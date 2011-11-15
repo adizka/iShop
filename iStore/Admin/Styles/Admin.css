@@ -1,0 +1,42 @@
+﻿body { margin:0; padding:0; }
+
+.Admin_Header { width:100%; height:50px; background-color:#0e5c9e; color:White; } 
+.Admin_HeaderCompanyName { float:left; }
+.Admin_HeaderCenter { float:left; }
+.Admin_HeaderToolbar { float:right; width:200px; color:White; }
+.Admin_HeaderToolbar a { color:White; }
+
+.Admin_Main { width:100%; }
+
+.Admin_Menu { float:left; width:300px; background-color:#0e5c9e;}
+.Admin_Center { float:left;}
+.Admin_MenuItemEmpty { background-color:transparent;  }
+.Admin_Menu a {color:white; text-decoration:none; }
+.Admin_Menu a:hover {color:white; text-decoration:underline;}
+
+    /* menu */
+*, * focus { outline: none; margin: 0; padding: 0; }
+ .admin_Menu .container { width: 300px;	margin: 0 auto; }
+.admin_Menu h1 { font: 4em normal Georgia, 'Times New Roman', Times, serif;	text-align:center;	padding: 20px 0; color: #aaa; }
+.admin_Menu h1 span { color: #666; }
+.admin_Menu h1 small{ font: 0.3em normal Verdana, Arial, Helvetica, sans-serif;	text-transform:uppercase; letter-spacing: 0.5em; display: block; color: #666; }
+ .admin_Menu h2.acc_trigger { padding: 0;	margin: 0 0 5px 0; background: url(../../Images/h2_trigger_a.gif) no-repeat; background-position:-5px top; height: 46px;
+	line-height: 46px;	width: 300px;	font-size: 2em;	font-weight: normal;	float: left;}
+.admin_Menu h2.acc_trigger a {	color: #fff;	text-decoration: none;	display: block;	padding: 0 0 0 50px; }
+.admin_Menu h2.acc_trigger a:hover { color: #ccc;}
+.admin_Menu h2.active {background-position: -5px bottom;}
+.admin_Menu .acc_container { margin: 0 0 5px; padding: 0; overflow: hidden; font-size: 1.2em; width: 298px; clear: both; background: #0e5c9e;
+	-webkit-border-bottom-right-radius: 5px;  -webkit-border-bottom-left-radius: 5px; -moz-border-radius-bottomright: 5px; 
+	-moz-border-radius-bottomleft: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px; }
+.acc_container h3 { font: 2.5em normal Georgia, "Times New Roman", Times, serif; margin: 0 0 10px; padding: 0 0 5px 0; border-bottom: 1px dashed #ccc;}
+.acc_container img { float: left; margin: 10px 15px 15px 0; padding: 5px; background: #ddd; border: 1px solid #ccc; }
+.block a { padding-left:20px; }
+ /* End menu */
+ 
+ /* Repeater */
+    .rep p { color:#000; font-family:Courier; font-size:14px; width: 700px; height:50px; text-align:left; vertical-align:top; }
+    .rep span { width:140px; padding:20px; }
+    .repHeader { background-color:#eddfa2; }
+    .first { background-color:#d6dcf1; }
+    .second { background-color:#f1d6da; }      
+ /* End Repeater */

@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BL", "BL\BL.csproj", "{F811AF93-8440-4DC9-A7AA-BCA306A0B8B2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iStore", "iStore\iStore.csproj", "{3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F811AF93-8440-4DC9-A7AA-BCA306A0B8B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F811AF93-8440-4DC9-A7AA-BCA306A0B8B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F811AF93-8440-4DC9-A7AA-BCA306A0B8B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F811AF93-8440-4DC9-A7AA-BCA306A0B8B2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

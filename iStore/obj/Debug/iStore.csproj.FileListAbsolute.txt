@@ -1,0 +1,14 @@
+F:\Projects\MarvelShop\iS\iStore\bin\iStore.dll
+F:\Projects\MarvelShop\iS\iStore\bin\iStore.pdb
+F:\Projects\MarvelShop\iS\iStore\obj\Debug\ResolveAssemblyReference.cache
+F:\Projects\MarvelShop\iS\iStore\obj\Debug\iStore.dll
+F:\Projects\MarvelShop\iS\iStore\obj\Debug\iStore.pdb
+F:\Projects\MarvelShop\iS\iStore\bin\BL.dll
+F:\Projects\MarvelShop\iS\iStore\bin\BL.pdb
+E:\!\iShop\Source\15-12-2011 17-09 AA\iS\iStore\bin\iStore.dll
+E:\!\iShop\Source\15-12-2011 17-09 AA\iS\iStore\bin\iStore.pdb
+E:\!\iShop\Source\15-12-2011 17-09 AA\iS\iStore\bin\BL.dll
+E:\!\iShop\Source\15-12-2011 17-09 AA\iS\iStore\bin\BL.pdb
+E:\!\iShop\Source\15-12-2011 17-09 AA\iS\iStore\obj\Debug\ResolveAssemblyReference.cache
+E:\!\iShop\Source\15-12-2011 17-09 AA\iS\iStore\obj\Debug\iStore.dll
+E:\!\iShop\Source\15-12-2011 17-09 AA\iS\iStore\obj\Debug\iStore.pdb

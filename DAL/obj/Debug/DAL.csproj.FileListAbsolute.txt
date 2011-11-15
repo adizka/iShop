@@ -1,0 +1,6 @@
+F:\Projects\MarvelShop\iS\DAL\bin\Debug\DAL.dll
+F:\Projects\MarvelShop\iS\DAL\bin\Debug\DAL.pdb
+F:\Projects\MarvelShop\iS\DAL\obj\Debug\ResolveAssemblyReference.cache
+F:\Projects\MarvelShop\iS\DAL\obj\Debug\DAL.dll
+F:\Projects\MarvelShop\iS\DAL\obj\Debug\DAL.pdb
+F:\Projects\MarvelShop\iS\DAL\bin\Debug\DAL.dll.config
