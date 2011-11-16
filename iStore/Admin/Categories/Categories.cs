@@ -9,38 +9,56 @@ namespace iStore.Admin.Categories
     public class Categories
     {
         BL.Modules.Categories.Categories cbl = new BL.Modules.Categories.Categories();
-        
-        public IQueryable<BL.Category> CategoriesHierarchy()
+
+        public string Name { get; set; }
+        public Guid? ID { get; set; }
+        public Categories Parent { get; set; }
+        public Categories Root { get; set; }
+        public int level;
+
+        public Categories()
         {
-            IQueryable<BL.Category> allCategories = cbl.GetAllCategories().OrderBy(c => c.Name);
-            if (allCategories.Any())
+            this.Parent = null;
+            this.Name = "Categories";
+            this.ID = null;
+            this.level = 0;
+            AllCategories = cbl.GetAllCategories().ToList();
+            this.level = 0;
+            this.Root = this;
+        }
+
+        private Categories(BL.Category category, Categories parent)
+        {
+
+            this.Parent = parent;
+            this.Root = parent.Root;
+            this.Name = category.Name;
+            this.ID = category.CategoryID;
+            this.level = parent.level + 1;
+            AllCategories = Root.AllCategories;
+        }
+
+        List<BL.Category> AllCategories;
+        List<Categories> _ChildCategories;
+
+        public IQueryable<Categories> ChildCategories
+        {
+            get
             {
-                //List<Guid?> Ids = new List<Guid?>();
+                if (_ChildCategories != null)
+                    return _ChildCategories.AsQueryable();
 
-                //foreach (var item in cbl.GetAllCategories())
-                //{
-                //    Ids.Add(item.ParentID);
-                //}
-                ////Удаляю повторяющиеся ПарентID
-                //Ids.Distinct().ToList();
-                
-                //Заполняем дерево родителями.
-                //IList<BL.Category> herarchy = allCategories.Where(c => c.ParentID == null).ToList();
-                //IList<BL.Category> distinctParents = allCategories.Distinct().ToList();
-                //foreach (var item in distinctParents)
-                //{
-                //    herarchy.Add(item);
-                //}
-                //herarchy = herarchy.Distinct().ToList().OrderBy(c => c.ParentID);
+                _ChildCategories = new List<Categories>();
 
 
-                
-                //foreach (var item in Ids)
-                //{
-                //    IQueryable<BL.Category> currentChild = cbl.GetCategoriesByParentId(item.Value);
-                //}
+                this._ChildCategories.AddRange(
+                    this.AllCategories.Where(c => c.ParentID == this.ID).Select(ct =>
+                        new Categories(ct, this)
+                        )
+                );
+
+                return _ChildCategories.AsQueryable();
             }
-            return allCategories;
         }
     }
 }

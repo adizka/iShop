@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.IO;
 
 namespace iStore.Admin.Categories
 {
@@ -22,14 +23,17 @@ namespace iStore.Admin.Categories
                     Delete(id);
                 }
             }
+
+            var temp = RootCategory;
+
         }
 
-        public IQueryable<BL.Category> allCategories
+        public Categories RootCategory
         {
             get
             {
                 iStore.Admin.Categories.Categories cl = new iStore.Admin.Categories.Categories();
-                return cl.CategoriesHierarchy();
+                return cl;
             }
         }
 

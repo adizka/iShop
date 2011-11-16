@@ -12,3 +12,10 @@ E:\!\iShop\Source\15-12-2011 17-09 AA\iS\iStore\bin\BL.pdb
 E:\!\iShop\Source\15-12-2011 17-09 AA\iS\iStore\obj\Debug\ResolveAssemblyReference.cache
 E:\!\iShop\Source\15-12-2011 17-09 AA\iS\iStore\obj\Debug\iStore.dll
 E:\!\iShop\Source\15-12-2011 17-09 AA\iS\iStore\obj\Debug\iStore.pdb
+E:\Work\iShop\iStore\bin\iStore.dll
+E:\Work\iShop\iStore\bin\iStore.pdb
+E:\Work\iShop\iStore\bin\BL.dll
+E:\Work\iShop\iStore\bin\BL.pdb
+E:\Work\iShop\iStore\obj\Debug\ResolveAssemblyReference.cache
+E:\Work\iShop\iStore\obj\Debug\iStore.dll
+E:\Work\iShop\iStore\obj\Debug\iStore.pdb

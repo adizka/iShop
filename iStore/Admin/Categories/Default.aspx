@@ -17,7 +17,7 @@
             <span>Sort</span>
             <span>Delete</span>
         </p>
-        <% int i = 0; string cssClass = string.Empty; foreach (var item in allCategories)
+        <% int i = 0; string cssClass = string.Empty; foreach (var item in RootCategory.ChildCategories)
            {
                i++; cssClass = ((i % 2) == 1 ) ? "first" : "second";
         %>
@@ -26,16 +26,16 @@
                 <%= item.Name %>
             </span>
             <span>
-                <a href="<%= iStore.Site.SiteAdminUrl %>Categories/CategoryEdit.aspx?id=<%= item.CategoryID.ToString() %>">Properties</a>
+                <a href="<%= iStore.Site.SiteAdminUrl %>Categories/CategoryEdit.aspx?id=<%= item.ID.ToString() %>">Properties</a>
             </span>
             <span>
-                <a href="<%= iStore.Site.SiteAdminUrl %>Categories/CategoryEdit.aspx?id=<%= item.CategoryID.ToString() %>">Edit</a>
+                <a href="<%= iStore.Site.SiteAdminUrl %>Categories/CategoryEdit.aspx?id=<%= item.ID.ToString() %>">Edit</a>
             </span>
             <span>
-                <a href="<%= iStore.Site.SiteAdminUrl %>Categories/CategorySort.aspx?id=<%= item.CategoryID.ToString() %>">Sort</a>
+                <a href="<%= iStore.Site.SiteAdminUrl %>Categories/CategorySort.aspx?id=<%= item.ID.ToString() %>">Sort</a>
             </span>
             <span>
-                <a href="<%= iStore.Site.SiteAdminUrl %>Categories/Default.aspx?delid=<%= item.CategoryID.ToString() %>">Delete</a>
+                <a href="<%= iStore.Site.SiteAdminUrl %>Categories/Default.aspx?delid=<%= item.ID.ToString() %>">Delete</a>
             </span>
         </p>       
         <% } %>
