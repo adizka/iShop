@@ -53,6 +53,7 @@
     <Compile Include="Helpers\MailHepler.cs" />
     <Compile Include="Helpers\MD5CryptoServiceProvider.cs" />
     <Compile Include="Modules\Categories\Categories.cs" />
+    <Compile Include="Modules\Categories\Properties.cs" />
     <Compile Include="Modules\News\News.cs" />
     <Compile Include="Modules\Pages\Pages.cs" />
     <Compile Include="Modules\Users\UserRights.cs" />

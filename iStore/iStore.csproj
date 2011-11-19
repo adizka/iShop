@@ -41,13 +41,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AjaxControlToolkit, Version=4.1.50927.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\AjaxControlToolkit.dll</HintPath>
+    <Reference Include="AjaxControlToolkit">
+      <HintPath>..\..\..\Users\Stam\Desktop\AjaxControlToolkit.dll</HintPath>
     </Reference>
-    <Reference Include="AjaxControlToolkit.resources, Version=4.1.50927.0, Culture=ru, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\AjaxControlToolkit.resources.dll</HintPath>
+    <Reference Include="AjaxControlToolkit.resources">
+      <HintPath>..\..\..\Users\Stam\Desktop\AjaxControlToolkit.resources.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
@@ -71,6 +69,7 @@
     <Content Include="Admin\Categories\Categories.xml" />
     <Content Include="Admin\Categories\CategoryEdit.aspx" />
     <Content Include="Admin\Categories\Default.aspx" />
+    <Content Include="Admin\Categories\Properties.aspx" />
     <Content Include="Admin\Default.aspx" />
     <Content Include="Admin\Design\Header.ascx" />
     <Content Include="Admin\Design\Menu.ascx" />
@@ -95,6 +94,8 @@
     <Content Include="Admin\Styles\images\ui-icons_ffd27a_256x240.png" />
     <Content Include="Admin\Styles\images\ui-icons_ffffff_256x240.png" />
     <Content Include="Admin\Styles\jquery-ui-1.8.16.custom.css" />
+    <Content Include="Images\bg-menu-main.png" />
+    <Content Include="Images\bg_nav.gif" />
     <Content Include="Images\h2_trigger_a.gif" />
     <Content Include="Modules\Controls\Validators\ValidateErrors.ascx" />
     <Content Include="Pages\Default.aspx" />
@@ -635,6 +636,13 @@
     </Compile>
     <Compile Include="Admin\Categories\Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Categories\Properties.aspx.cs">
+      <DependentUpon>Properties.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Categories\Properties.aspx.designer.cs">
+      <DependentUpon>Properties.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>

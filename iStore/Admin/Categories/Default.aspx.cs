@@ -4,14 +4,13 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using System.IO;
 
 namespace iStore.Admin.Categories
 {
     public partial class Default : System.Web.UI.Page
     {
         BL.Modules.Categories.Categories cbl = new BL.Modules.Categories.Categories();
-        
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -23,23 +22,21 @@ namespace iStore.Admin.Categories
                     Delete(id);
                 }
             }
-
-            var temp = RootCategory;
-
         }
 
-        public Categories RootCategory
+        public IQueryable<BL.Category> allCategories
         {
             get
             {
                 iStore.Admin.Categories.Categories cl = new iStore.Admin.Categories.Categories();
-                return cl;
+                //return cl.CategoriesHierarchy();
+                return cbl.GetAllCategories();
             }
         }
 
         public IQueryable<BL.Category> allParentCategory
         {
-            get 
+            get
             {
                 return cbl.GetAllCategories().Where(c => c.ParentID == null).OrderBy(c => c.Sort);
             }
@@ -52,7 +49,7 @@ namespace iStore.Admin.Categories
             {
                 Response.Redirect(iStore.Site.SiteAdminUrl);
             }
-            
+
             int errorMessageId = cbl.DeleteCategoryByIdWithErrorMessage(id);
             string errorMessage = string.Empty;
             switch (errorMessageId)

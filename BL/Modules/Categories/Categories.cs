@@ -30,15 +30,21 @@ namespace BL.Modules.Categories
 
         public void UpdateCategory(Guid categoryId, string name, Guid? parentId)
         {
-            using (var db = new ShopDataContext())
+            using (ShopDataContext db = new ShopDataContext())
             {
-                BL.Category category = GetCategoryById(categoryId);
+                BL.Category category = db.Categories.Where(c => c.CategoryID == categoryId).FirstOrDefault();
                 if (category != null)
                 {
-                    category.Name = name;
-                    category.ParentID = parentId;
-                    db.SubmitChanges();
+                    using (var ts = new TransactionScope())
+                    {
+                        category.Name = name;
+                        category.ParentID = parentId;
+                        db.SubmitChanges();
+                        ts.Complete();
+                        db.Refresh(System.Data.Linq.RefreshMode.OverwriteCurrentValues);
+                    }
                 }
+
             }
         }
 
@@ -66,7 +72,7 @@ namespace BL.Modules.Categories
         {
             using (var db = new ShopDataContext())
             {
-                
+
                 using (var ts = new TransactionScope())
                 {
                     db.Categories.AttachAll(categories);
@@ -87,13 +93,13 @@ namespace BL.Modules.Categories
         {
             if (CategoryHasChild(id))
             {
-                return (int)DeleteErrors.HasChilds;            
+                return (int)DeleteErrors.HasChilds;
             }
             if (CategoryHasProducts(id))
             {
                 return (int)DeleteErrors.HasProducts;
             }
-            
+
             ShopDataContext db = new ShopDataContext();
             BL.Category category = db.Categories.Where(c => c.CategoryID == id).FirstOrDefault();
             if (category == null)
@@ -104,7 +110,7 @@ namespace BL.Modules.Categories
             db.Categories.DeleteOnSubmit(category);
             db.SubmitChanges();
             return (int)DeleteErrors.Success;
-            
+
         }
 
         private static bool CategoryHasProducts(Guid id)
@@ -114,13 +120,13 @@ namespace BL.Modules.Categories
         }
 
         public static bool CategoryHasChild(Guid categoryId)
-        { 
+        {
             ShopDataContext db = new ShopDataContext();
             return db.Categories.Where(c => c.ParentID == categoryId).Any();
         }
 
         public IQueryable<BL.Category> GetCategoriesByParentId(Guid? parentId)
-        { 
+        {
             ShopDataContext db = new ShopDataContext();
             return db.Categories.Where(c => c.ParentID == parentId).OrderBy(c => c.Sort);
         }
@@ -128,7 +134,7 @@ namespace BL.Modules.Categories
         public bool NameInBD(string name)
         {
             return GetAllCategories().Where(c => c.Name == name).Any();
-                
+
         }
     }
 }

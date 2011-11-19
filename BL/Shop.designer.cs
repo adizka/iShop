@@ -890,6 +890,8 @@ namespace BL
 
         private string _PropertyValue;
 
+        private int _Sort;
+
         private EntityRef<Category> _Category;
 
         #region Extensibility Method Definitions
@@ -904,6 +906,8 @@ namespace BL
         partial void OnPropertNameChanged();
         partial void OnPropertyValueChanging(string value);
         partial void OnPropertyValueChanged();
+        partial void OnSortChanging(int value);
+        partial void OnSortChanged();
         #endregion
 
         public CategoryProperty()
@@ -992,6 +996,26 @@ namespace BL
                     this._PropertyValue = value;
                     this.SendPropertyChanged("PropertyValue");
                     this.OnPropertyValueChanged();
+                }
+            }
+        }
+
+        [global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_Sort", DbType = "Int NOT NULL", CanBeNull = false)]
+        public int Sort
+        {
+            get
+            {
+                return this._Sort;
+            }
+            set
+            {
+                if ((this._Sort != value))
+                {
+                    this.OnSortChanging(value);
+                    this.SendPropertyChanging();
+                    this._Sort = value;
+                    this.SendPropertyChanged("Sort");
+                    this.OnSortChanged();
                 }
             }
         }

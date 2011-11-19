@@ -2,9 +2,9 @@
 
 <%@ Register TagPrefix="iS" TagName="ValidateErrors" Src="~/Modules/Controls/Validators/ValidateErrors.ascx" %>
 
-<asp:Content runat="server" ContentPlaceHolderID="head">
+<asp:Content ID="Content1" runat="server" ContentPlaceHolderID="head">
 </asp:Content>
-<asp:Content runat="server" ContentPlaceHolderID="main">
+<asp:Content ID="Content2" runat="server" ContentPlaceHolderID="main">
     <p>
         <a href="<%= iStore.Site.SiteAdminUrl %>Categories/CategoryEdit.aspx">Добавить категорию</a>
     </p><br />
@@ -17,7 +17,7 @@
             <span>Sort</span>
             <span>Delete</span>
         </p>
-        <% int i = 0; string cssClass = string.Empty; foreach (var item in RootCategory.ChildCategories)
+        <% int i = 0; string cssClass = string.Empty; foreach (var item in allCategories)
            {
                i++; cssClass = ((i % 2) == 1 ) ? "first" : "second";
         %>
@@ -26,16 +26,16 @@
                 <%= item.Name %>
             </span>
             <span>
-                <a href="<%= iStore.Site.SiteAdminUrl %>Categories/CategoryEdit.aspx?id=<%= item.ID.ToString() %>">Properties</a>
+                <a href="<%= iStore.Site.SiteAdminUrl %>Categories/Properties.aspx?id=<%= item.CategoryID.ToString() %>">Properties</a>
             </span>
             <span>
-                <a href="<%= iStore.Site.SiteAdminUrl %>Categories/CategoryEdit.aspx?id=<%= item.ID.ToString() %>">Edit</a>
+                <a href="<%= iStore.Site.SiteAdminUrl %>Categories/CategoryEdit.aspx?id=<%= item.CategoryID.ToString() %>">Edit</a>
             </span>
             <span>
-                <a href="<%= iStore.Site.SiteAdminUrl %>Categories/CategorySort.aspx?id=<%= item.ID.ToString() %>">Sort</a>
+                <a href="<%= iStore.Site.SiteAdminUrl %>Categories/CategorySort.aspx?id=<%= item.CategoryID.ToString() %>">Sort</a>
             </span>
             <span>
-                <a href="<%= iStore.Site.SiteAdminUrl %>Categories/Default.aspx?delid=<%= item.ID.ToString() %>">Delete</a>
+                <a href="<%= iStore.Site.SiteAdminUrl %>Categories/Default.aspx?delid=<%= item.CategoryID.ToString() %>">Delete</a>
             </span>
         </p>       
         <% } %>

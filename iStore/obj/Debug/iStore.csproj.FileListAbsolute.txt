@@ -19,3 +19,12 @@ E:\Work\iShop\iStore\bin\BL.pdb
 E:\Work\iShop\iStore\obj\Debug\ResolveAssemblyReference.cache
 E:\Work\iShop\iStore\obj\Debug\iStore.dll
 E:\Work\iShop\iStore\obj\Debug\iStore.pdb
+C:\Work\iShop\iStore\bin\iStore.dll
+C:\Work\iShop\iStore\bin\iStore.pdb
+C:\Work\iShop\iStore\bin\BL.dll
+C:\Work\iShop\iStore\bin\BL.pdb
+C:\Work\iShop\iStore\obj\Debug\ResolveAssemblyReference.cache
+C:\Work\iShop\iStore\obj\Debug\iStore.dll
+C:\Work\iShop\iStore\obj\Debug\iStore.pdb
+C:\Work\iShop\iStore\bin\AjaxControlToolkit.dll
+C:\Work\iShop\iStore\bin\AjaxControlToolkit.resources.dll

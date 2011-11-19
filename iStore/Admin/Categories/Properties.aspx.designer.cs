@@ -10,7 +10,7 @@
 namespace iStore.Admin.Categories {
     
     
-    public partial class CategoryEdit {
+    public partial class Properties {
         
         /// <summary>
         /// sm control.
@@ -40,6 +40,33 @@ namespace iStore.Admin.Categories {
         protected global::iStore.Modules.Controls.Validators.ValidateErrors ve;
         
         /// <summary>
+        /// rlProp control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AjaxControlToolkit.ReorderList rlProp;
+        
+        /// <summary>
+        /// Label1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label1;
+        
+        /// <summary>
+        /// Label2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label2;
+        
+        /// <summary>
         /// lblName control.
         /// </summary>
         /// <remarks>
@@ -58,21 +85,30 @@ namespace iStore.Admin.Categories {
         protected global::System.Web.UI.WebControls.TextBox txtName;
         
         /// <summary>
-        /// ddlCategories control.
+        /// lblValue control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlCategories;
+        protected global::System.Web.UI.WebControls.Label lblValue;
         
         /// <summary>
-        /// btnSaveCategory control.
+        /// txtValue control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSaveCategory;
+        protected global::System.Web.UI.WebControls.TextBox txtValue;
+        
+        /// <summary>
+        /// btnSave control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnSave;
     }
 }

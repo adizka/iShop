@@ -10,15 +10,27 @@ namespace iStore.Admin.Categories
     public partial class CategoryEdit : System.Web.UI.Page
     {
         BL.Modules.Categories.Categories cbl = new BL.Modules.Categories.Categories();
-        
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
+                ddlCategories.DataSource = allCategories;
+                ddlCategories.DataValueField = "CategoryID";
+                ddlCategories.DataTextField = "Name";
+                ddlCategories.DataBind();
                 BL.Category category = CurrentCategory;
                 if (category != null)
                 {
                     txtName.Text = category.Name;
+                    if (category.ParentID == null)
+                    {
+                        ddlCategories.SelectedValue = "parent";
+                    }
+                    else
+                    {
+                        ddlCategories.SelectedValue = category.CategoryID.ToString();
+                    }
                 }
             }
         }
@@ -27,6 +39,7 @@ namespace iStore.Admin.Categories
         {
             string name = Server.HtmlEncode(txtName.Text);
             BL.Category category = CurrentCategory;
+            string hf = ddlCategories.SelectedItem.Value;
             if (string.IsNullOrEmpty(name))
             {
                 ve.ClearErrors();
@@ -50,26 +63,26 @@ namespace iStore.Admin.Categories
                 if (category == null)
                 {
                     Guid parentId;
-                    if (hf.Value == "parent")
+                    if (hf == "parent")
                     {
                         cbl.AddCategory(name, null);
                     }
                     else
                     {
-                        parentId = new Guid(hf.Value);
+                        parentId = new Guid(hf);
                         cbl.AddCategory(name, parentId);
                     }
                 }
                 else
                 {
                     Guid parentId;
-                    if (hf.Value == "parent")
+                    if (hf == "parent")
                     {
                         cbl.UpdateCategory(category.CategoryID, name, null);
                     }
                     else
                     {
-                        parentId = new Guid(hf.Value);
+                        parentId = new Guid(hf);
                         cbl.UpdateCategory(category.CategoryID, name, parentId);
                     }
                 }
