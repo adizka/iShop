@@ -71,6 +71,7 @@
     <Content Include="Admin\Categories\CategorySort.aspx" />
     <Content Include="Admin\Categories\Default.aspx" />
     <Content Include="Admin\Categories\Properties.aspx" />
+    <Content Include="Admin\Categories\Temp.aspx" />
     <Content Include="Admin\Default.aspx" />
     <Content Include="Admin\Design\Header.ascx" />
     <Content Include="Admin\Design\Menu.ascx" />
@@ -651,6 +652,13 @@
     </Compile>
     <Compile Include="Admin\Categories\Properties.aspx.designer.cs">
       <DependentUpon>Properties.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Categories\Temp.aspx.cs">
+      <DependentUpon>Temp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Categories\Temp.aspx.designer.cs">
+      <DependentUpon>Temp.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>

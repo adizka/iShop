@@ -16,22 +16,8 @@ namespace iStore.Admin.Categories
         {
             if (IsPostBack)
                 return;
-            rl.DataSource = SiblingCategories;
-            rl.DataBind();
-
         }
 
-        protected void lstReorder_Reorder(object sender, ReorderListItemReorderEventArgs e)
-        {
-            var lst = SiblingCategories.ToList();
-            var moved = lst[e.OldIndex];
-            lst.RemoveAt(e.OldIndex);
-            lst.Insert(e.NewIndex, moved);
-
-
-            this.rl.DataSource = lst;
-            this.rl.DataBind();
-        }
 
 
         IQueryable<BL.Category> _SiblingCategories;
@@ -43,7 +29,7 @@ namespace iStore.Admin.Categories
                 if (_SiblingCategories == null)
                     _SiblingCategories = cbl.GetCategoriesByParentId(ParentID);
 
-                return _SiblingCategories;
+                return _SiblingCategories.OrderBy(c=>c.Sort);
             }
         }
 
@@ -53,6 +39,20 @@ namespace iStore.Admin.Categories
             {
                 return new Guid(Request.QueryString["id"]);
             }
+        }
+
+        protected void SaveCategoriesRate(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(hd.Value))
+                return;
+            var ids = hd.Value.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries).Select(id => new Guid(id));
+            int index = 0;
+            foreach (var item in ids)
+            {
+                SiblingCategories.First(c => c.CategoryID == item).Sort = index;
+                index++;
+            }
+            cbl.UpdateAllCategories(SiblingCategories.ToList());
         }
 
     }
