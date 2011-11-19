@@ -32,7 +32,7 @@
                 <a href="<%= iStore.Site.SiteAdminUrl %>Categories/CategoryEdit.aspx?id=<%= item.ID.ToString() %>">Edit</a>
             </span>
             <span>
-                <a href="<%= iStore.Site.SiteAdminUrl %>Categories/CategorySort.aspx?id=<%= item.ID.ToString() %>">Sort</a>
+                <a href="<%= iStore.Site.SiteAdminUrl %>Categories/CategorySort.aspx?id=<%= item.Parent.ID.ToString() %>">Sort</a>
             </span>
             <span>
                 <a href="<%= iStore.Site.SiteAdminUrl %>Categories/Default.aspx?delid=<%= item.ID.ToString() %>">Delete</a>

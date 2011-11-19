@@ -70,7 +70,7 @@
         </div> 
 	</div> 
 	
-	<h2 class="acc_trigger" id="admin_Categories"><a href="#"><%= global::Resources.Shops.Products %></a></h2> 
+	<h2 class="acc_trigger"><a href="#"><%= global::Resources.Shops.Products %></a></h2> 
 	<div class="acc_container"> 
 		<div class="block"> 
 			<p>
@@ -81,12 +81,13 @@
 		    </p>
        </div> 
 	</div> 
-    <h2 class="acc_trigger"><a href="#"><%= global::Resources.Shops.Categories %></a></h2> 
+    <h2 class="acc_trigger" id="admin_Categories"><a href="#"><%= global::Resources.Shops.Categories %></a></h2> 
 	<div class="acc_container"> 
 		<div class="block"> 
 			<p>
 		        <ul>
                     <li><a href="<%= iStore.Site.SiteAdminUrl %>Categories/"><%= global::Resources.Shops.CategoriesList %></a></li>
+                     <li><a href="<%= iStore.Site.SiteAdminUrl %>Categories/CategoryEdit.aspx"><%= global::Resources.Shops.AddCategories %></a></li>
                 </ul>
 		    </p>
         </div> 

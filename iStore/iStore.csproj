@@ -68,6 +68,7 @@
   <ItemGroup>
     <Content Include="Admin\Categories\Categories.xml" />
     <Content Include="Admin\Categories\CategoryEdit.aspx" />
+    <Content Include="Admin\Categories\CategorySort.aspx" />
     <Content Include="Admin\Categories\Default.aspx" />
     <Content Include="Admin\Categories\Properties.aspx" />
     <Content Include="Admin\Default.aspx" />
@@ -629,6 +630,13 @@
     </Compile>
     <Compile Include="Admin\Categories\CategoryEdit.aspx.designer.cs">
       <DependentUpon>CategoryEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Categories\CategorySort.aspx.cs">
+      <DependentUpon>CategorySort.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Categories\CategorySort.aspx.designer.cs">
+      <DependentUpon>CategorySort.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\Categories\Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
