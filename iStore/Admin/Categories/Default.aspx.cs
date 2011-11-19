@@ -24,13 +24,12 @@ namespace iStore.Admin.Categories
             }
         }
 
-        public IQueryable<BL.Category> allCategories
+        public List<Categories> allCategories
         {
             get
             {
                 iStore.Admin.Categories.Categories cl = new iStore.Admin.Categories.Categories();
-                //return cl.CategoriesHierarchy();
-                return cbl.GetAllCategories();
+                return cl.GetCategoriesTree();
             }
         }
 

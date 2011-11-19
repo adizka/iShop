@@ -15,7 +15,7 @@ namespace iStore.Admin.Categories
         public Categories Parent { get; set; }
         public Categories Root { get; set; }
         public int level;
-
+        public int sort;
         public Categories()
         {
             this.Parent = null;
@@ -34,10 +34,37 @@ namespace iStore.Admin.Categories
             this.Root = parent.Root;
             this.Name = category.Name;
             this.ID = category.CategoryID;
+            this.sort = category.Sort;
             this.level = parent.level + 1;
             AllCategories = Root.AllCategories;
         }
 
+        public List<Categories> GetCategoriesTree()
+        {
+            List<Categories> result = new List<Categories>();
+            var childs = this.ChildCategories.OrderBy(c => c.sort).ThenBy(cc => cc.Name);
+
+            foreach (var item in childs)
+            {
+                result.Add(item);
+                result.AddRange(GetCategoriesTree(item));
+            }
+
+            return result;
+        }
+        List<Categories> GetCategoriesTree(Categories node)
+        {
+            List<Categories> result = new List<Categories>();
+            var childs = node.ChildCategories;
+
+            foreach (var item in childs)
+            {
+                result.Add(item);
+                result.AddRange(GetCategoriesTree(item));
+            }
+
+            return result;
+        }
         List<BL.Category> AllCategories;
         List<Categories> _ChildCategories;
 
