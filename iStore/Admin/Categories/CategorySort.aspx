@@ -89,11 +89,10 @@
            </div>
             <%} %>
 </div>
-<asp:Button Text="Save" OnClick="SaveCategoriesRate" runat="server"/>
+<asp:Button ID="Button1" Text="Save" OnClick="SaveCategoriesRate" runat="server"/>
 </div>
 
 
-    
 </asp:Content>  
 
 

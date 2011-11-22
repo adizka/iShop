@@ -15,7 +15,7 @@ namespace iStore.Admin.Categories
         {
             if (!IsPostBack)
             {
-                string sid = Request.QueryString["delid"];
+                string sid = Request.QueryString["delcid"];
                 if (sid != null)
                 {
                     Guid id = new Guid(sid);
@@ -24,12 +24,26 @@ namespace iStore.Admin.Categories
             }
         }
 
-        public List<Categories> allCategories
+        public IQueryable<BL.Category> allCategories
         {
             get
             {
-                iStore.Admin.Categories.Categories cl = new iStore.Admin.Categories.Categories();
-                return cl.GetCategoriesTree();
+                string sid = Request.QueryString["cid"];
+                BL.Modules.Categories.Categories cbl = new BL.Modules.Categories.Categories();
+                if (string.IsNullOrEmpty(sid)) 
+                { 
+                    return cbl.GetAllRootCatgories();
+                }
+                try
+                {
+                    Guid id = new Guid(sid);
+                    return cbl.GetCategoriesByParentId(id);
+                }
+                catch
+                {
+                    Response.Redirect(iStore.Site.SiteAdminUrl + "Login/");
+                }
+                return null;
             }
         }
 

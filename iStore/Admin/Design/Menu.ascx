@@ -20,6 +20,10 @@
                  $('#admin_Categories').addClass('active').next().show();
                  set = -1;
              }
+             if (url.indexOf('Admin/Products') != -1) {
+                 $('#admin_Products').addClass('active').next().show();
+                 set = -1;
+             }
              if (set == 0) {
                  $('.acc_trigger:first').addClass('active').next().show(); //Add "active" class to first trigger, then show/open the immediate next container
              }
@@ -70,13 +74,13 @@
         </div> 
 	</div> 
 	
-	<h2 class="acc_trigger"><a href="#"><%= global::Resources.Shops.Products %></a></h2> 
+	<h2 class="acc_trigger" id="admin_Products"><a href="#"><%= global::Resources.Shops.Products %></a></h2> 
 	<div class="acc_container"> 
 		<div class="block"> 
 			<p>
 		        <ul>
-                    <li><a href="#"><%= global::Resources.Shops.ProductsList %></a></li>
-                    <li><a href="#"><%= global::Resources.Shops.AddProducts %></a></li>
+                    <li><a href="<%= iStore.Site.SiteAdminUrl %>Products/"><%= global::Resources.Shops.ProductsList %></a></li>
+                    <li><a href="<%= iStore.Site.SiteAdminUrl %>Products/ProductEdit.aspx"><%= global::Resources.Shops.AddProducts %></a></li>
                 </ul>
 		    </p>
        </div> 
@@ -87,7 +91,7 @@
 			<p>
 		        <ul>
                     <li><a href="<%= iStore.Site.SiteAdminUrl %>Categories/"><%= global::Resources.Shops.CategoriesList %></a></li>
-                     <li><a href="<%= iStore.Site.SiteAdminUrl %>Categories/CategoryEdit.aspx"><%= global::Resources.Shops.AddCategories %></a></li>
+                    <li><a href="<%= iStore.Site.SiteAdminUrl %>Categories/"><%= global::Resources.Shops.AddCategories %></a></li>
                 </ul>
 		    </p>
         </div> 

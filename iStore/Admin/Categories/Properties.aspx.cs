@@ -25,8 +25,8 @@ namespace iStore.Admin.Categories
                 if (cp != null)
                 {
                     rlProp.DataSource = allProperties;
-
-
+                    
+                    
                     rlProp.SortOrderField = "Sort";
                     rlProp.DataBind();
                 }

@@ -27,9 +27,9 @@ namespace iStore.Admin.Categories
             get
             {
                 if (_SiblingCategories == null)
-                    _SiblingCategories = cbl.GetCategoriesByParentId(ParentID);
+                    _SiblingCategories = cbl.GetAllRootCatgories();
 
-                return _SiblingCategories.OrderBy(c=>c.Sort);
+                return _SiblingCategories.OrderBy(c => c.Sort);
             }
         }
 
@@ -37,7 +37,19 @@ namespace iStore.Admin.Categories
         {
             get
             {
-                return new Guid(Request.QueryString["id"]);
+                string sid = Request.QueryString["cid"];
+                if (sid != null)
+                {
+                    try
+                    {
+                        return new Guid(sid);
+                    }
+                    catch
+                    {
+                        return null;
+                    }
+                }
+                return null;
             }
         }
 

@@ -103,7 +103,7 @@ namespace iStore.Admin.Categories
         {
             get
             {
-                string sid = Request.QueryString["id"];
+                string sid = Request.QueryString["cid"];
                 if (sid != null)
                 {
                     Guid id = new Guid(sid);
