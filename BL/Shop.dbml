@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="MarvelDB" Class="ShopDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=RUSLANPC\SQLEXPRESS;Initial Catalog=MarvelDB;Integrated Security=True" SettingsObjectName="BL.Properties.Settings" SettingsPropertyName="MarvelDBConnectionString1" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=ITCOMP\TEST;Initial Catalog=MarvelDB;Persist Security Info=True;User ID=sa" SettingsObjectName="BL.Properties.Settings" SettingsPropertyName="MarvelDBConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.Categories" Member="Categories">
     <Type Name="Category">
       <Column Name="CategoryID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -11,11 +11,18 @@
       <Association Name="Category_ProductsRefCategory" Member="ProductsRefCategories" ThisKey="CategoryID" OtherKey="CategoryID" Type="ProductsRefCategory" />
     </Type>
   </Table>
-  <Table Name="dbo.UsersSessions" Member="UsersSessions">
-    <Type Name="UsersSession">
-      <Column Name="SessionID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="UserID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
-      <Association Name="User_UsersSession" Member="User" ThisKey="UserID" OtherKey="UserID" Type="User" IsForeignKey="true" />
+  <Table Name="dbo.Users" Member="Users">
+    <Type Name="User">
+      <Column Name="UserID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Login" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Password" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="UserRoleID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UserRightID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="User_Order" Member="Orders" ThisKey="UserID" OtherKey="UserID" Type="Order" />
+      <Association Name="User_UserProperty" Member="UserProperties" ThisKey="UserID" OtherKey="UserID" Type="UserProperty" />
+      <Association Name="UserRight_User" Member="UserRight" ThisKey="UserRightID" OtherKey="UserRightID" Type="UserRight" IsForeignKey="true" />
+      <Association Name="UserRole_User" Member="UserRole" ThisKey="UserRoleID" OtherKey="UserRolesID" Type="UserRole" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.CategoryProperties" Member="CategoryProperties">
@@ -64,9 +71,9 @@
       <Column Name="DeliveryTypeID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Association Name="Order_OrdersRefProduct" Member="OrdersRefProducts" ThisKey="OrderID" OtherKey="OrderID" Type="OrdersRefProduct" />
       <Association Name="DeliveryType_Order" Member="DeliveryType" ThisKey="DeliveryTypeID" OtherKey="DeliveryTypeID" Type="DeliveryType" IsForeignKey="true" />
+      <Association Name="User_Order" Member="User" ThisKey="UserID" OtherKey="UserID" Type="User" IsForeignKey="true" />
       <Association Name="OrderStatuse_Order" Member="OrderStatuse" ThisKey="OrderStatusID" OtherKey="OrderStatusID" Type="OrderStatuse" IsForeignKey="true" />
       <Association Name="PaymentType_Order" Member="PaymentType" ThisKey="PaymentTypeID" OtherKey="PaymentTypeID" Type="PaymentType" IsForeignKey="true" />
-      <Association Name="User_Order" Member="User" ThisKey="UserID" OtherKey="UserID" Type="User" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.OrdersRefProducts" Member="OrdersRefProducts">
@@ -91,7 +98,7 @@
   <Table Name="dbo.Pages" Member="Pages">
     <Type Name="Page">
       <Column Name="PageID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Keywords" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="PageURL" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
       <Column Name="PageName" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
       <Column Name="PageBody" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
     </Type>
@@ -189,23 +196,6 @@
       <Column Name="UserRolesName" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
       <Column Name="UserRoleRights" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Association Name="UserRole_User" Member="Users" ThisKey="UserRolesID" OtherKey="UserRoleID" Type="User" />
-    </Type>
-  </Table>
-  <Table Name="dbo.Users" Member="Users">
-    <Type Name="User">
-      <Column Name="UserID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="Login" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Email" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Password" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
-      <Column Name="UserRoleID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="UserRightID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="ConfirmationID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
-      <Column Name="IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Association Name="User_UsersSession" Member="UsersSessions" ThisKey="UserID" OtherKey="UserID" Type="UsersSession" />
-      <Association Name="User_Order" Member="Orders" ThisKey="UserID" OtherKey="UserID" Type="Order" />
-      <Association Name="User_UserProperty" Member="UserProperties" ThisKey="UserID" OtherKey="UserID" Type="UserProperty" />
-      <Association Name="UserRight_User" Member="UserRight" ThisKey="UserRightID" OtherKey="UserRightID" Type="UserRight" IsForeignKey="true" />
-      <Association Name="UserRole_User" Member="UserRole" ThisKey="UserRoleID" OtherKey="UserRolesID" Type="UserRole" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>

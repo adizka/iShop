@@ -77,8 +77,8 @@ namespace BL.Modules.Categories
                 {
                     foreach (var item in categories)
                     {
-                       var categ = db.Categories.First(c => c.CategoryID == item.CategoryID);
-                       categ.Sort = item.Sort;
+                        var categ = db.Categories.First(c => c.CategoryID == item.CategoryID);
+                        categ.Sort = item.Sort;
                     }
                     db.SubmitChanges();
                     ts.Complete();
@@ -134,10 +134,29 @@ namespace BL.Modules.Categories
             return db.Categories.Where(c => c.ParentID == parentId).OrderBy(c => c.Sort);
         }
 
+        public IQueryable<BL.Category> GetAllRootCatgories()
+        {
+            ShopDataContext db = new ShopDataContext();
+            return db.Categories.Where(c => c.ParentID == null).OrderBy(c => c.Sort);
+        }
+
         public bool NameInBD(string name)
         {
             return GetAllCategories().Where(c => c.Name == name).Any();
 
         }
+
+        public Category GetCategoryById(Guid? parentId)
+        {
+            ShopDataContext db = new ShopDataContext();
+            if (parentId.HasValue)
+            {
+                Guid id = parentId.Value;
+                return db.Categories.Where(c => c.CategoryID == id).FirstOrDefault();
+            }
+            return null;
+        }
+
+        
     }
 }
