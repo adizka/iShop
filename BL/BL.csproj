@@ -53,8 +53,10 @@
     <Compile Include="Modules\News\News.cs" />
     <Compile Include="Modules\Pages\Pages.cs" />
     <Compile Include="Modules\Products\ProductProperies.cs" />
+    <Compile Include="Modules\Products\ProductRefCategories.cs" />
     <Compile Include="Modules\Products\Products.cs" />
     <Compile Include="Modules\Products\ProductType.cs" />
+    <Compile Include="Modules\Stock\Stock.cs" />
     <Compile Include="Modules\Users\UserRights.cs" />
     <Compile Include="Modules\Users\UserRoles.cs" />
     <Compile Include="Modules\Users\Users.cs" />

@@ -8,5 +8,4 @@
     <p>
         <a href="<%= iStore.Site.SiteAdminUrl %>Products/ProductEdit.aspx">Добавить продукт</a>
     </p>
-
 </asp:Content>

@@ -24,8 +24,7 @@ namespace iStore.Admin.Categories
                 }
             }
             pager.AddInsParams = "cid=" + Request.QueryString["cid"];
-            pager.EntityCount = EntityCount;
-            pager.EntityCount = EntityCount;
+            pager.EntityCount = allCategories.Count();
             pager.EntitiesPerPage = 3;
             pager.NavigationNumbsCount = 5;
         }
