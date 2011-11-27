@@ -50,6 +50,7 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Transactions" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
@@ -789,6 +790,7 @@
   <ItemGroup>
     <Folder Include="Admin\Scripts\" />
     <Folder Include="App_Data\" />
+    <Folder Include="Content\Products\" />
     <Folder Include="NewFolder1\" />
     <Folder Include="News\" />
   </ItemGroup>

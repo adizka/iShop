@@ -17,7 +17,19 @@ namespace iStore.Admin
         }
         protected void Page_Load(object sender, EventArgs e)
         {
+            
+        }
 
+        string _NavigateUrl;
+        protected string NavigateUrl
+        {
+            get
+            {
+                if (_NavigateUrl == null)
+                    _NavigateUrl = Request.Url.AbsolutePath;
+                return _NavigateUrl;
+
+            }
         }
 
         public string AddInsParams { get; set; }

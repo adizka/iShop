@@ -7,8 +7,8 @@
     if(EntityCount != 0){
     if (PageIndex !=0)
   { %>
-  <span class="NavigateLastPage"><a href ="/Admin/Categories/Default.aspx?p=0&<%=AddInsParams%>">first</a></span>
-  <span class="NavigateLastPage"><a href ="/Admin/Categories/Default.aspx?p=<%=(PageIndex-1).ToString() %>&<%=AddInsParams%>">prev</a></span>
+  <span class="NavigateLastPage"><a href ="<%=NavigateUrl %>"?p=0&<%=AddInsParams%>">first</a></span>
+  <span class="NavigateLastPage"><a href ="<%=NavigateUrl %>?p=<%=(PageIndex-1).ToString() %>&<%=AddInsParams%>">prev</a></span>
   <%if (FirstIdnex != 0)
     { %>
     <span>...</span>
@@ -22,7 +22,7 @@
             <%}
             else
             { %>
-              <span class="NeigbourPageNumber"><a href="/Admin/Categories/Default.aspx?p=<%= i.ToString() %>&<%=AddInsParams%>"> <%= (i + 1).ToString()%></a> </span>
+              <span class="NeigbourPageNumber"><a href="<%=NavigateUrl %>?p=<%= i.ToString() %>&<%=AddInsParams%>"> <%= (i + 1).ToString()%></a> </span>
               <%}
         }
         if (PageIndex != PagesCount - 1)
@@ -30,8 +30,8 @@
     { %>
     <span>...</span>
     <%} %>
-  <span class="NavigateLastPage"><a href ="/Admin/Categories/Default.aspx?p=<%=(PageIndex+1).ToString() %>&<%=AddInsParams%>">next</a></span>
-  <span class="NavigateLastPage"><a href ="/Admin/Categories/Default.aspx?p=<%=(PagesCount-1).ToString() %>&<%=AddInsParams%>">last</a></span>
+  <span class="NavigateLastPage"><a href ="<%=NavigateUrl %>?p=<%=(PageIndex+1).ToString() %>&<%=AddInsParams%>">next</a></span>
+  <span class="NavigateLastPage"><a href ="<%=NavigateUrl %>?p=<%=(PagesCount-1).ToString() %>&<%=AddInsParams%>">last</a></span>
   
     <%  
   }    

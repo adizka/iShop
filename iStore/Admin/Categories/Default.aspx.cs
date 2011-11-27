@@ -36,13 +36,13 @@ namespace iStore.Admin.Categories
                 string sid = Request.QueryString["cid"];
                 BL.Modules.Categories.Categories cbl = new BL.Modules.Categories.Categories();
                 if (string.IsNullOrEmpty(sid)) 
-                { 
-                    return cbl.GetAllRootCatgories();
+                {
+                    return cbl.GetAllRootCatgories().OrderBy(c => c.Sort);
                 }
                 try
                 {
                     Guid id = new Guid(sid);
-                    return cbl.GetCategoriesByParentId(id);
+                    return cbl.GetCategoriesByParentId(id).OrderBy(c => c.Sort);
                 }
                 catch
                 {

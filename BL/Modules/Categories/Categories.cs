@@ -132,13 +132,13 @@ namespace BL.Modules.Categories
         public IQueryable<BL.Category> GetCategoriesByParentId(Guid? parentId)
         {
             ShopDataContext db = new ShopDataContext();
-            return db.Categories.Where(c => c.ParentID == parentId).OrderBy(c => c.Sort);
+            return db.Categories.Where(c => c.ParentID == parentId);
         }
 
         public IQueryable<BL.Category> GetAllRootCatgories()
         {
             ShopDataContext db = new ShopDataContext();
-            return db.Categories.Where(c => c.ParentID == null).OrderBy(c => c.Sort);
+            return db.Categories.Where(c => c.ParentID == null);
         }
 
         public bool NameInBD(string name)

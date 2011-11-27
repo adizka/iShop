@@ -6,6 +6,9 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using BL.Modules.Stock;
 using BL.Modules.Products;
+using System.Data.Linq;
+using System.IO;
+using System.Configuration;
 
 namespace iStore.Admin.Products
 {
@@ -15,10 +18,10 @@ namespace iStore.Admin.Products
         BL.Modules.Categories.Categories cbl = new BL.Modules.Categories.Categories();        
         Stock sbl = new Stock();
         ProductRefCategories prcbl = new ProductRefCategories();
+        ProductProperies prop = new ProductProperies();
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            hf.Value = string.Empty;
             if (!IsPostBack)
             {
                 BL.Product product = currentProduct;
@@ -39,6 +42,7 @@ namespace iStore.Admin.Products
         #region SaveProduct
         protected void Save(object sender, EventArgs e)
         {
+            var a = fu.FileName;
             BL.Product product = currentProduct;
             string name = Server.HtmlEncode(txtName.Text);
             string unit = Server.HtmlEncode(txtUnit.Text);
@@ -50,12 +54,16 @@ namespace iStore.Admin.Products
             try { count = Convert.ToInt32(scount); }
             catch { Response.Redirect(Request.Url.AbsolutePath); }
 
+
+            var categoriesIDs = hf.Value.Split(new string[] { "!~!" }, StringSplitOptions.RemoveEmptyEntries).Select(id => new Guid(id)).ToList();
+
+
             if (product == null)
             {
-                bool isAdd = pbl.AddProduct(name, unit, price, chkVisible.Checked, count);
+                bool isAdd = pbl.AddProduct(name, unit, price, chkVisible.Checked, count, out product);
                 if (isAdd)
                 {
-                    Response.Redirect(iStore.Site.SiteAdminUrl + "Products/");
+                    prcbl.AddCategoriesToProduct(categoriesIDs, product.ProductID);
                 }
                 else
                 {
@@ -71,7 +79,7 @@ namespace iStore.Admin.Products
                 bool isUpdate = pbl.UpdateProduct(product.ProductID, name, unit, price, chkVisible.Checked, count);
                 if (isUpdate)
                 {
-                    Response.Redirect(Request.Url.AbsoluteUri);
+                    prcbl.UpdateCategoriesToProduct(categoriesIDs, product.ProductID);
                 }
                 else
                 {
@@ -82,6 +90,18 @@ namespace iStore.Admin.Products
                     return;
                 }
             }
+
+            var extension = System.IO.Path.GetExtension(fu.FileName);
+
+            if (fu.HasFile && fu.FileBytes.Length > (1 << 20) && (extension == ".jpg" || extension == ".png" || extension == ".gif"))
+            {
+                var path =  ConfigurationManager.AppSettings["ProductsFileStoragePath"]+Guid.NewGuid().ToString();
+                fu.SaveAs(path);
+                File.WriteAllBytes(path, fu.FileBytes);
+                prop.AddProperty(product.ProductID, "Picture",path, true);
+            }
+            var redirectURL = ((product == null) ? iStore.Site.SiteAdminUrl + "Products/" : Request.Url.AbsolutePath);
+            Response.Redirect(redirectURL);
         }
         #endregion
 
@@ -155,10 +175,18 @@ namespace iStore.Admin.Products
             }
         }
 
+        public BL.Product _currentProduct;
+        public object _currentProductIndicator;
+
         public BL.Product currentProduct
         {
             get
             {
+                if (_currentProductIndicator != null)
+                    return _currentProduct;
+
+                _currentProductIndicator = new object();
+
                 string sid = Request.QueryString["pid"];
                 if (string.IsNullOrEmpty(sid))
                 {
@@ -167,48 +195,31 @@ namespace iStore.Admin.Products
                 try
                 {
                     Guid id = new Guid(sid);
-                    BL.Product product = pbl.GetProductById(id);
-                    if (product != null)
-                    {
-                        return product;
-                    }
+                    _currentProduct = pbl.GetProductById(id);
+                    return _currentProduct;
                 }
                 catch { Response.Redirect(iStore.Site.SiteAdminUrl + "Products/"); }
                 return null;
             }
         }
 
-        public IQueryable<BL.ProductsRefCategory> allCategoriesRefsCurrentProduct
+        List<BL.ProductsRefCategory> _allCategoriesRefsCurrentProduct;
+        public List<BL.ProductsRefCategory> allCategoriesRefsCurrentProduct
         {
             get
             {
-                BL.Product product = currentProduct;
-                if (product != null)
+                if (_allCategoriesRefsCurrentProduct != null)
+                    return _allCategoriesRefsCurrentProduct;
+
+                if (currentProduct == null)
+                    _allCategoriesRefsCurrentProduct = new List<BL.ProductsRefCategory>();
+
+                else
                 {
-                    return prcbl.GetProductRefCategoriesByProductId(product.ProductID);
+                    _allCategoriesRefsCurrentProduct = currentProduct.ProductsRefCategories.ToList();
                 }
-                return null;
+                return _allCategoriesRefsCurrentProduct;
             }
-        }
-
-        public bool CategoriInDB(Guid categoryId)
-        {
-            BL.Category category = currentCategory;
-            if (category != null)
-            {
-                if (categoryId == category.CategoryID) return true;
-            }
-            IQueryable<BL.ProductsRefCategory> cpr = allCategoriesRefsCurrentProduct;
-            if (cpr == null) { return false; }
-            if (!cpr.Any()) { return false; }
-            List<Guid> Ids = new List<Guid>();
-            foreach (var item in cpr)
-            {
-                Ids.Add(item.CategoryID);
-            }
-            Guid id = Ids.Find(p => p == categoryId);
-
-            return (id != null);
         }
     }
 }

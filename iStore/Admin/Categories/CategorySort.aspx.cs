@@ -20,16 +20,16 @@ namespace iStore.Admin.Categories
 
 
 
-        IQueryable<BL.Category> _SiblingCategories;
+        List<BL.Category> _SiblingCategories;
 
         public IQueryable<BL.Category> SiblingCategories
         {
             get
             {
                 if (_SiblingCategories == null)
-                    _SiblingCategories = cbl.GetAllRootCatgories();
+                    _SiblingCategories = cbl.GetAllRootCatgories().ToList();
 
-                return _SiblingCategories.OrderBy(c => c.Sort);
+                return _SiblingCategories.OrderBy(c => c.Sort).AsQueryable();
             }
         }
 

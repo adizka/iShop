@@ -8,33 +8,34 @@ namespace BL.Modules.Products
 {
     public class Products
     {
-        public bool AddProduct(string name, string unit, string price, bool isVisible, int count)
+        public bool AddProduct(string name, string unit, string price, bool isVisible, int count, out Product product)
         {
             bool addProduct = false;
             using (ShopDataContext db = new ShopDataContext())
             {
-                BL.Product product = new Product();
-                BL.Stock stock = new BL.Stock();
-                using (var ts = new TransactionScope())
-                {
-                    product.ProductID = Guid.NewGuid();
-                    product.Name = name;
-                    product.CreateDate = DateTime.Now;
-                    product.Unit = unit;
-                    product.Price = price;
-                    product.InStock = (count > 0);
-                    product.IsVisible = isVisible;
-                    product.ProductTypeID = 1;
-                    db.Products.InsertOnSubmit(product);
-                    db.SubmitChanges();
-                    stock.StockItemID = Guid.NewGuid();
-                    stock.ProductID = product.ProductID;
-                    stock.Count = count;
-                    db.Stocks.InsertOnSubmit(stock);
-                    db.SubmitChanges();
-                    ts.Complete();
-                    addProduct = true;
-                }
+                    product = new Product();
+                    BL.Stock stock = new BL.Stock();
+                    using (var ts = new TransactionScope())
+                    {
+                        product.ProductID = Guid.NewGuid();
+                        product.Name = name;
+                        product.CreateDate = DateTime.Now;
+                        product.Unit = unit;
+                        product.Price = price;
+                        product.InStock = (count > 0);
+                        product.IsVisible = isVisible;
+                        product.ProductTypeID = 1;
+
+                        stock.StockItemID = Guid.NewGuid();
+                        stock.Count = count;
+                        product.Stocks.Add(stock);
+
+                        db.Products.InsertOnSubmit(product);
+                        db.SubmitChanges();
+
+                        ts.Complete();
+                        addProduct = true;
+                    }
             }
             return addProduct;
         }
@@ -74,22 +75,35 @@ namespace BL.Modules.Products
         {
             bool addCategoryToProduct = false;
 
-            BL.Category category = db.Categories.Where(c => c.CategoryID == categoryId).FirstOrDefault();
+            BL.Category category = db.Categories.FirstOrDefault(c => c.CategoryID == categoryId);
             if (category != null)
             {
-                BL.Product product = db.Products.Where(p => p.ProductID == productId).FirstOrDefault();
+                BL.Product product = db.Products.FirstOrDefault(p => p.ProductID == productId);
                 if (product != null)
                 {
                     BL.ProductsRefCategory prc = new ProductsRefCategory();
                     prc.ID = Guid.NewGuid();
                     prc.CategoryID = categoryId;
                     prc.ProductID = productId;
-                    db.ProductsRefCategories.InsertOnSubmit(prc);
+                    prc.Sort = product.ProductsRefCategories.Count;
+                    product.ProductsRefCategories.Add(prc);
                     db.SubmitChanges();
                     addCategoryToProduct = true;
                  }
             }
             return addCategoryToProduct;
+        }
+
+        public void DeleteProductCategories(Guid productID)
+        {
+
+            BL.Product poducts = new BL.Product();
+
+            BL.ShopDataContext ctx = new ShopDataContext();
+            var refs = ctx.ProductsRefCategories.Where(r => r.ProductID == productID);
+
+            ctx.ProductsRefCategories.DeleteAllOnSubmit(refs);
+            ctx.SubmitChanges();
         }
 
         public bool DeleteCategoryFromProduct(Guid categoryId, Guid productId)
@@ -140,5 +154,11 @@ namespace BL.Modules.Products
             }
             return null;
         }
+
+        public IQueryable<Product> GetAllProducts()
+        {
+            return (new ShopDataContext()).Products;
+        }
+
     }
 }

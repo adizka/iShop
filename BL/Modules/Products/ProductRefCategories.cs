@@ -39,6 +39,15 @@ namespace BL.Modules.Products
             return add;
         }
 
+        public bool UpdateCategoriesToProduct(List<Guid> categoriesIds, Guid productId)
+        {
+            
+            BL.Modules.Products.Products pbl = new BL.Modules.Products.Products();
+
+            pbl.DeleteProductCategories(productId);
+            return AddCategoriesToProduct(categoriesIds, productId); ;
+        }
+
         public IQueryable<BL.ProductsRefCategory> GetProductRefCategoriesByProductId(Guid productId)
         {
             ShopDataContext db = new ShopDataContext();

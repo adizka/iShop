@@ -30,7 +30,7 @@
     });
 
     function SetCategory(categoryId) {
-        if ($("#chk" + categoryId).attr('checked')) {
+        if ($("#chk" + categoryId).is(':checked')) {
             SetCategoryInHiddenField(categoryId);
         }
         else {
@@ -39,22 +39,22 @@
     }
 
     function SetCategoryInHiddenField(categoryId) {
-        var value = $("#hf").val();
-        $("#hf").val(value + "!~!" + categoryId);
+        var value = $("#<%=hf.ClientID %>").val();
+        $("#<%=hf.ClientID %>").val(value + "!~!" + categoryId);
     }
 
     function RemoveCategoryFromHiddenField(categoryId) {
-        var value = $("#hf").val();
+        var value = $("#<%=hf.ClientID %>").val();
         var repString = categoryId + "!~!"
         
         if (value.indexOf(repString) != -1) {
             value = value.replace(repString, "");
-            $("#hf").val(value);
+            $("#<%=hf.ClientID %>").val(value);
         }
         repString = "!~!" + categoryId;
         if (value.indexOf(repString) != -1) {
             value = value.replace(repString, "");
-            $("#hf").val(value);
+            $("#<%=hf.ClientID %>").val(value);
         }
     }
 
@@ -99,15 +99,14 @@
     <div class="ProductEdit_AddCategory">
         <a class="various" href="#SelectCategoties">Add/Remove Categories</a>
         <div id="SelectCategoties">
-            <% values.InnerHtml = string.Empty; %>
             <% foreach (BL.Category item in allCategories)
                { %>
                 <p>
                     <span>
                         <label for="chk<%= item.CategoryID.ToString() %>"><%= item.Name %></label>
-                        <% if (CategoriInDB(item.CategoryID))
+                        <% if (allCategoriesRefsCurrentProduct.Any(r=>r.CategoryID == item.CategoryID))
                            { %>
-                                <% hf.Value = hf.Value + item.CategoryID.ToString() + "!~!"; %>
+                                <% hf.Value = hf.Value + "!~!" + item.CategoryID.ToString(); %>
                                 <input type="checkbox" id="chk<%= item.CategoryID.ToString() %>" checked="checked" onclick="SetCategory('<%= item.CategoryID.ToString() %>');" />
                             <% } else 
                            { %>
@@ -122,8 +121,9 @@
     <p class="ProductEdit_Save">
         <asp:Button runat="server" ID="btnSave" Text="Save"  OnClick="Save" />
     </p>
-    <asp:HiddenField runat="server" ID="hf" ClientIDMode="Static"   />
-    <div id="values" runat="server" clientidmode="Static"></div>
-</ContentTemplate>
+    <asp:HiddenField runat="server" ID="hf" />
+    
+    </ContentTemplate>
 </asp:UpdatePanel>
+
 </asp:Content>
