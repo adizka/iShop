@@ -74,6 +74,7 @@
     <Content Include="Admin\Login\Default.aspx" />
     <Content Include="Admin\News\Default.aspx" />
     <Content Include="Admin\News\NewsEdit.aspx" />
+    <Content Include="Admin\Pager.ascx" />
     <Content Include="Admin\Pages\Default.aspx" />
     <Content Include="Admin\Pages\PageEdit.aspx" />
     <Content Include="Admin\Products\Default.aspx" />
@@ -651,6 +652,13 @@
     </Compile>
     <Compile Include="Admin\News\NewsEdit.aspx.designer.cs">
       <DependentUpon>NewsEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Pager.ascx.cs">
+      <DependentUpon>Pager.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Pager.ascx.designer.cs">
+      <DependentUpon>Pager.ascx</DependentUpon>
     </Compile>
     <Compile Include="Admin\Pages\Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>

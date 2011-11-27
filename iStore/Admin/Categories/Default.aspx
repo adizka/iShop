@@ -2,7 +2,7 @@
 
 <%@ Register TagPrefix="iS" TagName="ValidateErrors" Src="~/Modules/Controls/Validators/ValidateErrors.ascx" %>
 <%@ Register TagPrefix="iS" TagName="BreadCrumbs" Src="~/Modules/Controls/BreadCrumbs/BreadCrumbs.ascx" %>
-
+<%@ Register TagPrefix="iS" TagName="Pager" Src="~/Admin/Pager.ascx" %>
 <asp:Content ID="Content1" runat="server" ContentPlaceHolderID="head">
 </asp:Content>
 <asp:Content ID="Content2" runat="server" ContentPlaceHolderID="main">
@@ -25,8 +25,9 @@
            { %>
                 <p>Нет категорий</p>
            <%} %>
-        <% int i = 0; string cssClass = string.Empty; foreach (var item in allCategories)
-           {
+        <% int i = 0; string cssClass = string.Empty; foreach (var item in allCategories.ToList()
+               .Where((c, ind) => ind >= pager.PageIndex * pager.EntitiesPerPage && ind < (pager.PageIndex + 1) * pager.EntitiesPerPage))
+               {
                i++; cssClass = ((i % 2) == 1 ) ? "first" : "second";
         %>
         <p class="repBody <%= cssClass %>">
@@ -49,4 +50,6 @@
         </p>       
         <% } %>
     </div>
+
+    <iS:Pager runat="server" ID="pager"></iS:Pager>
 </asp:Content>  

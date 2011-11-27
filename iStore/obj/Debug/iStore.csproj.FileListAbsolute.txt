@@ -12,3 +12,10 @@ c:\Work\iShop\iStore\bin\BL.pdb
 c:\Work\iShop\iStore\obj\Debug\ResolveAssemblyReference.cache
 c:\Work\iShop\iStore\obj\Debug\iStore.dll
 c:\Work\iShop\iStore\obj\Debug\iStore.pdb
+E:\Work\iShop\iStore\bin\iStore.dll
+E:\Work\iShop\iStore\bin\iStore.pdb
+E:\Work\iShop\iStore\bin\BL.dll
+E:\Work\iShop\iStore\bin\BL.pdb
+E:\Work\iShop\iStore\obj\Debug\ResolveAssemblyReference.cache
+E:\Work\iShop\iStore\obj\Debug\iStore.dll
+E:\Work\iShop\iStore\obj\Debug\iStore.pdb

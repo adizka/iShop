@@ -21,6 +21,7 @@ namespace BL.Modules.Categories
                     category.CreateDate = DateTime.Now;
                     category.ParentID = parentId;
                     category.CategoryID = Guid.NewGuid();
+                    category.Sort = db.Categories.Count(c => c.ParentID == parentId);
                     db.Categories.InsertOnSubmit(category);
                     db.SubmitChanges();
                     ts.Complete();

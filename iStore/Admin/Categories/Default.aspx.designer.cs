@@ -29,5 +29,14 @@ namespace iStore.Admin.Categories {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::iStore.Modules.Controls.Validators.ValidateErrors ve;
+        
+        /// <summary>
+        /// pager control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::iStore.Admin.Pager pager;
     }
 }
