@@ -80,6 +80,7 @@
     <Content Include="Admin\Pages\PageEdit.aspx" />
     <Content Include="Admin\Products\Default.aspx" />
     <Content Include="Admin\Products\ProductEdit.aspx" />
+    <Content Include="Admin\Products\ProductPropertyEdit.aspx" />
     <Content Include="Admin\Products\ProductSort.aspx" />
     <Content Include="Admin\Styles\Admin.css" />
     <Content Include="Admin\Styles\images\ui-bg_diagonals-thick_18_b81900_40x40.png" />
@@ -688,6 +689,13 @@
     </Compile>
     <Compile Include="Admin\Products\ProductEdit.aspx.designer.cs">
       <DependentUpon>ProductEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Products\ProductPropertyEdit.aspx.cs">
+      <DependentUpon>ProductPropertyEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Products\ProductPropertyEdit.aspx.designer.cs">
+      <DependentUpon>ProductPropertyEdit.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\Products\ProductSort.aspx.cs">
       <DependentUpon>ProductSort.aspx</DependentUpon>

@@ -72,9 +72,9 @@ namespace BL
     partial void InsertProductsRefCategory(ProductsRefCategory instance);
     partial void UpdateProductsRefCategory(ProductsRefCategory instance);
     partial void DeleteProductsRefCategory(ProductsRefCategory instance);
-    partial void InsertProductsRefPropery(ProductsRefPropery instance);
-    partial void UpdateProductsRefPropery(ProductsRefPropery instance);
-    partial void DeleteProductsRefPropery(ProductsRefPropery instance);
+    partial void InsertProductsRefPropery(ProductsRefProperty instance);
+    partial void UpdateProductsRefPropery(ProductsRefProperty instance);
+    partial void DeleteProductsRefPropery(ProductsRefProperty instance);
     partial void InsertProductType(ProductType instance);
     partial void UpdateProductType(ProductType instance);
     partial void DeleteProductType(ProductType instance);
@@ -244,11 +244,11 @@ namespace BL
 			}
 		}
 		
-		public System.Data.Linq.Table<ProductsRefPropery> ProductsRefProperies
+		public System.Data.Linq.Table<ProductsRefProperty> ProductsRefProperies
 		{
 			get
 			{
-				return this.GetTable<ProductsRefPropery>();
+				return this.GetTable<ProductsRefProperty>();
 			}
 		}
 		
@@ -2655,7 +2655,7 @@ namespace BL
 		
 		private System.Guid _ProductID;
 		
-		private EntitySet<ProductsRefPropery> _ProductsRefProperies;
+		private EntitySet<ProductsRefProperty> _ProductsRefProperies;
 		
 		private EntityRef<Product> _Product;
 		
@@ -2677,7 +2677,7 @@ namespace BL
 		
 		public ProductProperty()
 		{
-			this._ProductsRefProperies = new EntitySet<ProductsRefPropery>(new Action<ProductsRefPropery>(this.attach_ProductsRefProperies), new Action<ProductsRefPropery>(this.detach_ProductsRefProperies));
+			this._ProductsRefProperies = new EntitySet<ProductsRefProperty>(new Action<ProductsRefProperty>(this.attach_ProductsRefProperies), new Action<ProductsRefProperty>(this.detach_ProductsRefProperies));
 			this._Product = default(EntityRef<Product>);
 			OnCreated();
 		}
@@ -2787,7 +2787,7 @@ namespace BL
 		}
 		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ProductProperty_ProductsRefPropery", Storage="_ProductsRefProperies", ThisKey="PropertyID", OtherKey="ProductPropertiesID")]
-		public EntitySet<ProductsRefPropery> ProductsRefProperies
+		public EntitySet<ProductsRefProperty> ProductsRefProperies
 		{
 			get
 			{
@@ -2853,13 +2853,13 @@ namespace BL
 			}
 		}
 		
-		private void attach_ProductsRefProperies(ProductsRefPropery entity)
+		private void attach_ProductsRefProperies(ProductsRefProperty entity)
 		{
 			this.SendPropertyChanging();
 			entity.ProductProperty = this;
 		}
 		
-		private void detach_ProductsRefProperies(ProductsRefPropery entity)
+		private void detach_ProductsRefProperies(ProductsRefProperty entity)
 		{
 			this.SendPropertyChanging();
 			entity.ProductProperty = null;
@@ -2896,7 +2896,7 @@ namespace BL
 		
 		private EntitySet<ProductsRefCategory> _ProductsRefCategories;
 		
-		private EntitySet<ProductsRefPropery> _ProductsRefProperies;
+		private EntitySet<ProductsRefProperty> _ProductsRefProperies;
 		
 		private EntitySet<Stock> _Stocks;
 		
@@ -2931,7 +2931,7 @@ namespace BL
 			this._OrdersRefProducts = new EntitySet<OrdersRefProduct>(new Action<OrdersRefProduct>(this.attach_OrdersRefProducts), new Action<OrdersRefProduct>(this.detach_OrdersRefProducts));
 			this._ProductProperties = new EntitySet<ProductProperty>(new Action<ProductProperty>(this.attach_ProductProperties), new Action<ProductProperty>(this.detach_ProductProperties));
 			this._ProductsRefCategories = new EntitySet<ProductsRefCategory>(new Action<ProductsRefCategory>(this.attach_ProductsRefCategories), new Action<ProductsRefCategory>(this.detach_ProductsRefCategories));
-			this._ProductsRefProperies = new EntitySet<ProductsRefPropery>(new Action<ProductsRefPropery>(this.attach_ProductsRefProperies), new Action<ProductsRefPropery>(this.detach_ProductsRefProperies));
+			this._ProductsRefProperies = new EntitySet<ProductsRefProperty>(new Action<ProductsRefProperty>(this.attach_ProductsRefProperies), new Action<ProductsRefProperty>(this.detach_ProductsRefProperies));
 			this._Stocks = new EntitySet<Stock>(new Action<Stock>(this.attach_Stocks), new Action<Stock>(this.detach_Stocks));
 			this._ProductType = default(EntityRef<ProductType>);
 			OnCreated();
@@ -3161,7 +3161,7 @@ namespace BL
 		}
 		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Product_ProductsRefPropery", Storage="_ProductsRefProperies", ThisKey="ProductID", OtherKey="ProductID")]
-		public EntitySet<ProductsRefPropery> ProductsRefProperies
+		public EntitySet<ProductsRefProperty> ProductsRefProperies
 		{
 			get
 			{
@@ -3276,13 +3276,13 @@ namespace BL
 			entity.Product = null;
 		}
 		
-		private void attach_ProductsRefProperies(ProductsRefPropery entity)
+		private void attach_ProductsRefProperies(ProductsRefProperty entity)
 		{
 			this.SendPropertyChanging();
 			entity.Product = this;
 		}
 		
-		private void detach_ProductsRefProperies(ProductsRefPropery entity)
+		private void detach_ProductsRefProperies(ProductsRefProperty entity)
 		{
 			this.SendPropertyChanging();
 			entity.Product = null;
@@ -3516,198 +3516,222 @@ namespace BL
 			}
 		}
 	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ProductsRefProperies")]
-	public partial class ProductsRefPropery : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private System.Guid _ID;
-		
-		private System.Guid _ProductID;
-		
-		private System.Guid _ProductPropertiesID;
-		
-		private EntityRef<ProductProperty> _ProductProperty;
-		
-		private EntityRef<Product> _Product;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIDChanging(System.Guid value);
-    partial void OnIDChanged();
-    partial void OnProductIDChanging(System.Guid value);
-    partial void OnProductIDChanged();
-    partial void OnProductPropertiesIDChanging(System.Guid value);
-    partial void OnProductPropertiesIDChanged();
-    #endregion
-		
-		public ProductsRefPropery()
-		{
-			this._ProductProperty = default(EntityRef<ProductProperty>);
-			this._Product = default(EntityRef<Product>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="UniqueIdentifier NOT NULL", IsPrimaryKey=true)]
-		public System.Guid ID
-		{
-			get
-			{
-				return this._ID;
-			}
-			set
-			{
-				if ((this._ID != value))
-				{
-					this.OnIDChanging(value);
-					this.SendPropertyChanging();
-					this._ID = value;
-					this.SendPropertyChanged("ID");
-					this.OnIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProductID", DbType="UniqueIdentifier NOT NULL")]
-		public System.Guid ProductID
-		{
-			get
-			{
-				return this._ProductID;
-			}
-			set
-			{
-				if ((this._ProductID != value))
-				{
-					if (this._Product.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnProductIDChanging(value);
-					this.SendPropertyChanging();
-					this._ProductID = value;
-					this.SendPropertyChanged("ProductID");
-					this.OnProductIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProductPropertiesID", DbType="UniqueIdentifier NOT NULL")]
-		public System.Guid ProductPropertiesID
-		{
-			get
-			{
-				return this._ProductPropertiesID;
-			}
-			set
-			{
-				if ((this._ProductPropertiesID != value))
-				{
-					if (this._ProductProperty.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnProductPropertiesIDChanging(value);
-					this.SendPropertyChanging();
-					this._ProductPropertiesID = value;
-					this.SendPropertyChanged("ProductPropertiesID");
-					this.OnProductPropertiesIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ProductProperty_ProductsRefPropery", Storage="_ProductProperty", ThisKey="ProductPropertiesID", OtherKey="PropertyID", IsForeignKey=true)]
-		public ProductProperty ProductProperty
-		{
-			get
-			{
-				return this._ProductProperty.Entity;
-			}
-			set
-			{
-				ProductProperty previousValue = this._ProductProperty.Entity;
-				if (((previousValue != value) 
-							|| (this._ProductProperty.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._ProductProperty.Entity = null;
-						previousValue.ProductsRefProperies.Remove(this);
-					}
-					this._ProductProperty.Entity = value;
-					if ((value != null))
-					{
-						value.ProductsRefProperies.Add(this);
-						this._ProductPropertiesID = value.PropertyID;
-					}
-					else
-					{
-						this._ProductPropertiesID = default(System.Guid);
-					}
-					this.SendPropertyChanged("ProductProperty");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Product_ProductsRefPropery", Storage="_Product", ThisKey="ProductID", OtherKey="ProductID", IsForeignKey=true)]
-		public Product Product
-		{
-			get
-			{
-				return this._Product.Entity;
-			}
-			set
-			{
-				Product previousValue = this._Product.Entity;
-				if (((previousValue != value) 
-							|| (this._Product.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Product.Entity = null;
-						previousValue.ProductsRefProperies.Remove(this);
-					}
-					this._Product.Entity = value;
-					if ((value != null))
-					{
-						value.ProductsRefProperies.Add(this);
-						this._ProductID = value.ProductID;
-					}
-					else
-					{
-						this._ProductID = default(System.Guid);
-					}
-					this.SendPropertyChanged("Product");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
+
+    [global::System.Data.Linq.Mapping.TableAttribute(Name = "dbo.ProductsRefProperies")]
+    public partial class ProductsRefProperty : INotifyPropertyChanging, INotifyPropertyChanged
+    {
+
+        private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+
+        private System.Guid _ID;
+
+        private System.Guid _ProductID;
+
+        private System.Guid _ProductPropertiesID;
+
+        private int _Sort;
+
+        private EntityRef<ProductProperty> _ProductProperty;
+
+        private EntityRef<Product> _Product;
+
+        #region Extensibility Method Definitions
+        partial void OnLoaded();
+        partial void OnValidate(System.Data.Linq.ChangeAction action);
+        partial void OnCreated();
+        partial void OnIDChanging(System.Guid value);
+        partial void OnIDChanged();
+        partial void OnProductIDChanging(System.Guid value);
+        partial void OnProductIDChanged();
+        partial void OnProductPropertiesIDChanging(System.Guid value);
+        partial void OnProductPropertiesIDChanged();
+        partial void OnSortChanging(int value);
+        partial void OnSortChanged();
+        #endregion
+
+        public ProductsRefProperty()
+        {
+            this._ProductProperty = default(EntityRef<ProductProperty>);
+            this._Product = default(EntityRef<Product>);
+            OnCreated();
+        }
+
+        [global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_ID", DbType = "UniqueIdentifier NOT NULL", IsPrimaryKey = true)]
+        public System.Guid ID
+        {
+            get
+            {
+                return this._ID;
+            }
+            set
+            {
+                if ((this._ID != value))
+                {
+                    this.OnIDChanging(value);
+                    this.SendPropertyChanging();
+                    this._ID = value;
+                    this.SendPropertyChanged("ID");
+                    this.OnIDChanged();
+                }
+            }
+        }
+
+        [global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_ProductID", DbType = "UniqueIdentifier NOT NULL")]
+        public System.Guid ProductID
+        {
+            get
+            {
+                return this._ProductID;
+            }
+            set
+            {
+                if ((this._ProductID != value))
+                {
+                    if (this._Product.HasLoadedOrAssignedValue)
+                    {
+                        throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+                    }
+                    this.OnProductIDChanging(value);
+                    this.SendPropertyChanging();
+                    this._ProductID = value;
+                    this.SendPropertyChanged("ProductID");
+                    this.OnProductIDChanged();
+                }
+            }
+        }
+
+        [global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_ProductPropertiesID", DbType = "UniqueIdentifier NOT NULL")]
+        public System.Guid ProductPropertiesID
+        {
+            get
+            {
+                return this._ProductPropertiesID;
+            }
+            set
+            {
+                if ((this._ProductPropertiesID != value))
+                {
+                    if (this._ProductProperty.HasLoadedOrAssignedValue)
+                    {
+                        throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+                    }
+                    this.OnProductPropertiesIDChanging(value);
+                    this.SendPropertyChanging();
+                    this._ProductPropertiesID = value;
+                    this.SendPropertyChanged("ProductPropertiesID");
+                    this.OnProductPropertiesIDChanged();
+                }
+            }
+        }
+
+        [global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_Sort", DbType = "Int NOT NULL")]
+        public int Sort
+        {
+            get
+            {
+                return this._Sort;
+            }
+            set
+            {
+                if ((this._Sort != value))
+                {
+                    this.OnSortChanging(value);
+                    this.SendPropertyChanging();
+                    this._Sort = value;
+                    this.SendPropertyChanged("Sort");
+                    this.OnSortChanged();
+                }
+            }
+        }
+
+        [global::System.Data.Linq.Mapping.AssociationAttribute(Name = "ProductProperty_ProductsRefPropery", Storage = "_ProductProperty", ThisKey = "ProductPropertiesID", OtherKey = "PropertyID", IsForeignKey = true)]
+        public ProductProperty ProductProperty
+        {
+            get
+            {
+                return this._ProductProperty.Entity;
+            }
+            set
+            {
+                ProductProperty previousValue = this._ProductProperty.Entity;
+                if (((previousValue != value)
+                            || (this._ProductProperty.HasLoadedOrAssignedValue == false)))
+                {
+                    this.SendPropertyChanging();
+                    if ((previousValue != null))
+                    {
+                        this._ProductProperty.Entity = null;
+                        previousValue.ProductsRefProperies.Remove(this);
+                    }
+                    this._ProductProperty.Entity = value;
+                    if ((value != null))
+                    {
+                        value.ProductsRefProperies.Add(this);
+                        this._ProductPropertiesID = value.PropertyID;
+                    }
+                    else
+                    {
+                        this._ProductPropertiesID = default(System.Guid);
+                    }
+                    this.SendPropertyChanged("ProductProperty");
+                }
+            }
+        }
+
+        [global::System.Data.Linq.Mapping.AssociationAttribute(Name = "Product_ProductsRefPropery", Storage = "_Product", ThisKey = "ProductID", OtherKey = "ProductID", IsForeignKey = true)]
+        public Product Product
+        {
+            get
+            {
+                return this._Product.Entity;
+            }
+            set
+            {
+                Product previousValue = this._Product.Entity;
+                if (((previousValue != value)
+                            || (this._Product.HasLoadedOrAssignedValue == false)))
+                {
+                    this.SendPropertyChanging();
+                    if ((previousValue != null))
+                    {
+                        this._Product.Entity = null;
+                        previousValue.ProductsRefProperies.Remove(this);
+                    }
+                    this._Product.Entity = value;
+                    if ((value != null))
+                    {
+                        value.ProductsRefProperies.Add(this);
+                        this._ProductID = value.ProductID;
+                    }
+                    else
+                    {
+                        this._ProductID = default(System.Guid);
+                    }
+                    this.SendPropertyChanged("Product");
+                }
+            }
+        }
+
+        public event PropertyChangingEventHandler PropertyChanging;
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected virtual void SendPropertyChanging()
+        {
+            if ((this.PropertyChanging != null))
+            {
+                this.PropertyChanging(this, emptyChangingEventArgs);
+            }
+        }
+
+        protected virtual void SendPropertyChanged(String propertyName)
+        {
+            if ((this.PropertyChanged != null))
+            {
+                this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ProductTypes")]
 	public partial class ProductType : INotifyPropertyChanging, INotifyPropertyChanged
