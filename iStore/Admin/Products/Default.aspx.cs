@@ -14,14 +14,12 @@ namespace iStore.Admin.Products
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            pager.EntityCount = ProductsCount;
-            pager.EntitiesPerPage = 3;
-            pager.NavigationNumbsCount = 5;
+            pager.EntityCount = ProductsCount; 
         }
 
         object _prodCountInd;
         int _ProductsCount;
-        protected int ProductsCount
+        public int ProductsCount
         {
             get
             {
@@ -41,7 +39,7 @@ namespace iStore.Admin.Products
             {
                 if (_PageProducts == null)
                     _PageProducts = pbl.GetAllProducts().ToList()
-                        .Where((c, ind) => ind >= pager.PageIndex * pager.EntitiesPerPage 
+                        .Where((c, ind) => ind >= pager .PageIndex * pager.EntitiesPerPage 
                             && ind < (pager.PageIndex + 1) * pager.EntitiesPerPage).ToList();
 
                 return _PageProducts;

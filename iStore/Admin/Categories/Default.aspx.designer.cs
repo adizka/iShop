@@ -37,6 +37,6 @@ namespace iStore.Admin.Categories {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::iStore.Admin.Pager pager;
+        protected global::iStore.Modules.Controls.Pager.Pager pager;
     }
 }

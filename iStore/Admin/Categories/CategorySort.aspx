@@ -5,16 +5,6 @@
 <%--<asp:Content ID="Content1" runat="server" ContentPlaceHolderID="head"></asp:Content>--%>
 
 <asp:Content ID="Content2" runat="server" ContentPlaceHolderID="main">
-    <style type="text/css">
-.dragHandle {
-	width:10px;
-	height:15px;
-	background-color:Blue;
-	background-image:url(images/bg-menu-main.png);
-	cursor:move;
-	border:outset thin white;
-}
-</style>
 <script type="text/javascript">
 
     var catIds = [];

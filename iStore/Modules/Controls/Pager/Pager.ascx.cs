@@ -5,14 +5,16 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace iStore.Admin
+namespace iStore.Modules.Controls.Pager
 {
     public partial class Pager : System.Web.UI.UserControl
     {
+        public enum EntityType {  Categories, Products, Orders, Users,  Stock }
+
         protected override void OnInit(EventArgs e)
         {
             base.OnInit(e);
-            EntitiesPerPage = 20;
+            EntitiesPerPage = 15;
             NavigationNumbsCount = 5;
         }
         protected void Page_Load(object sender, EventArgs e)
@@ -32,7 +34,23 @@ namespace iStore.Admin
             }
         }
 
-        public string AddInsParams { get; set; }
+        private string _params;
+        protected string Params
+        {
+            get
+            {
+                if(_params !=null)
+                    return _params;
+
+                foreach (var key in Request.QueryString.AllKeys)
+                {
+                    if(key == "p")
+                        continue;
+                    _params += "&" + key + "=" + Request.QueryString[key];
+                }
+                return _params;
+            }
+        }
 
         public int EntityCount { get; set; }
 
@@ -89,5 +107,7 @@ namespace iStore.Admin
                 return EntityCount / EntitiesPerPage - ((EntityCount % EntitiesPerPage != 0) ? 0 : 1) + 1;
             }
         }
+
+        //pager.AddInsParams = "cid=" + Request.QueryString["cid"];
     }
 }

@@ -13,7 +13,6 @@ namespace iStore.Admin.Categories
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
             if (!IsPostBack)
             {
                 string sid = Request.QueryString["delcid"];
@@ -23,10 +22,7 @@ namespace iStore.Admin.Categories
                     Delete(id);
                 }
             }
-            pager.AddInsParams = "cid=" + Request.QueryString["cid"];
             pager.EntityCount = allCategories.Count();
-            pager.EntitiesPerPage = 3;
-            pager.NavigationNumbsCount = 5;
         }
 
         public IQueryable<BL.Category> allCategories
