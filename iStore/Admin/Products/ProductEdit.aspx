@@ -99,12 +99,17 @@
     <div class="ProductEdit_AddCategory">
         <a class="various" href="#SelectCategoties">Add/Remove Categories</a>
         <div id="SelectCategoties">
-            <% foreach (BL.Category item in allCategories)
+            <% Guid currentCategoryId = Guid.NewGuid();
+               if (currentCategory != null)
+               {
+                   currentCategoryId = currentCategory.CategoryID;
+               }
+               foreach (BL.Category item in allCategories)
                { %>
                 <p>
                     <span>
                         <label for="chk<%= item.CategoryID.ToString() %>"><%= item.Name %></label>
-                        <% if (allCategoriesRefsCurrentProduct.Any(r=>r.CategoryID == item.CategoryID))
+                        <% if (allCategoriesRefsCurrentProduct.Any(r => r.CategoryID == item.CategoryID) || (item.CategoryID == currentCategoryId))
                            { %>
                                 <% hf.Value = hf.Value + "!~!" + item.CategoryID.ToString(); %>
                                 <input type="checkbox" id="chk<%= item.CategoryID.ToString() %>" checked="checked" onclick="SetCategory('<%= item.CategoryID.ToString() %>');" />

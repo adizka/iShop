@@ -75,7 +75,6 @@
     <Content Include="Admin\Login\Default.aspx" />
     <Content Include="Admin\News\Default.aspx" />
     <Content Include="Admin\News\NewsEdit.aspx" />
-    <Content Include="Admin\Pager.ascx" />
     <Content Include="Admin\Pages\Default.aspx" />
     <Content Include="Admin\Pages\PageEdit.aspx" />
     <Content Include="Admin\Products\Default.aspx" />
@@ -104,6 +103,7 @@
     <Content Include="Images\bg_nav.gif" />
     <Content Include="Images\h2_trigger_a.gif" />
     <Content Include="Modules\Controls\BreadCrumbs\BreadCrumbs.ascx" />
+    <Content Include="Modules\Controls\Pager\Pager.ascx" />
     <Content Include="Modules\Controls\Validators\ValidateErrors.ascx" />
     <Content Include="Pages\Default.aspx" />
     <Content Include="Scripts\fancybox\blank.gif" />
@@ -657,13 +657,6 @@
     <Compile Include="Admin\News\NewsEdit.aspx.designer.cs">
       <DependentUpon>NewsEdit.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Admin\Pager.ascx.cs">
-      <DependentUpon>Pager.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Admin\Pager.ascx.designer.cs">
-      <DependentUpon>Pager.ascx</DependentUpon>
-    </Compile>
     <Compile Include="Admin\Pages\Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -768,6 +761,13 @@
       <DependentUpon>BreadCrumbs.ascx</DependentUpon>
     </Compile>
     <Compile Include="Modules\Controls\Colors.cs" />
+    <Compile Include="Modules\Controls\Pager\Pager.ascx.cs">
+      <DependentUpon>Pager.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\Controls\Pager\Pager.ascx.designer.cs">
+      <DependentUpon>Pager.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Modules\Controls\PageTitle.cs" />
     <Compile Include="Modules\Controls\Validators\ValidateErrors.ascx.cs">
       <DependentUpon>ValidateErrors.ascx</DependentUpon>

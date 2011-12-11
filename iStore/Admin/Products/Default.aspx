@@ -1,7 +1,7 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true"  MasterPageFile="~/Admin/Admin.Master"  CodeBehind="Default.aspx.cs" Inherits="iStore.Admin.Products.Default" %>
 
 <%@ Register TagPrefix="iS" TagName="ValidateErrors" Src="~/Modules/Controls/Validators/ValidateErrors.ascx" %>
-<%@ Register TagPrefix="iS" TagName="Pager" Src="~/Admin/Pager.ascx" %>
+<%@ Register TagPrefix="iS" TagName="Pager" Src="~/Modules/Controls/Pager/Pager.ascx" %>
 
 <asp:Content ID="Content1" runat="server" ContentPlaceHolderID="head">
 </asp:Content>
@@ -49,5 +49,5 @@
         <% } %>
     </div>
 
-    <iS:Pager runat="server" ID="pager"></iS:Pager>
+    <iS:Pager runat="server" ID="pager"  AddInsParams="Products"></iS:Pager>
 </asp:Content>

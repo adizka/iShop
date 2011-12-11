@@ -1,0 +1,9 @@
+[user]
+	name = Adiz Abdullayev
+	email = adizka@rambler.ru
+[core]
+	autocrlf = true
+[diff]
+	guitool = kdiff3
+[merge]
+	tool = kdiff3
