@@ -82,6 +82,8 @@
     <Content Include="Admin\Products\ProductEdit.aspx" />
     <Content Include="Admin\Products\ProductPropertyEdit.aspx" />
     <Content Include="Admin\Products\ProductSort.aspx" />
+    <Content Include="Admin\Search.aspx" />
+    <Content Include="Admin\SearchControl.ascx" />
     <Content Include="Admin\Styles\Admin.css" />
     <Content Include="Admin\Styles\images\ui-bg_diagonals-thick_18_b81900_40x40.png" />
     <Content Include="Admin\Styles\images\ui-bg_diagonals-thick_20_666666_40x40.png" />
@@ -703,6 +705,20 @@
     </Compile>
     <Compile Include="Admin\Products\ProductSort.aspx.designer.cs">
       <DependentUpon>ProductSort.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Search.aspx.cs">
+      <DependentUpon>Search.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Search.aspx.designer.cs">
+      <DependentUpon>Search.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\SearchControl.ascx.cs">
+      <DependentUpon>SearchControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\SearchControl.ascx.designer.cs">
+      <DependentUpon>SearchControl.ascx</DependentUpon>
     </Compile>
     <Compile Include="App_GlobalResources\Admin_Edits.designer.cs">
       <AutoGen>True</AutoGen>

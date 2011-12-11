@@ -31,7 +31,7 @@ namespace iStore.Admin.Products
                     if (stock != null)
                     {
                         txtName.Text = product.Name;
-                        txtPrice.Text = product.Price;
+                        txtPrice.Text = product.Price.ToString();
                         txtCount.Text = stock.Count.ToString();
                         txtUnit.Text = product.Unit;
                     }
@@ -46,12 +46,15 @@ namespace iStore.Admin.Products
             BL.Product product = currentProduct;
             string name = Server.HtmlEncode(txtName.Text);
             string unit = Server.HtmlEncode(txtUnit.Text);
-            string price = Server.HtmlEncode(txtPrice.Text);
+            float price = 0;
             string scount = Server.HtmlEncode(txtCount.Text);
-            if (!CheckAll(name, unit, price, scount)) { return; }
+            if (!CheckAll(name, unit, scount)) { return; }
             int count = 0;
 
-            try { count = Convert.ToInt32(scount); }
+            try { 
+                price = float.Parse( txtPrice.Text);
+                count = Convert.ToInt32(scount); 
+            }
             catch { Response.Redirect(Request.Url.AbsolutePath); }
 
 
@@ -76,7 +79,7 @@ namespace iStore.Admin.Products
             }
             else
             {
-                bool isUpdate = pbl.UpdateProduct(product.ProductID, name, unit, price, chkVisible.Checked, count);
+                bool isUpdate = pbl.UpdateProduct(product.ProductID, name, unit,  price, chkVisible.Checked, count);
                 if (isUpdate)
                 {
                     prcbl.UpdateCategoriesToProduct(categoriesIDs, product.ProductID);
@@ -106,7 +109,7 @@ namespace iStore.Admin.Products
         #endregion
 
         #region Check
-        private bool CheckAll(string name, string unit, string price, string count)
+        private bool CheckAll(string name, string unit, string count)
         {
             if (string.IsNullOrEmpty(name))
             {
@@ -124,14 +127,7 @@ namespace iStore.Admin.Products
                 ve.SetErrors();
                 return false;
             }
-            if (string.IsNullOrEmpty(price))
-            {
-                ve.Visible = true;
-                ve.ClearErrors();
-                ve.Errors = "Не заполненно поле Price";
-                ve.SetErrors();
-                return false;
-            }
+
             if (string.IsNullOrEmpty(count))
             {
                 ve.Visible = true;

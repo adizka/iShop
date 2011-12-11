@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAL.cs" />
     <Compile Include="Helpers\MailHepler.cs" />
     <Compile Include="Helpers\MD5CryptoServiceProvider.cs" />
     <Compile Include="Modules\Categories\Categories.cs" />

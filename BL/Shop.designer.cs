@@ -72,9 +72,9 @@ namespace BL
     partial void InsertProductsRefCategory(ProductsRefCategory instance);
     partial void UpdateProductsRefCategory(ProductsRefCategory instance);
     partial void DeleteProductsRefCategory(ProductsRefCategory instance);
-    partial void InsertProductsRefPropery(ProductsRefProperty instance);
-    partial void UpdateProductsRefPropery(ProductsRefProperty instance);
-    partial void DeleteProductsRefPropery(ProductsRefProperty instance);
+    partial void InsertProductsRefProperty(ProductsRefProperty instance);
+    partial void UpdateProductsRefProperty(ProductsRefProperty instance);
+    partial void DeleteProductsRefProperty(ProductsRefProperty instance);
     partial void InsertProductType(ProductType instance);
     partial void UpdateProductType(ProductType instance);
     partial void DeleteProductType(ProductType instance);
@@ -2786,7 +2786,7 @@ namespace BL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ProductProperty_ProductsRefPropery", Storage="_ProductsRefProperies", ThisKey="PropertyID", OtherKey="ProductPropertiesID")]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ProductProperty_ProductsRefProperty", Storage="_ProductsRefProperies", ThisKey="PropertyID", OtherKey="ProductPropertiesID")]
 		public EntitySet<ProductsRefProperty> ProductsRefProperies
 		{
 			get
@@ -2880,7 +2880,7 @@ namespace BL
 		
 		private string _Unit;
 		
-		private string _Price;
+		private float _Price;
 		
 		private bool _InStock;
 		
@@ -2914,7 +2914,7 @@ namespace BL
     partial void OnCreateDateChanged();
     partial void OnUnitChanging(string value);
     partial void OnUnitChanged();
-    partial void OnPriceChanging(string value);
+    partial void OnPriceChanging(float value);
     partial void OnPriceChanged();
     partial void OnInStockChanging(bool value);
     partial void OnInStockChanged();
@@ -3017,8 +3017,8 @@ namespace BL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Price", DbType="NVarChar(200) NOT NULL", CanBeNull=false)]
-		public string Price
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Price", DbType="Real NOT NULL")]
+		public float Price
 		{
 			get
 			{
@@ -3160,7 +3160,7 @@ namespace BL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Product_ProductsRefPropery", Storage="_ProductsRefProperies", ThisKey="ProductID", OtherKey="ProductID")]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Product_ProductsRefPropety", Storage="_ProductsRefProperies", ThisKey="ProductID", OtherKey="ProductID")]
 		public EntitySet<ProductsRefProperty> ProductsRefProperies
 		{
 			get
@@ -3732,7 +3732,7 @@ namespace BL
             }
         }
     }
-	
+
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ProductTypes")]
 	public partial class ProductType : INotifyPropertyChanging, INotifyPropertyChanged
 	{

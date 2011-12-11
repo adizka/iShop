@@ -8,39 +8,40 @@ namespace BL.Modules.Products
 {
     public class Products
     {
-        public bool AddProduct(string name, string unit, string price, bool isVisible, int count, out Product product)
+        public bool AddProduct(string name, string unit, float price, bool isVisible, int count, out Product product)
         {
             bool addProduct = false;
             using (ShopDataContext db = new ShopDataContext())
             {
-                    product = new Product();
-                    BL.Stock stock = new BL.Stock();
-                    using (var ts = new TransactionScope())
-                    {
-                        product.ProductID = Guid.NewGuid();
-                        product.Name = name;
-                        product.CreateDate = DateTime.Now;
-                        product.Unit = unit;
-                        product.Price = price;
-                        product.InStock = (count > 0);
-                        product.IsVisible = isVisible;
-                        product.ProductTypeID = 1;
+                product = new Product();
+                BL.Stock stock = new BL.Stock();
+                using (var ts = new TransactionScope())
+                {
+                    product.ProductID = Guid.NewGuid();
+                    product.Name = name;
+                    product.CreateDate = DateTime.Now;
+                    product.Unit = unit;
+                    product.Price = price;
+                    product.InStock = (count > 0);
+                    product.IsVisible = isVisible;
+                    product.ProductTypeID = (int)ProductType.Types.Real;
 
-                        stock.StockItemID = Guid.NewGuid();
-                        stock.Count = count;
-                        product.Stocks.Add(stock);
+                    stock.StockItemID = Guid.NewGuid();
+                    stock.Count = count;
+                    product.Stocks.Add(stock);
 
-                        db.Products.InsertOnSubmit(product);
-                        db.SubmitChanges();
+                    db.Products.InsertOnSubmit(product);
+                    db.SubmitChanges();
 
-                        ts.Complete();
-                        addProduct = true;
-                    }
+                    ts.Complete();
+                    addProduct = true;
+                }
+
             }
             return addProduct;
         }
 
-        public bool UpdateProduct(Guid productId, string name, string unit, string price, bool isVisible, int count)
+        public bool UpdateProduct(Guid productId, string name, string unit, float price, bool isVisible, int count)
         {
             bool updateProduct = false;
 
