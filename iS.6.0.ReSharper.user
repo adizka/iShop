@@ -1,0 +1,33 @@
+<Configuration>
+  <RecentFiles>
+    <RecentFiles>
+      <File id="F811AF93-8440-4DC9-A7AA-BCA306A0B8B2/f:app.config" caret="411" fromTop="8" />
+      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/f:Web.config" caret="512" fromTop="17" />
+      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Modules/d:Logic/d:Auth/f:Users.cs" caret="675" fromTop="0" />
+      <File id="F811AF93-8440-4DC9-A7AA-BCA306A0B8B2/f:Shop.designer.cs" caret="4588" fromTop="20" />
+      <File id="F811AF93-8440-4DC9-A7AA-BCA306A0B8B2/d:Properties/f:Settings.Designer.cs" caret="1438" fromTop="28" />
+    </RecentFiles>
+    <RecentEdits>
+      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Modules/d:Logic/d:Auth/f:Users.cs" caret="191" fromTop="4" />
+      <File id="F811AF93-8440-4DC9-A7AA-BCA306A0B8B2/d:Properties/f:Settings.Designer.cs" caret="1438" fromTop="28" />
+    </RecentEdits>
+  </RecentFiles>
+  <NAntValidationSettings>
+    <NAntPath value="" />
+  </NAntValidationSettings>
+  <UnitTestRunner>
+    <Providers />
+  </UnitTestRunner>
+  <UnitTestRunnerNUnit>
+    <NUnitInstallDir IsNull="False">
+    </NUnitInstallDir>
+    <UseAddins>Never</UseAddins>
+  </UnitTestRunnerNUnit>
+  <SettingsComponent>
+    <string />
+    <integer />
+    <boolean>
+      <setting name="SolutionAnalysisEnabled">False</setting>
+    </boolean>
+  </SettingsComponent>
+</Configuration>
