@@ -7,17 +7,19 @@
 </asp:Content>
 <asp:Content ID="Content2" runat="server" ContentPlaceHolderID="main">
     
-    <iS:BreadCrumbs runat="server" ID="bc" SiteMode="false" />
+    <iS:BreadCrumbs runat="server" ID="bc" SiteMode="false" EntityType="Categories" />
     <p>
-        <a href="<%= iStore.Site.SiteAdminUrl %>Categories/CategoryEdit.aspx">Добавить категорию</a>
+        <a href="<%= iStore.Site.SiteAdminUrl %>Categories/CategoryEdit.aspx?parentId=<%= Request.QueryString["cid"] %>">Добавить категорию</a>
+        <a href="<%= iStore.Site.SiteAdminUrl %>Categories/CategorySort.aspx?cid=<%= Request.QueryString["cid"] %>">Сортировать категории</a>
         <a href="<%= iStore.Site.SiteAdminUrl %>Products/ProductEdit.aspx?cid=<%= Request.QueryString["cid"] %>">Добавить продукт в категорию</a>
     </p><br />
     <iS:ValidateErrors runat="server" ID="ve" Visible="false" />
     <div class="rep">
         <p class="repHeader">
             <span>Name</span>
+            <span>Подкатегории</span>
+            <span>Количество товаров в категории</span>            
             <span>Edit</span>
-            <span>Sort</span>
             <span>Delete</span>
         </p>
         <% if (!allCategories.Any())
@@ -34,11 +36,13 @@
                 <a href="<%= iStore.Site.SiteAdminUrl %>Categories/?cid=<%= item.CategoryID.ToString() %>"><%= item.Name%></a> 
             </span>
             <span>
-                <a href="<%= iStore.Site.SiteAdminUrl %>Categories/CategoryEdit.aspx?cid=<%= item.CategoryID.ToString() %>">Edit</a>
+                <a href="<%= iStore.Site.SiteAdminUrl %>Categories/?cid=<%= item.CategoryID.ToString() %>"><%= cbl.GetCategoriesByParentId(item.CategoryID).Count().ToString()  %></a> 
             </span>
             <span>
-                <a href="<%= iStore.Site.SiteAdminUrl %>Categories/CategorySort.aspx?cid=<%= item.ParentID.ToString() %>">Sort</a>
-                &nbsp; <%= item.Sort.ToString() %>
+                <%= prcbl.GetProductRefCategoriesByCategoryId(item.CategoryID).Count().ToString() %>
+            </span>
+            <span>
+                <a href="<%= iStore.Site.SiteAdminUrl %>Categories/CategoryEdit.aspx?cid=<%= item.CategoryID.ToString() %>&parentId=<%= Request.QueryString["cid"] %>">Edit</a>
             </span>
             <span>
                 <a href="<%= iStore.Site.SiteAdminUrl %>Categories/Default.aspx?delcid=<%= item.CategoryID.ToString() %>">Delete</a>

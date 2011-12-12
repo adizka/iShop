@@ -91,7 +91,7 @@
 			<p>
 		        <ul>
                     <li><a href="<%= iStore.Site.SiteAdminUrl %>Categories/"><%= global::Resources.Shops.CategoriesList %></a></li>
-                    <li><a href="<%= iStore.Site.SiteAdminUrl %>Categories/"><%= global::Resources.Shops.AddCategories %></a></li>
+                    <li><a href="<%= iStore.Site.SiteAdminUrl %>Categories/CategoryEdit.aspx"><%= global::Resources.Shops.AddCategories %></a></li>
                 </ul>
 		    </p>
         </div> 

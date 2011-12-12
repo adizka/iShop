@@ -45,13 +45,23 @@ namespace BL.Modules.Products
             BL.Modules.Products.Products pbl = new BL.Modules.Products.Products();
 
             pbl.DeleteProductCategories(productId);
-            return AddCategoriesToProduct(categoriesIds, productId); ;
+            return AddCategoriesToProduct(categoriesIds, productId); 
+        }
+
+        public  IQueryable<BL.ProductsRefCategory> GetAllProductsRefCategories()
+        {
+            ShopDataContext db = new ShopDataContext();
+            return db.ProductsRefCategories.OrderBy(p => p.CategoryID);
         }
 
         public IQueryable<BL.ProductsRefCategory> GetProductRefCategoriesByProductId(Guid productId)
         {
-            ShopDataContext db = new ShopDataContext();
-            return db.ProductsRefCategories.Where(p => p.ProductID == productId).OrderBy(p => p.Sort);
+            return GetAllProductsRefCategories().Where(p => p.ProductID == productId).OrderBy(p => p.Sort);
+        }
+
+        public  IQueryable<BL.ProductsRefCategory> GetProductRefCategoriesByCategoryId(Guid categoryId)
+        {
+            return GetAllProductsRefCategories().Where(p => p.CategoryID == categoryId).OrderBy(s => s.Sort);
         }
     }
 }

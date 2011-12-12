@@ -158,6 +158,32 @@ namespace BL.Modules.Categories
             return null;
         }
 
-        
+        public bool CategoryNameInParentList(string name, string sparentId)
+        {
+            Guid? parentId;
+            if (string.IsNullOrEmpty(sparentId))
+            {
+                parentId = null;
+            }
+            else
+            {
+                if (sparentId == "parent")
+                {
+                    parentId = null;
+                }
+                else
+                {
+                    parentId = new Guid(sparentId);
+                }
+                
+            }
+            IQueryable<BL.Category> currentCategories = GetCategoriesByParentId(parentId);
+            if (currentCategories == null) return false;
+            if (currentCategories.Any(c => c.Name == name))
+            {
+                return true;
+            }
+            return false;
+        }
     }
 }

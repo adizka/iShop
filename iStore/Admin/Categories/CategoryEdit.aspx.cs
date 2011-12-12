@@ -29,7 +29,19 @@ namespace iStore.Admin.Categories
                     }
                     else
                     {
-                        ddlCategories.SelectedValue = category.CategoryID.ToString();
+                        ddlCategories.SelectedValue = category.ParentID.ToString();
+                    }
+                }
+                else
+                {
+                    string scatId = Request.QueryString["parentId"];
+                    if (!string.IsNullOrEmpty(scatId))
+                    {
+                        Guid catId = new Guid(scatId);
+                        if (allCategories.Any(c => c.CategoryID == catId))
+                        {
+                            ddlCategories.SelectedValue = scatId;
+                        }
                     }
                 }
             }
@@ -48,7 +60,7 @@ namespace iStore.Admin.Categories
                 return;
             }
 
-            if (cbl.NameInBD(name))
+            if (cbl.CategoryNameInParentList(name, hf))
             {
                 if (category == null)
                 {
@@ -62,32 +74,30 @@ namespace iStore.Admin.Categories
             {
                 if (category == null)
                 {
-                    Guid parentId;
                     if (hf == "parent")
                     {
                         cbl.AddCategory(name, null);
                     }
                     else
                     {
-                        parentId = new Guid(hf);
+                        Guid parentId = new Guid(hf);
                         cbl.AddCategory(name, parentId);
                     }
                 }
                 else
                 {
-                    Guid parentId;
                     if (hf == "parent")
                     {
                         cbl.UpdateCategory(category.CategoryID, name, null);
                     }
                     else
                     {
-                        parentId = new Guid(hf);
+                        Guid parentId = new Guid(hf);
                         cbl.UpdateCategory(category.CategoryID, name, parentId);
                     }
                 }
-                Response.Redirect(iStore.Site.SiteAdminUrl + "Categories/");
-
+                if (hf == "parent") hf = string.Empty;
+                Response.Redirect(iStore.Site.SiteAdminUrl + "Categories/?cid=" + hf);
             }
         }
 
@@ -95,7 +105,7 @@ namespace iStore.Admin.Categories
         {
             get
             {
-                return cbl.GetAllCategories();
+                return cbl.GetAllCategories().OrderBy(c => c.Sort);
             }
         }
 

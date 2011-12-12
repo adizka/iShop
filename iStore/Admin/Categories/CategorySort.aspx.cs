@@ -18,17 +18,20 @@ namespace iStore.Admin.Categories
                 return;
         }
 
-
-
         List<BL.Category> _SiblingCategories;
 
         public IQueryable<BL.Category> SiblingCategories
         {
             get
             {
-                if (_SiblingCategories == null)
+                if (ParentID == null)
+                {
                     _SiblingCategories = cbl.GetAllRootCatgories().ToList();
-
+                }
+                else
+                {
+                    _SiblingCategories = cbl.GetCategoriesByParentId(ParentID.Value).ToList();
+                }
                 return _SiblingCategories.OrderBy(c => c.Sort).AsQueryable();
             }
         }
@@ -65,6 +68,7 @@ namespace iStore.Admin.Categories
                 index++;
             }
             cbl.UpdateAllCategories(SiblingCategories.ToList());
+            Response.Redirect(iStore.Site.SiteAdminUrl + "Categories/?cid=" + Request.QueryString["cid"]);
         }
 
     }

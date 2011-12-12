@@ -9,7 +9,8 @@ namespace iStore.Admin.Categories
 {
     public partial class Default : System.Web.UI.Page
     {
-        BL.Modules.Categories.Categories cbl = new BL.Modules.Categories.Categories();
+        public BL.Modules.Categories.Categories cbl = new BL.Modules.Categories.Categories();
+        public  BL.Modules.Products.ProductRefCategories prcbl = new BL.Modules.Products.ProductRefCategories();
 
         protected void Page_Load(object sender, EventArgs e)
         {

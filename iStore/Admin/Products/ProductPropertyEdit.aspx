@@ -87,7 +87,7 @@ function PackVals(name, val, sortInd) {
 
         $(template).css("display", "");
         $("#ChangeID", template).click(function () { UpdateData(this) });
-        parent.append(template)
+        parent.append(template);
     }
 
 

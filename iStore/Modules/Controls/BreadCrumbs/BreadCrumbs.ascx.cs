@@ -38,7 +38,7 @@ namespace iStore.Modules.Controls.BreadCrumbs
                 if (category != null)
                 {
                     string bctemplate = string.Empty;
-                    string preUrl = ((!SiteMode) ? iStore.Site.SiteAdminUrl : iStore.Site.SiteUrl) + "Categories/";
+                    string preUrl = ((!SiteMode) ? iStore.Site.SiteAdminUrl : iStore.Site.SiteUrl) + EntityType + "/";
                     Guid? parentId = category.CategoryID;
                     BL.Category tempCategory;
                     int i = 0;
@@ -73,11 +73,13 @@ namespace iStore.Modules.Controls.BreadCrumbs
         private string SetRootCategories()
         {
             string bctemplate = string.Empty;
-            string url = ((!SiteMode) ? iStore.Site.SiteAdminUrl : iStore.Site.SiteUrl) + "Categories/";
+            string url = ((!SiteMode) ? iStore.Site.SiteAdminUrl : iStore.Site.SiteUrl) + EntityType  + "/";
             bctemplate =  String.Format("<a class='BCCategoriesLink' href='{0}'>{1}</a>{2}", url, "Главная", "->");
             return bctemplate;
         }
 
         public bool SiteMode { get; set; }
+
+        public string EntityType { get; set; }
     }
 }

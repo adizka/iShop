@@ -4,17 +4,34 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using BL.Modules.Products;
 
 namespace iStore.Admin.Products
 {
     public partial class Default : System.Web.UI.Page
     {
-        
-        BL.Modules.Products.Products pbl = new BL.Modules.Products.Products();
+        public  BL.Modules.Categories.Categories cbl = new BL.Modules.Categories.Categories();
+        public  BL.Modules.Products.Products pbl = new BL.Modules.Products.Products();
+        public  BL.Modules.Products.ProductRefCategories prcbl = new BL.Modules.Products.ProductRefCategories();
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            pager.EntityCount = ProductsCount; 
+            pager.EntityCount = ProductsCount;
+            ddlChildCategories.DataSource = AllChildCategories; 
+            ddlChildCategories.DataValueField = "CategoryID";
+            ddlChildCategories.DataTextField = "Name";
+            ddlChildCategories.DataBind();
+            if (AllChildCategories.Count() > 0)
+            {
+                
+            }
+        }
+
+        protected  void RedirectToSelectedCategory(object sender, EventArgs e)
+        {
+
+            string hf = ddlChildCategories.SelectedItem.Value;
+            Response.Redirect(iStore.Site.SiteAdminUrl + "Products/?cid=" + hf);
         }
 
         object _prodCountInd;
@@ -31,17 +48,53 @@ namespace iStore.Admin.Products
             }
         }
 
+        public Guid? CurrentCategoryId
+        {
+            get 
+            { 
+                string scid = Request.QueryString["cid"];
+                Guid cid;
+                try
+                {
+                    cid = new Guid(scid);
+                }
+                catch
+                {
+                    return null;
+                }
+                return cid;
+            }
+        }
 
-        List<BL.Product> _PageProducts;
-        protected List<BL.Product> PageProducts
+        public IQueryable<BL.Category> AllChildCategories
+        {
+            
+            get
+            {
+                IQueryable<BL.Category> categories = cbl.GetAllRootCatgories();
+                return categories;
+            }
+        }
+
+        List<BL.ProductsRefCategory> _PageProducts;
+        protected List<BL.ProductsRefCategory> PageProducts
         {
             get
             {
-                if (_PageProducts == null)
-                    _PageProducts = pbl.GetAllProducts().ToList()
-                        .Where((c, ind) => ind >= pager .PageIndex * pager.EntitiesPerPage 
-                            && ind < (pager.PageIndex + 1) * pager.EntitiesPerPage).ToList();
-
+                if (CurrentCategoryId == null)
+                {
+                    if (_PageProducts == null)
+                        _PageProducts = prcbl.GetAllProductsRefCategories().ToList().Distinct()
+                            .Where((c, ind) => ind >= pager.PageIndex*pager.EntitiesPerPage
+                                               && ind < (pager.PageIndex + 1)*pager.EntitiesPerPage).ToList();
+                }
+                else
+                {
+                    if (_PageProducts == null)
+                        _PageProducts = prcbl.GetProductRefCategoriesByCategoryId(CurrentCategoryId.Value).ToList()
+                            .Where((c, ind) => ind >= pager.PageIndex * pager.EntitiesPerPage
+                                               && ind < (pager.PageIndex + 1) * pager.EntitiesPerPage).ToList();
+                }
                 return _PageProducts;
             }
         }
