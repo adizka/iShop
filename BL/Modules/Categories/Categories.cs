@@ -69,17 +69,19 @@ namespace BL.Modules.Categories
             }
         }
 
-        public void UpdateAllCategories(List<BL.Category> categories)
+        public void UpdateAllCategories(List<Guid> categories)
         {
             using (var db = new ShopDataContext())
             {
 
                 using (var ts = new TransactionScope())
                 {
+                    var index = 0;
                     foreach (var item in categories)
                     {
-                        var categ = db.Categories.First(c => c.CategoryID == item.CategoryID);
-                        categ.Sort = item.Sort;
+                        var categ = db.Categories.First(c => c.CategoryID == item);
+                        categ.Sort = index;
+                        index++;
                     }
                     db.SubmitChanges();
                     ts.Complete();

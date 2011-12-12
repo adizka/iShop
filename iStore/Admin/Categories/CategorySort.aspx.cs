@@ -60,14 +60,9 @@ namespace iStore.Admin.Categories
         {
             if (string.IsNullOrEmpty(hd.Value))
                 return;
-            var ids = hd.Value.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries).Select(id => new Guid(id));
-            int index = 0;
-            foreach (var item in ids)
-            {
-                SiblingCategories.First(c => c.CategoryID == item).Sort = index;
-                index++;
-            }
-            cbl.UpdateAllCategories(SiblingCategories.ToList());
+            var ids = hd.Value.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries).Select(id => new Guid(id)).ToList();
+
+            cbl.UpdateAllCategories(ids);
             Response.Redirect(iStore.Site.SiteAdminUrl + "Categories/?cid=" + Request.QueryString["cid"]);
         }
 

@@ -34,7 +34,7 @@ namespace iStore.Admin
                         _products.AddRange(pbl.GetAllProducts().Where(p => p.Name.IndexOf(item) > 0
                             && p.Price <= PriceTo && p.Price >= PriceFrom));
                     }
-                    _products = _products.Distinct().ToList();
+                    _products = _products.Distinct(new BL.ProductComparer()).ToList();
                 }
                 return _products;
             }

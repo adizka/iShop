@@ -160,6 +160,5 @@ namespace BL.Modules.Products
         {
             return (new ShopDataContext()).Products;
         }
-
     }
 }

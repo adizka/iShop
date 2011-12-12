@@ -38,8 +38,8 @@ function PackVals(name, val, sortInd) {
     }
     function UpdateData(el) {
         var parent = $(el).parent().parent();
-        var newName =escape( $("#EditName", parent).val());
-        var newVal = escape($("#EditVal", parent).val());
+        var newName =( $("#EditName", parent).val());
+        var newVal = ($("#EditVal", parent).val());
 
         
         
@@ -48,7 +48,7 @@ function PackVals(name, val, sortInd) {
         $(".ProductPropertyItem").each(
             function () {
                 counter++;
-                if ($.trim(newName) == escape($.trim($(".PropertyName", this).html())) && $(this).has("input").length == 0)
+                if ($.trim(newName) == ($.trim($(".PropertyName", this).html())) && $(this).has("input").length == 0)
                     isSuchNameExist = true;
             });
 
@@ -58,10 +58,10 @@ function PackVals(name, val, sortInd) {
         }
         $("#EditErrorMsg").css("display", "none");
 
-        var oldName = escape($(".PropertyName", parent).html());
+        var oldName = ($(".PropertyName", parent).html());
         $(".PropertyName", parent).html(newName)
-        var oldVal = escape($(".PropertyValue", parent).html());
-        var index = escape($(".SortIndex", parent).html())/1;
+        var oldVal = ($(".PropertyValue", parent).html());
+        var index = ($(".SortIndex", parent).html())/1;
         $(".PropertyValue", parent).html(newVal);
         if (newName.length == 0 || newVal.length == 0)
             return;
@@ -132,15 +132,15 @@ function PackVals(name, val, sortInd) {
         var clone = $(".ProductPropertyItemTemplate").clone();
         clone.addClass("ProductPropertyItem").removeClass("ProductPropertyItemTemplate");
 
-        $(".PropertyName", clone).html(escape($("#PropName").val()));
-        $(".PropertyValue", clone).html(escape($("#ValName").val()));
+        $(".PropertyName", clone).html(($("#PropName").val()));
+        $(".PropertyValue", clone).html(($("#ValName").val()));
         $(".SortIndex", clone).html(counter);
         $(clone).css("display","");
         $("#ProductPropertyContainer").append(clone);
         AssignEvents();
         $("#AddFormID").css('display', 'none');
         $("#AddButton").css('display', '');
-        $("#hf").val($("#hf").val() + PackVals(escape($("#PropName").val()), escape($("#ValName").val()), counter));
+        $("#hf").val($("#hf").val() + PackVals(($("#PropName").val()), ($("#ValName").val()), counter));
     }
 
     function ShowInputForm() {

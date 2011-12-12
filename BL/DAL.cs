@@ -14,16 +14,30 @@ namespace BL
             Web = 2
         }
     }
-    public partial class Product : IEquatable<BL.Product>
+
+    public class ProductComparer : IEqualityComparer<BL.Product>
     {
-        public int GetHashCode(object obj)
+        public bool Equals(BL.Product x, BL.Product y)
         {
-            return obj.GetHashCode();
+            return (x.ProductID == y.ProductID);
         }
 
-        public bool Equals(Product other)
+        public int GetHashCode(BL.Product obj)
         {
-            return this.ProductID == other.ProductID;
+            return obj.ProductID.GetHashCode();
+        }
+    }
+
+    public class ProductsRefCategoryComparer : IEqualityComparer<ProductsRefCategory>
+    {
+        public bool Equals(BL.ProductsRefCategory x, BL.ProductsRefCategory y)
+        {
+            return (x.ProductID == y.ProductID);
+        }
+
+        public int GetHashCode(ProductsRefCategory obj)
+        {
+            return obj.ProductID.GetHashCode();
         }
     }
 }
