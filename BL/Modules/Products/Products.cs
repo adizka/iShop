@@ -8,13 +8,14 @@ namespace BL.Modules.Products
 {
     public class Products
     {
-        public bool AddProduct(string name, string unit, float price, bool isVisible, int count, out BL.Product product)
+        public bool AddProduct(string name, string unit, float price, bool isVisible, int count, out BL.Product product, Guid? categoryID)
         {
             bool addProduct = false;
             using (ShopDataContext db = new ShopDataContext())
             {
                 product = new BL.Product();
                 BL.Modules.Products.ProductProperies ppbl = new ProductProperies();
+
                 using (var ts = new TransactionScope())
                 {
                     product.ProductID = Guid.NewGuid();
@@ -26,6 +27,16 @@ namespace BL.Modules.Products
                     product.IsVisible = isVisible;
                     product.ProductTypeID = (int)ProductType.Types.Real;
                     product.Count = count;
+                    if (categoryID.HasValue)
+                    {
+                        var prodRefCat = new BL.ProductsRefCategory()
+                        {
+                            ID = Guid.NewGuid(),
+                            CategoryID = categoryID.Value,
+                            Sort = product.ProductsRefCategories.Count,
+                        };
+                        product.ProductsRefCategories.Add(prodRefCat);
+                    }
                     db.Products.InsertOnSubmit(product);
                     db.SubmitChanges();
                     addProduct = ppbl.AddProductPhoto(BL.Site.DefaultPhotoPreview, BL.Site.DefaultPhotoOriginal, product.ProductID);
@@ -45,21 +56,17 @@ namespace BL.Modules.Products
                 BL.Product product = GetProductById(productId);
                 if (product != null)
                 {
-                    BL.Stock stock = db.Stocks.Where(s => s.ProductID == productId).FirstOrDefault();
-                    if (stock != null)
+                    using (var ts = new TransactionScope())
                     {
-                        using (var ts = new TransactionScope())
-                        {
-                            product.Name = name;
-                            product.Unit = unit;
-                            product.Price = price;
-                            product.IsVisible = isVisible;
-                            product.InStock = (count > 0);
-                            product.Count = count;
-                            updateProduct = true;
-                            db.SubmitChanges();
-                            ts.Complete();
-                        }
+                        product.Name = name;
+                        product.Unit = unit;
+                        product.Price = price;
+                        product.IsVisible = isVisible;
+                        product.InStock = (count > 0);
+                        product.Count = count;
+                        updateProduct = true;
+                        db.SubmitChanges();
+                        ts.Complete();
                     }
                 }
             }

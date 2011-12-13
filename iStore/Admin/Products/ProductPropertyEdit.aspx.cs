@@ -56,7 +56,6 @@ namespace iStore.Admin.Products
 
 
             List<BL.ProductProperty> props = new List<ProductProperty>();
-
             foreach (var item in strProps)
             {
                 props.Add(
@@ -64,7 +63,8 @@ namespace iStore.Admin.Products
                     {
                         PropertyName = Server.HtmlEncode(item.Name),
                         PropertyValue = Server.HtmlEncode(item.Val),
-                        IsImportant = true
+                        IsImportant = true,
+                        Sort = item.Sort 
                     }
                 );
             }

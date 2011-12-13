@@ -27,14 +27,10 @@ namespace iStore.Admin.Products
                 BL.Product product = currentProduct;
                 if (product != null)
                 {
-                    BL.Stock stock = sbl.GetStockByProductId(product.ProductID);
-                    if (stock != null)
-                    {
-                        txtName.Text = product.Name;
-                        txtPrice.Text = product.Price.ToString();
-                        txtCount.Text = stock.Count.ToString();
-                        txtUnit.Text = product.Unit;
-                    }
+                    txtName.Text = product.Name;
+                    txtPrice.Text = product.Price.ToString();
+                    txtCount.Text = product.Count.ToString();
+                    txtUnit.Text = product.Unit;
                 }
             }
         }
@@ -59,10 +55,13 @@ namespace iStore.Admin.Products
 
             var categoriesIDs = hf.Value.Split(new string[] { "!~!" }, StringSplitOptions.RemoveEmptyEntries).Select(id => new Guid(id)).ToList();
 
+            Guid? CategoryID = null ;
+            if (currentCategory != null)
+                CategoryID = currentCategory.CategoryID;
 
             if (product == null)
             {
-                bool isAdd = pbl.AddProduct(name, unit, price, chkVisible.Checked, count, out product);
+                bool isAdd = pbl.AddProduct(name, unit, price, chkVisible.Checked, count, out product, CategoryID);
                 if (isAdd)
                 {
                     prcbl.AddCategoriesToProduct(categoriesIDs, product.ProductID);

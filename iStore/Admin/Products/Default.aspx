@@ -11,7 +11,7 @@
     <asp:DropDownList runat="server" ID="ddlChildCategories"></asp:DropDownList>
     <asp:Button runat="server" ID="btnRedirect" OnClick="RedirectToSelectedCategory" Text="Перейти"/>
     <p >
-        <a href="<%= iStore.Site.SiteAdminUrl %>Products/ProductEdit.aspx">Добавить продукт</a>
+        <a href="<%= iStore.Site.SiteAdminUrl %>Products/ProductEdit.aspx?cid=<%= Request.QueryString["cid"] %>">Добавить продукт</a>
         <a href="">Сортировать продукты в данной категории</a>
     </p>
     <br />
