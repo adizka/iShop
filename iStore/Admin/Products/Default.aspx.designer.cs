@@ -31,6 +31,15 @@ namespace iStore.Admin.Products {
         protected global::System.Web.UI.WebControls.DropDownList ddlChildCategories;
         
         /// <summary>
+        /// btnRedirect control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnRedirect;
+        
+        /// <summary>
         /// ve control.
         /// </summary>
         /// <remarks>

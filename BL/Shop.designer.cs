@@ -2654,6 +2654,8 @@ namespace BL
 		private bool _IsImportant;
 		
 		private System.Guid _ProductID;
+
+	    private int _Sort;
 		
 		private EntitySet<ProductsRefProperty> _ProductsRefProperies;
 		
@@ -2673,6 +2675,8 @@ namespace BL
     partial void OnIsImportantChanged();
     partial void OnProductIDChanging(System.Guid value);
     partial void OnProductIDChanged();
+	partial void OnSortChanging(int value);
+	partial void OnSortChanged();
     #endregion
 		
 		public ProductProperty()
@@ -2785,8 +2789,26 @@ namespace BL
 				}
 			}
 		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ProductProperty_ProductsRefProperty", Storage="_ProductsRefProperies", ThisKey="PropertyID", OtherKey="ProductPropertiesID")]
+
+	    [global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_Sort", DbType = "Int NOT NULL")]
+	    public int Sort
+	    {
+	        get { return this._Sort; }
+            set
+            {
+                if ((this._Sort != value))
+                {
+                    this.OnSortChanging(value);
+                    this.SendPropertyChanging();
+                    this._Sort = value;
+                    this.SendPropertyChanged("Sort");
+                    this.OnSortChanged();
+                }
+            }
+
+	    }
+
+	    [global::System.Data.Linq.Mapping.AssociationAttribute(Name="ProductProperty_ProductsRefProperty", Storage="_ProductsRefProperies", ThisKey="PropertyID", OtherKey="ProductPropertiesID")]
 		public EntitySet<ProductsRefProperty> ProductsRefProperies
 		{
 			get
@@ -2889,6 +2911,8 @@ namespace BL
 		private int _CurrencyType;
 		
 		private int _ProductTypeID;
+
+	    private int _Count;
 		
 		private EntitySet<OrdersRefProduct> _OrdersRefProducts;
 		
@@ -2924,6 +2948,8 @@ namespace BL
     partial void OnCurrencyTypeChanged();
     partial void OnProductTypeIDChanging(int value);
     partial void OnProductTypeIDChanged();
+	partial void OnCountChanging(int value);
+    partial void OnCountChanged();
     #endregion
 		
 		public Product()
@@ -3120,7 +3146,28 @@ namespace BL
 				}
 			}
 		}
-		
+
+        [global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_Count", DbType = "Int NOT NULL")]
+        public int Count
+        {
+            get
+            {
+                return this._Count;
+            }
+            set
+            {
+                if ((this._Count != value))
+                {
+                    this.OnCountChanging(value);
+                    this.SendPropertyChanging();
+                    this._Count = value;
+                    this.SendPropertyChanged("Count");
+                    this.OnCountChanged();
+                }
+            }
+        }
+
+
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Product_OrdersRefProduct", Storage="_OrdersRefProducts", ThisKey="ProductID", OtherKey="ProductID")]
 		public EntitySet<OrdersRefProduct> OrdersRefProducts
 		{

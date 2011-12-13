@@ -81,6 +81,7 @@
     <Content Include="Admin\Products\ProductEdit.aspx" />
     <Content Include="Admin\Products\ProductPropertyEdit.aspx" />
     <Content Include="Admin\Products\ProductSort.aspx" />
+    <Content Include="Admin\Products\ProductsPhoto.aspx" />
     <Content Include="Admin\Search.aspx" />
     <Content Include="Admin\SearchControl.ascx" />
     <Content Include="Admin\Styles\Admin.css" />
@@ -101,6 +102,9 @@
     <Content Include="Admin\Styles\jquery-ui-1.8.16.custom.css" />
     <Content Include="Images\bg-menu-main.png" />
     <Content Include="Images\bg_nav.gif" />
+    <Content Include="Images\box.png" />
+    <Content Include="Images\Default\DefaultOriginal.png" />
+    <Content Include="Images\Default\DefaultPreview.png" />
     <Content Include="Images\h2_trigger_a.gif" />
     <Content Include="Modules\Controls\BreadCrumbs\BreadCrumbs.ascx" />
     <Content Include="Modules\Controls\Pager\Pager.ascx" />
@@ -699,6 +703,13 @@
     <Compile Include="Admin\Products\ProductSort.aspx.designer.cs">
       <DependentUpon>ProductSort.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\Products\ProductsPhoto.aspx.cs">
+      <DependentUpon>ProductsPhoto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Products\ProductsPhoto.aspx.designer.cs">
+      <DependentUpon>ProductsPhoto.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\Search.aspx.cs">
       <DependentUpon>Search.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -815,7 +826,6 @@
     <Folder Include="Admin\Scripts\" />
     <Folder Include="App_Data\" />
     <Folder Include="Content\Products\" />
-    <Folder Include="NewFolder1\" />
     <Folder Include="News\" />
   </ItemGroup>
   <ItemGroup>

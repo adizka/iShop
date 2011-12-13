@@ -1,8 +1,6 @@
 <Configuration>
   <RecentFiles>
     <RecentFiles>
-      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/f:Web.config" caret="512" fromTop="17" />
-      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Modules/d:Logic/d:Auth/f:Users.cs" caret="675" fromTop="0" />
       <File id="F811AF93-8440-4DC9-A7AA-BCA306A0B8B2/f:Shop.designer.cs" caret="4588" fromTop="20" />
       <File id="F811AF93-8440-4DC9-A7AA-BCA306A0B8B2/d:Properties/f:Settings.Designer.cs" caret="1438" fromTop="28" />
       <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Modules/d:Controls/d:Pager/f:Pager.ascx.designer.cs" caret="467" fromTop="10" />
@@ -11,42 +9,30 @@
       <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Admin/d:Products/f:Default.aspx.designer.cs" caret="1797" fromTop="30" />
       <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Modules/d:Controls/d:Pager/f:Pager.ascx" caret="172" fromTop="5" />
       <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Admin/d:Products/f:ProductPropertyEdit.aspx.cs" caret="2041" fromTop="35" />
-      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Admin/d:Products/f:ProductEdit.aspx.cs" caret="5991" fromTop="2" />
       <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Admin/d:Products/f:ProductSort.aspx" caret="0" fromTop="0" />
       <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Admin/d:Products/f:ProductPropertyEdit.aspx" caret="4958" fromTop="12" />
-      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Admin/d:Products/f:ProductEdit.aspx" caret="5874" fromTop="34" />
       <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Admin/f:Default.aspx" caret="0" fromTop="0" />
       <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Admin/d:Categories/f:CategorySort.aspx" caret="644" fromTop="11" />
       <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Modules/d:Controls/d:BreadCrumbs/f:BreadCrumbs.ascx.cs" caret="1725" fromTop="9" />
       <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Modules/d:Controls/d:BreadCrumbs/f:BreadCrumbs.ascx" caret="210" fromTop="5" />
       <File id="F811AF93-8440-4DC9-A7AA-BCA306A0B8B2/d:Modules/d:Products/f:ProductRefCategories.cs" caret="1694" fromTop="12" />
-      <File id="F811AF93-8440-4DC9-A7AA-BCA306A0B8B2/d:Modules/d:Products/f:Products.cs" caret="475" fromTop="0" />
       <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Admin/d:Categories/f:CategorySort.aspx.cs" caret="440" fromTop="0" />
       <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Admin/d:Design/f:Menu.ascx" caret="4499" fromTop="22" />
       <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Admin/d:Categories/f:CategoryEdit.aspx" caret="357" fromTop="4" />
       <File id="F811AF93-8440-4DC9-A7AA-BCA306A0B8B2/d:Modules/d:Categories/f:Categories.cs" caret="4615" fromTop="11" />
       <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Admin/d:Categories/f:Default.aspx.cs" caret="1646" fromTop="22" />
-      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Admin/d:Categories/f:Default.aspx" caret="1113" fromTop="13" />
       <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Modules/d:Controls/d:Pager/f:Pager.ascx.cs" caret="506" fromTop="17" />
       <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Admin/d:Categories/f:CategoryEdit.aspx.cs" caret="1935" fromTop="21" />
-      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Admin/d:Products/f:Default.aspx" caret="869" fromTop="11" />
-      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Admin/d:Products/f:Default.aspx.cs" caret="1314" fromTop="34" />
+      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Admin/d:Products/f:Default.aspx.cs" caret="571" fromTop="15" />
+      <File id="F811AF93-8440-4DC9-A7AA-BCA306A0B8B2/d:Modules/d:Products/f:Products.cs" caret="1432" fromTop="27" />
+      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Admin/d:Products/f:Default.aspx" caret="2540" fromTop="11" />
+      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Admin/d:Products/f:ProductEdit.aspx" caret="3466" fromTop="14" />
+      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Admin/d:Products/f:ProductsPhoto.aspx.cs" caret="572" fromTop="1" />
+      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Admin/d:Products/f:ProductsPhoto.aspx" caret="1661" fromTop="26" />
+      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Admin/d:Categories/f:Default.aspx" caret="1377" fromTop="16" />
+      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Admin/d:Products/f:ProductEdit.aspx.cs" caret="4463" fromTop="27" />
     </RecentFiles>
     <RecentEdits>
-      <File id="F811AF93-8440-4DC9-A7AA-BCA306A0B8B2/d:Modules/d:Products/f:ProductRefCategories.cs" caret="1824" fromTop="14" />
-      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Admin/d:Products/f:Default.aspx.cs" caret="3366" fromTop="30" />
-      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Admin/d:Products/f:Default.aspx.cs" caret="2435" fromTop="12" />
-      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Admin/d:Products/f:Default.aspx.cs" caret="3124" fromTop="25" />
-      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Admin/d:Products/f:Default.aspx.cs" caret="2703" fromTop="18" />
-      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Admin/d:Categories/f:CategoryEdit.aspx.cs" caret="3882" fromTop="34" />
-      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Admin/d:Products/f:Default.aspx" caret="2161" fromTop="23" />
-      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Admin/d:Categories/f:Default.aspx" caret="723" fromTop="0" />
-      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Admin/d:Categories/f:Default.aspx" caret="2745" fromTop="32" />
-      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Admin/d:Categories/f:CategoryEdit.aspx.cs" caret="1320" fromTop="23" />
-      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Admin/d:Categories/f:CategoryEdit.aspx.cs" caret="1128" fromTop="17" />
-      <File id="F811AF93-8440-4DC9-A7AA-BCA306A0B8B2/d:Modules/d:Categories/f:Categories.cs" caret="6302" fromTop="25" />
-      <File id="F811AF93-8440-4DC9-A7AA-BCA306A0B8B2/d:Modules/d:Categories/f:Categories.cs" caret="5716" fromTop="22" />
-      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Admin/d:Categories/f:CategoryEdit.aspx.cs" caret="2214" fromTop="18" />
       <File id="F811AF93-8440-4DC9-A7AA-BCA306A0B8B2/d:Modules/d:Categories/f:Categories.cs" caret="5994" fromTop="32" />
       <File id="F811AF93-8440-4DC9-A7AA-BCA306A0B8B2/d:Modules/d:Categories/f:Categories.cs" caret="5881" fromTop="28" />
       <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Admin/d:Categories/f:CategoryEdit.aspx" caret="1225" fromTop="24" />
@@ -63,6 +49,20 @@
       <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Admin/d:Products/f:Default.aspx" caret="869" fromTop="11" />
       <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Admin/d:Products/f:Default.aspx.cs" caret="692" fromTop="7" />
       <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Admin/d:Products/f:Default.aspx.cs" caret="1003" fromTop="14" />
+      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Admin/d:Products/f:ProductsPhoto.aspx" caret="804" fromTop="8" />
+      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Admin/d:Products/f:ProductsPhoto.aspx" caret="1206" fromTop="22" />
+      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Admin/d:Products/f:Default.aspx" caret="2831" fromTop="16" />
+      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Admin/d:Products/f:ProductsPhoto.aspx" caret="1661" fromTop="26" />
+      <File id="F811AF93-8440-4DC9-A7AA-BCA306A0B8B2/d:Modules/d:Products/f:Products.cs" caret="1414" fromTop="19" />
+      <File id="F811AF93-8440-4DC9-A7AA-BCA306A0B8B2/d:Modules/d:Products/f:Products.cs" caret="299" fromTop="3" />
+      <File id="F811AF93-8440-4DC9-A7AA-BCA306A0B8B2/d:Modules/d:Products/f:Products.cs" caret="454" fromTop="14" />
+      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Admin/d:Products/f:ProductEdit.aspx.cs" caret="3382" fromTop="9" />
+      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Admin/d:Products/f:ProductEdit.aspx.cs" caret="2095" fromTop="0" />
+      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Admin/d:Products/f:ProductEdit.aspx" caret="3070" fromTop="14" />
+      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Admin/d:Products/f:ProductEdit.aspx" caret="5300" fromTop="14" />
+      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Admin/d:Products/f:ProductEdit.aspx" caret="3270" fromTop="17" />
+      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Admin/d:Products/f:ProductEdit.aspx.cs" caret="3482" fromTop="23" />
+      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Admin/d:Products/f:ProductEdit.aspx.cs" caret="1502" fromTop="8" />
     </RecentEdits>
   </RecentFiles>
   <NAntValidationSettings>
@@ -99,16 +99,16 @@
       <Item value="AddInsParams" priority="7" />
       <Item value="runat" priority="13" />
       <Item value="server" priority="20" />
-      <Item value="a" priority="35" />
-      <Item value="href" priority="36" />
-      <Item value="p" priority="14" />
+      <Item value="a" priority="42" />
+      <Item value="href" priority="43" />
+      <Item value="p" priority="21" />
       <Item value="s" priority="6" />
       <Item value="span" priority="20" />
       <Item value="EntityType" priority="13" />
       <Item value="Register" priority="7" />
       <Item value="tagPrefix" priority="7" />
       <Item value="tagName" priority="13" />
-      <Item value="src" priority="6" />
+      <Item value="src" priority="20" />
       <Item value="BreadCrumbs" priority="13" />
       <Item value="BreadCrumbs.ascx" priority="6" />
       <Item value="ID" priority="13" />
@@ -116,11 +116,18 @@
       <Item value="asp" priority="6" />
       <Item value="SelectedIndexChanged" priority="14" />
       <Item value="div" priority="6" />
+      <Item value="img" priority="14" />
+      <Item value="ProductEdit.aspx" priority="6" />
+      <Item value="alt" priority="7" />
+      <Item value="id" priority="6" />
+      <Item value="AddButton" priority="6" />
+      <Item value="style" priority="7" />
+      <Item value="display" priority="9" />
     </ItemStatistics>
     <ItemStatistics item="CSharpCodeCompletionContext">
       <Item value="public" priority="415" />
       <Item value="enum" priority="31" />
-      <Item value="Modules" priority="134" />
+      <Item value="Modules" priority="188" />
       <Item value="Controls" priority="26" />
       <Item value="Pager" priority="54" />
       <Item value="Pager`0" priority="54" />
@@ -140,7 +147,7 @@
       <Item value="Stack&lt;string&gt;" priority="28" />
       <Item value="return" priority="447" />
       <Item value="foreach" priority="63" />
-      <Item value="Request" priority="351" />
+      <Item value="Request" priority="415" />
       <Item value="item" priority="287" />
       <Item value="continue" priority="31" />
       <Item value="_params`0" priority="63" />
@@ -149,8 +156,8 @@
       <Item value="pager" priority="63" />
       <Item value="allCategories" priority="123" />
       <Item value="ProductsCount" priority="31" />
-      <Item value="iStore" priority="186" />
-      <Item value="Site`0" priority="134" />
+      <Item value="iStore" priority="218" />
+      <Item value="Site`0" priority="161" />
       <Item value="Guid`0" priority="319" />
       <Item value="currentCategory" priority="95" />
       <Item value="r" priority="31" />
@@ -174,7 +181,7 @@
       <Item value="ParentID" priority="31" />
       <Item value="IQueryProvider`0" priority="31" />
       <Item value="IQueryable" priority="245" />
-      <Item value="BL" priority="319" />
+      <Item value="BL" priority="383" />
       <Item value="ProductsRefCategory`0" priority="103" />
       <Item value="ShopDataContext`0" priority="63" />
       <Item value="ShopDataContext" priority="57" />
@@ -211,6 +218,10 @@
       <Item value="EventArgs`0" priority="31" />
       <Item value="AllChildCategories" priority="63" />
       <Item value="sid" priority="63" />
+      <Item value="CurrentProductPreview" priority="26" />
+      <Item value="CurrentProductOriginal" priority="31" />
+      <Item value="ts" priority="31" />
+      <Item value="Product`0" priority="53" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.Collections.Generic.Dictionary`2">
       <Item value="Add`0" priority="27" />
@@ -224,7 +235,8 @@
       <Item value="Distinct`1" priority="26" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.Web.HttpRequest">
-      <Item value="QueryString" priority="296" />
+      <Item value="QueryString" priority="350" />
+      <Item value="Url" priority="26" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.Collections.Specialized.NameValueCollection">
       <Item value="Add`0" priority="26" />
@@ -243,7 +255,7 @@
       <Item value="Distinct`1" priority="26" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:@iStore.Site">
-      <Item value="SiteAdminUrl" priority="134" />
+      <Item value="SiteAdminUrl" priority="161" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:@System.Guid">
       <Item value="NewGuid`0" priority="26" />
@@ -262,7 +274,7 @@
     </ItemStatistics>
     <ItemStatistics item="Qualified:BL.Product">
       <Item value="ProductID" priority="53" />
-      <Item value="Name" priority="26" />
+      <Item value="Name" priority="53" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.Guid">
       <Item value="ToString`0" priority="80" />
@@ -303,6 +315,19 @@
     <ItemStatistics item="Qualified:BL.Modules.Products.ProductRefCategories">
       <Item value="GetProductRefCategoriesByCategoryId`0" priority="53" />
       <Item value="GetAllProductsRefCategories`0" priority="80" />
+    </ItemStatistics>
+    <ItemStatistics item="JavaScriptSpecificContext">
+      <Item value="Math" priority="20" />
+      <Item value="ScriptEngine" priority="10" />
+    </ItemStatistics>
+    <ItemStatistics item="CssCodeCompletionContext">
+      <Item value="display" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Transactions.TransactionScope">
+      <Item value="Complete`0" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Uri">
+      <Item value="AbsolutePath" priority="26" />
     </ItemStatistics>
   </CompletionStatisticsManager>
 </Configuration>

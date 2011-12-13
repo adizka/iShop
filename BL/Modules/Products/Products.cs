@@ -8,13 +8,13 @@ namespace BL.Modules.Products
 {
     public class Products
     {
-        public bool AddProduct(string name, string unit, float price, bool isVisible, int count, out Product product)
+        public bool AddProduct(string name, string unit, float price, bool isVisible, int count, out BL.Product product)
         {
             bool addProduct = false;
             using (ShopDataContext db = new ShopDataContext())
             {
-                product = new Product();
-                BL.Stock stock = new BL.Stock();
+                product = new BL.Product();
+                BL.Modules.Products.ProductProperies ppbl = new ProductProperies();
                 using (var ts = new TransactionScope())
                 {
                     product.ProductID = Guid.NewGuid();
@@ -25,18 +25,13 @@ namespace BL.Modules.Products
                     product.InStock = (count > 0);
                     product.IsVisible = isVisible;
                     product.ProductTypeID = (int)ProductType.Types.Real;
-
-                    stock.StockItemID = Guid.NewGuid();
-                    stock.Count = count;
-                    product.Stocks.Add(stock);
-
+                    product.Count = count;
                     db.Products.InsertOnSubmit(product);
                     db.SubmitChanges();
-
-                    ts.Complete();
+                    addProduct = ppbl.AddProductPhoto(BL.Site.DefaultPhotoPreview, BL.Site.DefaultPhotoOriginal, product.ProductID);
                     addProduct = true;
+                    ts.Complete();
                 }
-
             }
             return addProduct;
         }
@@ -60,9 +55,8 @@ namespace BL.Modules.Products
                             product.Price = price;
                             product.IsVisible = isVisible;
                             product.InStock = (count > 0);
+                            product.Count = count;
                             updateProduct = true;
-                            db.SubmitChanges();
-                            stock.Count = count;
                             db.SubmitChanges();
                             ts.Complete();
                         }

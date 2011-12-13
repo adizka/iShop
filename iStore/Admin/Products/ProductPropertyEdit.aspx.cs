@@ -18,15 +18,15 @@ namespace iStore.Admin.Products
             if(Product == null)
                 Response.Redirect("~/Admin");
         }
-        List<ProductsRefProperty> _ProductsRefProperies;
-        protected List<ProductsRefProperty> ProductsRefProperies
+        List<ProductProperty> _ProductsProperies;
+        protected List<ProductProperty> ProductsProperies
         {
             get
             {
-                if (_ProductsRefProperies == null)
-                    _ProductsRefProperies = Product.ProductsRefProperies.OrderBy(p => p.Sort).ToList();
+                if (_ProductsProperies == null)
+                    _ProductsProperies = Product.ProductProperties.OrderBy(p => p.Sort).ToList();
 
-                return _ProductsRefProperies;
+                return _ProductsProperies;
             }
         }
 
@@ -66,7 +66,7 @@ namespace iStore.Admin.Products
                         PropertyValue = Server.HtmlEncode(item.Val),
                         IsImportant = true
                     }
-                    );
+                );
             }
 
             ppbl.DeleteAllProperties(Product.ProductID);

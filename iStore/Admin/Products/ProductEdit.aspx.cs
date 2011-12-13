@@ -42,7 +42,6 @@ namespace iStore.Admin.Products
         #region SaveProduct
         protected void Save(object sender, EventArgs e)
         {
-            var a = fu.FileName;
             BL.Product product = currentProduct;
             string name = Server.HtmlEncode(txtName.Text);
             string unit = Server.HtmlEncode(txtUnit.Text);
@@ -93,18 +92,7 @@ namespace iStore.Admin.Products
                     return;
                 }
             }
-
-            var extension = System.IO.Path.GetExtension(fu.FileName);
-
-            if (fu.HasFile && fu.FileBytes.Length > (1 << 20) && (extension == ".jpg" || extension == ".png" || extension == ".gif"))
-            {
-                var path =  ConfigurationManager.AppSettings["ProductsFileStoragePath"]+Guid.NewGuid().ToString();
-                fu.SaveAs(path);
-                File.WriteAllBytes(path, fu.FileBytes);
-                prop.AddProperty(product.ProductID, "Picture",path, true);
-            }
-            var redirectURL = ((product == null) ? iStore.Site.SiteAdminUrl + "Products/" : Request.Url.AbsolutePath);
-            Response.Redirect(redirectURL);
+            Response.Redirect(iStore.Site.SiteAdminUrl + "Products/?cid=" + Request.QueryString["cid"]);
         }
         #endregion
 

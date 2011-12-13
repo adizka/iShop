@@ -226,14 +226,13 @@ function PackVals(name, val, sortInd) {
     </div>
 
     <div id="ProductPropertyContainer">
-        <%foreach (var item in ProductsRefProperies)
+        <%foreach (var item in ProductsProperies)
           { %>
         <div class="ProductPropertyItem">
-
                 <span class="MoveUp" style="cursor:pointer;color:Blue;">MoveUp</span>
                 <span class="MoveDown" style="cursor:pointer;color:Blue;">MoveDown</span>
-                <span class="PropertyName"><%=item.ProductProperty.PropertyName%></span>
-                <span class="PropertyValue"><%=item.ProductProperty.PropertyValue%></span>
+                <span class="PropertyName"><%=item.PropertyName %></span>
+                <span class="PropertyValue"><%=item.PropertyValue %></span>
                 <span class="SortIndex"><%=item.Sort.ToString()%></span>
                 <span class="DeleteButton" style="cursor:pointer;color:Blue;">Del</span>
                 <span class="EditButton" style="cursor:pointer;color:Blue;">Edit</span>
@@ -264,7 +263,6 @@ function PackVals(name, val, sortInd) {
     </p>
     <asp:HiddenField runat="server" ID="hf" ClientIDMode="Static" />
     <script type="text/javascript">
-
         AssignEvents();
         var val = "";
         $(".ProductPropertyItem").each(
@@ -272,7 +270,6 @@ function PackVals(name, val, sortInd) {
             val += PackVals($(".PropertyName", this).html(), $(".PropertyValue", this).html(), $(".SortIndex", this).html());
         });
         $("#hf").val(val);
-        
     </script>
     </ContentTemplate>
     </asp:UpdatePanel>

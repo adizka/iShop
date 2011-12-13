@@ -8,8 +8,9 @@
 </asp:Content>
 <asp:Content ID="Content2" runat="server" ContentPlaceHolderID="main">
     <iS:BreadCrumbs runat="server" ID="bc" SiteMode="false" EntityType="Products" /> 
-    Перейти: <asp:DropDownList runat="server" ID="ddlChildCategories" OnSelectedIndexChanged="RedirectToSelectedCategory"></asp:DropDownList>
-    <p>
+    <asp:DropDownList runat="server" ID="ddlChildCategories"></asp:DropDownList>
+    <asp:Button runat="server" ID="btnRedirect" OnClick="RedirectToSelectedCategory" Text="Перейти"/>
+    <p >
         <a href="<%= iStore.Site.SiteAdminUrl %>Products/ProductEdit.aspx">Добавить продукт</a>
         <a href="">Сортировать продукты в данной категории</a>
     </p>
@@ -18,9 +19,12 @@
     <div class="rep">
         <p class="repHeader">
             <span>Name</span>
+            <span>Count</span>
+            <span>Price</span>
             <span>Properies</span>
             <span>Edit</span>
             <span>Delete</span>
+            <span>Photo</span>
         </p>
         <% if (!PageProducts.Any())
            { %>
@@ -29,20 +33,29 @@
         <% int i = 0; string cssClass = string.Empty;
            foreach (var item in PageProducts)
                {
-               i++; cssClass = ((i % 2) == 1 ) ? "first" : "second";
+                    i++; cssClass = ((i % 2) == 1 ) ? "first" : "second";
         %>
         <p class="repBody <%= cssClass %>">
             <span>
                 <a href="<%= iStore.Site.SiteAdminUrl %>"><%= item.Product.Name %></a> 
             </span>
+            <span><%= item.Product.Count.ToString() %></span>
             <span>
-                <a href="<%= iStore.Site.SiteAdminUrl %>Products/ProductPropertyEdit.aspx?pid=<%= item.ProductID.ToString() %>">Properties</a>
+                <%= item.Product.Price.ToString() %>
             </span>
             <span>
-                <a href="<%= iStore.Site.SiteAdminUrl %>Products/ProductEdit.aspx?pid=<%= item.ProductID.ToString() %>">Edit</a>
+                <a href="<%= iStore.Site.SiteAdminUrl %>Products/ProductPropertyEdit.aspx?pid=<%= item.ProductID.ToString() %>&cid=<%= Request.QueryString["cid"] %>">Properties</a>
+            </span>
+            <span>
+                <a href="<%= iStore.Site.SiteAdminUrl %>Products/ProductEdit.aspx?pid=<%= item.ProductID.ToString() %>&cid=<%= Request.QueryString["cid"] %>">Edit</a>
             </span>
             <span>
                 <a href="<%= iStore.Site.SiteAdminUrl %>">Delete</a>
+            </span>
+            <span>
+                <a href="<%= iStore.Site.SiteAdminUrl %>Products/ProductsPhoto.aspx?pid=<%= item.ProductID.ToString() %>&cid=<%= Request.QueryString["cid"] %>">
+                    Edit Photo
+                </a>
             </span>
         </p>       
         <% } %>

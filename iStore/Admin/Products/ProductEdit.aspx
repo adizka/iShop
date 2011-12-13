@@ -13,6 +13,7 @@
     .ProductEdit_Right { width:300px; float:right; }
     .ProductEdit_Save {  padding-top:20px; } 
     .ProductEdit_AddCategory { clear:both; padding-top:20px;}
+    #SelectCategoties { display: none;}
 </style>
 <script type="text/javascript">
     $(document).ready(function () {
@@ -20,8 +21,8 @@
             maxWidth: 800,
             maxHeight: 600,
             fitToView: false,
-            width: '30%',
-            height: '30%',
+            width: '100%',
+            height: '100%',
             autoSize: false,
             closeClick: false,
             openEffect: 'none',
@@ -67,18 +68,13 @@
      <iS:ValidateErrors runat="server" ID="ve" Visible="false" />
      <div class="ProductEdit">
         <div class="ProductEdit_Left">
-             <p>
+            <p>
                 <asp:Label runat="server" ID="lblName" AssociatedControlID="txtName">Name</asp:Label>   
                 <asp:TextBox runat="server" ID="txtName" />
-             </p>
-             <p>
-                <asp:Label runat="server" ID="lblPhoto" AssociatedControlID="fu">Photo</asp:Label>   
-                <asp:FileUpload runat="server" ID="fu" />
             </p>
             <p>
                 <asp:Label runat="server" ID="lblUnit" AssociatedControlID="txtUnit">Unit</asp:Label> 
                 <asp:TextBox runat="server" ID="txtUnit" Width="30" />   
-
                 <asp:Label runat="server" ID="lblPrice" AssociatedControlID="txtPrice">Price</asp:Label>
                 <asp:TextBox runat="server" ID="txtPrice" Width="30" />
             </p>
@@ -94,8 +90,6 @@
             img
         </div>
     </div>
-    <script type="text/javascript">
-    </script>
     <div class="ProductEdit_AddCategory">
         <a class="various" href="#SelectCategoties">Add/Remove Categories</a>
         <div id="SelectCategoties">
@@ -120,7 +114,7 @@
                     </span>
                 </p>
             <% } %>
-            <a href="#">Выбрать</a>
+            <a href="#" >Выбрать</a>
         </div>
     </div>
     <p class="ProductEdit_Save">

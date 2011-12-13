@@ -16,20 +16,31 @@ namespace iStore.Admin.Products
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            pager.EntityCount = ProductsCount;
-            ddlChildCategories.DataSource = AllChildCategories; 
-            ddlChildCategories.DataValueField = "CategoryID";
-            ddlChildCategories.DataTextField = "Name";
-            ddlChildCategories.DataBind();
-            if (AllChildCategories.Count() > 0)
+            if (!IsPostBack)
             {
-                
+                if (AllChildCategories != null)
+                {
+                    pager.EntityCount = ProductsCount;
+                    ddlChildCategories.DataSource = AllChildCategories;
+                    ddlChildCategories.DataValueField = "CategoryID";
+                    ddlChildCategories.DataTextField = "Name";
+                    ddlChildCategories.DataBind();
+                    if (AllChildCategories.Count() < 1)
+                    {
+                        ddlChildCategories.Visible = false;
+                        btnRedirect.Visible = false;
+                    }
+                }
+                else
+                {
+                    ddlChildCategories.Visible = false;
+                    btnRedirect.Visible = false;
+                }
             }
         }
 
         protected  void RedirectToSelectedCategory(object sender, EventArgs e)
         {
-
             string hf = ddlChildCategories.SelectedItem.Value;
             Response.Redirect(iStore.Site.SiteAdminUrl + "Products/?cid=" + hf);
         }
@@ -68,11 +79,17 @@ namespace iStore.Admin.Products
 
         public IQueryable<BL.Category> AllChildCategories
         {
-            
             get
             {
-                IQueryable<BL.Category> categories = cbl.GetAllRootCatgories();
-                return categories;
+                if (CurrentCategoryId == null) return cbl.GetAllRootCatgories();
+                try
+                {
+                    return cbl.GetCategoriesByParentId(CurrentCategoryId);
+                }
+                catch
+                {
+                    return null;
+                }
             }
         }
 
