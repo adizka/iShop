@@ -226,14 +226,18 @@ function PackVals(name, val, sortInd) {
     </div>
 
     <div id="ProductPropertyContainer">
-        <%foreach (var item in ProductsProperies)
-          { %>
+        <%
+            int sortIndex = -1;
+            foreach (var item in ProductsProperies)
+              
+          {
+              sortIndex++; %>
         <div class="ProductPropertyItem">
                 <span class="MoveUp" style="cursor:pointer;color:Blue;">MoveUp</span>
                 <span class="MoveDown" style="cursor:pointer;color:Blue;">MoveDown</span>
                 <span class="PropertyName"><%=item.PropertyName %></span>
                 <span class="PropertyValue"><%=item.PropertyValue %></span>
-                <span class="SortIndex"><%=item.Sort.ToString()%></span>
+                <span class="SortIndex"><%=sortIndex.ToString()%></span>
                 <span class="DeleteButton" style="cursor:pointer;color:Blue;">Del</span>
                 <span class="EditButton" style="cursor:pointer;color:Blue;">Edit</span>
         </div>
