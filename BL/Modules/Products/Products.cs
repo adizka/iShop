@@ -8,7 +8,7 @@ namespace BL.Modules.Products
 {
     public class Products
     {
-        public bool AddProduct(string name, string unit, float price, bool isVisible, int count, out BL.Product product, Guid? categoryID)
+        public bool AddProduct(string name, string unit, float price, bool isVisible, int count, out BL.Product product)
         {
             bool addProduct = false;
             using (ShopDataContext db = new ShopDataContext())
@@ -26,16 +26,6 @@ namespace BL.Modules.Products
                     product.IsVisible = isVisible;
                     product.ProductTypeID = (int)ProductType.Types.Real;
                     product.Count = count;
-                    if (categoryID.HasValue)
-                    {
-                        var prodRefCat = new BL.ProductsRefCategory()
-                        {
-                            ID = Guid.NewGuid(),
-                            CategoryID = categoryID.Value,
-                            Sort = product.ProductsRefCategories.Count,
-                        };
-                        product.ProductsRefCategories.Add(prodRefCat);
-                    }
                     db.Products.InsertOnSubmit(product);
                     db.SubmitChanges();
                     addProduct = ppbl.AddProductPhoto(BL.Site.DefaultPhotoPreview, BL.Site.DefaultPhotoOriginal, product.ProductID);
@@ -153,6 +143,43 @@ namespace BL.Modules.Products
                 return products.AsQueryable();
             }
             return null;
+        }
+
+        public void CopyProperties(Guid fromID, Guid toID)
+        {
+            using (ShopDataContext db = new ShopDataContext())
+            {
+                var fromProd = db.Products.First(p => p.ProductID == fromID);
+                var toProd = db.Products.First(p => p.ProductID == toID);
+
+                List<BL.ProductProperty> newProps = new List<BL.ProductProperty>();
+                List<BL.ProductsRefProperty> newRefs = new List<ProductsRefProperty>();
+
+                foreach (var item in fromProd.ProductProperties.Where(p =>
+                        p.PropertyName != ProductPropertyConstants.ProductPhotoPreview
+                        && p.PropertyName != ProductPropertyConstants.ProductPhotoOriginal).OrderBy(pp => pp.Sort))
+                {
+                    var newProp = new ProductProperty()
+                    {
+                        IsImportant = item.IsImportant,
+                        PropertyID = Guid.NewGuid(),
+                        PropertyName = item.PropertyName,
+                        PropertyValue = item.PropertyValue,
+                        Sort = newProps.Count
+                    };
+                    newProps.Add(newProp);
+                    newRefs.Add(new ProductsRefProperty()
+                    {
+                        ID = Guid.NewGuid(),
+                        ProductPropertiesID = newProp.PropertyID,
+                        Sort = newRefs.Count
+                    });
+                }
+                toProd.ProductProperties.AddRange(newProps);
+                toProd.ProductsRefProperies.AddRange(newRefs);
+
+                db.SubmitChanges();
+            }
         }
 
         public IQueryable<Product> GetAllProducts()

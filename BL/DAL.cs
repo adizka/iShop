@@ -40,4 +40,9 @@ namespace BL
             return obj.ProductID.GetHashCode();
         }
     }
+    public class ProductPropertyConstants
+    {
+        public static string ProductPhotoPreview = "ProductPhotoPreview";
+        public static string ProductPhotoOriginal = "ProductPhotoOriginal";
+    }
 }

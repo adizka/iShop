@@ -31,6 +31,42 @@ namespace iStore.Admin.Products {
         protected global::System.Web.UI.UpdatePanel up;
         
         /// <summary>
+        /// cpddl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList cpddl;
+        
+        /// <summary>
+        /// AddPropertiesbtn1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button AddPropertiesbtn1;
+        
+        /// <summary>
+        /// apddl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList apddl;
+        
+        /// <summary>
+        /// AddPropertiesbtn2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button AddPropertiesbtn2;
+        
+        /// <summary>
         /// btnSave control.
         /// </summary>
         /// <remarks>
