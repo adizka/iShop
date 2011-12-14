@@ -100,12 +100,15 @@
     <Content Include="Admin\Styles\images\ui-icons_ffd27a_256x240.png" />
     <Content Include="Admin\Styles\images\ui-icons_ffffff_256x240.png" />
     <Content Include="Admin\Styles\jquery-ui-1.8.16.custom.css" />
+    <Content Include="Content\Products\Original\DefaultOriginal.png" />
+    <Content Include="Content\Products\Preview\DefaultPreview.png" />
     <Content Include="Images\bg-menu-main.png" />
     <Content Include="Images\bg_nav.gif" />
     <Content Include="Images\box.png" />
     <Content Include="Images\Default\DefaultOriginal.png" />
     <Content Include="Images\Default\DefaultPreview.png" />
     <Content Include="Images\h2_trigger_a.gif" />
+    <Content Include="Images\hint.png" />
     <Content Include="Modules\Controls\BreadCrumbs\BreadCrumbs.ascx" />
     <Content Include="Modules\Controls\Pager\Pager.ascx" />
     <Content Include="Modules\Controls\Validators\ValidateErrors.ascx" />
@@ -825,7 +828,6 @@
   <ItemGroup>
     <Folder Include="Admin\Scripts\" />
     <Folder Include="App_Data\" />
-    <Folder Include="Content\Products\" />
     <Folder Include="News\" />
   </ItemGroup>
   <ItemGroup>

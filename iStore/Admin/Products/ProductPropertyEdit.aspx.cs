@@ -16,7 +16,7 @@ namespace iStore.Admin.Products
         protected void Page_Load(object sender, EventArgs e)
         {
             if(Product == null)
-                Response.Redirect("~/Admin");
+                Response.Redirect(iStore.Site.SiteAdminUrl + "Products/");
         }
         List<ProductProperty> _ProductsProperies;
         protected List<ProductProperty> ProductsProperies
@@ -24,7 +24,7 @@ namespace iStore.Admin.Products
             get
             {
                 if (_ProductsProperies == null)
-                    _ProductsProperies = Product.ProductProperties.OrderBy(p => p.Sort).ToList();
+                    _ProductsProperies = Product.ProductProperties.Where(p => p.PropertyName != "ProductPhotoPreview" && p.PropertyName != "ProductPhotoOriginal").OrderBy(p => p.Sort).ToList();
 
                 return _ProductsProperies;
             }

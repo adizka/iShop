@@ -16,8 +16,7 @@ namespace BL.Modules.Products
                 product = new BL.Product();
                 BL.Modules.Products.ProductProperies ppbl = new ProductProperies();
 
-                using (var ts = new TransactionScope())
-                {
+               
                     product.ProductID = Guid.NewGuid();
                     product.Name = name;
                     product.CreateDate = DateTime.Now;
@@ -41,8 +40,7 @@ namespace BL.Modules.Products
                     db.SubmitChanges();
                     addProduct = ppbl.AddProductPhoto(BL.Site.DefaultPhotoPreview, BL.Site.DefaultPhotoOriginal, product.ProductID);
                     addProduct = true;
-                    ts.Complete();
-                }
+                
             }
             return addProduct;
         }

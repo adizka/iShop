@@ -7,7 +7,7 @@ namespace BL
 {
     public class Site
     {
-        public static string DefaultPhotoPreview = "Images/Default/DefaultPreview.png";
-        public static string DefaultPhotoOriginal ="Images/Default/DefaultOriginal.png";
+        public static string DefaultPhotoPreview = "DefaultPreview.png";
+        public static string DefaultPhotoOriginal ="DefaultOriginal.png";
     }
 }

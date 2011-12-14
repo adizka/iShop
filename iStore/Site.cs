@@ -10,7 +10,11 @@ namespace iStore
         public static string SiteUrl = "http://localhost:36138/";
         public static string ProjectName = "Marvel Worldwide LTD";
         public static string SiteAdminUrl = "http://localhost:36138/Admin/";
-        public static string DefaultPhotoPreview = SiteUrl + "Images/Default/DefaultPreview.png";
-        public static string DefaultPhotoOriginal = SiteUrl + "Images/Default/DefaultOriginal.png";
+
+        public static string PreUrlProductPreviewImage = SiteUrl + "Content/Products/Preview/";
+        public static string PreUrlProductOriginalImage = SiteUrl + "Content/Products/Original/";
+        
+        public static string FileUploadProductPhotoOriginal = "C:\\Work\\iShop\\iStore\\Content\\Products\\Original\\";
+        public static string FileUploadProductPhotoPreview = "C:\\Work\\iShop\\iStore\\Content\\Products\\Preview\\";
     }
 }

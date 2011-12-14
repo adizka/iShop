@@ -161,5 +161,33 @@ namespace BL.Modules.Products
             }
             return string.Empty;
         }
+
+        public bool UpdateProductPhotoPreview(string url, Guid productId)
+        {
+            bool allRight = false;
+            ShopDataContext db = new ShopDataContext();
+            BL.ProductProperty productProperty = db.ProductProperties.Where(p => p.ProductID == productId && p.PropertyName == ProductPhoto.ProductPhotoPreview.ToString()).FirstOrDefault();
+            if (productProperty != null)
+            {
+                productProperty.PropertyValue = url;
+                db.SubmitChanges();
+                allRight = true;
+            }
+            return allRight;
+        }
+
+        public bool UpdateProductPhotoOriginal(string url, Guid productId)
+        {
+            bool allRight = false;
+            ShopDataContext db = new ShopDataContext();
+            BL.ProductProperty productProperty = db.ProductProperties.Where(p => p.ProductID == productId && p.PropertyName == ProductPhoto.ProductPhotoOriginal.ToString()).FirstOrDefault();
+            if (productProperty != null)
+            {
+                productProperty.PropertyValue = url;
+                db.SubmitChanges();
+                allRight = true;
+            }
+            return allRight;
+        }
     }
 }

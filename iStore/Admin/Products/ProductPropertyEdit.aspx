@@ -207,7 +207,10 @@ function PackVals(name, val, sortInd) {
     }
 
 </script>
-
+<p>
+    <a href="<%= iStore.Site.SiteAdminUrl %>Products/?cid=<%= Request.QueryString["cid"] %>">Вернуться к списку товаров</a>
+</p>
+<br />
 
 <div style="font-size:30px;text-align:center;">
 <%=Product.Name %>
@@ -277,4 +280,8 @@ function PackVals(name, val, sortInd) {
     </script>
     </ContentTemplate>
     </asp:UpdatePanel>
+<br />
+<p>
+    <a href="<%= iStore.Site.SiteAdminUrl %>Products/?cid=<%= Request.QueryString["cid"] %>">Вернуться к списку товаров</a>
+</p>
 </asp:Content>

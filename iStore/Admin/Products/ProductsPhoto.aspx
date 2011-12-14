@@ -9,12 +9,10 @@
 <script type="text/javascript">
     $(document).ready(function () {
         $(".various").fancybox({
-            maxWidth: 800,
-            maxHeight: 600,
             fitToView: false,
-            width: '100%',
-            height: '100%',
-            autoSize: false,
+            width: '90%',
+            height: '90%',
+            autoSize: true,
             closeClick: false,
             openEffect: 'none',
             closeEffect: 'none'
@@ -24,18 +22,48 @@
 </asp:Content>
 <asp:Content ID="Content2" runat="server" ContentPlaceHolderID="main">
 <div>    
+    <p>
+        <a href="<%= iStore.Site.SiteAdminUrl %>Products/?cid=<%= Request.QueryString["cid"] %>">Вернуться к списку товаров</a>
+    </p>
+    <br />
     <iS:ValidateErrors runat="server" ID="ve" />
     <br />
     <p>
         Редактирование фотографии для продукта <span><b><%= CuurentProduct.Name %></b></span>
     </p>
     <p>
-        <img src="<%= CurrentProductPreview %>" alt="<%= CuurentProduct.Name %>" />
+        <img src="<%= CurrentProductPreview %>" alt="<%= CuurentProduct.Name %>" style="max-height: 200px; max-width:200px;" />
     </p>
     <p>
-         <a class="various" href="#OriginalImage">Original</a>
+         <a class="various" href="#OriginalImage">Просмотреть полный размер</a>
          <img id="OriginalImage" src="<%= CurrentProductOriginal %>" alt="<%= CuurentProduct.Name %>" style="display: none;" />
     </p>
+    <p>
+        Изменить изображение            
+    </p>
+    <br />
+    <p>
+        <asp:Label runat="server" id="lblPreview" AssociatedControlID="upPreview">Изменение Preview</asp:Label>
+        <asp:FileUpload runat="server" ID="upPreview" /><br />
+        <asp:Button runat="server" ID="btnSavePreview" OnClick="SavePreview" Text="Загрузить Preview" />
+    </p>
+    <p>
+        <img src="<%= iStore.Site.SiteUrl %>Images/hint.png" alt="Подсказка"   />
+    </p>
+    <br /><br />
+    <p>
+        <asp:Label runat="server" ID="lblOriginal">Изменение Original</asp:Label>
+        <asp:FileUpload runat="server" ID="upOriginal" /><br />
+        <asp:Button runat="server" ID="btnSaveOriginal" OnClick="SaveOriginal" Text="Загрузить Original" />
+    </p>
+    <p> 
+        <img src="<%= iStore.Site.SiteUrl %>Images/hint.png" alt="Подсказка" />    
+    </p>
+    <br />
+     <p>
+        <a href="<%= iStore.Site.SiteAdminUrl %>Products/?cid=<%= Request.QueryString["cid"] %>">Вернуться к списку товаров</a>
+    </p>
+    <br />
 </div>
 
 </asp:Content>
