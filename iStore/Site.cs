@@ -8,7 +8,7 @@ namespace iStore
     public class Site
     {
         public static string SiteUrl = "http://localhost:36138/";
-        public static string ProjectName = "Marvel Worldwide LTD";
+        public static string ProjectName = "Marvel Worldwide";
         public static string SiteAdminUrl = "http://localhost:36138/Admin/";
 
         public static string PreUrlProductPreviewImage = SiteUrl + "Content/Products/Preview/";

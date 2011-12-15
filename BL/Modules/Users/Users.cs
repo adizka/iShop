@@ -31,6 +31,7 @@ namespace BL.Modules.Users
             Guid ConfirmationId = Guid.NewGuid();
             using (var ts = new TransactionScope())
             {
+                user.UserID = Guid.NewGuid();
                 user.Login = login;
                 user.Email = email;
                 user.Password = md5.getMd5Hash(password);
@@ -99,13 +100,13 @@ namespace BL.Modules.Users
 
         public bool isEmailInDB(string email)
         {
-            BL.User user = db.Users.Where(u => u.Email == email).FirstOrDefault();
+            BL.User user = db.Users.Where(u => u.Email.ToUpper() == email.ToUpper()).FirstOrDefault();
             return (user != null);
         }
             
         public bool isLoginInDB(string login)
         {
-            BL.User user = db.Users.Where(u => u.Login == login).FirstOrDefault();
+            BL.User user = db.Users.Where(u => u.Login.ToUpper() == login.ToUpper()).FirstOrDefault();
             return (user != null);
         }
 
@@ -181,7 +182,7 @@ namespace BL.Modules.Users
         public bool CheckPasswordByLogin(string login, string password)
         {
             BL.Helpers.MD5CryptoServiceProvider md5 = new Helpers.MD5CryptoServiceProvider();
-            BL.User user = db.Users.Where(u => (u.Password == md5.getMd5Hash(password)) && (u.Email == login || u.Login == login) && u.IsActive).FirstOrDefault();
+            BL.User user = db.Users.Where(u => (u.Password == md5.getMd5Hash(password)) && (u.Email.ToUpper() == login.ToUpper() || u.Login.ToUpper() == login.ToUpper()) && u.IsActive).FirstOrDefault();
             return (user == null);
         }
 

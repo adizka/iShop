@@ -1,28 +1,41 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="iStore.SiteMaster" %>
 
+<%@ Register tagPrefix="iS" tagName="Header" src="Design/Header.ascx" %>
+<%@ Register tagPrefix="iS" tagName="Footer" src="Design/Footer.ascx" %>
+<%@ Register tagPrefix="iS" tagName="MainPageHeader" src="Design/MainPageHeader.ascx" %>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head runat="server">
     <title></title>
     <link href="Styles/Site.css" rel="stylesheet" type="text/css" />
     <link href="Styles/Controls.css" rel="Stylesheet" type="text/css" />
+    <link rel="Stylesheet" type="text/css" href="Scripts/jquery.fancybox-2.0/jquery.fancybox.css" media="screen" />
     <script type="text/javascript" src="Scripts/jquery.min.js"></script>
     <asp:ContentPlaceHolder ID="HeadContent" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
-    <form id="Form1" runat="server">
-        <%--Header--%>
-        <div class="header"></div>
-        <%--End Header--%>
+    <form id="MainPageForm" runat="server">
         
-        <%--Main--%>
-        <asp:ContentPlaceHolder ID="MainContent" runat="server"/>
-        <%--End Main--%>
-    
-        <%--Footer--%>
-        <div class="footer"></div>
-        <%--End Footer--%>
+        <div class="Header">
+            <div class="MarginBoth">
+                <iS:Header runat="server" ID="header" />
+                <iS:MainPageHeader runat="server" ID="mainPageHeader" />
+            </div>
+        </div>
+        
+        <div class="Center">
+            <div class="MarginBoth">
+                <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+            </div>
+        </div>
+
+        <div class="Footer">
+            <div class="MarginBoth">
+                <iS:Footer runat="server" ID="footer" />
+            </div>
+        </div>
 
     </form>
 </body>
