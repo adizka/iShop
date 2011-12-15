@@ -1,0 +1,12 @@
+F:\Projects\MarvelShop\iS\BL\bin\Debug\BL.dll.config
+F:\Projects\MarvelShop\iS\BL\bin\Debug\BL.dll
+F:\Projects\MarvelShop\iS\BL\bin\Debug\BL.pdb
+F:\Projects\MarvelShop\iS\BL\obj\Debug\ResolveAssemblyReference.cache
+F:\Projects\MarvelShop\iS\BL\obj\Debug\BL.dll
+F:\Projects\MarvelShop\iS\BL\obj\Debug\BL.pdb
+C:\Work\iShop\BL\bin\Debug\BL.dll.config
+C:\Work\iShop\BL\bin\Debug\BL.dll
+C:\Work\iShop\BL\bin\Debug\BL.pdb
+C:\Work\iShop\BL\obj\Debug\ResolveAssemblyReference.cache
+C:\Work\iShop\BL\obj\Debug\BL.dll
+C:\Work\iShop\BL\obj\Debug\BL.pdb
