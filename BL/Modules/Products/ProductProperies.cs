@@ -48,6 +48,7 @@ namespace BL.Modules.Products
                 BL.Product prod = db.Products.FirstOrDefault(p => p.ProductID == productID);
                 if (prod != null)
                 {
+                    int index = 0;
                     foreach (var item in props)
                     {
                         BL.ProductProperty pr = new ProductProperty()
@@ -59,6 +60,16 @@ namespace BL.Modules.Products
                                                         PropertyID = Guid.NewGuid()
                                                     };
                         prod.ProductProperties.Add(pr);
+                        BL.ProductsRefProperty pref = new ProductsRefProperty()
+                        {
+                            ProductPropertiesID = pr.PropertyID,
+                            Sort = index,
+                            ID = Guid.NewGuid()
+                        };
+                        prod.ProductsRefProperies.Add(pref);
+
+
+                        index++;
                     }
                     db.SubmitChanges();
                     allRight = true;
@@ -88,6 +99,7 @@ namespace BL.Modules.Products
             {
                 var prod = db.Products.FirstOrDefault(p => p.ProductID == propertyID);
                 if (prod == null) return;
+                db.ProductsRefProperies.DeleteAllOnSubmit(db.ProductsRefProperies);
                 db.ProductProperties.DeleteAllOnSubmit(prod.ProductProperties);
                 db.SubmitChanges();
             }

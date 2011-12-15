@@ -55,13 +55,15 @@ namespace iStore.Admin.Products
 
             var categoriesIDs = hf.Value.Split(new string[] { "!~!" }, StringSplitOptions.RemoveEmptyEntries).Select(id => new Guid(id)).ToList();
 
-            Guid? CategoryID = null ;
-            if (currentCategory != null)
-                CategoryID = currentCategory.CategoryID;
+            if (categoriesIDs.Count == 0)
+            {
+                ve.SetErrors("Товар должен принадлежать какой-либо категории");
+                return;
+            }
 
             if (product == null)
             {
-                bool isAdd = pbl.AddProduct(name, unit, price, chkVisible.Checked, count, out product, CategoryID);
+                bool isAdd = pbl.AddProduct(name, unit, price, chkVisible.Checked, count, out product);
                 if (isAdd)
                 {
                     prcbl.AddCategoriesToProduct(categoriesIDs, product.ProductID);

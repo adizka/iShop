@@ -82,6 +82,7 @@
     <Content Include="Admin\Products\ProductPropertyEdit.aspx" />
     <Content Include="Admin\Products\ProductSort.aspx" />
     <Content Include="Admin\Products\ProductsPhoto.aspx" />
+    <Content Include="Admin\Scripts\ProdPropertyEdit.js" />
     <Content Include="Admin\Search.aspx" />
     <Content Include="Admin\SearchControl.ascx" />
     <Content Include="Admin\Styles\Admin.css" />
@@ -927,7 +928,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Admin\Scripts\" />
     <Folder Include="App_Data\" />
     <Folder Include="News\" />
   </ItemGroup>

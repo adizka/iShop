@@ -13,10 +13,27 @@ namespace iStore.Admin.Products
     {
         BL.Modules.Products.Products pbl = new BL.Modules.Products.Products();
         BL.Modules.Products.ProductProperies ppbl = new BL.Modules.Products.ProductProperies();
+        BL.Modules.Categories.Categories cbl = new BL.Modules.Categories.Categories();
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(Product == null)
+            if (Product == null)
                 Response.Redirect(iStore.Site.SiteAdminUrl + "Products/");
+
+            if (!IsPostBack)
+            {
+                var relatedProds = Product.ProductsRefCategories.SelectMany(c => c.Category.ProductsRefCategories.Select(r => r.Product)).
+                Distinct().Where(p => p.ProductID != Product.ProductID).OrderBy(p => p.Name);
+
+                cpddl.DataSource = relatedProds;
+                cpddl.DataTextField = "Name";
+                cpddl.DataValueField = "ProductID";
+                cpddl.DataBind();
+                var allProds = pbl.GetAllProducts().ToList();
+                apddl.DataSource = allProds.Where(p => p.ProductID != Product.ProductID).OrderBy(p => p.Name);
+                apddl.DataTextField = "Name";
+                apddl.DataValueField = "ProductID";
+                apddl.DataBind();
+            }
         }
         List<ProductProperty> _ProductsProperies;
         protected List<ProductProperty> ProductsProperies
@@ -24,7 +41,9 @@ namespace iStore.Admin.Products
             get
             {
                 if (_ProductsProperies == null)
-                    _ProductsProperies = Product.ProductProperties.Where(p => p.PropertyName != "ProductPhotoPreview" && p.PropertyName != "ProductPhotoOriginal").OrderBy(p => p.Sort).ToList();
+                    _ProductsProperies = Product.ProductProperties.Where(p =>
+                        p.PropertyName != ProductPropertyConstants.ProductPhotoPreview
+                        && p.PropertyName != ProductPropertyConstants.ProductPhotoOriginal).OrderBy(p => p.Sort).ToList();
 
                 return _ProductsProperies;
             }
@@ -46,7 +65,16 @@ namespace iStore.Admin.Products
             }
         }
 
+        protected void Copy(object obj, EventArgs args)
+        {
+            Guid prodID = (obj.Equals(AddPropertiesbtn1)) ?
+                new Guid(cpddl.SelectedValue)
+                : new Guid(apddl.SelectedValue);
 
+
+            pbl.CopyProperties(prodID, Product.ProductID);
+
+        }
         protected void Save(object obj, EventArgs args)
         {
 
