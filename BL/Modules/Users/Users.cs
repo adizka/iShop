@@ -37,7 +37,7 @@ namespace BL.Modules.Users
                 user.Password = md5.getMd5Hash(password);
                 user.IsActive = false;
                 user.ConfirmationID = ConfirmationId;
-                user.UserRoleID = userRoles.Admin;
+                user.UserRoleID = userRoles.User;
                 user.UserRightID = userRights.Read;
                 db.Users.InsertOnSubmit(user);
                 db.SubmitChanges();

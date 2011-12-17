@@ -101,6 +101,7 @@
     <Content Include="Admin\Styles\images\ui-icons_ffd27a_256x240.png" />
     <Content Include="Admin\Styles\images\ui-icons_ffffff_256x240.png" />
     <Content Include="Admin\Styles\jquery-ui-1.8.16.custom.css" />
+    <Content Include="Categories\Default.aspx" />
     <Content Include="Contacts\Default.aspx" />
     <Content Include="Content\Products\Original\DefaultOriginal.png" />
     <Content Include="Content\Products\Preview\DefaultPreview.png" />
@@ -109,6 +110,7 @@
     <Content Include="Design\Footer.ascx" />
     <Content Include="Design\Header.ascx" />
     <Content Include="Design\MainPageHeader.ascx" />
+    <Content Include="Design\Menu.ascx" />
     <Content Include="Images\bg-menu-main.png" />
     <Content Include="Images\bg_nav.gif" />
     <Content Include="Images\box.png" />
@@ -785,6 +787,13 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Shops.ru-RU.resx</DependentUpon>
     </Compile>
+    <Compile Include="Categories\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Categories\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Contacts\Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -826,6 +835,13 @@
     </Compile>
     <Compile Include="Design\MainPageHeader.ascx.designer.cs">
       <DependentUpon>MainPageHeader.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Design\Menu.ascx.cs">
+      <DependentUpon>Menu.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Design\Menu.ascx.designer.cs">
+      <DependentUpon>Menu.ascx</DependentUpon>
     </Compile>
     <Compile Include="Modules\Controls\BreadCrumbs\BreadCrumbs.ascx.cs">
       <DependentUpon>BreadCrumbs.ascx</DependentUpon>
@@ -930,6 +946,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="News\" />
+    <Folder Include="Products\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Site.Master" />
