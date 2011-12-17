@@ -1,16 +1,25 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="iStore.Pages.Default" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" MasterPageFile="~/Site.Master" Inherits="iStore.Pages.Default" %>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
-    <div>
-    
+<asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="HeadContent">
+</asp:Content>
+<asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainContent">
+    <%if (Page != null)
+      { %>
+    <div class="PageContent">
+        <%=Page.PageBody%>
     </div>
-    </form>
-</body>
-</html>
+    <div class="PageKeyWords">
+        <%foreach (var item in Page.Keywords.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries))
+          {
+              %>
+              <a><%=item%></a>
+              <%
+
+          } %>
+    </div>
+    <%}
+      else
+      {%>
+      <b> Такая страница отсутствует на сайте.</b>
+    <%} %>
+</asp:Content>

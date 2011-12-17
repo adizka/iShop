@@ -25,6 +25,7 @@
             <span>Edit</span>
             <span>Delete</span>
             <span>Photo</span>
+            <span>Description</span>
         </p>
         <% if (!PageProducts.Any())
            { %>
@@ -55,6 +56,11 @@
             <span>
                 <a href="<%= iStore.Site.SiteAdminUrl %>Products/ProductsPhoto.aspx?pid=<%= item.ProductID.ToString() %>&cid=<%= Request.QueryString["cid"] %>">
                     Edit Photo
+                </a>
+            </span>
+            <span>
+                <a href="<%= iStore.Site.SiteAdminUrl %>Products/ProductDescriptionEdit.aspx?pid=<%= item.ProductID.ToString() %>&cid=<%= Request.QueryString["cid"] %>">
+                    Edit Description
                 </a>
             </span>
         </p>       

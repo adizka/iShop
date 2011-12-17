@@ -201,5 +201,35 @@ namespace BL.Modules.Products
             }
             return allRight;
         }
+
+        public void AddProductProperty(string propertyName, string propertyValue, Guid productID)
+        {
+
+            using (ShopDataContext db = new ShopDataContext())
+            {
+                BL.Product prod = db.Products.FirstOrDefault(p => p.ProductID == productID);
+                if (prod == null)
+                    return;
+
+                BL.ProductsRefProperty refProp = new ProductsRefProperty()
+                {
+                    ID = Guid.NewGuid(),
+                    Sort = prod.ProductsRefProperies.Count,
+                    ProductID = productID
+                };
+
+                BL.ProductProperty prop = new ProductProperty()
+                {
+                    IsImportant = true,
+                    PropertyID = Guid.NewGuid(),
+                    PropertyName = BL.ProductPropertyConstants.ProductDescription,
+                    PropertyValue = propertyValue,
+                    Sort = prod.ProductProperties.Count,
+                };
+                prop.ProductsRefProperies.Add(refProp);
+                prod.ProductProperties.Add(prop);
+                db.SubmitChanges();
+            }
+        }
     }
 }

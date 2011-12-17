@@ -13,5 +13,16 @@ namespace iStore.Pages
         {
 
         }
+
+        BL.Page _page;
+        protected BL.Page Page
+        {
+            get
+            {
+                if (_page == null)
+                    _page = BL.Modules.Pages.Pages.GetPageByName(Request.QueryString["name"]);
+                return _page;
+            }
+        }
     }
 }
