@@ -49,6 +49,15 @@ namespace iStore {
         protected global::iStore.Design.MainPageHeader mainPageHeader;
         
         /// <summary>
+        /// menu control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::iStore.Design.Menu menu;
+        
+        /// <summary>
         /// MainContent control.
         /// </summary>
         /// <remarks>

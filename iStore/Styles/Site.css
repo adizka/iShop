@@ -17,15 +17,21 @@ body { margin: 0;padding: 0; }
 .Header_ItemsBottom {  }
 .Header_Login { display: none;background-color: #fff;color: #000; padding: 10px; }
 
-/* Registration */
-.Registration {   }
-.Registration_Info {   }
-
 /* Center */
 .Center { background-color: grey; }
 
 /* Footer */
 .Footer { background-color: #000; color: #fff; }
+
+/* Registration */
+.Registration {   }
+.Registration_Info {   }
+
+/* Menu */
+.item { }
+.pItem { }
+.wpItem { }
+.hover{ display: none; }
 
 /* Extertnal Controls */
 .apple_overlay { display:none; background-image:url('white.png'); width:250px; padding:35px; }
