@@ -17,6 +17,17 @@ body { margin: 0;padding: 0; }
 .Header_ItemsBottom {  }
 .Header_Login { display: none;background-color: #fff;color: #000; padding: 10px; }
 
+/* Menu */
+.Menu { width: 200px;position: relative;text-align: left;background-color: cornsilk; }
+.MenuItemSecond{ display:none; position:absolute; z-index:2; left:200px; top:1px; width:200px; background-color:bisque; }
+.MenuItemThird { display:none; position:absolute; z-index:3; left:200px; top:1px; width:200px; background-color:azure; }
+.Hover { display: block; }
+
+/* MainPageHeader */
+.MainPageHeader { width: 980px; overflow:hidden;color: black; }
+.MainPageHeader_Left { width: 200px; float:left; }
+/* .MainPageHeader_Right { width: 780px; } */
+
 /* Center */
 .Center { background-color: grey; }
 
@@ -26,12 +37,6 @@ body { margin: 0;padding: 0; }
 /* Registration */
 .Registration {   }
 .Registration_Info {   }
-
-/* Menu */
-.item { }
-.pItem { }
-.wpItem { }
-.hover{ display: none; }
 
 /* Extertnal Controls */
 .apple_overlay { display:none; background-image:url('white.png'); width:250px; padding:35px; }

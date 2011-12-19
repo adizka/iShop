@@ -1,14 +1,6 @@
 <Configuration>
   <RecentFiles>
     <RecentFiles>
-      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Pages/f:Default.aspx" caret="0" fromTop="0" />
-      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Admin/d:Categories/f:CategoryEdit.aspx" caret="989" fromTop="17" />
-      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Search/f:Search.ascx.cs" caret="511" fromTop="19" />
-      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:NewDeals/f:Default.aspx" caret="0" fromTop="0" />
-      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Delivery/f:Default.aspx" caret="0" fromTop="0" />
-      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Admin/d:Login/f:Default.aspx" caret="768" fromTop="12" />
-      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Admin/f:Default.aspx" caret="0" fromTop="0" />
-      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Design/f:AutorizationControl.ascx" caret="411" fromTop="8" />
       <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:NewDeals/f:Default.aspx.cs" caret="237" fromTop="10" />
       <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Contacts/f:Default.aspx.cs" caret="172" fromTop="7" />
       <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/f:Site.cs" caret="279" fromTop="11" />
@@ -18,51 +10,59 @@
       <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Users/f:Register.aspx.cs" caret="1300" fromTop="16" />
       <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Users/f:Register.aspx" caret="1021" fromTop="0" />
       <File id="F811AF93-8440-4DC9-A7AA-BCA306A0B8B2/d:Modules/d:Users/f:Users.cs" caret="1670" fromTop="4" />
-      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/f:Default.aspx" caret="0" fromTop="0" />
       <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/f:Site.Master.cs" caret="323" fromTop="14" />
       <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Users/f:ForgotPassword.aspx" caret="0" fromTop="0" />
       <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Users/f:Profile.aspx.cs" caret="0" fromTop="0" />
       <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Categories/f:Default.aspx" caret="0" fromTop="0" />
-      <File id="F811AF93-8440-4DC9-A7AA-BCA306A0B8B2/d:Modules/d:Users/f:UsersSessions.cs" caret="520" fromTop="17" />
-      <File id="F811AF93-8440-4DC9-A7AA-BCA306A0B8B2/d:Properties/f:Settings.Designer.cs" caret="1001" fromTop="11" />
-      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/f:Site.Master" caret="1502" fromTop="12" />
       <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Search/f:Default.aspx" caret="0" fromTop="0" />
-      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Search/f:Search.ascx" caret="115" fromTop="2" />
-      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Design/f:Menu.ascx.cs" caret="638" fromTop="18" />
-      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Styles/f:Site.css" caret="932" fromTop="29" />
-      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Design/f:Menu.ascx" caret="1752" fromTop="0" />
+      <File id="F811AF93-8440-4DC9-A7AA-BCA306A0B8B2/d:Modules/d:Users/f:UsersSessions.cs" caret="241" fromTop="8" />
+      <File id="F811AF93-8440-4DC9-A7AA-BCA306A0B8B2/d:Properties/f:Settings.Designer.cs" caret="940" fromTop="12" />
+      <File id="F811AF93-8440-4DC9-A7AA-BCA306A0B8B2/f:Shop.designer.cs" caret="4498" fromTop="15" />
+      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Search/f:Search.ascx" caret="501" fromTop="12" />
+      <File id="F811AF93-8440-4DC9-A7AA-BCA306A0B8B2/f:Site.cs" caret="296" fromTop="12" />
+      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Pages/f:Default.aspx" caret="218" fromTop="4" />
+      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/f:Default.aspx" caret="0" fromTop="0" />
+      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Design/f:Menu.ascx.cs" caret="1111" fromTop="21" />
+      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Design/f:Menu.ascx" caret="1825" fromTop="19" />
+      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/f:Site.Master" caret="1072" fromTop="2" />
+      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Styles/f:Site.css" caret="1192" fromTop="14" />
+      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Design/f:MainPageHeader.ascx" caret="455" fromTop="9" />
+      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Scripts/f:Menu.js" caret="874" fromTop="31" />
+      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Design/f:Menu2.ascx.cs" caret="946" fromTop="33" />
+      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Design/f:Menu2.ascx" caret="2237" fromTop="23" />
+      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Design/f:MostPopularProducts.ascx" caret="732" fromTop="7" />
     </RecentFiles>
     <RecentEdits>
-      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Users/f:Register.aspx.cs" caret="2314" fromTop="15" />
-      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Users/f:Register.aspx.cs" caret="2069" fromTop="8" />
-      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Users/f:Register.aspx.cs" caret="3505" fromTop="29" />
-      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Users/f:Register.aspx.cs" caret="2997" fromTop="13" />
-      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Users/f:Register.aspx.cs" caret="3243" fromTop="19" />
-      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Users/f:Register.aspx.cs" caret="3490" fromTop="25" />
-      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Users/f:Register.aspx.cs" caret="917" fromTop="7" />
-      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Users/f:Register.aspx.cs" caret="1324" fromTop="16" />
-      <File id="F811AF93-8440-4DC9-A7AA-BCA306A0B8B2/d:Modules/d:Users/f:Users.cs" caret="1203" fromTop="14" />
-      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Design/f:Menu.ascx.cs" caret="334" fromTop="10" />
-      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/f:Site.Master" caret="413" fromTop="5" />
-      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/f:Site.Master" caret="2732" fromTop="6" />
-      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/f:Site.Master" caret="1502" fromTop="12" />
-      <File id="F811AF93-8440-4DC9-A7AA-BCA306A0B8B2/d:Properties/f:Settings.Designer.cs" caret="1438" fromTop="19" />
-      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Categories/f:Default.aspx" caret="0" fromTop="0" />
-      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Design/f:Menu.ascx" caret="1541" fromTop="21" />
-      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Design/f:Menu.ascx" caret="2526" fromTop="25" />
-      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Design/f:Menu.ascx" caret="2084" fromTop="18" />
-      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Styles/f:Site.css" caret="732" fromTop="18" />
-      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Design/f:Menu.ascx" caret="765" fromTop="21" />
-      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Styles/f:Site.css" caret="991" fromTop="15" />
-      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Design/f:Menu.ascx" caret="157" fromTop="7" />
-      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Design/f:Menu.ascx" caret="618" fromTop="12" />
-      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Design/f:Menu.ascx" caret="1444" fromTop="15" />
-      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Design/f:Menu.ascx" caret="1276" fromTop="10" />
-      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Design/f:Menu.ascx" caret="2701" fromTop="16" />
-      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Design/f:Menu.ascx.cs" caret="623" fromTop="21" />
-      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Design/f:Menu.ascx.cs" caret="872" fromTop="28" />
-      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Design/f:Menu.ascx" caret="466" fromTop="8" />
-      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Design/f:Menu.ascx" caret="1009" fromTop="18" />
+      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Design/f:Menu2.ascx" caret="190" fromTop="21" />
+      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Design/f:Menu2.ascx" caret="1422" fromTop="22" />
+      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Design/f:Menu2.ascx" caret="2401" fromTop="22" />
+      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Design/f:Menu2.ascx" caret="387" fromTop="9" />
+      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Design/f:Menu2.ascx" caret="2418" fromTop="26" />
+      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Design/f:Menu2.ascx" caret="2361" fromTop="21" />
+      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Design/f:Menu2.ascx" caret="190" fromTop="30" />
+      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Design/f:Menu2.ascx" caret="190" fromTop="14" />
+      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Design/f:Menu2.ascx" caret="190" fromTop="22" />
+      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Design/f:Menu2.ascx" caret="190" fromTop="6" />
+      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Design/f:Menu2.ascx" caret="190" fromTop="17" />
+      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Design/f:Menu2.ascx" caret="190" fromTop="18" />
+      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Design/f:Menu2.ascx" caret="2418" fromTop="15" />
+      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Design/f:Menu2.ascx" caret="190" fromTop="4" />
+      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Design/f:Menu2.ascx" caret="1744" fromTop="13" />
+      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Design/f:Menu2.ascx" caret="1151" fromTop="8" />
+      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Design/f:Menu2.ascx" caret="2298" fromTop="25" />
+      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Scripts/f:Menu.js" caret="874" fromTop="31" />
+      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Design/f:Menu2.ascx" caret="190" fromTop="1" />
+      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/f:Site.Master" caret="2366" fromTop="12" />
+      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Styles/f:Site.css" caret="1485" fromTop="20" />
+      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Styles/f:Site.css" caret="734" fromTop="10" />
+      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/f:Site.Master" caret="1467" fromTop="12" />
+      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Design/f:MainPageHeader.ascx" caret="543" fromTop="10" />
+      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Design/f:MainPageHeader.ascx" caret="282" fromTop="3" />
+      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Design/f:MainPageHeader.ascx" caret="455" fromTop="9" />
+      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Styles/f:Site.css" caret="1192" fromTop="14" />
+      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Design/f:MostPopularProducts.ascx" caret="452" fromTop="5" />
+      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Design/f:MostPopularProducts.ascx" caret="628" fromTop="10" />
+      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Design/f:MostPopularProducts.ascx" caret="720" fromTop="6" />
     </RecentEdits>
   </RecentFiles>
   <NAntValidationSettings>
@@ -89,51 +89,51 @@
       <Item value="NavigationNumbsCount" priority="7" />
       <Item value="EntitiesPerPage" priority="7" />
       <Item value=".." priority="6" />
-      <Item value="." priority="125" />
+      <Item value="." priority="146" />
       <Item value="Properties.aspx.designer.cs" priority="6" />
-      <Item value="~" priority="55" />
+      <Item value="~" priority="69" />
       <Item value="Modules" priority="20" />
       <Item value="Controls" priority="20" />
       <Item value="Pager" priority="20" />
       <Item value="Pager.ascx" priority="13" />
       <Item value="AddInsParams" priority="7" />
-      <Item value="runat" priority="105" />
-      <Item value="server" priority="112" />
-      <Item value="a" priority="162" />
-      <Item value="href" priority="155" />
+      <Item value="runat" priority="119" />
+      <Item value="server" priority="126" />
+      <Item value="a" priority="190" />
+      <Item value="href" priority="183" />
       <Item value="p" priority="165" />
       <Item value="s" priority="13" />
       <Item value="span" priority="77" />
       <Item value="EntityType" priority="13" />
-      <Item value="Register" priority="71" />
-      <Item value="tagPrefix" priority="62" />
-      <Item value="tagName" priority="62" />
-      <Item value="src" priority="90" />
+      <Item value="Register" priority="87" />
+      <Item value="tagPrefix" priority="77" />
+      <Item value="tagName" priority="76" />
+      <Item value="src" priority="119" />
       <Item value="BreadCrumbs" priority="13" />
       <Item value="BreadCrumbs.ascx" priority="6" />
-      <Item value="ID" priority="295" />
+      <Item value="ID" priority="316" />
       <Item value="SiteMode" priority="6" />
-      <Item value="asp" priority="225" />
+      <Item value="asp" priority="232" />
       <Item value="SelectedIndexChanged" priority="14" />
-      <Item value="div" priority="156" />
-      <Item value="img" priority="21" />
+      <Item value="div" priority="359" />
+      <Item value="img" priority="28" />
       <Item value="ProductEdit.aspx" priority="6" />
-      <Item value="alt" priority="21" />
-      <Item value="id" priority="83" />
-      <Item value="AddButton" priority="13" />
-      <Item value="style" priority="29" />
+      <Item value="alt" priority="28" />
+      <Item value="id" priority="140" />
+      <Item value="AddButton" priority="48" />
+      <Item value="style" priority="78" />
       <Item value="display" priority="9" />
       <Item value="Label`0" priority="76" />
       <Item value="FileUpload`0" priority="13" />
       <Item value="Images" priority="20" />
       <Item value="hint.png" priority="13" />
-      <Item value="br" priority="205" />
+      <Item value="br" priority="247" />
       <Item value="AssociatedControlID" priority="49" />
       <Item value="Button`0" priority="27" />
       <Item value="Click" priority="34" />
       <Item value="Text" priority="27" />
       <Item value="max-width" priority="7" />
-      <Item value="width" priority="17" />
+      <Item value="width" priority="41" />
       <Item value="height" priority="6" />
       <Item value="max-height" priority="7" />
       <Item value="Design" priority="27" />
@@ -142,13 +142,13 @@
       <Item value="Global.asax" priority="6" />
       <Item value="Footer.ascx" priority="6" />
       <Item value="Footer" priority="6" />
-      <Item value="class" priority="171" />
+      <Item value="class" priority="355" />
       <Item value="MarginBoth" priority="14" />
       <Item value="MainPageHeader.ascx" priority="6" />
       <Item value="MaunPageHeader" priority="6" />
       <Item value="logo.png" priority="6" />
       <Item value="border" priority="6" />
-      <Item value="Control" priority="7" />
+      <Item value="Control" priority="15" />
       <Item value="AutorizationControl.ascx" priority="6" />
       <Item value="AuthorizationControl" priority="6" />
       <Item value="LinkButton`0" priority="6" />
@@ -160,14 +160,14 @@
       <Item value="CheckBox`0" priority="6" />
       <Item value="Checked" priority="6" />
       <Item value="input" priority="6" />
-      <Item value="type" priority="34" />
+      <Item value="type" priority="62" />
       <Item value="button" priority="6" />
       <Item value="value" priority="6" />
-      <Item value="script" priority="41" />
-      <Item value="text/javascript" priority="20" />
+      <Item value="script" priority="55" />
+      <Item value="text/javascript" priority="34" />
       <Item value="Search" priority="13" />
       <Item value="Search.ascx" priority="6" />
-      <Item value="ClientIDMode" priority="6" />
+      <Item value="ClientIDMode" priority="14" />
       <Item value="Static" priority="6" />
       <Item value="DropDownList`0" priority="6" />
       <Item value="asp:DropDownList" priority="6" />
@@ -187,12 +187,35 @@
       <Item value="Registration" priority="7" />
       <Item value="divAfterRegistration" priority="6" />
       <Item value="Triggers" priority="6" />
-      <Item value="ul" priority="20" />
-      <Item value="li" priority="34" />
+      <Item value="ul" priority="35" />
+      <Item value="li" priority="48" />
       <Item value="Menu.ascx" priority="6" />
-      <Item value="Menu" priority="6" />
-      <Item value="&lt;" priority="6" />
+      <Item value="Menu" priority="14" />
+      <Item value="&lt;" priority="41" />
       <Item value="u" priority="6" />
+      <Item value="PlaceHolder`0" priority="6" />
+      <Item value="meta" priority="7" />
+      <Item value="content" priority="13" />
+      <Item value="name" priority="7" />
+      <Item value="MOpen" priority="6" />
+      <Item value="Plus" priority="6" />
+      <Item value="Clear" priority="6" />
+      <Item value="MenuItem" priority="6" />
+      <Item value="Nesting" priority="6" />
+      <Item value="AddButton&lt;" priority="27" />
+      <Item value="innerContents" priority="6" />
+      <Item value="innerContents&lt;" priority="6" />
+      <Item value="ul&lt;" priority="6" />
+      <Item value="hover" priority="6" />
+      <Item value="top" priority="7" />
+      <Item value="Hover" priority="6" />
+      <Item value="divUpload" priority="6" />
+      <Item value="divUpload&lt;" priority="6" />
+      <Item value="Language" priority="7" />
+      <Item value="Menu2.ascx" priority="6" />
+      <Item value="MostPopularProducts.ascx" priority="6" />
+      <Item value="MostPopularProducts" priority="7" />
+      <Item value="Slider" priority="6" />
     </ItemStatistics>
     <ItemStatistics item="CSharpCodeCompletionContext">
       <Item value="public" priority="703" />
@@ -202,23 +225,23 @@
       <Item value="Pager" priority="54" />
       <Item value="Pager`0" priority="54" />
       <Item value="Dictionary" priority="31" />
-      <Item value="string" priority="1503" />
+      <Item value="string" priority="1631" />
       <Item value="List" priority="60" />
       <Item value="static" priority="159" />
       <Item value="Dictionary&lt;EntityType,List&lt;string&gt;&gt;" priority="57" />
-      <Item value="if" priority="1375" />
+      <Item value="if" priority="1471" />
       <Item value="_Params" priority="95" />
       <Item value="null" priority="287" />
       <Item value="new" priority="479" />
       <Item value="Enum`0" priority="31" />
       <Item value="EntityType`0" priority="26" />
-      <Item value="var" priority="31" />
+      <Item value="var" priority="159" />
       <Item value="catParams" priority="31" />
       <Item value="Stack&lt;string&gt;" priority="28" />
       <Item value="return" priority="863" />
-      <Item value="foreach" priority="191" />
+      <Item value="foreach" priority="442" />
       <Item value="Request" priority="666" />
-      <Item value="item" priority="415" />
+      <Item value="item" priority="794" />
       <Item value="continue" priority="31" />
       <Item value="_params`0" priority="63" />
       <Item value="key" priority="63" />
@@ -226,8 +249,8 @@
       <Item value="pager" priority="63" />
       <Item value="allCategories" priority="123" />
       <Item value="ProductsCount" priority="31" />
-      <Item value="iStore" priority="1115" />
-      <Item value="Site`0" priority="1006" />
+      <Item value="iStore" priority="1339" />
+      <Item value="Site`0" priority="1168" />
       <Item value="Guid`0" priority="415" />
       <Item value="currentCategory" priority="95" />
       <Item value="r" priority="31" />
@@ -347,11 +370,24 @@
       <Item value="user" priority="31" />
       <Item value="id" priority="31" />
       <Item value="pItem" priority="63" />
-      <Item value="int" priority="31" />
-      <Item value="i" priority="63" />
+      <Item value="int" priority="63" />
+      <Item value="i" priority="127" />
       <Item value="category" priority="96" />
       <Item value="parentCategory" priority="31" />
       <Item value="NullReferenceException`0" priority="31" />
+      <Item value="ITemplate`0" priority="26" />
+      <Item value="in" priority="31" />
+      <Item value="ParentCategory" priority="63" />
+      <Item value="GetCategoryByParent`0" priority="95" />
+      <Item value="secondCategories" priority="31" />
+      <Item value="top" priority="96" />
+      <Item value="Style`0" priority="31" />
+      <Item value="topStyle" priority="31" />
+      <Item value="item2" priority="127" />
+      <Item value="thirdCategories" priority="63" />
+      <Item value="item3" priority="63" />
+      <Item value="j" priority="63" />
+      <Item value="topstyle" priority="31" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.Collections.Generic.Dictionary`2">
       <Item value="Add`0" priority="27" />
@@ -377,7 +413,7 @@
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.Linq.IQueryable`1">
       <Item value="ctx" priority="27" />
-      <Item value="Count`1" priority="107" />
+      <Item value="Count`1" priority="242" />
       <Item value="Any`1" priority="107" />
       <Item value="OrderBy`2" priority="53" />
       <Item value="ToList`1" priority="53" />
@@ -387,7 +423,7 @@
     </ItemStatistics>
     <ItemStatistics item="Qualified:@iStore.Site">
       <Item value="SiteAdminUrl" priority="265" />
-      <Item value="SiteUrl" priority="542" />
+      <Item value="SiteUrl" priority="704" />
       <Item value="FileUploadProductPhotoPreview" priority="53" />
       <Item value="FileUploadProductPhotoOriginal" priority="53" />
       <Item value="PreUrlProductOriginalImage" priority="26" />
@@ -397,10 +433,10 @@
       <Item value="NewGuid`0" priority="80" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:BL.Category">
-      <Item value="CategoryID" priority="323" />
+      <Item value="CategoryID" priority="809" />
       <Item value="Sort" priority="26" />
       <Item value="ParentID" priority="53" />
-      <Item value="Name" priority="107" />
+      <Item value="Name" priority="215" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:BL.ProductsRefCategory">
       <Item value="Category" priority="26" />
@@ -413,13 +449,13 @@
       <Item value="Name" priority="53" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.Guid">
-      <Item value="ToString`0" priority="269" />
+      <Item value="ToString`0" priority="620" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.Web.HttpResponse">
       <Item value="Redirect`0" priority="215" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:@System.String">
-      <Item value="Empty" priority="215" />
+      <Item value="Empty" priority="269" />
       <Item value="IsNullOrEmpty`0" priority="188" />
       <Item value="Format`0" priority="26" />
     </ItemStatistics>
@@ -441,7 +477,7 @@
       <Item value="Value" priority="53" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.Int32">
-      <Item value="ToString`0" priority="53" />
+      <Item value="ToString`0" priority="107" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:BL.ShopDataContext">
       <Item value="ProductsRefCategories" priority="53" />
@@ -460,47 +496,53 @@
       <Item value="Math" priority="41" />
       <Item value="ScriptEngine" priority="52" />
       <Item value="true" priority="10" />
-      <Item value="$" priority="119" />
-      <Item value="function" priority="53" />
-      <Item value="var" priority="87" />
+      <Item value="$" priority="259" />
+      <Item value="function" priority="97" />
+      <Item value="var" priority="109" />
       <Item value="loginId" priority="10" />
       <Item value="passwordId" priority="10" />
       <Item value="saveMe" priority="18" />
       <Item value="saveMeId" priority="7" />
-      <Item value="document" priority="21" />
+      <Item value="document" priority="32" />
       <Item value="window" priority="21" />
       <Item value="password" priority="7" />
       <Item value="ProcessingInstruction" priority="10" />
       <Item value="txtSearch" priority="5" />
       <Item value="ClientID" priority="5" />
       <Item value="ToString`0" priority="5" />
-      <Item value="if" priority="10" />
-      <Item value="this" priority="32" />
-      <Item value="ids" priority="10" />
+      <Item value="if" priority="43" />
+      <Item value="this" priority="109" />
+      <Item value="ids" priority="21" />
       <Item value="ImageData" priority="10" />
+      <Item value="setClassName" priority="10" />
+      <Item value="firstId" priority="10" />
+      <Item value="else" priority="10" />
+      <Item value="fun" priority="10" />
+      <Item value="alert" priority="43" />
+      <Item value="Ids" priority="10" />
     </ItemStatistics>
     <ItemStatistics item="CssCodeCompletionContext">
-      <Item value="display" priority="12" />
-      <Item value="max-width" priority="0" />
-      <Item value="width" priority="36" />
+      <Item value="display" priority="30" />
+      <Item value="max-width" priority="6" />
+      <Item value="width" priority="55" />
       <Item value="max-height" priority="0" />
       <Item value="header" priority="4" />
       <Item value="footer" priority="4" />
-      <Item value="margin" priority="11" />
+      <Item value="margin" priority="17" />
       <Item value="Center" priority="4" />
-      <Item value="background-color" priority="29" />
-      <Item value="black" priority="18" />
+      <Item value="background-color" priority="35" />
+      <Item value="black" priority="25" />
       <Item value="grey" priority="6" />
       <Item value="border" priority="13" />
       <Item value="border-color" priority="3" />
       <Item value="body" priority="5" />
-      <Item value="padding" priority="11" />
-      <Item value="color" priority="35" />
+      <Item value="padding" priority="17" />
+      <Item value="color" priority="41" />
       <Item value="lightyellow" priority="4" />
-      <Item value="padding-left" priority="5" />
+      <Item value="padding-left" priority="17" />
       <Item value="solid" priority="6" />
       <Item value="Header_Items" priority="4" />
-      <Item value="float" priority="11" />
+      <Item value="float" priority="29" />
       <Item value="right" priority="6" />
       <Item value="overflow" priority="11" />
       <Item value="hidden" priority="13" />
@@ -509,14 +551,14 @@
       <Item value="Header_Links" priority="4" />
       <Item value="Header_Login" priority="4" />
       <Item value="Title" priority="4" />
-      <Item value="clear" priority="5" />
+      <Item value="clear" priority="17" />
       <Item value="orange" priority="6" />
       <Item value="txtLogin" priority="0" />
       <Item value="ClientID" priority="0" />
       <Item value="ToString`0" priority="1" />
       <Item value="various" priority="4" />
       <Item value="Header_LoginLink" priority="4" />
-      <Item value="cursor" priority="5" />
+      <Item value="cursor" priority="17" />
       <Item value="none" priority="6" />
       <Item value="white" priority="6" />
       <Item value="text-decoration" priority="5" />
@@ -525,10 +567,51 @@
       <Item value="Header_ItemsBottom" priority="4" />
       <Item value="red" priority="6" />
       <Item value="Registration_Info" priority="4" />
-      <Item value="item" priority="9" />
+      <Item value="item" priority="15" />
       <Item value="pItem" priority="4" />
       <Item value="wpItem" priority="9" />
       <Item value="ui-datepicker-next-hover" priority="16" />
+      <Item value="x-height" priority="5" />
+      <Item value="height" priority="5" />
+      <Item value="pointer" priority="6" />
+      <Item value="close" priority="5" />
+      <Item value="background" priority="11" />
+      <Item value="Menu" priority="9" />
+      <Item value="li" priority="5" />
+      <Item value="list-style" priority="5" />
+      <Item value="left" priority="20" />
+      <Item value="MenuLink" priority="4" />
+      <Item value="alignment-adjust" priority="5" />
+      <Item value="MenuItem" priority="9" />
+      <Item value="both" priority="13" />
+      <Item value="itemA" priority="4" />
+      <Item value="Empty" priority="4" />
+      <Item value="Nesting" priority="9" />
+      <Item value="MFirst" priority="4" />
+      <Item value="transparent" priority="6" />
+      <Item value="no-repeat" priority="13" />
+      <Item value="MenuItemFirst" priority="4" />
+      <Item value="MenuItemSecond" priority="9" />
+      <Item value="Hover" priority="4" />
+      <Item value="top" priority="6" />
+      <Item value="bisque" priority="5" />
+      <Item value="position" priority="5" />
+      <Item value="relative" priority="6" />
+      <Item value="text-align" priority="11" />
+      <Item value="list-style-position" priority="5" />
+      <Item value="inherit" priority="4" />
+      <Item value="MenuItemThird" priority="4" />
+      <Item value="azure" priority="5" />
+      <Item value="cornsilk" priority="4" />
+      <Item value="MainPageHeader" priority="4" />
+      <Item value="MainPageHeader_Left" priority="4" />
+      <Item value="MainPageHeader_Right" priority="4" />
+      <Item value="Slider_Left" priority="9" />
+      <Item value="Slider_Right" priority="9" />
+      <Item value="Slider" priority="4" />
+      <Item value="darkseagreen" priority="5" />
+      <Item value="hover" priority="10" />
+      <Item value="blanchedalmond" priority="5" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.Transactions.TransactionScope">
       <Item value="Complete`0" priority="26" />
@@ -594,13 +677,16 @@
       <Item value="ClientID" priority="29" />
     </ItemStatistics>
     <ItemStatistics item="JavaScriptSpecificContextQualified">
-      <Item value="click" priority="7" />
+      <Item value="click" priority="17" />
       <Item value="location" priority="8" />
       <Item value="ToString" priority="7" />
-      <Item value="ready" priority="7" />
+      <Item value="ready" priority="15" />
       <Item value="val" priority="19" />
-      <Item value="removeClass" priority="31" />
-      <Item value="attr" priority="9" />
+      <Item value="removeClass" priority="66" />
+      <Item value="attr" priority="18" />
+      <Item value="addClass" priority="23" />
+      <Item value="hasClass" priority="7" />
+      <Item value="hover" priority="9" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.Web.UI.WebControls.ListItem">
       <Item value="Value" priority="53" />

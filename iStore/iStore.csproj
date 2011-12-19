@@ -111,6 +111,8 @@
     <Content Include="Design\Header.ascx" />
     <Content Include="Design\MainPageHeader.ascx" />
     <Content Include="Design\Menu.ascx" />
+    <Content Include="Design\Menu2.ascx" />
+    <Content Include="Design\MostPopularProducts.ascx" />
     <Content Include="Images\bg-menu-main.png" />
     <Content Include="Images\bg_nav.gif" />
     <Content Include="Images\box.png" />
@@ -119,6 +121,8 @@
     <Content Include="Images\h2_trigger_a.gif" />
     <Content Include="Images\hint.png" />
     <Content Include="Images\logo.png" />
+    <Content Include="Images\minus.png" />
+    <Content Include="Images\plus.png" />
     <Content Include="Modules\Controls\BreadCrumbs\BreadCrumbs.ascx" />
     <Content Include="Modules\Controls\Pager\Pager.ascx" />
     <Content Include="Modules\Controls\Validators\ValidateErrors.ascx" />
@@ -572,11 +576,14 @@
     <Content Include="Scripts\flowplayerOverlay\jquery.tools.min.js" />
     <Content Include="Scripts\jquery-1.6.4.js" />
     <Content Include="Scripts\jquery.min.js" />
+    <Content Include="Scripts\Menu.js" />
     <Content Include="Search\Default.aspx" />
     <Content Include="Search\Search.ascx" />
     <Content Include="Styles\close.png" />
     <Content Include="Styles\Controls.css" />
     <Content Include="Styles\flowplayer.png" />
+    <Content Include="Styles\minus.png" />
+    <Content Include="Styles\plus.png" />
     <Content Include="Styles\Site.css" />
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
@@ -842,6 +849,20 @@
     </Compile>
     <Compile Include="Design\Menu.ascx.designer.cs">
       <DependentUpon>Menu.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Design\Menu2.ascx.cs">
+      <DependentUpon>Menu2.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Design\Menu2.ascx.designer.cs">
+      <DependentUpon>Menu2.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Design\MostPopularProducts.ascx.cs">
+      <DependentUpon>MostPopularProducts.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Design\MostPopularProducts.ascx.designer.cs">
+      <DependentUpon>MostPopularProducts.ascx</DependentUpon>
     </Compile>
     <Compile Include="Modules\Controls\BreadCrumbs\BreadCrumbs.ascx.cs">
       <DependentUpon>BreadCrumbs.ascx</DependentUpon>
