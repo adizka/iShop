@@ -78,6 +78,7 @@
     <Content Include="Admin\Pages\Default.aspx" />
     <Content Include="Admin\Pages\PageEdit.aspx" />
     <Content Include="Admin\Products\Default.aspx" />
+    <Content Include="Admin\Products\ProductDescriptionEdit.aspx" />
     <Content Include="Admin\Products\ProductEdit.aspx" />
     <Content Include="Admin\Products\ProductPropertyEdit.aspx" />
     <Content Include="Admin\Products\ProductSort.aspx" />
@@ -101,6 +102,11 @@
     <Content Include="Admin\Styles\images\ui-icons_ffd27a_256x240.png" />
     <Content Include="Admin\Styles\images\ui-icons_ffffff_256x240.png" />
     <Content Include="Admin\Styles\jquery-ui-1.8.16.custom.css" />
+    <Content Include="bin\FCKEditorWebForms.dll" />
+    <Content Include="bin\FCKEditorWebForms.pdb" />
+    <Content Include="bin\FredCK.FCKeditorV2.dll" />
+    <Content Include="bin\iStore.dll" />
+    <Content Include="bin\iStore.pdb" />
     <Content Include="Categories\Default.aspx" />
     <Content Include="Contacts\Default.aspx" />
     <Content Include="Content\Products\Original\DefaultOriginal.png" />
@@ -712,6 +718,13 @@
     <Compile Include="Admin\Products\Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\Products\ProductDescriptionEdit.aspx.cs">
+      <DependentUpon>ProductDescriptionEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Products\ProductDescriptionEdit.aspx.designer.cs">
+      <DependentUpon>ProductDescriptionEdit.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\Products\ProductEdit.aspx.cs">
       <DependentUpon>ProductEdit.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -966,6 +979,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\News\" />
+    <Folder Include="Content\Pages\" />
     <Folder Include="News\" />
     <Folder Include="Products\" />
   </ItemGroup>

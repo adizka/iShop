@@ -39,7 +39,7 @@ namespace iStore.Admin.Pages
         protected void Save(object sender, EventArgs e)
         {   
             string name = HttpContext.Current.Server.HtmlEncode(txtName.Text);
-            string keywords = HttpContext.Current.Server.HtmlEncode(txtDesc.Text);
+            string keywords = HttpContext.Current.Server.HtmlEncode(txtDesc.Text.Replace(" ", "_"));
             string body = txtBody.Text;
             bool AllRight = CheckAll(name, keywords, body);
             if (!AllRight)

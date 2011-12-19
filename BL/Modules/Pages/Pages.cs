@@ -108,7 +108,7 @@ namespace BL.Modules.Pages
             return db.Pages.OrderByDescending(p => p.PageID);
         }
 
-        private  static BL.Page GetPageByName(string name)
+        public static BL.Page GetPageByName(string name)
         {
             return db.Pages.Where(p => p.PageName == name).FirstOrDefault();
         }

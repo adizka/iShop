@@ -44,5 +44,6 @@ namespace BL
     {
         public static string ProductPhotoPreview = "ProductPhotoPreview";
         public static string ProductPhotoOriginal = "ProductPhotoOriginal";
+        public static string ProductDescription = "ProductDescription";
     }
 }
