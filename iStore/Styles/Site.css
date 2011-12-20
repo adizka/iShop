@@ -18,10 +18,21 @@ body { margin: 0;padding: 0; }
 .Header_Login { display: none;background-color: #fff;color: #000; padding: 10px; }
 
 /* Menu */
-.Menu { width: 200px;position: relative;text-align: left;background-color: cornsilk; }
+.Menu { width: 200px;position: relative; text-align: left;background-color: green; }
 .MenuItemSecond{ display:none; position:absolute; z-index:2; left:200px; top:1px; width:200px; background-color:bisque; }
 .MenuItemThird { display:none; position:absolute; z-index:3; left:200px; top:1px; width:200px; background-color:azure; }
 .Hover { display: block; }
+
+/* Slider */
+.Slider_Left  { float: left; width:55px; text-align:center; background-color:darkseagreen; cursor:pointer; }
+.Slider_Left:hover { background-color:blanchedalmond; }
+.Slider_Right { float: left; width:55px; text-align: center; background-color:darkseagreen; cursor:pointer; }
+.Slider_Right:hover { background-color:blanchedalmond; }
+.Slider { float:left; width: 670px; background-color:white; }
+.Slider li { display:none; list-style-type: none; float:left; width:150px; }
+.SliderItem {}
+.HiddenLeft { display:none; }
+.HiddenRight { display:none; }
 
 /* MainPageHeader */
 .MainPageHeader { width: 980px; overflow:hidden;color: black; }
@@ -30,6 +41,8 @@ body { margin: 0;padding: 0; }
 
 /* Center */
 .Center { background-color: grey; }
+.Center_Left { width: 200px;float: left; }
+.Center_Right { width: 780px; }
 
 /* Footer */
 .Footer { background-color: #000; color: #fff; }

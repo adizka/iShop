@@ -583,6 +583,7 @@
     <Content Include="Scripts\jquery-1.6.4.js" />
     <Content Include="Scripts\jquery.min.js" />
     <Content Include="Scripts\Menu.js" />
+    <Content Include="Scripts\MostPopularProducts.js" />
     <Content Include="Search\Default.aspx" />
     <Content Include="Search\Search.ascx" />
     <Content Include="Styles\close.png" />
@@ -918,6 +919,13 @@
     <Compile Include="NewDeals\Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Page.Master.cs">
+      <DependentUpon>Page.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Page.Master.designer.cs">
+      <DependentUpon>Page.Master</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1048,6 +1056,7 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Page.Master" />
     <None Include="Scripts\FCK\editor\dialog\fck_spellerpages\spellerpages\server-scripts\spellchecker.cfm" />
     <None Include="Scripts\FCK\editor\dialog\fck_spellerpages\spellerpages\server-scripts\spellchecker.php" />
     <None Include="Scripts\FCK\editor\dialog\fck_spellerpages\spellerpages\server-scripts\spellchecker.pl" />

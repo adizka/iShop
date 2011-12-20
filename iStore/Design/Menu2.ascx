@@ -1,6 +1,4 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Menu2.ascx.cs" Inherits="iStore.Design.Menu2" %>
-<script type="text/javascript" src="<%= iStore.Site.SiteUrl %>Scripts/Menu.js"></script>
-
 
 <div class="Menu">
 <%-- 1--%>

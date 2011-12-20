@@ -186,5 +186,11 @@ namespace BL.Modules.Products
         {
             return (new ShopDataContext()).Products;
         }
+
+        public IQueryable<BL.Product> GetMostPopularProducts()
+        {
+            var db = new ShopDataContext();
+            return db.Products.Take(10);
+        }
     }
 }

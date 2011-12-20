@@ -1,32 +1,37 @@
-﻿$(document).ready(function () {
+﻿//Menu Scripts For iShop 2011
+//Authors Adiz Abdullaev
+
+
+$(document).ready(function () {
+
     //Подменю
-    $(".MenuHoverFirst").hover(function () {
+   $(".MenuHoverFirst").hover(function () {
         var ids = $(this).attr("id");
-        $("#div" + ids).addClass("Hover");
+        $("#div" + ids).show();
     }, function () {
         var ids = $(this).attr("id");
-        $("#div" + ids).removeClass("Hover");
+        $("#div" + ids).hide();
     });
 
     $(".MenuItemSecond").hover(function () {
-        $(this).addClass("Hover");
+        $(this).show();
     }, function () {
-        $(this).removeClass("Hover");
+        $(this).hide();
     });
 
     //ПодПод меню
     $(".MenuHoverSecond").hover(function () {
         var ids = $(this).attr("id");
-        $("#div" + ids).addClass("Hover");
+        $("#div" + ids).show();
 
     }, function () {
         var ids = $(this).attr("id");
-        $("#div" + ids).removeClass("Hover");
+        $("#div" + ids).hide();
     });
 
     $(".MenuItemThird").hover(function () {
-        $(this).addClass("Hover");
+        $(this).show();
     }, function () {
-        $(this).removeClass("Hover");
+        $(this).hide();
     });
 });

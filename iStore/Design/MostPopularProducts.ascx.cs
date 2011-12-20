@@ -13,5 +13,20 @@ namespace iStore.Design
         {
 
         }
+
+        public IQueryable<BL.Product> AllProducts
+        {
+            get 
+            { 
+                var pbl = new BL.Modules.Products.Products();
+                return pbl.GetMostPopularProducts();
+            }
+        }
+
+        public string GetProductPreviewById(Guid id)
+        {
+            var ppbl = new BL.Modules.Products.ProductProperies();
+            return ppbl.GetProductPreviewByProductId(id);
+        }
     }
 }

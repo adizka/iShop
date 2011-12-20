@@ -1,17 +1,17 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="iStore.SiteMaster" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Page.master.cs" Inherits="iStore.Page" %>
 
 <%@ Register tagPrefix="iS" tagName="Header" src="Design/Header.ascx" %>
 <%@ Register tagPrefix="iS" tagName="Footer" src="Design/Footer.ascx" %>
-<%@ Register tagPrefix="iS" tagName="MainPageHeader" src="Design/MainPageHeader.ascx" %>
+<%@ Register tagPrefix="iS" tagName="Menu" src="Design/Menu.ascx" %>
  
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head runat="server">
     <title></title>
-    <link href="Styles/Site.css" rel="stylesheet" type="text/css" />
-    <link href="Styles/Controls.css" rel="Stylesheet" type="text/css" />
-    <link rel="Stylesheet" type="text/css" href="Scripts/jquery.fancybox-2.0/jquery.fancybox.css" media="screen" />
-    <script type="text/javascript" src="Scripts/jquery.min.js"></script>
+    <link href="http://localhost:36138/Styles/Site.css" rel="stylesheet" type="text/css" />
+    <link href="http://localhost:36138/Styles/Controls.css" rel="Stylesheet" type="text/css" />
+    <link rel="Stylesheet" type="text/css" href="http://localhost:36138/Scripts/jquery.fancybox-2.0/jquery.fancybox.css" media="screen" />
+    <script type="text/javascript" src="<%= iStore.Site.SiteUrl %>Scripts/jquery.min.js"></script>
     <script type="text/javascript" src="<%= iStore.Site.SiteUrl %>Scripts/Menu.js"></script>
     <script type="text/javascript" src="<%= iStore.Site.SiteUrl %>Scripts/MostPopularProducts.js"></script>
     <asp:ContentPlaceHolder ID="HeadContent" runat="server">
@@ -23,13 +23,17 @@
         <div class="Header">
             <div class="MarginBoth">
                 <iS:Header runat="server" ID="header" />
-                <iS:MainPageHeader runat="server" ID="mainPageHeader" />
             </div>
         </div>
         
         <div class="Center">
             <div class="MarginBoth">
-                <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+                <div class="MainPageHeader_Left">
+                    <iS:Menu runat="server" ID="menu" />
+                </div>
+                <div class="MainPageHeader_Right">
+                    <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+                </div>
             </div>
         </div>
 
@@ -42,3 +46,4 @@
     </form>
 </body>
 </html>
+
