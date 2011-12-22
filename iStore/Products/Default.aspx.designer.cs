@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace iStore.Categories {
+namespace iStore.Products {
     
     
     public partial class Default {

@@ -1,7 +1,6 @@
 <Configuration>
   <RecentFiles>
     <RecentFiles>
-      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Design/f:AutorizationControl.ascx.cs" caret="415" fromTop="0" />
       <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Users/f:Register.aspx.cs" caret="1300" fromTop="16" />
       <File id="F811AF93-8440-4DC9-A7AA-BCA306A0B8B2/d:Modules/d:Users/f:Users.cs" caret="1670" fromTop="4" />
       <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/f:Site.Master.cs" caret="323" fromTop="14" />
@@ -9,12 +8,10 @@
       <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Users/f:Profile.aspx.cs" caret="0" fromTop="0" />
       <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Categories/f:Default.aspx" caret="0" fromTop="0" />
       <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Search/f:Default.aspx" caret="0" fromTop="0" />
-      <File id="F811AF93-8440-4DC9-A7AA-BCA306A0B8B2/d:Modules/d:Users/f:UsersSessions.cs" caret="241" fromTop="8" />
       <File id="F811AF93-8440-4DC9-A7AA-BCA306A0B8B2/f:Shop.designer.cs" caret="4498" fromTop="15" />
       <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Search/f:Search.ascx" caret="501" fromTop="12" />
       <File id="F811AF93-8440-4DC9-A7AA-BCA306A0B8B2/f:Site.cs" caret="296" fromTop="12" />
       <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Pages/f:Default.aspx" caret="218" fromTop="4" />
-      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/f:Default.aspx" caret="0" fromTop="0" />
       <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Design/f:Menu.ascx.cs" caret="1111" fromTop="21" />
       <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Design/f:Menu.ascx" caret="1825" fromTop="19" />
       <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Design/f:Menu2.ascx.cs" caret="946" fromTop="33" />
@@ -25,17 +22,17 @@
       <File id="F811AF93-8440-4DC9-A7AA-BCA306A0B8B2/d:Modules/d:Products/f:Products.cs" caret="7273" fromTop="13" />
       <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Design/f:MostPopularProducts.ascx.cs" caret="145" fromTop="6" />
       <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Design/f:MostPopularProducts.ascx" caret="489" fromTop="11" />
-      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Users/f:Register.aspx" caret="504" fromTop="8" />
-      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Scripts/f:Menu.js" caret="820" fromTop="19" />
-      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Styles/f:Site.css" caret="1635" fromTop="15" />
-      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Design/f:MainPageHeader.ascx" caret="551" fromTop="12" />
+      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Styles/f:Site.css" caret="1863" fromTop="36" />
+      <File id="F811AF93-8440-4DC9-A7AA-BCA306A0B8B2/d:Modules/d:Users/f:UsersSessions.cs" caret="611" fromTop="7" />
       <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/f:Site.Master" caret="1892" fromTop="35" />
-      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/f:Page.Master" caret="1538" fromTop="10" />
+      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/f:Default.aspx" caret="389" fromTop="8" />
+      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Design/f:MainPageHeader.ascx" caret="551" fromTop="12" />
+      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Scripts/f:Menu.js" caret="820" fromTop="19" />
+      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/f:Page.Master" caret="1834" fromTop="23" />
+      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Users/f:Register.aspx" caret="0" fromTop="0" />
+      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Modules/d:Logic/d:Auth/f:Users.cs" caret="1100" fromTop="14" />
     </RecentFiles>
     <RecentEdits>
-      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Design/f:MostPopularProducts.ascx" caret="141" fromTop="26" />
-      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Design/f:MostPopularProducts.ascx" caret="139" fromTop="11" />
-      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Design/f:MostPopularProducts.ascx" caret="403" fromTop="20" />
       <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Design/f:MostPopularProducts.ascx" caret="141" fromTop="10" />
       <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Design/f:MostPopularProducts.ascx" caret="141" fromTop="13" />
       <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Scripts/f:Menu.js" caret="29" fromTop="0" />
@@ -49,20 +46,23 @@
       <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Design/f:MostPopularProducts.ascx" caret="139" fromTop="1" />
       <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Users/f:Register.aspx" caret="432" fromTop="6" />
       <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/f:Page.Master" caret="0" fromTop="0" />
-      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/f:Page.Master" caret="1462" fromTop="10" />
-      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Styles/f:Site.css" caret="1991" fromTop="20" />
+      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/f:Page.Master" caret="1395" fromTop="10" />
       <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Users/f:Register.aspx" caret="105" fromTop="0" />
-      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/f:Page.Master" caret="802" fromTop="13" />
-      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/f:Page.Master" caret="2102" fromTop="9" />
-      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/f:Page.Master" caret="936" fromTop="14" />
-      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/f:Page.Master" caret="253" fromTop="4" />
+      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/f:Page.Master" caret="733" fromTop="13" />
       <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Styles/f:Site.css" caret="827" fromTop="17" />
       <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Scripts/f:Menu.js" caret="318" fromTop="12" />
       <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Scripts/f:Menu.js" caret="447" fromTop="18" />
       <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Scripts/f:Menu.js" caret="596" fromTop="24" />
       <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Scripts/f:Menu.js" caret="692" fromTop="28" />
       <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Scripts/f:Menu.js" caret="820" fromTop="19" />
-      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/f:Page.Master" caret="1759" fromTop="15" />
+      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/f:Page.Master" caret="2033" fromTop="1" />
+      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/f:Page.Master" caret="313" fromTop="1" />
+      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Styles/f:Site.css" caret="2008" fromTop="23" />
+      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/f:Page.Master" caret="1700" fromTop="16" />
+      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/f:Page.Master" caret="734" fromTop="12" />
+      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/f:Page.Master" caret="1820" fromTop="22" />
+      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/f:Default.aspx" caret="361" fromTop="6" />
+      <File id="F811AF93-8440-4DC9-A7AA-BCA306A0B8B2/d:Modules/d:Users/f:UsersSessions.cs" caret="478" fromTop="5" />
     </RecentEdits>
   </RecentFiles>
   <NAntValidationSettings>
@@ -113,9 +113,9 @@
       <Item value="BreadCrumbs.ascx" priority="6" />
       <Item value="ID" priority="323" />
       <Item value="SiteMode" priority="6" />
-      <Item value="asp" priority="232" />
+      <Item value="asp" priority="239" />
       <Item value="SelectedIndexChanged" priority="14" />
-      <Item value="div" priority="408" />
+      <Item value="div" priority="415" />
       <Item value="img" priority="35" />
       <Item value="ProductEdit.aspx" priority="6" />
       <Item value="alt" priority="35" />
@@ -224,6 +224,8 @@
       <Item value="SlideToRight" priority="7" />
       <Item value="Center" priority="7" />
       <Item value="Page.Master" priority="6" />
+      <Item value="Center_Right" priority="6" />
+      <Item value="Center_Left" priority="7" />
     </ItemStatistics>
     <ItemStatistics item="CSharpCodeCompletionContext">
       <Item value="public" priority="703" />
@@ -566,8 +568,8 @@
       <Item value="Header_Items" priority="4" />
       <Item value="float" priority="35" />
       <Item value="right" priority="6" />
-      <Item value="overflow" priority="11" />
-      <Item value="hidden" priority="13" />
+      <Item value="overflow" priority="17" />
+      <Item value="hidden" priority="20" />
       <Item value="Header_All" priority="4" />
       <Item value="Header_CompanyName" priority="4" />
       <Item value="Header_Links" priority="4" />

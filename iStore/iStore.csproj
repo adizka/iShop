@@ -129,11 +129,13 @@
     <Content Include="Images\logo.png" />
     <Content Include="Images\minus.png" />
     <Content Include="Images\plus.png" />
+    <Content Include="Modules\Controls\AddToCard.ascx" />
     <Content Include="Modules\Controls\BreadCrumbs\BreadCrumbs.ascx" />
     <Content Include="Modules\Controls\Pager\Pager.ascx" />
     <Content Include="Modules\Controls\Validators\ValidateErrors.ascx" />
     <Content Include="NewDeals\Default.aspx" />
     <Content Include="Pages\Default.aspx" />
+    <Content Include="Products\Default.aspx" />
     <Content Include="Scripts\fancybox\blank.gif" />
     <Content Include="Scripts\fancybox\fancybox-x.png" />
     <Content Include="Scripts\fancybox\fancybox-y.png" />
@@ -878,6 +880,13 @@
     <Compile Include="Design\MostPopularProducts.ascx.designer.cs">
       <DependentUpon>MostPopularProducts.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Modules\Controls\AddToCard.ascx.cs">
+      <DependentUpon>AddToCard.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\Controls\AddToCard.ascx.designer.cs">
+      <DependentUpon>AddToCard.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Modules\Controls\BreadCrumbs\BreadCrumbs.ascx.cs">
       <DependentUpon>BreadCrumbs.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -931,6 +940,13 @@
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Pages\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Products\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Products\Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -990,7 +1006,6 @@
     <Folder Include="Content\News\" />
     <Folder Include="Content\Pages\" />
     <Folder Include="News\" />
-    <Folder Include="Products\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Site.Master" />

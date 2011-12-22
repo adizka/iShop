@@ -231,5 +231,11 @@ namespace BL.Modules.Products
                 db.SubmitChanges();
             }
         }
+
+        public IQueryable<BL.ProductProperty> GetAllProperyByProductId(Guid productId)
+        {
+            var db = new ShopDataContext();
+            return db.ProductProperties.Where(p => p.ProductID == productId && (p.PropertyName != "ProductPhotoPreview" || p.PropertyName != "ProductPhotoOriginal" || p.PropertyName != "ProductDescription")).OrderBy(p => p.Sort);
+        }
     }
 }

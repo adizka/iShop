@@ -2,15 +2,15 @@
 
 <%@ Register tagPrefix="iS" tagName="Header" src="Design/Header.ascx" %>
 <%@ Register tagPrefix="iS" tagName="Footer" src="Design/Footer.ascx" %>
-<%@ Register tagPrefix="iS" tagName="Menu" src="Design/Menu.ascx" %>
+<%@ Register tagPrefix="iS" tagName="Menu" src="Design/Menu2.ascx" %>
  
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head runat="server">
     <title></title>
-    <link href="http://localhost:36138/Styles/Site.css" rel="stylesheet" type="text/css" />
-    <link href="http://localhost:36138/Styles/Controls.css" rel="Stylesheet" type="text/css" />
-    <link rel="Stylesheet" type="text/css" href="http://localhost:36138/Scripts/jquery.fancybox-2.0/jquery.fancybox.css" media="screen" />
+    <link href="Styles/Site.css" rel="stylesheet" type="text/css" />
+    <link href="Styles/Controls.css" rel="Stylesheet" type="text/css" />
+    <link rel="Stylesheet" type="text/css" href="Scripts/jquery.fancybox-2.0/jquery.fancybox.css"" media="screen" />
     <script type="text/javascript" src="<%= iStore.Site.SiteUrl %>Scripts/jquery.min.js"></script>
     <script type="text/javascript" src="<%= iStore.Site.SiteUrl %>Scripts/Menu.js"></script>
     <script type="text/javascript" src="<%= iStore.Site.SiteUrl %>Scripts/MostPopularProducts.js"></script>
@@ -28,21 +28,22 @@
         
         <div class="Center">
             <div class="MarginBoth">
-                <div class="MainPageHeader_Left">
+                <div class="Center_Left">
                     <iS:Menu runat="server" ID="menu" />
                 </div>
-                <div class="MainPageHeader_Right">
-                    <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+                <div class="Center_Right">
+                    <div class="CenterPad">
+                        <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+                    </div>
                 </div>
             </div>
-        </div>
-
+        </div>  
+            
         <div class="Footer">
             <div class="MarginBoth">
                 <iS:Footer runat="server" ID="footer" />
             </div>
         </div>
-
     </form>
 </body>
 </html>

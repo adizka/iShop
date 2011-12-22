@@ -46,7 +46,7 @@ namespace iStore {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::iStore.Design.Menu menu;
+        protected global::iStore.Design.Menu2 menu;
         
         /// <summary>
         /// MainContent control.

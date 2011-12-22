@@ -42,7 +42,8 @@ body { margin: 0;padding: 0; }
 /* Center */
 .Center { background-color: grey; }
 .Center_Left { width: 200px;float: left; }
-.Center_Right { width: 780px; }
+.Center_Right { width: 780px; overflow: hidden; min-height: 300px; }
+.CenterPad { padding-left: 10px;padding-right: 10px; }
 
 /* Footer */
 .Footer { background-color: #000; color: #fff; }
@@ -56,3 +57,6 @@ body { margin: 0;padding: 0; }
 .apple_overlay .close { background-image:url('close.png'); position:absolute; right:-15px; top:-15px;
 	cursor:pointer; height:35px; width:35px; }
 
+/* Categories */
+.ProductList_Table { width: 750px;padding: 0;margin: 0;border: 0;vertical-align: top; }
+.ProductList_Table tr td { vertical-align: top;text-align: left; }
