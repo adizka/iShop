@@ -20,12 +20,12 @@
         selectedEl += "~~~";
         $("input:checkbox:not(:checked)", "#ProdTable").
         each(function () {
-            if ($(".CountInput", $(this).parent().parent()).val() / 1 < 0 || isNaN($(".CountInput", $(this).parent().parent()).val()))
-                $(".CountInput", $(this).parent().parent()).val("0");
+            if ($(".ProdCount", $(this).parent().parent()).html() / 1 < 1 || isNaN($(".ProdCount", $(this).parent().parent()).html()))
+                $(".ProdCount", $(this).parent().parent()).html("1");
 
-            $(".CountInput", $(this).parent().parent()).val(Math.floor($(".CountInput", $(this).parent().parent()).val()));
-            
-            selectedEl += $(this).attr("id") + "~" + $(".CountInput", $(this).parent().parent()).val() + "~~";
+            $(".ProdCount", $(this).parent().parent()).val(Math.floor($(".ProdCount", $(this).parent().parent()).html()));
+
+            selectedEl += $(this).attr("id") + "~" + $(".ProdCount", $(this).parent().parent()).html() + "~~";
         });
         $("#hf").val(selectedEl);
 
@@ -36,7 +36,7 @@
 
         $(".TotalSum", "#ProdTable").each(function () {
             var parent = $(this).parent();
-            var sum = $(".Price", parent).html() * $(".CountInput", parent).val();  
+            var sum = $(".Price", parent).html() * $(".ProdCount", parent).html();  
             $(this).html(sum);
 
         });
@@ -47,10 +47,42 @@
         });
         $("#TotalSumID").html(total);
     }
+
+    function Incr(el) {
+    
+        var count = $($(el).parent().children()[1]).html() / 1;
+
+        if (count == 1)
+            $($(el).parent().children()[0]).css("cursor", "pointer")
+
+        $($(el).parent().children()[1]).html(count + 1);
+        Sum();
+        Update();
+    }
+    function Decr(el) {
+
+        var count = $($(el).parent().children()[1]).html() / 1;
+
+        if (count == 1) {
+            $(el).css("cursor", "");
+            return;
+        }
+        else {
+            $(el).css("cursor", "pointer");
+        }
+
+        $($(el).parent().children()[1]).html(count - 1);
+        Sum();
+        Update();
+    }
+
 </script>
 
 <table id="ProdTable">
     <tr>
+        <td>
+            Удалить
+        </td>
         <td>
             Название
         </td>
@@ -63,14 +95,15 @@
         <td>
             Итого
         </td>
-        <td>
-            Удалить
-        </td>
+
     </tr>
 <%  
       foreach (var prodRef in UserOrder.OrdersRefProducts)
       {%>
        <tr>
+       <td>
+<input type="checkbox" onchange="Update()" id="<%=prodRef.ID%>" /> 
+</td>  
 <td>
 <%=prodRef.Product.Name%>
 </td>
@@ -78,14 +111,12 @@
 <%=prodRef.Product.Price%>
 </td>
 <td >
-<input type="text" class="CountInput" onkeyup="Update()" value="<%=prodRef.Count%>" />
+<div><span style="cursor:pointer;color:Blue;" onclick="Decr(this)">-</span><span class="ProdCount"><%=prodRef.Count%></span><span style="cursor:pointer;color:Blue;" onclick="Incr(this)">+</span></div>
 </td>
 <td class="TotalSum">
 
 </td>
-<td>
-<input type="checkbox" onchange="Update()" id="<%=prodRef.ID%>" /> 
-</td>       
+     
        </tr>
        <%
       } %>
@@ -107,6 +138,7 @@
     <%if (UserOrder.OrdersRefProducts.Count != 0)
       { %>
     <asp:Button  OnClick="Save" ID="btnSave" runat="server" Text="Save" />
+    <asp:Button  OnClick="Clear" ID="btnClear" runat="server" Text="Clear" />
     <a href="<%= iStore.Site.SiteUrl + "Orders/FormOrder.aspx" %>">Оплатить</a>
     <%} %>
     <%}
