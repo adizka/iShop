@@ -14,6 +14,25 @@ namespace BL
             Web = 2
         }
     }
+    public enum OrderStatus
+    {
+        NotPaid  = 1,
+        Paid = 2
+    }
+    public enum DeliveryTypes
+    {
+        NonameType = 1
+    }
+    public enum PaymentTypes
+    {
+        NonameType = 1
+    }
+
+    public class ProductCounter
+    {
+        public Guid ID;
+        public int Count;
+    }
 
     public class ProductComparer : IEqualityComparer<BL.Product>
     {
