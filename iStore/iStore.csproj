@@ -75,6 +75,8 @@
     <Content Include="Admin\Login\Default.aspx" />
     <Content Include="Admin\News\Default.aspx" />
     <Content Include="Admin\News\NewsEdit.aspx" />
+    <Content Include="Admin\Orders\Details.aspx" />
+    <Content Include="Admin\Orders\OrderList.aspx" />
     <Content Include="Admin\Pages\Default.aspx" />
     <Content Include="Admin\Pages\PageEdit.aspx" />
     <Content Include="Admin\Products\Default.aspx" />
@@ -134,6 +136,9 @@
     <Content Include="Modules\Controls\Pager\Pager.ascx" />
     <Content Include="Modules\Controls\Validators\ValidateErrors.ascx" />
     <Content Include="NewDeals\Default.aspx" />
+    <Content Include="Orders\Default.aspx" />
+    <Content Include="Orders\FormOrder.aspx" />
+    <Content Include="Orders\OrdersList.aspx" />
     <Content Include="Pages\Default.aspx" />
     <Content Include="Products\Default.aspx" />
     <Content Include="Scripts\fancybox\blank.gif" />
@@ -700,6 +705,20 @@
     <Compile Include="Admin\News\NewsEdit.aspx.designer.cs">
       <DependentUpon>NewsEdit.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\Orders\Details.aspx.cs">
+      <DependentUpon>Details.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Orders\Details.aspx.designer.cs">
+      <DependentUpon>Details.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Orders\OrderList.aspx.cs">
+      <DependentUpon>OrderList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Orders\OrderList.aspx.designer.cs">
+      <DependentUpon>OrderList.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\Pages\Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -927,6 +946,27 @@
     </Compile>
     <Compile Include="NewDeals\Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Orders\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Orders\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Orders\FormOrder.aspx.cs">
+      <DependentUpon>FormOrder.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Orders\FormOrder.aspx.designer.cs">
+      <DependentUpon>FormOrder.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Orders\OrdersList.aspx.cs">
+      <DependentUpon>OrdersList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Orders\OrdersList.aspx.designer.cs">
+      <DependentUpon>OrdersList.aspx</DependentUpon>
     </Compile>
     <Compile Include="Page.Master.cs">
       <DependentUpon>Page.Master</DependentUpon>
