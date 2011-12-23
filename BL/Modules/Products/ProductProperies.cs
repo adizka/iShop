@@ -185,6 +185,11 @@ namespace BL.Modules.Products
                 db.SubmitChanges();
                 allRight = true;
             }
+            else
+            {
+                AddProperty(productId, ProductPhoto.ProductPhotoPreview.ToString(), url, true);
+                allRight = true;
+            }
             return allRight;
         }
 
@@ -201,6 +206,26 @@ namespace BL.Modules.Products
             }
             return allRight;
         }
+
+        public bool UpdateProductDescription(string text, Guid productId)
+        {
+            bool allRight = false;
+            ShopDataContext db = new ShopDataContext();
+            BL.ProductProperty productProperty = db.ProductProperties.Where(p => p.ProductID == productId && p.PropertyName == BL.ProductPropertyConstants.ProductDescription).FirstOrDefault();
+            if (productProperty != null)
+            {
+                productProperty.PropertyValue = text;
+                db.SubmitChanges();
+                allRight = true;
+            }
+            else
+            {
+                AddProperty(productId, BL.ProductPropertyConstants.ProductDescription, text, true);
+                allRight = true;
+            }
+            return allRight;
+        }
+
 
         public void AddProductProperty(string propertyName, string propertyValue, Guid productID)
         {

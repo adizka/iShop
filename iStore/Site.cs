@@ -13,8 +13,8 @@ namespace iStore
 
         public static string PreUrlProductPreviewImage = SiteUrl + "Content/Products/Preview/";
         public static string PreUrlProductOriginalImage = SiteUrl + "Content/Products/Original/";
-        
-        public static string FileUploadProductPhotoOriginal = "C:\\Work\\iShop\\iStore\\Content\\Products\\Original\\";
-        public static string FileUploadProductPhotoPreview = "C:\\Work\\iShop\\iStore\\Content\\Products\\Preview\\";
+
+        public static string FileUploadProductPhotoOriginal = HttpContext.Current.Request.MapPath("~/") + @"Content\Products\Original\";
+        public static string FileUploadProductPhotoPreview = HttpContext.Current.Request.MapPath("~/") + @"Content\Products\Preview\";
     }
 }

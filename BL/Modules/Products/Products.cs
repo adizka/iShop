@@ -114,7 +114,7 @@ namespace BL.Modules.Products
         public BL.Product GetProductById(Guid productId)
         {
             ShopDataContext db = new ShopDataContext();
-            return db.Products.Where(p => p.ProductID == productId).FirstOrDefault();
+            return db.Products.FirstOrDefault(p => p.ProductID == productId);
         }
 
         public IQueryable<BL.Product> GetProductByCategories(Guid categoryId)

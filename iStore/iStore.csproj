@@ -140,6 +140,7 @@
     <Content Include="Orders\FormOrder.aspx" />
     <Content Include="Orders\OrdersList.aspx" />
     <Content Include="Pages\Default.aspx" />
+    <Content Include="Products\ProductsList.aspx" />
     <Content Include="Products\Default.aspx" />
     <Content Include="Scripts\fancybox\blank.gif" />
     <Content Include="Scripts\fancybox\fancybox-x.png" />
@@ -981,6 +982,13 @@
     </Compile>
     <Compile Include="Pages\Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Products\ProductsList.aspx.cs">
+      <DependentUpon>ProductsList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Products\ProductsList.aspx.designer.cs">
+      <DependentUpon>ProductsList.aspx</DependentUpon>
     </Compile>
     <Compile Include="Products\Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
