@@ -68,7 +68,7 @@ namespace iStore.Products
             }
         }
         
-        int counter = -1;
+      protected  int counter = -1;
         protected string GetPreviewUrl()
         {
             var prodProp = RelatedProducts[counter].ProductProperties.FirstOrDefault(p => p.PropertyName == BL.ProductPropertyConstants.ProductPhotoPreview);
