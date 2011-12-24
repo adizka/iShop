@@ -11,7 +11,19 @@ namespace iStore.Users
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            string error = Request.QueryString["error"];
+            if (!string.IsNullOrEmpty(error))
+            {
+                if (error == "0")
+                {
+                    divError.InnerHtml = "Invalid login-password pair";
+                }
+            }
+        }
+        
+        protected void Log_in(object sender, EventArgs e)
+        {
+            
         }
     }
 }
