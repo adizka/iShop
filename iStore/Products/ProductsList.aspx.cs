@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.IO;
 
 namespace iStore.Products
 {
@@ -75,7 +76,23 @@ namespace iStore.Products
             }
         }
 
-
-
+        protected string GetPreviewUrl(BL.Product prod)
+        {
+            var prodProp = prod.ProductProperties.FirstOrDefault(p => p.PropertyName == BL.ProductPropertyConstants.ProductPhotoPreview);
+            return (prodProp == null) ? BL.Site.DefaultPhotoPreview : prodProp.PropertyValue;
+        }
+       
+        protected string GetRenderedControl(BL.ProductsRefCategory item)
+        {
+            StringWriter stringWrite = new StringWriter();
+            System.Web.UI.HtmlTextWriter htmlWrite = new System.Web.UI.HtmlTextWriter(stringWrite);
+            var control = LoadControl("~/Modules/Controls/AddToCard.ascx") as iStore.Modules.Controls.AddToCard;
+            control.ProductId = item.ProductID;
+            control.ID = Guid.NewGuid().ToString();
+            control.IsCounterVisible = false;
+            var btn = control.FindControl("addBtn") as System.Web.UI.WebControls.Button;
+            btn.OnClientClick = "addTocart('" + item.ProductID.ToString() + "',1)";
+            return iStore.Modules.Controls.AddToCard.RenderControl(control);
+        }
     }
 }

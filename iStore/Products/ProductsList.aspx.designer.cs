@@ -13,6 +13,15 @@ namespace iStore.Products {
     public partial class ProductsList {
         
         /// <summary>
+        /// addtoCart control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::iStore.Modules.Controls.AddToCard addtoCart;
+        
+        /// <summary>
         /// pager control.
         /// </summary>
         /// <remarks>

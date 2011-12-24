@@ -31,7 +31,7 @@ namespace iStore.Modules.Controls
                     _prodCount = 0;
                     ProdCountObj = new object();
                     if (Order != null)
-                        _prodCount = Order.OrdersRefProducts.Count;
+                        _prodCount = Order.OrdersRefProducts.Sum(p => p.Count);
                 }
 
                 return _prodCount;
