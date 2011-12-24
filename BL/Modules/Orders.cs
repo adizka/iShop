@@ -130,5 +130,19 @@ namespace BL.Modules.Orders
         {
             return new ShopDataContext().Orders.FirstOrDefault(o => o.OrderID == orderID);
         }
+
+        public void ClearCart(Guid userID, Guid orderID)
+        {
+            using (var db = new ShopDataContext())
+            {
+                var user = db.Users.First(u => u.UserID == userID);
+                var order = user.Orders.FirstOrDefault(o => o.OrderID == orderID && o.IsActive);
+
+                if (order == null)
+                    return;
+                db.OrdersRefProducts.DeleteAllOnSubmit(order.OrdersRefProducts);
+                db.SubmitChanges();
+            }
+        }
     }
 }

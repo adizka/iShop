@@ -10,24 +10,15 @@
 namespace iStore.Products {
     
     
-    public partial class Default {
+    public partial class ProductsList {
         
         /// <summary>
-        /// btnAdd control.
+        /// pager control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAdd;
-        
-        /// <summary>
-        /// hf control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField hf;
+        protected global::iStore.Modules.Controls.Pager.Pager pager;
     }
 }

@@ -66,5 +66,9 @@ namespace iStore.Orders
             obl.Remove(toDelete, ubl.CurrentUser.UserID, oid);
             obl.UpdateCounts(newCounts, ubl.CurrentUser.UserID, oid);
         }
+        protected void Clear(object obj, EventArgs args)
+        {
+            obl.ClearCart(ubl.CurrentUser.UserID, UserOrder.OrderID);
+        }
     }
 }

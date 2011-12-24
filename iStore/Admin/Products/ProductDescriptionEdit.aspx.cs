@@ -17,8 +17,24 @@ namespace iStore.Admin.Products
 
             if (CurrentProduct == null)
                 Response.Redirect(iStore.Site.SiteAdminUrl + "Products/?cid=" + Request.QueryString["cid"]);
-            txtBody.Text = string.Empty;
+            
+            if (!IsPostBack)
+                txtBody.Text = ProductDescription;
 
+        }
+
+        string _ProductDescription;
+        protected string ProductDescription
+        {
+            get
+            {
+                if (_ProductDescription == null)
+                {
+                    var prodProp = CurrentProduct.ProductProperties.FirstOrDefault(p => p.PropertyName == BL.ProductPropertyConstants.ProductDescription);
+                    _ProductDescription = (prodProp == null) ? string.Empty : prodProp.PropertyValue;
+                }
+                return _ProductDescription;
+            }
         }
 
         public BL.Product _CurrentProduct;
@@ -41,7 +57,7 @@ namespace iStore.Admin.Products
 
         protected void SaveDescription(object sender, EventArgs e)
         {
-            ppbl.AddProductProperty(BL.ProductPropertyConstants.ProductDescription, txtBody.Text, CurrentProduct.ProductID);
+            ppbl.UpdateProductDescription(txtBody.Text, CurrentProduct.ProductID);
         }
     }
 }
