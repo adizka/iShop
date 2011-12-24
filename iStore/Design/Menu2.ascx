@@ -1,7 +1,12 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Menu2.ascx.cs" Inherits="iStore.Design.Menu2" %>
 
+<%@ Register TagPrefix="iS" TagName="Cart" Src="~/Modules/Controls/Cart.ascx" %>
 <div class="Menu">
 <%-- 1--%>
+
+<div class="UserCart">
+<iS:Cart runat="server" ></iS:Cart>
+</div>
     <div class="MenuItemFirst">
         <% int i = -1; string topStyle = string.Empty;  
         foreach (var item in ParentCategory) 

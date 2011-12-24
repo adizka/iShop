@@ -133,6 +133,7 @@
     <Content Include="Images\plus.png" />
     <Content Include="Modules\Controls\AddToCard.ascx" />
     <Content Include="Modules\Controls\BreadCrumbs\BreadCrumbs.ascx" />
+    <Content Include="Modules\Controls\Cart.ascx" />
     <Content Include="Modules\Controls\Pager\Pager.ascx" />
     <Content Include="Modules\Controls\Validators\ValidateErrors.ascx" />
     <Content Include="NewDeals\Default.aspx" />
@@ -914,6 +915,13 @@
     </Compile>
     <Compile Include="Modules\Controls\BreadCrumbs\BreadCrumbs.ascx.designer.cs">
       <DependentUpon>BreadCrumbs.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Controls\Cart.ascx.cs">
+      <DependentUpon>Cart.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\Controls\Cart.ascx.designer.cs">
+      <DependentUpon>Cart.ascx</DependentUpon>
     </Compile>
     <Compile Include="Modules\Controls\Colors.cs" />
     <Compile Include="Modules\Controls\Pager\Pager.ascx.cs">

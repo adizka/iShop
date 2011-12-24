@@ -6,7 +6,7 @@
         $($(el).parent().children()[0]).css("cursor", "pointer")
 
     $(".ProdCount", $(el).parent()).html(count + 1);
-    $("#" + cont).val(count + 1);
+    $("#" + cont, $(el).parent().parent()).val(count + 1);
 }
 function Decr(el, cont) {
 
@@ -21,5 +21,6 @@ function Decr(el, cont) {
     }
 
     $(".ProdCount" ,$(el).parent()).html(count - 1);
-    $("#" + cont).val(count - 1);
+    
+    $("#" + cont, $(el).parent().parent()).val(count - 1);
 }

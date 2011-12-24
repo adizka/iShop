@@ -123,8 +123,8 @@
     
     <tr>
     <td>Итого</td><td></td><td></td>
-    <td id="TotalSumID"></td>
     <td></td>
+    <td id="TotalSumID"></td>
     </tr>
     </table>
     
