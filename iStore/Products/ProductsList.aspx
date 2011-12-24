@@ -19,30 +19,10 @@
         %>
         <p class="repBody <%= cssClass %>">
             <div>
-                <a href="<%= iStore.Site.SiteAdminUrl %>"><%= item.Product.Name %></a> 
+                <a href="/Products/?pid=<%=item.ProductID %>"><%= item.Product.Name %></a> 
             </div>
-            <div><%= item.Product.Count.ToString() %></div>
             <div>
                 <%= item.Product.Price.ToString() %>
-            </div>
-            <div>
-                <a href="<%= iStore.Site.SiteAdminUrl %>Products/ProductPropertyEdit.aspx?pid=<%= item.ProductID.ToString() %>&cid=<%= Request.QueryString["cid"] %>">Properties</a>
-            </div>
-            <div>
-                <a href="<%= iStore.Site.SiteAdminUrl %>Products/ProductEdit.aspx?pid=<%= item.ProductID.ToString() %>&cid=<%= Request.QueryString["cid"] %>">Edit</a>
-            </div>
-            <div>
-                <a href="<%= iStore.Site.SiteAdminUrl %>">Delete</a>
-            </div>
-            <div>
-                <a href="<%= iStore.Site.SiteAdminUrl %>Products/ProductsPhoto.aspx?pid=<%= item.ProductID.ToString() %>&cid=<%= Request.QueryString["cid"] %>">
-                    Edit Photo
-                </a>
-            </div>
-            <div>
-                <a href="<%= iStore.Site.SiteAdminUrl %>Products/ProductDescriptionEdit.aspx?pid=<%= item.ProductID.ToString() %>&cid=<%= Request.QueryString["cid"] %>">
-                    Edit Description
-                </a>
             </div>
         </p>       
         <% } %>

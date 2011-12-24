@@ -1,44 +1,10 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Page.Master" CodeBehind="Default.aspx.cs" Inherits="iStore.Products.Default" %>
+﻿<%@ Page EnableEventValidation="false" Language="C#" AutoEventWireup="true" MasterPageFile="~/Page.Master" CodeBehind="Default.aspx.cs" Inherits="iStore.Products.Default" %>
 
+<%@ Register TagPrefix="iS" TagName="AddToCart" Src="~/Modules/Controls/AddToCard.ascx" %>
 <asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="HeadContent">
 </asp:Content>
 <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainContent">
-<script type="text/javascript">
-    
-    function Incr(el) {
-
-        var count = $($(el).parent().children()[1]).html() / 1;
-
-        if (count == 1)
-            $($(el).parent().children()[0]).css("cursor", "pointer")
-
-        $($(el).parent().children()[1]).html(count + 1);
-    }
-    function Decr(el) {
-
-        var count = $($(el).parent().children()[1]).html() / 1;
-
-        if (count == 1) {
-            $(el).css("cursor", "");
-            return;
-        }
-        else {
-            $(el).css("cursor", "pointer");
-        }
-
-        $($(el).parent().children()[1]).html(count - 1);
-    }
-    function Add(pid) {
-        var count = 1;
-        if ('<%=CurrentProduct.ProductID %>' == pid)
-            count = $(".ProdCount").html();
-
-        $("#hf").val(count + ";" + pid);
-        
-        $("#btnAdd").click();
-    }
-
-</script>
+<script type="text/javascript" src="../Scripts/AddToCart.js"></script>
 
 <div class="ProducContainer">
 <div>
@@ -67,11 +33,7 @@
 
       <%
   } %>
-  <b>Number Of items</b> <div><span style="cursor:pointer;color:Blue;" onclick="Decr(this)">-</span><span class="ProdCount">1</span><span style="cursor:pointer;color:Blue;" onclick="Incr(this)">+</span> 
-  <input type="button" value="ADD TO CART" onclick="Add('<%=CurrentProduct.ProductID %>')" />
-  </div>
-  <asp:Button  OnClick="AddToCart" ID="btnAdd" runat="server" Text="ADD TO CART" ClientIDMode="Static" style="display:none" />
-  <asp:HiddenField ID="hf" runat="server" Value="1" ClientIDMode="Static" ></asp:HiddenField>
+  <iS:AddToCart ProductId="<%#CurrentProduct.ProductID %>" ID="CurrProdAddToCart" runat="server" IsCounterVisible="true"  />
 </div>
 <br />
 <div style="float:left;width:100%">
@@ -81,18 +43,24 @@
 </div>
 <div>
 <p><b>Related Products</b></p>
-<% foreach (var item in RelatedProducts)
-   {
-       %>
+<div runat="server" id="RelatedProductsContainer">
 
-       <span>
-            <img src="/Content/Products/Preview/<%=GetPreviewUrl(item) %>" />
-            <br />
-       <a href="/Products/?pid=<%=item.ProductID %>">     <%=item.Name %></a>
-       <input type="button" value="ADD TO CART" onclick="Add('<%=item.ProductID %>')" />
-       </span>
-       <%
-   } %>
+</div>
+
+<%counter=0; %>
+<asp:Repeater runat="server" id="rpt" >
+    <ItemTemplate> 
+            <span style="float:left;">
+        <img src="/Content/Products/Preview/<%=GetPreviewUrl() %>" />
+        <br />
+        <a href='/Products/?pid=<%#Eval("ProductID")%>'>
+        <%#Eval("Name")%>
+        </a>
+        <iS:AddToCart ProductId='<%#Eval("ProductID") %>' runat="server" IsCounterVisible="false"  />
+        <%counter++; %>
+    </span>
+    </ItemTemplate > 
+</asp:Repeater>
 
 </div>
 </asp:Content>

@@ -13,12 +13,30 @@ namespace iStore.Modules.Controls {
     public partial class AddToCard {
         
         /// <summary>
-        /// btnAdd control.
+        /// CounterContainer control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAdd;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl CounterContainer;
+        
+        /// <summary>
+        /// hf control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hf;
+        
+        /// <summary>
+        /// ProdID control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField ProdID;
     }
 }

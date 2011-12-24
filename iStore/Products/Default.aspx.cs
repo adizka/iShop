@@ -19,6 +19,10 @@ namespace iStore.Products
         {
             if (CurrentProduct == null)
                 Response.Redirect(iStore.Site.SiteUrl + "Products/ProductsList.aspx");
+
+            CurrProdAddToCart.ProductId = CurrentProduct.ProductID;
+            rpt.DataSource = RelatedProducts;
+            rpt.DataBind();
         }
 
 
@@ -63,10 +67,11 @@ namespace iStore.Products
                 return _ProductPreviewUrl;
             }
         }
-
-        protected string GetPreviewUrl(BL.Product prod)
+        
+        int counter = -1;
+        protected string GetPreviewUrl()
         {
-            var prodProp = prod.ProductProperties.FirstOrDefault(p => p.PropertyName == BL.ProductPropertyConstants.ProductPhotoPreview);
+            var prodProp = RelatedProducts[counter].ProductProperties.FirstOrDefault(p => p.PropertyName == BL.ProductPropertyConstants.ProductPhotoPreview);
             return (prodProp == null) ? BL.Site.DefaultPhotoPreview : prodProp.PropertyValue;
         }
 
@@ -109,22 +114,12 @@ namespace iStore.Products
             var comparer = new BL.ProductComparer();
             foreach (var item in syblings)
             {
-                result.AddRange(item.ProductsRefCategories.Where(p=>p.ProductID!=CurrentProduct.ProductID).Select(r => r.Product));
+                result.AddRange(item.ProductsRefCategories.Where(p => p.ProductID != CurrentProduct.ProductID).Select(r => r.Product));
                 result = result.Distinct(comparer).ToList();
                 if (result.Count >= count)
                     return result.Take(count).ToList();
             }
             return result;
-        }
-
-        protected void AddToCart(object obj, EventArgs args)
-        {
-            int count;
-            Guid pid;
-            var vals = hf.Value.Split(new char[] { ';' }, StringSplitOptions.RemoveEmptyEntries);
-            if (vals.Length != 2 || !int.TryParse(vals[0], out count) || !Guid.TryParse(vals[1], out pid) || count < 1)
-                return;
-            obl.AddToCart(new List<BL.ProductCounter>() { new BL.ProductCounter() { ID = pid, Count = count } }, ubl.CurrentUser.UserID);
         }
     }
 }

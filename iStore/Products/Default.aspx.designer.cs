@@ -13,21 +13,30 @@ namespace iStore.Products {
     public partial class Default {
         
         /// <summary>
-        /// btnAdd control.
+        /// CurrProdAddToCart control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAdd;
+        protected global::iStore.Modules.Controls.AddToCard CurrProdAddToCart;
         
         /// <summary>
-        /// hf control.
+        /// RelatedProductsContainer control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField hf;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl RelatedProductsContainer;
+        
+        /// <summary>
+        /// rpt control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater rpt;
     }
 }
