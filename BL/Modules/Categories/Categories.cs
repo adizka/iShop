@@ -187,5 +187,18 @@ namespace BL.Modules.Categories
             }
             return false;
         }
+        public List<Guid> GetAllNestedCategories(Guid categoryID)
+        {
+            List<Guid> _childCategories = new List<Guid>();
+            _childCategories.Add(categoryID);
+
+            for (int i = 0; i < _childCategories.Count; i++)
+            {
+                _childCategories.AddRange(GetCategoriesByParentId(_childCategories[i]).OrderBy(s => s.Sort).Select(c => c.CategoryID));
+                _childCategories = _childCategories.Distinct().ToList();
+            }
+         
+            return _childCategories;
+        }
     }
 }

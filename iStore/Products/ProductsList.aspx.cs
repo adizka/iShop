@@ -17,7 +17,9 @@ namespace iStore.Products
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            pager.EntityCount = ((CurrentCategoryId.HasValue) 
+                ? prcbl.GetProductRefCategoriesByCategoryId(CurrentCategoryId.Value) 
+                : prcbl.GetAllProductsRefCategories()).ToList().Distinct(new BL.ProductsRefCategoryComparer()).Count();
         }
 
         object _prodCountInd;
@@ -51,6 +53,26 @@ namespace iStore.Products
                 return cid;
             }
         }
+        List<Guid> _childCategories;
+        List<Guid> ChildCategories
+        {
+            get
+            { 
+                if(_childCategories!=null)
+                    return _childCategories;
+
+                _childCategories = new List<Guid>();
+                
+                if(!CurrentCategoryId.HasValue)
+                    return _childCategories;
+
+                BL.Modules.Categories.Categories cbl = new BL.Modules.Categories.Categories();
+
+                _childCategories = cbl.GetAllNestedCategories(CurrentCategoryId.Value);
+                return _childCategories;
+            }
+        }
+
 
         List<BL.ProductsRefCategory> _PageProducts;
         protected List<BL.ProductsRefCategory> PageProducts
@@ -60,14 +82,17 @@ namespace iStore.Products
                 if (CurrentCategoryId == null)
                 {
                     if (_PageProducts == null)
-                        _PageProducts = prcbl.GetAllProductsRefCategories().ToArray().Distinct(new BL.ProductsRefCategoryComparer())
+                        _PageProducts = prcbl.GetAllProductsRefCategories().
+                            ToArray().Distinct(new BL.ProductsRefCategoryComparer())
                             .Where((c, ind) => ind >= pager.PageIndex * pager.EntitiesPerPage
                                                && ind < (pager.PageIndex + 1) * pager.EntitiesPerPage).ToList();
                 }
                 else
                 {
                     if (_PageProducts == null)
-                        _PageProducts = prcbl.GetProductRefCategoriesByCategoryId(CurrentCategoryId.Value).ToArray()
+                        _PageProducts = prcbl.GetAllProductsRefCategories()
+                            .Where(p => ChildCategories.Contains(p.CategoryID))
+                            .ToArray()
                             .Distinct(new BL.ProductsRefCategoryComparer())
                             .Where((c, ind) => ind >= pager.PageIndex * pager.EntitiesPerPage
                                                && ind < (pager.PageIndex + 1) * pager.EntitiesPerPage).ToList();

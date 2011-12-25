@@ -2,7 +2,7 @@
 
 <%@ Register TagPrefix="iS" TagName="Pager" Src="~/Modules/Controls/Pager/Pager.ascx" %>
 <%@ Register TagPrefix="iS" TagName="AddToCart" Src="~/Modules/Controls/AddToCard.ascx" %>
-
+<%@ Register TagPrefix="iS" TagName="BreadCrumbs" Src="~/Modules/Controls/BreadCrumbs/BreadCrumbs.ascx" %>
 <asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="HeadContent">
 </asp:Content>
 <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainContent">
@@ -14,6 +14,7 @@
         $("[type=submit]", "#<%=addtoCart.ClientID %>").click();
     }
 </script>
+<iS:BreadCrumbs runat="server" ID="bc" SiteMode="true" EntityType="Products/ProductsList.aspx" />
 <div class="rep">
 
         <% if (!PageProducts.Any())
@@ -60,5 +61,5 @@
     <iS:AddToCart ID="addtoCart" IsCounterVisible="false" runat="server" />
     </div>
 
-<iS:Pager runat="server" ID="pager"  AddInsParams="Products"></iS:Pager>
+<iS:Pager runat="server" ID="pager"></iS:Pager>
 </asp:Content>

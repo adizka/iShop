@@ -98,28 +98,34 @@ namespace iStore.Products
                 if (_RelatedProducts == null)
                 {
                     var cat = CurrentProduct.ProductsRefCategories.FirstOrDefault(s => s.Sort == 0);
-
-                    _RelatedProducts = SearchAnotherProducts(0, cat.Category.ParentID, 4);
+                    BL.Modules.Products.ProductRefCategories prcbl = new BL.Modules.Products.ProductRefCategories();
+                    _RelatedProducts = prcbl.GetAllProductsRefCategories()
+                        .Where(c => ChildCategories.Contains(c.CategoryID) && c.ProductID != CurrentProduct.ProductID)
+                        .Select(pr => pr.Product).Distinct().Take(4).ToList();
                 }
-
                 
                 return _RelatedProducts;
             }
         }
 
-        List<BL.Product> SearchAnotherProducts(int currSort, Guid? parentCategoryID, int count)
+        List<Guid> _childCategories;
+        List<Guid> ChildCategories
         {
-            var syblings = cbl.GetCategoriesByParentId(parentCategoryID).OrderBy(s => s.Sort);
-            var result = new List<BL.Product>();
-            var comparer = new BL.ProductComparer();
-            foreach (var item in syblings)
+            get
             {
-                result.AddRange(item.ProductsRefCategories.Where(p => p.ProductID != CurrentProduct.ProductID).Select(r => r.Product));
-                result = result.Distinct(comparer).ToList();
-                if (result.Count >= count)
-                    return result.Take(count).ToList();
+                if (_childCategories != null)
+                    return _childCategories;
+
+                BL.Modules.Categories.Categories cbl = new BL.Modules.Categories.Categories();
+                _childCategories = new List<Guid>();
+                foreach (var item in CurrentProduct.ProductsRefCategories.OrderBy(s=>s.Sort))
+                {
+                    _childCategories.AddRange(cbl.GetAllNestedCategories(item.CategoryID));
+                    _childCategories = _childCategories.Distinct().ToList();
+                }
+
+                return _childCategories;
             }
-            return result;
         }
     }
 }

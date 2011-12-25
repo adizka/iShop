@@ -13,6 +13,15 @@ namespace iStore.Products {
     public partial class ProductsList {
         
         /// <summary>
+        /// bc control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::iStore.Modules.Controls.BreadCrumbs.BCCategories bc;
+        
+        /// <summary>
         /// addtoCart control.
         /// </summary>
         /// <remarks>
