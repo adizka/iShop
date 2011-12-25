@@ -13,5 +13,10 @@ namespace iStore.Contacts
         {
 
         }
+
+        protected void Send(object obj, EventArgs args)
+        {
+            
+        }
     }
 }

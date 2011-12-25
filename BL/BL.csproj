@@ -58,6 +58,7 @@
     <Compile Include="Modules\Products\ProductRefCategories.cs" />
     <Compile Include="Modules\Products\Products.cs" />
     <Compile Include="Modules\Products\ProductType.cs" />
+    <Compile Include="Modules\ShopProperties\ShopProperties.cs" />
     <Compile Include="Modules\Stock\Stock.cs" />
     <Compile Include="Modules\Users\UserRights.cs" />
     <Compile Include="Modules\Users\UserRoles.cs" />

@@ -267,6 +267,14 @@ namespace BL
 				return this.GetTable<Stock>();
 			}
 		}
+
+        public System.Data.Linq.Table<ShopProperties> ShopProperties
+        {
+            get
+            {
+                return this.GetTable<ShopProperties>();
+            }
+        }
 		
 		public System.Data.Linq.Table<UserProperty> UserProperties
 		{
@@ -3893,6 +3901,116 @@ namespace BL
 			entity.ProductType = null;
 		}
 	}
+
+    [global::System.Data.Linq.Mapping.TableAttribute(Name = "dbo.ShopProperties")]
+    public partial class ShopProperties : INotifyPropertyChanging, INotifyPropertyChanged
+    {
+
+        private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+
+        private System.Guid _ID;
+
+        private string _Key;
+
+        private string _Value;
+
+        #region Extensibility Method Definitions
+        partial void OnLoaded();
+        partial void OnValidate(System.Data.Linq.ChangeAction action);
+        partial void OnCreated();
+        partial void OnIDChanging(System.Guid value);
+        partial void OnIDChanged();
+        partial void OnKeyChanging(string value);
+        partial void OnKeyChanged();
+        partial void OnValueChanging(string value);
+        partial void OnValueChanged();
+        #endregion
+
+        public ShopProperties()
+        {
+            OnCreated();
+        }
+
+        [global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_ID", DbType = "UniqueIdentifier NOT NULL", IsPrimaryKey = true)]
+        public System.Guid ID
+        {
+            get
+            {
+                return this._ID;
+            }
+            set
+            {
+                if ((this._ID != value))
+                {
+                    this.OnIDChanging(value);
+                    this.SendPropertyChanging();
+                    this._ID = value;
+                    this.SendPropertyChanged("ID");
+                    this.OnIDChanged();
+                }
+            }
+        }
+
+        [global::System.Data.Linq.Mapping.ColumnAttribute(Name = "[Key]", Storage = "_Key", DbType = "NVarChar(200) NOT NULL", CanBeNull = false)]
+        public string Key
+        {
+            get
+            {
+                return this._Key;
+            }
+            set
+            {
+                if ((this._Key != value))
+                {
+                    this.OnKeyChanging(value);
+                    this.SendPropertyChanging();
+                    this._Key = value;
+                    this.SendPropertyChanged("Key");
+                    this.OnKeyChanged();
+                }
+            }
+        }
+
+        [global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_Value", DbType = "NVarChar(MAX) NOT NULL", CanBeNull = false)]
+        public string Value
+        {
+            get
+            {
+                return this._Value;
+            }
+            set
+            {
+                if ((this._Value != value))
+                {
+                    this.OnValueChanging(value);
+                    this.SendPropertyChanging();
+                    this._Value = value;
+                    this.SendPropertyChanged("Value");
+                    this.OnValueChanged();
+                }
+            }
+        }
+
+        public event PropertyChangingEventHandler PropertyChanging;
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected virtual void SendPropertyChanging()
+        {
+            if ((this.PropertyChanging != null))
+            {
+                this.PropertyChanging(this, emptyChangingEventArgs);
+            }
+        }
+
+        protected virtual void SendPropertyChanged(String propertyName)
+        {
+            if ((this.PropertyChanged != null))
+            {
+                this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Stock")]
 	public partial class Stock : INotifyPropertyChanging, INotifyPropertyChanged
