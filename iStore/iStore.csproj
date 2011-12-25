@@ -88,6 +88,8 @@
     <Content Include="Admin\Scripts\ProdPropertyEdit.js" />
     <Content Include="Admin\Search.aspx" />
     <Content Include="Admin\SearchControl.ascx" />
+    <Content Include="Admin\ShopProperties\Default.aspx" />
+    <Content Include="Admin\ShopProperties\PropertyEdit.aspx" />
     <Content Include="Admin\Styles\Admin.css" />
     <Content Include="Admin\Styles\images\ui-bg_diagonals-thick_18_b81900_40x40.png" />
     <Content Include="Admin\Styles\images\ui-bg_diagonals-thick_20_666666_40x40.png" />
@@ -791,6 +793,20 @@
     </Compile>
     <Compile Include="Admin\SearchControl.ascx.designer.cs">
       <DependentUpon>SearchControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ShopProperties\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ShopProperties\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ShopProperties\PropertyEdit.aspx.cs">
+      <DependentUpon>PropertyEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ShopProperties\PropertyEdit.aspx.designer.cs">
+      <DependentUpon>PropertyEdit.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_GlobalResources\Admin_Edits.designer.cs">
       <AutoGen>True</AutoGen>

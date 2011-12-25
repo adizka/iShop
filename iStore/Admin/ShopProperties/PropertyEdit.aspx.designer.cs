@@ -7,45 +7,45 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace iStore.Contacts {
+namespace iStore.Admin.ShopProperty {
     
     
-    public partial class Default {
+    public partial class PropertyEdit {
         
         /// <summary>
-        /// userNameTxt control.
+        /// ErrorMsg control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox userNameTxt;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl ErrorMsg;
         
         /// <summary>
-        /// emailTxt control.
+        /// keyTxt control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox emailTxt;
+        protected global::System.Web.UI.WebControls.TextBox keyTxt;
         
         /// <summary>
-        /// msgTxt control.
+        /// valTxt control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox msgTxt;
+        protected global::System.Web.UI.WebControls.TextBox valTxt;
         
         /// <summary>
-        /// sendBtn control.
+        /// SaveBtn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button sendBtn;
+        protected global::System.Web.UI.WebControls.Button SaveBtn;
     }
 }
