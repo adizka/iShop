@@ -1,16 +1,23 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ForgotPassword.aspx.cs" Inherits="iStore.Users.ForgotPassword" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Page.Master" CodeBehind="ForgotPassword.aspx.cs" Inherits="iStore.Users.ForgotPassword" %>
+<asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="HeadContent">
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+</asp:Content>
+<asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainContent">
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
-    <div>
-    
-    </div>
-    </form>
-</body>
-</html>
+<asp:ScriptManager runat="server" ID="sm"></asp:ScriptManager>    
+<asp:UpdatePanel runat="server" ID="up">
+<ContentTemplate>
+   <p>
+        I forgot my password
+   </p>
+   <p>
+        <asp:Label runat="server" ID="lblLogin">Username or email</asp:Label> 
+        <asp:TextBox runat="server" ID="txtEmail"></asp:TextBox> 
+        <asp:Label runat="server" ID="lblEmailError"></asp:Label>
+   </p>
+   <p>
+        <asp:Button runat="server" ID="btnGo" OnClick="Go" Text="Go" />
+   </p>
+</ContentTemplate>
+</asp:UpdatePanel>
+</asp:Content>

@@ -110,6 +110,14 @@ namespace BL.Modules.Users
             return (user != null);
         }
 
+        public bool isLoginAndMailNotInDb(string login)
+        {
+            login = login.ToUpper();
+            BL.User user =
+                db.Users.Where(u => u.Login.ToUpper() == login || u.Email.ToUpper() == login).FirstOrDefault();
+            return (user != null);
+        }
+
         public bool ChangePassword(Guid userId, string oldPassword, string password)
         {
             BL.User user = db.Users.Where(u => u.UserID == userId).FirstOrDefault();
