@@ -30,12 +30,18 @@ namespace iStore.Orders
                 {
                     Guid oid;
                     if (!Guid.TryParse(Request.QueryString["oid"], out oid))
-                        return null;
-                    _UserOrder = obl.GetUserOrderedProducts(ubl.CurrentUser.UserID).FirstOrDefault(o => o.OrderID == oid);
+                        _UserOrder = obl.GetUserOrderedProducts(ubl.CurrentUser.UserID).FirstOrDefault(o => o.IsActive);
+                    else
+                    {
+                        _UserOrder = obl.GetUserOrderedProducts(ubl.CurrentUser.UserID).FirstOrDefault(o => o.OrderID == oid);
+                    }
+                    if (_UserOrder == null)
+                        _UserOrder = obl.CreateOrder(ubl.CurrentUser.UserID);
                 }
                 return _UserOrder;
             }
         }
+
         protected void Save(object obj, EventArgs args)
         {
             if (!UserOrder.IsActive)

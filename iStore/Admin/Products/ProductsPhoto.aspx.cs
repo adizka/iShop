@@ -66,7 +66,21 @@ namespace iStore.Admin.Products
                 return string.Empty;
             }
         }
-
+        object _OriginalCountObj;
+        int _OriginalCount;
+        protected int OriginalCount
+        {
+            get
+            {
+                if (_OriginalCountObj == null)
+                {
+                    _OriginalCountObj = new object();
+                    _OriginalCount = ppbl.GetAllProperyByProductId(CuurentProduct.ProductID).Count(p => p.PropertyName == BL.ProductPropertyConstants.ProductPhotoOriginal);
+                }
+                return _OriginalCount;
+ 
+            }
+        }
         protected string CheckPreviewPhoto()
         {
             string result = string.Empty;

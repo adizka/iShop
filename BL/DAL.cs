@@ -61,8 +61,8 @@ namespace BL
     }
     public class ProductPropertyConstants
     {
-        public static string ProductPhotoPreview = "ProductPhotoPreview";
-        public static string ProductPhotoOriginal = "ProductPhotoOriginal";
-        public static string ProductDescription = "ProductDescription";
+        public const string ProductPhotoPreview = "ProductPhotoPreview";
+        public const string ProductPhotoOriginal = "ProductPhotoOriginal";
+        public const string ProductDescription = "ProductDescription";
     }
 }

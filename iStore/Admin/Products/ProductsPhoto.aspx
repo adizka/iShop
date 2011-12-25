@@ -52,6 +52,7 @@
     </p>
     <br /><br />
     <p>
+        <b>Всего загружено <%=OriginalCount %> photo</b><br />
         <asp:Label runat="server" ID="lblOriginal">Изменение Original</asp:Label>
         <asp:FileUpload runat="server" ID="upOriginal" /><br />
         <asp:Button runat="server" ID="btnSaveOriginal" OnClick="SaveOriginal" Text="Загрузить Original" />

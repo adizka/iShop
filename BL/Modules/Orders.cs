@@ -41,7 +41,7 @@ namespace BL.Modules.Orders
 
                 foreach (var item in prodIDs)
                 {
-                    var ord = order.OrdersRefProducts.FirstOrDefault(r=>r.ProductID == item.ID);
+                    var ord = order.OrdersRefProducts.FirstOrDefault(r => r.ProductID == item.ID);
                     if (ord != null)
                     {
                         ord.Count += item.Count;
@@ -67,10 +67,10 @@ namespace BL.Modules.Orders
         {
             using (var db = new ShopDataContext())
             {
-                 var user = db.Users.First(u => u.UserID == userID);
-                 var order = user.Orders.FirstOrDefault(o => o.OrderID == orderID&& o.IsActive);
+                var user = db.Users.First(u => u.UserID == userID);
+                var order = user.Orders.FirstOrDefault(o => o.OrderID == orderID && o.IsActive);
 
-                if(order == null)
+                if (order == null)
                     return;
                 db.OrdersRefProducts.DeleteAllOnSubmit(order.OrdersRefProducts.Where(r => toDelete.Contains(r.ID)));
 
@@ -143,6 +143,33 @@ namespace BL.Modules.Orders
                 db.OrdersRefProducts.DeleteAllOnSubmit(order.OrdersRefProducts);
                 db.SubmitChanges();
             }
+        }
+
+        public Order CreateOrder(Guid userID)
+        {
+            var db = new ShopDataContext();
+            var user = db.Users.First(u => u.UserID == userID);
+            var order = user.Orders.FirstOrDefault(o => o.IsActive);
+
+            if (order != null)
+                return order;
+
+            order = new Order()
+                {
+                    DeliveryTypeID = (int)DeliveryTypes.NonameType,
+                    IsActive = true,
+                    IsPaid = false,
+                    OrderID = Guid.NewGuid(),
+                    OrderStatusID = (int)OrderStatus.NotPaid,
+                    PaymentTypeID = (int)PaymentTypes.NonameType,
+                    UserID = userID,
+                    CreateDate = DateTime.Now,
+                    DeliveryDate = DateTime.Now
+                };
+            user.Orders.Add(order);
+            db.SubmitChanges();
+
+            return order;
         }
     }
 }

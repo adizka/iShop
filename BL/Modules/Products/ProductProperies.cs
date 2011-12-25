@@ -31,9 +31,28 @@ namespace BL.Modules.Products
                                                      {
                                                          ID = Guid.NewGuid(),
                                                          ProductID = prod.ProductID,
-                                                         ProductPropertiesID = pr.PropertyID,
-                                                         Sort = prod.ProductProperties.Count
+                                                         ProductPropertiesID = pr.PropertyID
                                                      };
+
+                switch (propertyName)
+                {
+                    case BL.ProductPropertyConstants.ProductPhotoOriginal:
+                        propRef.Sort = prod.ProductProperties.Count(p => p.PropertyName == BL.ProductPropertyConstants.ProductPhotoOriginal);
+                        break;
+                    case BL.ProductPropertyConstants.ProductPhotoPreview:
+                        propRef.Sort = 0;
+                        break;
+                    case BL.ProductPropertyConstants.ProductDescription:
+                        propRef.Sort = 0;
+                        break;
+                    default:
+                        propRef.Sort = prod.ProductProperties.Count(p =>
+                                             p.PropertyName != BL.ProductPropertyConstants.ProductDescription
+                                             && p.PropertyName != BL.ProductPropertyConstants.ProductPhotoOriginal
+                                             && p.PropertyName != BL.ProductPropertyConstants.ProductPhotoPreview);
+                        break;
+                }
+                
                 prod.ProductProperties.Add(pr);
                 prod.ProductsRefProperies.Add(propRef);
                 db.SubmitChanges();
@@ -86,6 +105,7 @@ namespace BL.Modules.Products
 
                 if (pr != null)
                 {
+                    db.ProductsRefProperies.DeleteAllOnSubmit(pr.ProductsRefProperies);
                     db.ProductProperties.DeleteOnSubmit(pr);
                     db.SubmitChanges();
                 }
@@ -196,13 +216,33 @@ namespace BL.Modules.Products
         public bool UpdateProductPhotoOriginal(string url, Guid productId)
         {
             bool allRight = false;
-            ShopDataContext db = new ShopDataContext();
-            BL.ProductProperty productProperty = db.ProductProperties.Where(p => p.ProductID == productId && p.PropertyName == ProductPhoto.ProductPhotoOriginal.ToString()).FirstOrDefault();
-            if (productProperty != null)
+            int maxCount = 3;
+            using (ShopDataContext db = new ShopDataContext())
             {
-                productProperty.PropertyValue = url;
-                db.SubmitChanges();
-                allRight = true;
+                var productProperties = db.ProductProperties.Where(p => p.ProductID == productId && p.PropertyName == BL.ProductPropertyConstants.ProductPhotoOriginal).OrderBy(s=>s.Sort).ToList();
+                if (productProperties.Count == maxCount)
+                {
+                    var prop1 = productProperties.First(p => p.PropertyName == BL.ProductPropertyConstants.ProductPhotoOriginal);
+                    prop1.PropertyValue = url;
+
+                    var ref1 = prop1.ProductsRefProperies.First();
+                    ref1.Sort = productProperties.Count - 1; 
+                    
+                    for (int i = 1; i < productProperties.Count; i++)
+                    {
+                        productProperties[i].ProductsRefProperies.First().Sort = i - 1;
+                    }
+                    db.SubmitChanges();
+                    allRight = true;
+                }
+                else
+                {
+                    if (productProperties.Count > maxCount)
+                        DeleteProperty(productProperties.Last().PropertyID);
+                    else
+                        AddProperty(productId, BL.ProductPropertyConstants.ProductPhotoOriginal, url, true);
+                    allRight = true;
+                }
             }
             return allRight;
         }
