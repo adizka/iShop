@@ -17,9 +17,9 @@ namespace iStore.Products
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            pager.EntityCount = ((CurrentCategoryId.HasValue) 
-                ? prcbl.GetProductRefCategoriesByCategoryId(CurrentCategoryId.Value) 
-                : prcbl.GetAllProductsRefCategories()).ToList().Distinct(new BL.ProductsRefCategoryComparer()).Count();
+            pager.EntityCount = ((CurrentCategoryId.HasValue)
+                ? prcbl.GetAllProductsRefCategories().Where(p => ChildCategories.Contains(p.CategoryID))                            
+                : prcbl.GetAllProductsRefCategories().ToArray().Distinct(new BL.ProductsRefCategoryComparer())).Count();
         }
 
         object _prodCountInd;
