@@ -20,7 +20,7 @@ namespace BL.Modules.Orders
             {
                 var user = db.Users.First(u => u.UserID == userID);
 
-                var order = user.Orders.FirstOrDefault(o => o.IsActive);
+                var order = user.Orders.FirstOrDefault(o => o.OrderStatusID == (int)OrderStatus.NotPaid);
 
                 if (order == null)
                 {

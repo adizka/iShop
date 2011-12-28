@@ -9,7 +9,7 @@ namespace BL.Modules.Pages
 {
     public class Pages
     {
-        public static ShopDataContext db = new ShopDataContext();
+        public ShopDataContext db = new ShopDataContext();
 
         public void AddOrUpdatePage(int pageId, string keywords, string pageName, string pageBody)
         {
@@ -108,12 +108,12 @@ namespace BL.Modules.Pages
             return db.Pages.OrderByDescending(p => p.PageID);
         }
 
-        public static BL.Page GetPageByName(string name)
+        public BL.Page GetPageByName(string name)
         {
             return db.Pages.Where(p => p.PageName == name).FirstOrDefault();
         }
 
-        public static bool IsPageNameInDB(string pageName)
+        public bool IsPageNameInDB(string pageName)
         {
             BL.Page page = GetPageByName(pageName);
             return (page != null);

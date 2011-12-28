@@ -1,9 +1,6 @@
 <Configuration>
   <RecentFiles>
     <RecentFiles>
-      <File id="F811AF93-8440-4DC9-A7AA-BCA306A0B8B2/d:Modules/d:Products/f:Products.cs" caret="7273" fromTop="13" />
-      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Design/f:MostPopularProducts.ascx.cs" caret="145" fromTop="6" />
-      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Design/f:MostPopularProducts.ascx" caret="489" fromTop="11" />
       <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Styles/f:Site.css" caret="1863" fromTop="36" />
       <File id="F811AF93-8440-4DC9-A7AA-BCA306A0B8B2/d:Modules/d:Users/f:UsersSessions.cs" caret="611" fromTop="7" />
       <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Scripts/f:Menu.js" caret="820" fromTop="19" />
@@ -21,16 +18,19 @@
       <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Users/f:Register.aspx.cs" caret="3909" fromTop="58" />
       <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Users/f:Profile.aspx.cs" caret="1918" fromTop="58" />
       <File id="F811AF93-8440-4DC9-A7AA-BCA306A0B8B2/d:Modules/d:Users/f:Users.cs" caret="4226" fromTop="27" />
-      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/f:Site.Master" caret="1892" fromTop="35" />
       <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Users/f:ForgotPassword.aspx.designer.cs" caret="2382" fromTop="69" />
+      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Users/f:ForgotPassword.aspx.cs" caret="544" fromTop="16" />
+      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Users/f:ForgotPassword.aspx" caret="477" fromTop="9" />
       <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Contacts/f:Default.aspx" caret="394" fromTop="10" />
       <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Users/f:Login.aspx" caret="777" fromTop="6" />
       <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Users/f:Profile.aspx" caret="0" fromTop="0" />
       <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Admin/d:Login/f:Default.aspx" caret="904" fromTop="8" />
       <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Design/f:AutorizationControl.ascx" caret="1340" fromTop="16" />
-      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Users/f:ForgotPassword.aspx" caret="477" fromTop="9" />
-      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Users/f:ForgotPassword.aspx.cs" caret="544" fromTop="16" />
-      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Users/f:Register.aspx" caret="1647" fromTop="21" />
+      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/f:Site.Master" caret="1892" fromTop="35" />
+      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Users/f:Register.aspx" caret="1997" fromTop="31" />
+      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Delivery/f:Default.aspx" caret="0" fromTop="0" />
+      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Pages/f:Default.aspx" caret="196" fromTop="2" />
+      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Pages/f:Default.aspx.cs" caret="87" fromTop="3" />
     </RecentFiles>
     <RecentEdits>
       <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Users/f:Login.aspx.cs" caret="1396" fromTop="18" />

@@ -4,9 +4,6 @@
 <div class="Menu">
 <%-- 1--%>
 
-<div class="UserCart">
-<iS:Cart runat="server" ></iS:Cart>
-</div>
     <div class="MenuItemFirst">
         <% int i = -1; string topStyle = string.Empty;  
         foreach (var item in ParentCategory) 
@@ -43,6 +40,10 @@
            <% } %>
            <%--end 2--%>
     <% } %>
+    </div>
+    <div class="UserCart">
+        <h2>Shopping cart</h2>
+        <iS:Cart runat="server" ></iS:Cart>
     </div>
 <%--end 1--%>
 </div>

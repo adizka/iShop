@@ -8,7 +8,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head runat="server">
     <title></title>
-    <link href="Styles/Site.css" rel="stylesheet" type="text/css" />
+    <link href="Styles/Style.css" rel="stylesheet" type="text/css" />
     <link href="Styles/Controls.css" rel="Stylesheet" type="text/css" />
     <link rel="Stylesheet" type="text/css" href="Scripts/jquery.fancybox-2.0/jquery.fancybox.css"" media="screen" />
     <script type="text/javascript" src="<%= iStore.Site.SiteUrl %>Scripts/jquery.min.js"></script>
@@ -20,7 +20,7 @@
 <body>
     <form id="MainPageForm" runat="server">
         
-        <div class="Header">
+        <div class="Header_All">
             <div class="MarginBoth">
                 <iS:Header runat="server" ID="header" />
             </div>
@@ -37,8 +37,8 @@
                     </div>
                 </div>
             </div>
+            <div class="clear"></div>
         </div>  
-            
         <div class="Footer">
             <div class="MarginBoth">
                 <iS:Footer runat="server" ID="footer" />

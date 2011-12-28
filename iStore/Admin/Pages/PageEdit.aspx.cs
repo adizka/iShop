@@ -59,7 +59,7 @@ namespace iStore.Admin.Pages
                 ve.SetErrors();
                 return false;
             }
-            if (BL.Modules.Pages.Pages.IsPageNameInDB(name))
+            if (pages.IsPageNameInDB(name))
             {
                 if (CurrentPageId == -1)
                 {

@@ -64,7 +64,14 @@ namespace iStore.Modules.Controls
                 if (_orderObj == null)
                 {
                     _orderObj = new object();
-                    _order = obl.GetUserOrderedProducts(ubl.CurrentUser.UserID).FirstOrDefault(o => o.IsActive);
+                    if (ubl.CurrentUser != null)
+                    {
+                        _order = obl.GetUserOrderedProducts(ubl.CurrentUser.UserID).FirstOrDefault(o => o.IsActive);
+                    }
+                    else
+                    {
+                        _order = null;
+                    }
                 }
                 return _order;
             }

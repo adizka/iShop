@@ -49,15 +49,6 @@ namespace iStore.Design {
         protected global::System.Web.UI.WebControls.TextBox txtPassword;
         
         /// <summary>
-        /// lblSaveMe control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblSaveMe;
-        
-        /// <summary>
         /// chbSaveMe control.
         /// </summary>
         /// <remarks>
@@ -67,13 +58,22 @@ namespace iStore.Design {
         protected global::System.Web.UI.WebControls.CheckBox chbSaveMe;
         
         /// <summary>
+        /// lblSaveMe control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblSaveMe;
+        
+        /// <summary>
         /// btnLogin control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnLogin;
+        protected global::System.Web.UI.WebControls.LinkButton btnLogin;
         
         /// <summary>
         /// lbLogOur control.

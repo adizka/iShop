@@ -1,10 +1,10 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="MostPopularProducts.ascx.cs" Inherits="iStore.Design.MostPopularProducts" %>
 
-<div class="Title">
-    Products
-</div>
-<div>
-    <div class="Slider_Left" id="slide_left" onclick="SlideToLeft();"><</div>
+<h1>Products</h1>
+<div class="border_bg">
+<div class="black_bg">
+    <a class="Slider_Left" id="slide_left" onclick="SlideToLeft();"></a>
+    <a class="Slider_Right" id="slide_right" onclick="SlideToRight();"></a>
     <div class="Slider">
         <div class="HiddenLeft">0</div>
         <div class="HiddenRight"><%= AllProducts.Count().ToString() %></div>
@@ -13,15 +13,13 @@
              { %>
 
             <li id="li<%= i.ToString() %>" class="SliderItem">
-                <div>
+                <div class="img_field">
                     <img alt="<%= product.Name  %>" src="<%= iStore.Site.PreUrlProductPreviewImage %><%= GetProductPreviewById(product.ProductID) %>"  />
                 </div>
-                <div>
-                    <span><%= product.Name %></span>
-                    <span>$<%= product.Price.ToString() %></span>
-                </div>
-                <div>
-                    <a href="<%= iStore.Site.SiteUrl %>Products/?pid=<%= product.ProductID.ToString() %>">
+                <div class="price_name">
+                    <span class="name_product"><%= product.Name %></span>
+                    <span class="price_product">$<%= product.Price.ToString() %></span> <br />
+                    <a class="more_details" href="<%= iStore.Site.SiteUrl %>Products/?pid=<%= product.ProductID.ToString() %>">
                         more details
                     </a>
                 </div>
@@ -31,5 +29,5 @@
              } %>
         </ul>
     </div>
-    <div class="Slider_Right" id="slide_right" onclick="SlideToRight();">></div>
+</div>
 </div>

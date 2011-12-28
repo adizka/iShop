@@ -3,43 +3,51 @@
 <script type="text/javascript" src="<%= iStore.Site.SiteUrl %>Scripts/flowplayerOverlay/jquery.tools.min.js"></script>
 <script type="text/javascript">
       $(function () {
-          $("button[rel]").overlay({ mask: '#777', effect: 'apple' });
+          $("a[rel]").overlay({ mask: '#777', effect: 'apple' });
       });
 </script>
 
 <% if (CurrentUser == null) { %>
-
-NOT LOGGED YET
-<button class="Header_LoginLink" rel="#Header_Login" type="button">sign in</button> or 
-<a href="<%= iStore.Site.SiteUrl %>Users/Register.aspx">register</a>
+<span class="not_loginyet">
+    NOT LOGGED YET <br />
+    <span>
+        <a class="Header_LoginLink" rel="#Header_Login" type="button">sign in</a> or 
+        <a href="<%= iStore.Site.SiteUrl %>Users/Register.aspx">register</a>
+    </span>
+</span>
 
 <div class="Header_Login apple_overlay" id="Header_Login">
-    <span class="Title">Вход</span>
     <p>
-        <asp:Label runat="server" ID="lblLogin" AssociatedControlID="txtLogin">Логин или E-mail</asp:Label><br />
+        <asp:Label runat="server" ID="lblLogin" AssociatedControlID="txtLogin">User name:</asp:Label><br />
         <asp:TextBox runat="server" ID="txtLogin"></asp:TextBox>
     </p>
     <p>
-        <asp:Label runat="server" ID="lblPassword" AssociatedControlID="txtPassword">Пароль</asp:Label><br />
+        <asp:Label runat="server" ID="lblPassword" AssociatedControlID="txtPassword">Password:</asp:Label><br />
         <asp:TextBox runat="server" ID="txtPassword" TextMode="Password"></asp:TextBox>
     </p>
     <p>
-        <asp:Label runat="server" ID="lblSaveMe" AssociatedControlID="chbSaveMe">Запомнить меня</asp:Label> 
         <asp:CheckBox runat="server" ID="chbSaveMe" Checked="true" />
+        <asp:Label runat="server" ID="lblSaveMe" AssociatedControlID="chbSaveMe">Remember me</asp:Label> 
     </p>
     <p>
-       <asp:Button runat="server" ID="btnLogin" OnClick="LoginUser" Text="Войти" />
+        <span class="universal_btn">
+            <span>
+                <asp:LinkButton runat="server" ID="btnLogin" OnClick="LoginUser" Text="Log in" />
+            </span>
+        </span>
         <%--<input type="button" id="btnLogin" value="Войти" />--%>
     </p>
     <p>
-        <a href="<%= iStore.Site.SiteUrl %>Users/Register.aspx">Регистрация</a><br />
-        <a href="<%= iStore.Site.SiteUrl %>Users/ForgotPassword.aspx">Забыли пароль</a>
+        <a href="<%= iStore.Site.SiteUrl %>Users/ForgotPassword.aspx">Forgot your password?</a> <br />
+        <a href="<%= iStore.Site.SiteUrl %>Users/Register.aspx">Register</a>
     </p>
 </div>
 
 <% } else { %>
 
-<%= CurrentUser.Login %>  
-<a href="<%= iStore.Site.SiteUrl %>Users/Profile.aspx">profile</a>
-<asp:LinkButton runat="server" ID="lbLogOur" OnClick="LogOut">Log out</asp:LinkButton>
+<span class="not_loginyet">
+    <%= CurrentUser.Login %> <br />
+    <a class="anchor_nm" href="<%= iStore.Site.SiteUrl %>Users/Profile.aspx">Profile</a>
+    <asp:LinkButton runat="server" ID="lbLogOur" OnClick="LogOut">Log out</asp:LinkButton>
+</span>
 <% } %>

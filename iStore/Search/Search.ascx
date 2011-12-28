@@ -14,10 +14,11 @@
         });
     });
 </script>
-
-<asp:DropDownList runat="server" ID="ddlSearchType">
-    <asp:ListItem Value="0">By product</asp:ListItem>
-    <asp:ListItem Value="1">By category</asp:ListItem>
-</asp:DropDownList>
-<asp:TextBox runat="server" ID="txtSearch" ClientIDMode="Static">Search request here</asp:TextBox>
-<asp:Button runat="server" ID="btnSearch" Text="GO" OnClick="SearchText" />
+<span class="paraq_search">
+    <asp:DropDownList runat="server" ID="ddlSearchType">
+        <asp:ListItem Value="0">By product</asp:ListItem>
+        <asp:ListItem Value="1">By category</asp:ListItem>
+    </asp:DropDownList>
+    <asp:TextBox runat="server" ID="txtSearch" ClientIDMode="Static">Search request here</asp:TextBox>
+    <asp:Button runat="server" CssClass="go_btn" ID="btnSearch" Text="" OnClick="SearchText" />
+</span>

@@ -52,10 +52,7 @@ body { margin: 0;padding: 0; }
 .Registration {   }
 .Registration_Info {   }
 
-/* Extertnal Controls */
-.apple_overlay { display:none; background-image:url('white.png'); width:250px; padding:35px; }
-.apple_overlay .close { background-image:url('close.png'); position:absolute; right:-15px; top:-15px;
-	cursor:pointer; height:35px; width:35px; }
+
 
 /* Categories */
 .ProductList_Table { width: 750px;padding: 0;margin: 0;border: 0;vertical-align: top; }

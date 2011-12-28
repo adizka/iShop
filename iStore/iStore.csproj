@@ -37,13 +37,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AjaxControlToolkit, Version=4.1.50927.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\AjaxControlToolkit.dll</HintPath>
+    <Reference Include="AjaxControlToolkit">
+      <HintPath>C:\Users\abdullaev.WCH\Desktop\AjaxControlToolkit.dll</HintPath>
     </Reference>
-    <Reference Include="AjaxControlToolkit.resources, Version=4.1.50927.0, Culture=ru, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\AjaxControlToolkit.resources.dll</HintPath>
+    <Reference Include="AjaxControlToolkit.resources">
+      <HintPath>C:\Users\abdullaev.WCH\Desktop\AjaxControlToolkit.resources.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
@@ -113,7 +111,9 @@
     <Content Include="bin\iStore.pdb" />
     <Content Include="Categories\Default.aspx" />
     <Content Include="Contacts\Default.aspx" />
+    <Content Include="Content\Products\Original\11dc51d1-0466-4640-98b7-735514d588fd777.jpg" />
     <Content Include="Content\Products\Original\DefaultOriginal.png" />
+    <Content Include="Content\Products\Preview\b914362f-1e8a-4fca-9363-b9211ee00951777.jpg" />
     <Content Include="Content\Products\Preview\DefaultPreview.png" />
     <Content Include="Delivery\Default.aspx" />
     <Content Include="Design\AutorizationControl.ascx" />
@@ -123,16 +123,30 @@
     <Content Include="Design\Menu.ascx" />
     <Content Include="Design\Menu2.ascx" />
     <Content Include="Design\MostPopularProducts.ascx" />
+    <Content Include="Images\5x5black.png" />
+    <Content Include="Images\5x5white.png" />
+    <Content Include="Images\anchor_style.png" />
+    <Content Include="Images\arrow_anchor.png" />
     <Content Include="Images\bg-menu-main.png" />
+    <Content Include="Images\bg_main.jpg" />
     <Content Include="Images\bg_nav.gif" />
     <Content Include="Images\box.png" />
+    <Content Include="Images\cart_item.png" />
     <Content Include="Images\Default\DefaultOriginal.png" />
     <Content Include="Images\Default\DefaultPreview.png" />
+    <Content Include="Images\go_search.gif" />
     <Content Include="Images\h2_trigger_a.gif" />
     <Content Include="Images\hint.png" />
+    <Content Include="Images\left_btn_marv.png" />
+    <Content Include="Images\left_trigermarv.png" />
     <Content Include="Images\logo.png" />
+    <Content Include="Images\marvel_logo.png" />
+    <Content Include="Images\marvel_world_wide.png" />
+    <Content Include="Images\mid_btn_marv.png" />
     <Content Include="Images\minus.png" />
     <Content Include="Images\plus.png" />
+    <Content Include="Images\right_btn_marv.png" />
+    <Content Include="Images\right_trigermarv.png" />
     <Content Include="Modules\Controls\AddToCard.ascx" />
     <Content Include="Modules\Controls\BreadCrumbs\BreadCrumbs.ascx" />
     <Content Include="Modules\Controls\Cart.ascx" />
@@ -609,6 +623,7 @@
     <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
     <Content Include="Scripts\jquery-1.4.1.js" />
     <Content Include="Scripts\jquery-1.4.1.min.js" />
+    <Content Include="Styles\Style.css" />
     <Content Include="Styles\white.png" />
     <Content Include="Users\ForgotPassword.aspx" />
     <Content Include="Users\Login.aspx" />
@@ -1188,6 +1203,7 @@
     <None Include="Scripts\FCK\editor\filemanager\connectors\py\upload.py" />
     <None Include="Scripts\FCK\editor\filemanager\connectors\py\wsgi.py" />
     <None Include="Scripts\FCK\editor\filemanager\connectors\py\zope.py" />
+    <None Include="Styles\Eras Medium Regular.ttf" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
