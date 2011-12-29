@@ -11,7 +11,8 @@ namespace iStore.Design
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            rpt.DataSource = AllProducts;
+            rpt.DataBind();
         }
 
         public IQueryable<BL.Product> AllProducts
@@ -23,10 +24,10 @@ namespace iStore.Design
             }
         }
 
-        public string GetProductPreviewById(Guid id)
+        public string GetProductPreviewById(string id)
         {
             var ppbl = new BL.Modules.Products.ProductProperies();
-            return ppbl.GetProductPreviewByProductId(id);
+            return ppbl.GetProductPreviewByProductId(new Guid(id));
         }
     }
 }

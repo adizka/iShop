@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using log4net;
 
 namespace iStore.Orders
 {
@@ -38,7 +39,7 @@ namespace iStore.Orders
             if (UserOrder == null || UserOrder.OrdersRefProducts.Count == 0)
                 return;
 
-            obl.FromOrder(int.Parse(paymentDdl.SelectedValue), int.Parse(deliveryDdl.SelectedValue),ubl.CurrentUser.UserID);
+            obl.FormOrder(BL.PaymentTypes.PayPal,ubl.CurrentUser.UserID);
             UserOrder = null;
         }
     }

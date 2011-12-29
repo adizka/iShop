@@ -11,5 +11,32 @@ namespace iStore.Categories {
     
     
     public partial class Default {
+        
+        /// <summary>
+        /// bc control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::iStore.Modules.Controls.BreadCrumbs.BCCategories bc;
+        
+        /// <summary>
+        /// addtoCart control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::iStore.Modules.Controls.AddToCard addtoCart;
+        
+        /// <summary>
+        /// pager control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::iStore.Modules.Controls.Pager.Pager pager;
     }
 }
