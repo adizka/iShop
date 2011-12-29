@@ -43,6 +43,14 @@ namespace iStore.Categories
             }
         }
 
+        public IList<BL.ProductsRefCategory> GetProductsRefCurrentCategoryList
+        {
+            get 
+            {
+                return GetProductsRefCurrentCategory.ToList();
+            }
+        }
+
         public IQueryable<BL.Category> GetChildCategoryWhereParentIsCurrentCategory
         {
             get 

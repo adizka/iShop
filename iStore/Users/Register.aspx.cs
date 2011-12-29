@@ -55,44 +55,44 @@ namespace iStore.Users
             if (login.Length < 4) 
             {
                 allRight = false;
-                lblLoginError.Text += "Логин должен быть длиной не менее 4х симоволов <br />";
+                lblLoginError.Text += "Usernames (Login) must be at least 4 characters ";
                 lblLoginError.Visible = true;
             }
             if (login.Length > 20) 
             {
                 allRight = false;
-                lblLoginError.Text += "Логин должен быть длиной не более 20 симоволов <br />";
+                lblLoginError.Text += "Username (Login)  must be no longer than 20 characters";
                 lblLoginError.Visible = true;
             }
             if (ubl.isLoginInDB(login))
             {
                 allRight = false;
-                lblLoginError.Text += "Логин занят. Выберите другой логин <br />";
+                lblLoginError.Text += "Username (Login) occupied. Choose another";
                 lblLoginError.Visible = true;
             }
             
             if (!IsEmail(email))
             {
                 allRight = false;
-                lblEmailError.Text += "Введите валидный email-адрес <br />";
+                lblEmailError.Text += "Enter a valid email-address";
                 lblEmailError.Visible = true;
             }
             if (ubl.isEmailInDB(email))
             {
                 allRight = false;
-                lblEmailError.Text += "Email занят. Выберите другой Email <br />";
+                lblEmailError.Text += "Email occupied. Choose another (email) ";
                 lblEmailError.Visible = true;
             }
             if (password.Length < 4)
             {
                 allRight = false;
-                lblPasswordError.Text += "Пароль должен быть не менее 4х симоволов <br />";
+                lblPasswordError.Text += "Your password must be at least four characters";
                 lblPasswordError.Visible = true;
             }
             if (password.Length > 20)
             {
                 allRight = false;
-                lblPasswordError.Text += "Пароль должен быть не более 20 симоволов <br />";
+                lblPasswordError.Text += "Your password must be no more than 20 characters";
                 lblPasswordError.Visible = true;
             }
             return allRight;

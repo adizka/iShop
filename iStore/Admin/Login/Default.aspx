@@ -3,8 +3,6 @@
 
 <asp:Content ContentPlaceHolderID="head" runat="server" ID="hd"></asp:Content>
 <asp:Content ContentPlaceHolderID="main" runat="server" ID="md">
-<div>
-
 <asp:ScriptManager  ID="sm" runat="server" EnablePageMethods="true"></asp:ScriptManager>
 <asp:UpdatePanel runat="server" ID="up" updatemode="Conditional">
 <ContentTemplate>
@@ -28,16 +26,30 @@
             <iS:ValidateErrors runat="server" ID="veLogin" Visible="false" />
         </div>
         <div class="Admin_LoginForm">
-                <p>Username or email</p>                        
-                <asp:TextBox runat="server" ID="txtLogin" AutoPostBack="true" />
-                <br />
-                <p>Password</p>
-                <asp:TextBox runat="server" ID="txrPassword" TextMode="Password" AutoPostBack="true" />
-                <br />
+            <div class="top_loged"></div>
+            <div class="mid_loged">
                 <p>
-                    <asp:CheckBox runat="server" ID="cbSaveMe" Checked="true" /> Remember me 
-                    <asp:Button runat="server" ID="btnLogin" OnClick="SignIn" Text="Sign in" />
+                    <span class="spn_spec">Username </span>
+                    <asp:TextBox runat="server" ID="txtLogin" AutoPostBack="true" />
+                </p>  
+                <p>
+                    <span class="spn_spec">Password </span>
+                    <asp:TextBox runat="server" ID="txrPassword" TextMode="Password" AutoPostBack="true" />
                 </p>
+                <p>
+                    <span class="spn_spec">&nbsp;</span>
+                    <asp:CheckBox runat="server" ID="cbSaveMe" Checked="true" /> Remember me 
+                </p>
+                <p>
+                    <span class="spn_spec">&nbsp;</span>
+                    <span class="universal_button">
+                        <span>
+                            <asp:LinkButton runat="server" ID="btnLogin" OnClick="SignIn" Text="Sign in" />
+                        </span>
+                    </span>
+                </p>
+            </div>
+            <div class="bot_loged"></div>
         </div>
     </div>
     <div class="Admin_ForgotPassword" style="display:none;">
@@ -53,12 +65,11 @@
             </p>
         </div>         
     </div>
-    <div class="Admin_LoginLinks">
+   <%-- <div class="Admin_LoginLinks">
         <a href="#" onclick="Forgot();" id="linkForgot">Forgot password?</a>
         <a href="#" onclick="Login();" id="linkLogin" style="display:none">Sign in</a>
-    </div>       
+    </div>   --%>    
 </ContentTemplate>     
 </asp:UpdatePanel>
-</div>
 </asp:Content>
 

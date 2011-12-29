@@ -7,15 +7,14 @@
 <style type="text/css">
     .LoginForm {  }
 </style>
-
-<div>Log in</div> 
+<h1>Log in</h1> 
 <asp:ScriptManager runat="server" ID="sm"></asp:ScriptManager>
 <asp:UpdatePanel runat="server" ID="up">
 <ContentTemplate>
     <div class="Admin_LoginErrors" id="divError" runat="server">
         
     </div>
-    <div class="LoginForm">
+    <div class="Form">
         <p>
             <asp:Label runat="server" ID="lblLogin" AssociatedControlID="txtLogin">Login or Email</asp:Label>
             <asp:TextBox runat="server" ID="txtLogin"></asp:TextBox>
@@ -23,16 +22,15 @@
         <p>
             <asp:Label runat="server" ID="lblPassword" AssociatedControlID="txtPassword">Password</asp:Label>
             <asp:TextBox runat="server" ID="txtPassword" ></asp:TextBox>
+            <a class="forgot_pass" href="<%= iStore.Site.SiteUrl %>Users/ForgotPassword.aspx">Forgot your password?</a>
         </p>
         <p>
-            <asp:CheckBox runat="server" ID="chbSaveMe" Checked="true" />
             <asp:Label runat="server" ID="lblSaveMe" AssociatedControlID="chbSaveMe">Remember me</asp:Label>
+            <asp:CheckBox runat="server" ID="chbSaveMe" Checked="true" />
         </p>
         <p>
-            <asp:Button runat="server" ID="btnLogin" Text="LOG IN"  OnClick="Log_in" />
-        </p>
-        <p>
-            <a href="<%= iStore.Site.SiteUrl %>Users/ForgotPassword.aspx">Forgot your password?</a>
+            <label>&nbsp;</label>
+            <asp:Button CssClass="log_inbtn" runat="server" ID="btnLogin" Text=""  OnClick="Log_in" />
         </p>
     </div>
 </ContentTemplate>    
