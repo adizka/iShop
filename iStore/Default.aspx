@@ -9,29 +9,26 @@
         <h1>New Deals</h1>    
     </div>
     <div class="last_goods">
-        <% foreach (var product in AllProducts)
-           {%>
-           <div class="goods_item">
+        <%counter=0; %>
+        <asp:Repeater runat="server" id="rpt">
+        <ItemTemplate>
+            <div class="goods_item">
                 <div class="img_field02">
-                    <img alt="<%= product.Name  %>" src="<%= iStore.Site.PreUrlProductPreviewImage %><%= GetProductPreviewById(product.ProductID) %>"  />
+                    <img  src="/Content/Products/Preview/<%=GetPreviewUrl() %>" />
                 </div>
                 <div class="price_name">
-                    <span class="name_product"><%= product.Name %></span>
-                    <span class="price_product">$<%= product.Price.ToString() %></span> <br />
-                    <a class="more_details" href="<%= iStore.Site.SiteUrl %>Products/?pid=<%= product.ProductID.ToString() %>">
+                    <span class="name_product"><%#Eval("Name")%></span>
+                    <span class="price_product">$<%#Eval("Price")%></span> <br />
+                    <a class="more_details" href="<%= iStore.Site.SiteUrl %>Products/?pid=<%#Eval("ProductID")%>">
                         more details
                     </a>
                 </div>
                 <div class="cart_button">
-                        <span class="universal_btn">
-                            <span>
-                                <a href="#">Add to cart</a>
-                            </span>
-                        </span>
-                     <%--<iS:AddToCart ProductId='<%#Eval("ProductID") %>' runat="server" IsCounterVisible="false"  />--%>
+                    <iS:AddToCart ID="AddToCart1" ProductId='<%#Eval("ProductID") %>' runat="server" IsCounterVisible="false"  />
                 </div>
-            </div>     
-        <% } %>
-     
+            </div>
+            <% counter++; %>
+        </ItemTemplate>
+        </asp:Repeater>
     </div>
 </asp:Content>

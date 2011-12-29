@@ -8,7 +8,7 @@
     <span class="ProdCount">1</span>
     <span style="cursor:pointer;color:Blue;" onclick="Incr(this,'<%=hf.ClientID %>')">+</span> 
     </div>
-  <asp:Button ID="addBtn" Text="ADD TO CART" OnClick="AddToCart" runat="server" />
+  <asp:Button ID="addBtn" CssClass="add_to_cart" Text="" OnClick="AddToCart" runat="server" />
   <asp:HiddenField ID="hf" runat="server" Value="1" />
   <asp:HiddenField ID="ProdID" runat="server" />
   </div>

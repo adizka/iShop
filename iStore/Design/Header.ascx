@@ -21,7 +21,7 @@
    </div>
    <div class="Header_ItemsBottom">
         <div class="hd_clipter">
-            <a href="<%= iStore.Site.SiteUrl %>Pages/?name=About Us">ABOUT US</a> 
+            <a href="<%= iStore.Site.SiteUrl %>Pages/?name=About_Us">ABOUT US</a> 
             <a href="<%= iStore.Site.SiteUrl %>NewDeals/">NEW DEALS</a> 
             <a href="<%= iStore.Site.SiteUrl %>Pages/?name=Delivery">DELIVERY</a> 
             <a href="<%= iStore.Site.SiteUrl %>Contacts/">CONTACTS</a>

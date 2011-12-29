@@ -25,12 +25,12 @@ namespace iStore.Users
             var ubl = new BL.Modules.Users.Users();
             if (ubl.isLoginAndMailNotInDb(login))
             {
-                lblEmailError.Text = "Письмо для восстановления пароля отправлено вам на почту";
+                lblEmailError.Text = "Your password has been sent but please ensure you check your SPAM filters if it doesn't arrive.";
                 //Как дадут данные, будем отправлять письмо
             }
             else
             {
-                lblEmailError.Text = "Логин или Email не верны";
+                lblEmailError.Text = "Login or Password are wrong";
             }
         }
     }
