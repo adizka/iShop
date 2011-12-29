@@ -156,6 +156,7 @@
     <Content Include="Orders\Default.aspx" />
     <Content Include="Orders\FormOrder.aspx" />
     <Content Include="Orders\OrdersList.aspx" />
+    <Content Include="Orders\Thanks.aspx" />
     <Content Include="Pages\Default.aspx" />
     <Content Include="Products\ProductsList.aspx" />
     <Content Include="Products\Default.aspx" />
@@ -1008,6 +1009,20 @@
     </Compile>
     <Compile Include="Orders\OrdersList.aspx.designer.cs">
       <DependentUpon>OrdersList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Orders\Thanks.aspx.cs">
+      <DependentUpon>Thanks.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Orders\Thanks.aspx.designer.cs">
+      <DependentUpon>Thanks.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Orders\WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Orders\WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
     </Compile>
     <Compile Include="Page.Master.cs">
       <DependentUpon>Page.Master</DependentUpon>
