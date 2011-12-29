@@ -4,3 +4,4 @@
 /*.txt
 !log4net.dll
 !paypal_base.dll
+!.gitignore
