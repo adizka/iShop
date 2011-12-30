@@ -1,7 +1,6 @@
 <Configuration>
   <RecentFiles>
     <RecentFiles>
-      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Styles/f:Site.css" caret="1863" fromTop="36" />
       <File id="F811AF93-8440-4DC9-A7AA-BCA306A0B8B2/d:Modules/d:Users/f:UsersSessions.cs" caret="611" fromTop="7" />
       <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Scripts/f:Menu.js" caret="820" fromTop="19" />
       <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Design/f:MainPageHeader.ascx" caret="0" fromTop="0" />
@@ -13,7 +12,6 @@
       <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Admin/d:Login/f:Default.aspx.cs" caret="775" fromTop="16" />
       <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Design/f:AutorizationControl.ascx.cs" caret="1178" fromTop="22" />
       <File id="F811AF93-8440-4DC9-A7AA-BCA306A0B8B2/d:Modules/f:Orders.cs" caret="3508" fromTop="0" />
-      <File id="F811AF93-8440-4DC9-A7AA-BCA306A0B8B2/d:Properties/f:Settings.Designer.cs" caret="1223" fromTop="17" />
       <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Users/f:Login.aspx.cs" caret="896" fromTop="9" />
       <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Users/f:Register.aspx.cs" caret="3909" fromTop="58" />
       <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Users/f:Profile.aspx.cs" caret="1918" fromTop="58" />
@@ -31,9 +29,10 @@
       <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Delivery/f:Default.aspx" caret="0" fromTop="0" />
       <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Pages/f:Default.aspx" caret="196" fromTop="2" />
       <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Pages/f:Default.aspx.cs" caret="87" fromTop="3" />
+      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/f:Default.aspx.cs" caret="864" fromTop="26" />
+      <File id="F811AF93-8440-4DC9-A7AA-BCA306A0B8B2/d:Properties/f:Settings.Designer.cs" caret="1359" fromTop="13" />
     </RecentFiles>
     <RecentEdits>
-      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Users/f:Login.aspx.cs" caret="1396" fromTop="18" />
       <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Users/f:Login.aspx.cs" caret="1396" fromTop="18" />
       <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Users/f:Profile.aspx" caret="1088" fromTop="16" />
       <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Users/f:Profile.aspx" caret="645" fromTop="6" />
@@ -63,6 +62,7 @@
       <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Users/f:ForgotPassword.aspx.cs" caret="727" fromTop="19" />
       <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Users/f:ForgotPassword.aspx.cs" caret="326" fromTop="11" />
       <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Users/f:ForgotPassword.aspx.cs" caret="516" fromTop="11" />
+      <File id="F811AF93-8440-4DC9-A7AA-BCA306A0B8B2/d:Properties/f:Settings.Designer.cs" caret="1359" fromTop="13" />
     </RecentEdits>
   </RecentFiles>
   <NAntValidationSettings>
