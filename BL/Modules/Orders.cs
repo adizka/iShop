@@ -20,7 +20,7 @@ namespace BL.Modules.Orders
             {
                 var user = db.Users.First(u => u.UserID == userID);
 
-                var order = user.Orders.FirstOrDefault(o => o.OrderStatusID == (int)OrderStatus.NotPaid);
+                var order = user.Orders.FirstOrDefault(o => o.IsActive);
 
                 if (order == null)
                 {
@@ -31,7 +31,7 @@ namespace BL.Modules.Orders
                         IsPaid = false,
                         OrderID = Guid.NewGuid(),
                         OrderStatusID = (int)OrderStatus.NotPaid,
-                        PaymentTypeID = (int)PaymentTypes.NonameType,
+                        PaymentTypeID = (int)PaymentTypes.PayPal,
                         UserID = userID,
                         CreateDate = DateTime.Now,
                         DeliveryDate = DateTime.Now
@@ -100,7 +100,7 @@ namespace BL.Modules.Orders
             }
         }
 
-        public void FromOrder(int paymentType, int deliveryType, Guid userID)
+        public void FormOrder(PaymentTypes paymentType, Guid userID)
         {
             using (var db = new ShopDataContext())
             {
@@ -111,8 +111,8 @@ namespace BL.Modules.Orders
                     return;
 
                 order.IsActive = false;
-                order.PaymentTypeID = paymentType;
-                order.DeliveryTypeID = deliveryType;
+                order.PaymentTypeID = (int)paymentType;
+                //order.DeliveryTypeID = deliveryType;
                 order.OrderStatusID = (int)BL.OrderStatus.Paid;
                 order.TotalSum = Convert.ToDecimal(order.OrdersRefProducts.Sum(r => r.Product.Price * r.Count));
                 order.CreateDate = DateTime.Now;
@@ -161,7 +161,7 @@ namespace BL.Modules.Orders
                     IsPaid = false,
                     OrderID = Guid.NewGuid(),
                     OrderStatusID = (int)OrderStatus.NotPaid,
-                    PaymentTypeID = (int)PaymentTypes.NonameType,
+                    PaymentTypeID = (int)PaymentTypes.PayPal,
                     UserID = userID,
                     CreateDate = DateTime.Now,
                     DeliveryDate = DateTime.Now

@@ -6,3 +6,4 @@
 /App_GlobalResources.Errors.designer.cs.dll
 /App_GlobalResources.Shops.designer.cs.dll
 /App_GlobalResources.Shops.ru-RU.designer.cs.dll
+!.gitignore

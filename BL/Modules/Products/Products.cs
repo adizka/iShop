@@ -192,5 +192,15 @@ namespace BL.Modules.Products
             var db = new ShopDataContext();
             return db.Products.Take(10);
         }
+
+        public IQueryable<ProductData> GetProductsByProductName(string name)
+        {
+            return new ShopDataContext().GetProductDataByProductName(name);
+        }
+
+        public IQueryable<ProductData> GetProductsByCategoryName(string name)
+        {
+            return new ShopDataContext().GetProductDataByCategoryName(name);
+        }
     }
 }

@@ -3,3 +3,4 @@
 /iStore.csproj.FileListAbsolute.txt
 /iStore.dll
 /iStore.pdb
+!.gitignore

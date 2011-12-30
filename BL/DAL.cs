@@ -25,7 +25,7 @@ namespace BL
     }
     public enum PaymentTypes
     {
-        NonameType = 1
+        PayPal = 1
     }
 
     public class ProductCounter

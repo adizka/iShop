@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.IO;
 
 namespace iStore.Categories
 {
@@ -19,6 +20,7 @@ namespace iStore.Categories
             {
                 if (CurrentCategory == null) Response.Redirect(iStore.Site.SiteUrl);
             }
+            pager.EntityCount = GetProductsRefCurrentCategory.Count();
         }
 
         public BL.Category CurrentCategory
@@ -40,6 +42,18 @@ namespace iStore.Categories
                 BL.Category category = CurrentCategory;
                 if (category == null) return null;
                 return Prcbl.GetProductRefCategoriesByCategoryId(category.CategoryID);
+            }
+        }
+
+        public IQueryable<BL.ProductsRefCategory> GetPageProductsRefCurrentCategory
+        {
+            get
+            {
+                BL.Category category = CurrentCategory;
+                if (category == null) return null;
+                return Prcbl.GetProductRefCategoriesByCategoryId(category.CategoryID).ToList()
+                    .Where((c, ind) => ind >= pager.PageIndex * pager.EntitiesPerPage
+                                               && ind < (pager.PageIndex + 1) * pager.EntitiesPerPage).AsQueryable();
             }
         }
 
@@ -74,6 +88,19 @@ namespace iStore.Categories
         public IQueryable<BL.ProductProperty> GetProductPropery(Guid productId)
         {
             return Ppbl.GetAllProperyByProductId(productId).Take(6);
+        }
+
+        protected string GetRenderedControl(BL.ProductsRefCategory item)
+        {
+            StringWriter stringWrite = new StringWriter();
+            System.Web.UI.HtmlTextWriter htmlWrite = new System.Web.UI.HtmlTextWriter(stringWrite);
+            var control = LoadControl("~/Modules/Controls/AddToCard.ascx") as iStore.Modules.Controls.AddToCard;
+            control.ProductId = item.ProductID;
+            control.ID = Guid.NewGuid().ToString();
+            control.IsCounterVisible = false;
+            var btn = control.FindControl("addBtn") as System.Web.UI.WebControls.Button;
+            btn.OnClientClick = "addTocart('" + item.ProductID.ToString() + "',1)";
+            return iStore.Modules.Controls.AddToCard.RenderControl(control);
         }
     }
 }
