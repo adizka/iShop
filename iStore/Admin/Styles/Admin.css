@@ -1,16 +1,21 @@
-﻿body { margin:0; padding:0; }
+﻿body { margin:0; padding:0; background:#ededed url(../../images/main_background.gif) repeat-y center top; }
 
-.Admin_Header { width:100%; height:50px; background-color:#0e5c9e; color:White; } 
-.Admin_HeaderCompanyName { float:left; }
-.Admin_HeaderCenter { float:left; }
-.Admin_HeaderToolbar { float:right; width:200px; color:White; }
-.Admin_HeaderToolbar a { color:White; }
+.Admin_Header {height:50px; width:1000px; margin:0 auto; background-color:#0f5a9a; color:White;} 
+.Admin_HeaderCompanyName {float:left; padding:13px 0 0 13px; font-size:18px;}
+    .Admin_HeaderCompanyName span {
+        text-transform:uppercase;
+        font-weight:bold;
+        }
+.Admin_HeaderCenter {float:left;}
+.Admin_HeaderToolbar {float:right; padding:12px 0 0 0;}
+.Admin_HeaderToolbar a {color:#151515; font-size:14px; text-decoration:none; vertical-align:middle; display:inline-block;}
+    .Admin_HeaderToolbar span {margin-right:22px;}
 
-.Admin_Main { width:100%; }
+.Admin_Main {width:1000px; margin:0 auto; }
 
 .Admin_Menu { float:left; width:205px; padding:15px 10px 0;}
-.Admin_Center { float:left;}
-.Admin_MenuItemEmpty { background-color:transparent;  }
+.Admin_Center { margin-left:225px; padding:0 0 0 10px;}
+.Admin_MenuItemEmpty { background-color:transparent;}
 .Admin_Menu a {color:white; text-decoration:none; }
 
     /* menu */
@@ -42,15 +47,7 @@
 .ashpo_lat {
 margin:10px 0;    
 }
- 
- /* Repeater */
-    .rep p { color:#000; font-family:Courier; font-size:14px; width: 700px; height:50px; text-align:left; vertical-align:top; }
-    .rep span { width:140px; padding:20px; }
-    .repHeader { background-color:#eddfa2; }
-    .first { background-color:#d6dcf1; }
-    .second { background-color:#f1d6da; }      
- /* End Repeater */
- 
+  
   /*Reorder List*/
     .dragHandle { width:10px; height:15px; background-color:Blue; background-image:url(../../Images/bg-menu-main.png); cursor:move; border:outset thin white; }
     .callbackStyle { border:thin blue inset; }
@@ -138,9 +135,116 @@ background:url(../../images/left_btnangleb.png) no-repeat left top;
                 text-decoration:none;
                 }
 
+.BCCategories {
+padding:10px 15px;
+color:#008ec3;    
+} .BCCategories a {color:#008ec3; margin:0 5px 0 0;}
+    .BCCategories a:hover {text-decoration:none;}
+    
+.pader_category {
+padding:0 0 0 15px;    
+}
 
+.top_repeater {
+width:728px;
+height:5px;
+background:url(../../images/table_toper.png) no-repeat;
+}
 
+.bot_repeater {
+width:728px;
+height:5px;
+background:url(../../images/table_boter.png) no-repeat;
+}
 
+.mid_repeater {
+width:724px;
+padding:5px 2px;
+background:url(../../images/table_toperwhite.png) repeat-y;
+}
 
+.mid_repeatergrey {
+width:724px;
+padding:5px 2px;
+background:url(../../images/table_topergrey.png) repeat-y;
+}
 
-                            
+.cat_h3 {
+font-size:14px;
+color:#151515;
+font-weight:bold;
+font-style:italic;
+text-transform:uppercase;
+padding:0 10px 5px;
+}
+
+.repparaq {border-bottom:solid #c7c7c7 1px; padding:3px 10px;}
+    .second {background:#f6f6f6;}
+
+.repparaq span {
+display:inline-block;
+} .repparaq span a {color:#232323;}
+    .repparaq span a:hover {text-decoration:none;}
+
+.cat_span01 {
+width:380px;
+}
+
+.cat_span02 {
+width:110px;    
+}
+
+.cat_span03 {
+width:125px;    
+}
+
+.cat_span04 {
+width:75px;
+text-align:center;
+}
+
+.edit_ico {
+width:14px;
+height:13px;
+background:url(../../images/edit_btn.png) no-repeat;
+display:inline-block;
+margin:0 2px;
+text-decoration:none;
+border:none;
+}
+
+.delete_ico {
+width:14px;
+height:13px;
+background:url(../../images/delete_btn.png) no-repeat;
+display:inline-block;
+margin:0 2px;
+text-decoration:none;
+border:none;
+}
+
+.Paging {
+text-align:center;
+padding:5px 0;
+width:728px;    
+} .Paging a {
+    color:#008EC3;
+    margin:0 2px;
+    } .NavigateLastPage a {text-decoration:none;}
+        .Paging a:hover {text-decoration:none;}
+    
+.view_span {
+vertical-align:middle;
+display:inline-block;
+padding:2px 0 0 25px;
+height:23px;
+background:url(../../images/view_site.jpg) no-repeat;
+}
+
+.exit_span {
+vertical-align:middle;
+display:inline-block;
+padding:2px 0 0 25px;
+height:23px;
+background:url(../../images/log_out.jpg) no-repeat;
+}

@@ -6,50 +6,55 @@
 <asp:Content ID="Content1" runat="server" ContentPlaceHolderID="head">
 </asp:Content>
 <asp:Content ID="Content2" runat="server" ContentPlaceHolderID="main">
-    
     <iS:BreadCrumbs runat="server" ID="bc" SiteMode="false" EntityType="Categories" />
-    <p>
+    <p class="BCCategories">
         <a href="<%= iStore.Site.SiteAdminUrl %>Categories/CategoryEdit.aspx?parentId=<%= Request.QueryString["cid"] %>">Добавить категорию</a>
         <a href="<%= iStore.Site.SiteAdminUrl %>Categories/CategorySort.aspx?cid=<%= Request.QueryString["cid"] %>">Сортировать категории</a>
         <a href="<%= iStore.Site.SiteAdminUrl %>Products/ProductEdit.aspx?cid=<%= Request.QueryString["cid"] %>">Добавить продукт в категорию</a>
-    </p><br />
+    </p>
+    <br />
     <iS:ValidateErrors runat="server" ID="ve" Visible="false" />
-    <div class="rep">
-        <p class="repHeader">
-            <span>Name</span>
-            <span>Подкатегории</span>
-            <span>Количество товаров в категории</span>            
-            <span>Edit</span>
-            <span>Delete</span>
+<div class="pader_category">
+    <div class="top_repeater"></div>
+    <div class="mid_repeater">
+        <p class="cat_h3">Categories</p>
+    </div>
+    <div class="mid_repeatergrey">
+        <p class="repparaq">
+            <span class="cat_span01">Name</span>
+            <span class="cat_span02">Subcategory</span>
+            <span class="cat_span03">Number of products</span>
+            <span class="cat_span04">Actions</span>
         </p>
+    </div>
+    <div class="mid_repeater">
         <% if (!allCategories.Any())
            { %>
-                <p>Нет категорий</p>
+                <p class="repparaq">Нет категорий</p>
            <%} %>
         <% int i = 0; string cssClass = string.Empty; foreach (var item in allCategories.ToList()
                .Where((c, ind) => ind >= pager.PageIndex * pager.EntitiesPerPage && ind < (pager.PageIndex + 1) * pager.EntitiesPerPage))
                {
                     i++; cssClass = ((i % 2) == 1 ) ? "first" : "second";
         %>
-        <p class="repBody <%= cssClass %>">
-            <span>
+        <p class="repparaq <%= cssClass %>">
+            <span class="cat_span01">
                 <a href="<%= iStore.Site.SiteAdminUrl %>Categories/?cid=<%= item.CategoryID.ToString() %>"><%= item.Name%></a> 
             </span>
-            <span>
+            <span class="cat_span02">
                 <a href="<%= iStore.Site.SiteAdminUrl %>Categories/?cid=<%= item.CategoryID.ToString() %>"><%= cbl.GetCategoriesByParentId(item.CategoryID).Count().ToString()  %></a> 
             </span>
-            <span>
+            <span class="cat_span03">
                 <%= prcbl.GetProductRefCategoriesByCategoryId(item.CategoryID).Count().ToString() %>
             </span>
-            <span>
-                <a href="<%= iStore.Site.SiteAdminUrl %>Categories/CategoryEdit.aspx?cid=<%= item.CategoryID.ToString() %>&parentId=<%= Request.QueryString["cid"] %>">Edit</a>
-            </span>
-            <span>
-                <a href="<%= iStore.Site.SiteAdminUrl %>Categories/Default.aspx?delcid=<%= item.CategoryID.ToString() %>">Delete</a>
+            <span class="cat_span04">
+                <a class="edit_ico" href="<%= iStore.Site.SiteAdminUrl %>Categories/CategoryEdit.aspx?cid=<%= item.CategoryID.ToString() %>&parentId=<%= Request.QueryString["cid"] %>"></a>
+                <a class="delete_ico" href="<%= iStore.Site.SiteAdminUrl %>Categories/Default.aspx?delcid=<%= item.CategoryID.ToString() %>"></a>
             </span>
         </p>       
         <% } %>
-    </div>
-
+        </div>
+    <div class="bot_repeater"></div>
+</div>
     <iS:Pager runat="server" ID="pager"   AddInsParams="Categories" ></iS:Pager>
 </asp:Content>  

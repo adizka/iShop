@@ -52,10 +52,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\paypal_base.dll</HintPath>
     </Reference>
-    <Reference Include="SiteMechanics.PayPalDirect, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\SiteMechanics.PayPalDirect.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Core" />
@@ -121,14 +117,13 @@
     <Content Include="bin\FredCK.FCKeditorV2.dll" />
     <Content Include="bin\iStore.dll" />
     <Content Include="bin\iStore.pdb" />
-    <Content Include="bin\log4net.dll" />
-    <Content Include="bin\paypal_base.dll" />
-    <Content Include="bin\SiteMechanics.PayPalDirect.dll" />
     <Content Include="Categories\Default.aspx" />
     <Content Include="Contacts\Default.aspx" />
     <Content Include="Content\Products\Original\11dc51d1-0466-4640-98b7-735514d588fd777.jpg" />
+    <Content Include="Content\Products\Original\a575d9f6-77f1-4aa9-95f7-a06309d3090a392469.jpg" />
     <Content Include="Content\Products\Original\DefaultOriginal.png" />
     <Content Include="Content\Products\Preview\b914362f-1e8a-4fca-9363-b9211ee00951777.jpg" />
+    <Content Include="Content\Products\Preview\dc4fd9c4-ea19-47ec-b050-f3fa1858a6fb3.2.jpg" />
     <Content Include="Content\Products\Preview\DefaultPreview.png" />
     <Content Include="Delivery\Default.aspx" />
     <Content Include="Design\AutorizationControl.ascx" />
@@ -140,28 +135,53 @@
     <Content Include="Design\MostPopularProducts.ascx" />
     <Content Include="Images\5x5black.png" />
     <Content Include="Images\5x5white.png" />
+    <Content Include="Images\add_to_cart.png" />
     <Content Include="Images\anchor_style.png" />
     <Content Include="Images\arrow_anchor.png" />
+    <Content Include="Images\arrow_linearpol.png" />
+    <Content Include="Images\arrow_linearpolor.png" />
     <Content Include="Images\bg-menu-main.png" />
     <Content Include="Images\bg_main.jpg" />
     <Content Include="Images\bg_nav.gif" />
+    <Content Include="Images\blue_bg.png" />
+    <Content Include="Images\bot_log_plank.png" />
     <Content Include="Images\box.png" />
     <Content Include="Images\cart_item.png" />
     <Content Include="Images\Default\DefaultOriginal.png" />
     <Content Include="Images\Default\DefaultPreview.png" />
+    <Content Include="Images\delete_btn.png" />
+    <Content Include="Images\edit_btn.png" />
     <Content Include="Images\go_search.gif" />
     <Content Include="Images\h2_trigger_a.gif" />
     <Content Include="Images\hint.png" />
+    <Content Include="Images\hot_flac.png" />
+    <Content Include="Images\left_btnangleb.png" />
     <Content Include="Images\left_btn_marv.png" />
     <Content Include="Images\left_trigermarv.png" />
+    <Content Include="Images\login_btn.png" />
     <Content Include="Images\logo.png" />
+    <Content Include="Images\logo_admin.jpg" />
+    <Content Include="Images\log_out.jpg" />
+    <Content Include="Images\main_background.gif" />
     <Content Include="Images\marvel_logo.png" />
     <Content Include="Images\marvel_world_wide.png" />
+    <Content Include="Images\mid_btnangleb.png" />
     <Content Include="Images\mid_btn_marv.png" />
+    <Content Include="Images\mid_log_plank.png" />
     <Content Include="Images\minus.png" />
+    <Content Include="Images\new_flac.png" />
     <Content Include="Images\plus.png" />
+    <Content Include="Images\register_btn.png" />
+    <Content Include="Images\right_btnangleb.png" />
     <Content Include="Images\right_btn_marv.png" />
     <Content Include="Images\right_trigermarv.png" />
+    <Content Include="Images\sale_flac.png" />
+    <Content Include="Images\table_boter.png" />
+    <Content Include="Images\table_toper.png" />
+    <Content Include="Images\table_topergrey.png" />
+    <Content Include="Images\table_toperwhite.png" />
+    <Content Include="Images\top_log_plank.png" />
+    <Content Include="Images\view_site.jpg" />
     <Content Include="Modules\Controls\AddToCard.ascx" />
     <Content Include="Modules\Controls\BreadCrumbs\BreadCrumbs.ascx" />
     <Content Include="Modules\Controls\Cart.ascx" />
@@ -171,7 +191,6 @@
     <Content Include="Orders\Default.aspx" />
     <Content Include="Orders\FormOrder.aspx" />
     <Content Include="Orders\OrdersList.aspx" />
-    <Content Include="Orders\Thanks.aspx" />
     <Content Include="Pages\Default.aspx" />
     <Content Include="Products\ProductsList.aspx" />
     <Content Include="Products\Default.aspx" />
@@ -1024,13 +1043,6 @@
     </Compile>
     <Compile Include="Orders\OrdersList.aspx.designer.cs">
       <DependentUpon>OrdersList.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Orders\Thanks.aspx.cs">
-      <DependentUpon>Thanks.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Orders\Thanks.aspx.designer.cs">
-      <DependentUpon>Thanks.aspx</DependentUpon>
     </Compile>
     <Compile Include="Page.Master.cs">
       <DependentUpon>Page.Master</DependentUpon>
