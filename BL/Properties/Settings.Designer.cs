@@ -26,6 +26,7 @@ namespace BL.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+<<<<<<< HEAD
 
         [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(local);Initial Catalog=MarvelDB;Integrated Security=True" + 
             "")]
@@ -33,6 +34,10 @@ namespace BL.Properties {
         //     "ID=sa;Password=yefim")]
 
 
+=======
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(local)\\sqlexpress;Initial Catalog=MarvelDB;Integrated Security=True" + 
+            "")]
+>>>>>>> origin/master
         public string MarvelDBConnectionString {
             get {
                 return ((string)(this["MarvelDBConnectionString"]));

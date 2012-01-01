@@ -43,6 +43,10 @@
     <Reference Include="AjaxControlToolkit.resources">
       <HintPath>C:\Users\abdullaev.WCH\Desktop\AjaxControlToolkit.resources.dll</HintPath>
     </Reference>
+    <Reference Include="iStore, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\iStore.dll</HintPath>
+    </Reference>
     <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\log4net.dll</HintPath>
@@ -112,8 +116,8 @@
     <Content Include="Admin\Styles\images\ui-icons_ffd27a_256x240.png" />
     <Content Include="Admin\Styles\images\ui-icons_ffffff_256x240.png" />
     <Content Include="Admin\Styles\jquery-ui-1.8.16.custom.css" />
+    <Content Include="bin\BL.dll" />
     <Content Include="bin\FCKEditorWebForms.dll" />
-    <Content Include="bin\FCKEditorWebForms.pdb" />
     <Content Include="bin\FredCK.FCKeditorV2.dll" />
     <Content Include="bin\iStore.dll" />
     <Content Include="bin\iStore.pdb" />
@@ -189,7 +193,6 @@
     <Content Include="Modules\Controls\Validators\ValidateErrors.ascx" />
     <Content Include="NewDeals\Default.aspx" />
     <Content Include="Orders\Default.aspx" />
-    <Content Include="Orders\FormOrder.aspx" />
     <Content Include="Orders\OrdersList.aspx" />
     <Content Include="Pages\Default.aspx" />
     <Content Include="Products\ProductsList.aspx" />
@@ -1029,13 +1032,6 @@
     </Compile>
     <Compile Include="Orders\Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Orders\FormOrder.aspx.cs">
-      <DependentUpon>FormOrder.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Orders\FormOrder.aspx.designer.cs">
-      <DependentUpon>FormOrder.aspx</DependentUpon>
     </Compile>
     <Compile Include="Orders\OrdersList.aspx.cs">
       <DependentUpon>OrdersList.aspx</DependentUpon>

@@ -77,7 +77,7 @@
     }
 
 </script>
-
+<form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
 <table id="ProdTable">
     <tr>
         <td>
@@ -95,11 +95,19 @@
         <td>
             Итого
         </td>
+        <td>
+            <input type="hidden" name="cmd" value="_cart"/>
+            <input type="hidden" name="upload" value="1"/>
+            <input type="hidden" name="business" value='<%=ConfigurationManager.AppSettings["Login"] %>'/>
+            <input type="hidden" name="currency_code" value="US"/>
+        </td>
 
     </tr>
-<%  
+<%  int counter = 0;
       foreach (var prodRef in UserOrder.OrdersRefProducts)
-      {%>
+      {
+          counter++;
+          %>
        <tr>
        <td>
 <input type="checkbox" onchange="Update()" id="<%=prodRef.ID%>" /> 
@@ -113,10 +121,13 @@
 <td >
 <div><span style="cursor:pointer;color:Blue;" onclick="Decr(this)">-</span><span class="ProdCount"><%=prodRef.Count%></span><span style="cursor:pointer;color:Blue;" onclick="Incr(this)">+</span></div>
 </td>
-<td class="TotalSum">
-
-</td>
-     
+           <td class="TotalSum">
+           </td>
+           <td>
+               <input type="hidden" name="item_name_<%=counter.ToString() %>" value="<%=prodRef.Product.Name%>"/>
+               <input type="hidden" name="amount_<%=counter.ToString() %>" value="<%=(prodRef.Product.Price).ToString()%>"/>
+               <input type="hidden" name="quantity_<%=counter.ToString() %>" value="<%=(prodRef.Count).ToString()%>"/>
+           </td>
        </tr>
        <%
       } %>
@@ -127,19 +138,23 @@
     <td id="TotalSumID"></td>
     </tr>
     </table>
-    
+    </form>
     <asp:HiddenField ID="hf" runat="server" ClientIDMode="Static" ></asp:HiddenField>
     <script type="text/javascript" >
         function pageLoad() {
             Update();
         }
         Update();
+        function PaypalSubmit() {
+            $("form").attr("action", '<%=ConfigurationManager.AppSettings["PayPalPaymentUrlTest"] %>');
+            $("form").submit();
+        }
     </script> 
     <%if (UserOrder.OrdersRefProducts.Count != 0)
       { %>
     <asp:Button  OnClick="Save" ID="btnSave" runat="server" Text="Save" />
     <asp:Button  OnClick="Clear" ID="btnClear" runat="server" Text="Clear" />
-    <a href="<%= iStore.Site.SiteUrl + "Orders/FormOrder.aspx" %>">Оплатить</a>
+    <input type="image" src="http://www.paypal.com/en_US/i/btn/x-click-but01.gif" onclick="PaypalSubmit()" alt="Make payments with PayPal - it's fast, free and secure!">
     <%} %>
     <%}
   else
@@ -172,7 +187,11 @@
     <td><%=UserOrder.TotalSum%></td>
     </tr>
     </table>
+
+    <asp:ImageButton runat="server" ID="btnPaypal" AlternateText="checkout with paypal"
+        ImageUrl="https://www.paypal.com/en_US/i/btn/btn_xpressCheckout.gif" />
+    This will show the checkout with Paypal button on the page. Below is the onClick
+    event handler code:
     <%} %>
 
-    
 </asp:Content>

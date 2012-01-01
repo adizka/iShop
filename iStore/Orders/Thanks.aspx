@@ -4,6 +4,10 @@
 </asp:Content>
 <asp:Content ID="Content2" runat="server" ContentPlaceHolderID="MainContent">
 
-Thank you for choosing our e-shop.
+
+<div runat="server" id="msg">
+
+</div>
+
 
 </asp:Content>
