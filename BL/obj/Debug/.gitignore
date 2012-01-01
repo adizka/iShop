@@ -2,3 +2,4 @@
 /*.csproj.FileListAbsolute.txt
 /*.dll
 /*.pdb
+!.gitignore

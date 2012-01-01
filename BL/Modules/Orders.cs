@@ -100,25 +100,30 @@ namespace BL.Modules.Orders
             }
         }
 
-        public void FormOrder(PaymentTypes paymentType, Guid userID)
+        public bool TryFormOrder(PaymentTypes paymentType, Guid userID, DateTime paymentDate,string transactionID)
         {
             using (var db = new ShopDataContext())
             {
+                if(db.Orders.Any(o=>o.TransactionID == transactionID))
+                    return false;
+
                 var user = db.Users.First(u => u.UserID == userID);
                 var order = user.Orders.FirstOrDefault(o => o.IsActive);
 
                 if (order == null)
-                    return;
-
+                    return false;
+                
                 order.IsActive = false;
                 order.PaymentTypeID = (int)paymentType;
-                //order.DeliveryTypeID = deliveryType;
                 order.OrderStatusID = (int)BL.OrderStatus.Paid;
                 order.TotalSum = Convert.ToDecimal(order.OrdersRefProducts.Sum(r => r.Product.Price * r.Count));
-                order.CreateDate = DateTime.Now;
-
+                order.CreateDate = paymentDate;
+                order.TransactionID = transactionID;
+                //order.DeliveryDate  ??????????????????????????
+                //order.DeliveryType = ?????????????????????????
                 db.SubmitChanges();
             }
+            return true;
         }
 
         public IQueryable<Order> GetAllOrders()

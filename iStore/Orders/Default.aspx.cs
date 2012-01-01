@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.Linq;
 using System.Collections;
+using System.Configuration;
 
 namespace iStore.Orders
 {
