@@ -16,6 +16,8 @@ namespace iStore.Search
 
         protected void SearchText(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(txtSearch.Text) || txtSearch.Text == "Search request here")
+                return;
             string searchItem = Server.HtmlEncode(txtSearch.Text);
             string searchType = ddlSearchType.SelectedItem.Value;
             Response.Redirect(iStore.Site.SiteUrl + "Search/?s=" + searchItem + "&t=" + searchType);

@@ -4651,6 +4651,10 @@ namespace BL
 
         private string _PropertyValue;
 
+        private System.Guid _CategoryID;
+
+        private string _CategoryName;
+
         public ProductData()
         {
         }
@@ -4827,6 +4831,38 @@ namespace BL
                 if ((this._PropertyValue != value))
                 {
                     this._PropertyValue = value;
+                }
+            }
+        }
+
+        [global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_CategoryID", DbType = "UniqueIdentifier NOT NULL")]
+        public System.Guid CategoryID
+        {
+            get
+            {
+                return this._CategoryID;
+            }
+            set
+            {
+                if ((this._CategoryID != value))
+                {
+                    this._CategoryID = value;
+                }
+            }
+        }
+
+        [global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_CategoryName", DbType = "NVarChar(MAX) NOT NULL", CanBeNull = false)]
+        public string CategoryName
+        {
+            get
+            {
+                return this._CategoryName;
+            }
+            set
+            {
+                if ((this._CategoryName != value))
+                {
+                    this._CategoryName = value;
                 }
             }
         }

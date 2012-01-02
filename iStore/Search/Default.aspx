@@ -23,25 +23,55 @@
         <% int i = 0; string cssClass = string.Empty;
            foreach (var item in PageProducts)
                {
+                   var prod = item.Value.First();
         %>
         <div style="width:100%;float:left;">
         <div style="float:left;">
-        <img src="/Content/Products/Preview/<%=GetPreviewUrl(item) %>" />
+        <img src="/Content/Products/Preview/<%=GetPreviewUrl(prod) %>" />
         </div>
         <div style="float:left;">
-        <a href='/Products/?pid=<%=item.ProductID%>'>
-        <%=item.Name %></a>
+        <a href='/Products/?pid=<%=item.Key%>'>
+        <%=prod.Name%></a>
+        Categories: (
+        <%foreach (var cats in item.Value)
+          {
+              %>
+              <a href="/Categories/?cid=<%=cats.CategoryID%>"><%= cats.CategoryName%></a> 
+              <%
+          } %>)
         <br />
         </div>
         <div style="float:right;">
         Our price:
         <br /> 
-        <%=item.Price %>$
-        <%=GetRenderedControl(item)%>
+        <%=prod.Price%>$
+        <%=GetRenderedControl(prod)%>
         </div>
         </div>
         <br />
         <% } %>
+
+        <% if(PageProducts.Count ==0)
+           {
+               %>
+               Categories: <br />
+               <ul>
+               <%
+               foreach (var item in Categories)
+               {
+                %>
+                
+                <li>
+                <a href="/Categories/?cid=<%= item.CategoryID %>">
+                <%= item.Name %>
+                     </a>
+                </li>
+        
+        <%}
+          %>
+          </ul>
+          <%
+           }%>
     </div>
     <div style="display:none">
     <iS:AddToCart ID="addtoCart" IsCounterVisible="false" runat="server" />

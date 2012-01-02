@@ -14,7 +14,7 @@ namespace iStore.Modules.Controls
         
         BL.Modules.Categories.Categories cbl = new BL.Modules.Categories.Categories();
         BL.Modules.Orders.Orders obl = new BL.Modules.Orders.Orders();
-        iStore.Modules.Logic.Auth.Users ubl = new iStore.Modules.Logic.Auth.Users();
+        iStore.Modules.Logic.Auth.Users auth = new iStore.Modules.Logic.Auth.Users();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -47,10 +47,12 @@ namespace iStore.Modules.Controls
 
         public void AddToCart(object obj, EventArgs args)
         {
+            if (auth.CurrentUser == null)
+                Response.Redirect(iStore.Site.SiteUrl + "Users/Login.aspx");
             int count;
             if (!int.TryParse(hf.Value, out count) || count < 1)
                 return;
-            obl.AddToCart(new List<BL.ProductCounter>() { new BL.ProductCounter() { ID = ProductId, Count = count } }, ubl.CurrentUser.UserID);
+            obl.AddToCart(new List<BL.ProductCounter>() { new BL.ProductCounter() { ID = ProductId, Count = count } }, auth.CurrentUser.UserID);
         }
 
         public static string RenderControl(Control ctrl)

@@ -34,6 +34,19 @@ namespace BL
         public int Count;
     }
 
+    public class ProductDataComparer : IEqualityComparer<BL.ProductData>
+    {
+        public bool Equals(BL.ProductData x, BL.ProductData y)
+        {
+            return (x.ProductID == y.ProductID);
+        }
+
+        public int GetHashCode(BL.ProductData obj)
+        {
+            return obj.ProductID.GetHashCode();
+        }
+    }
+
     public class ProductComparer : IEqualityComparer<BL.Product>
     {
         public bool Equals(BL.Product x, BL.Product y)

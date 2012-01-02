@@ -12,16 +12,16 @@ namespace iStore.Search
     {
         enum SearchType
         {
-            Category = 0,
-            Product = 1
+            Product = 0,
+            Category = 1
         }
         public BL.Modules.Categories.Categories cbl = new BL.Modules.Categories.Categories();
         public BL.Modules.Products.Products pbl = new BL.Modules.Products.Products();
         public BL.Modules.Products.ProductRefCategories prcbl = new BL.Modules.Products.ProductRefCategories();
-
+        private BL.ProductDataComparer comparer = new BL.ProductDataComparer();
         protected void Page_Load(object sender, EventArgs e)
         {
-            pager.EntityCount = AllProducts.Count;
+            pager.EntityCount = AllProducts.Distinct(comparer).Count();
         }
 
         List<BL.ProductData> _allProducts;
@@ -41,17 +41,25 @@ namespace iStore.Search
             }
         }
 
-        List<BL.ProductData> _PageProducts;
-        protected List<BL.ProductData> PageProducts
+        Dictionary<Guid,IGrouping<Guid,BL.ProductData>> _PageProducts;
+        protected Dictionary<Guid, IGrouping<Guid, BL.ProductData>> PageProducts
         {
             get
             {
                 if (_PageProducts == null)
-                    _PageProducts = AllProducts.Where((c, ind) => ind >= pager.PageIndex * pager.EntitiesPerPage
-                                           && ind < (pager.PageIndex + 1) * pager.EntitiesPerPage).ToList();
-
-
+                    _PageProducts = AllProducts.GroupBy(g => g.ProductID)
+                        .Where((c, ind) => ind >= pager.PageIndex * pager.EntitiesPerPage
+                                           && ind < (pager.PageIndex + 1) * pager.EntitiesPerPage).ToDictionary(x => x.Key);
+                
                 return _PageProducts;
+            }
+        }
+
+        protected List<BL.Category> Categories
+        {
+            get 
+            {
+                return cbl.GetAllCategories().Where(c => c.Name.IndexOf(SearchCriteria) != -1).ToList();
             }
         }
 
@@ -69,7 +77,6 @@ namespace iStore.Search
             control.ID = Guid.NewGuid().ToString();
             control.IsCounterVisible = false;
             var btn = control.FindControl("addBtn") as System.Web.UI.WebControls.Button;
-            btn.Text = "Add";
             btn.OnClientClick = "addTocart('" + item.ProductID.ToString() + "',1)";
             return iStore.Modules.Controls.AddToCard.RenderControl(control);
         }
