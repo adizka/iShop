@@ -21,7 +21,8 @@ namespace BL
     }
     public enum DeliveryTypes
     {
-        NonameType = 1
+        Delivered = 1,
+        NotDelivered = 2
     }
     public enum PaymentTypes
     {

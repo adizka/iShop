@@ -76,6 +76,11 @@
         Update();
     }
 
+    function SelDes(val) {
+        $("input:checkbox", "#ProdTable").attr("checked", val);
+        Update();
+    }
+
 </script>
 <form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
 <table id="ProdTable">
@@ -119,14 +124,14 @@
 <%=prodRef.Product.Price%>
 </td>
 <td >
-<div><span style="cursor:pointer;color:Blue;" onclick="Decr(this)">-</span><span class="ProdCount"><%=prodRef.Count%></span><span style="cursor:pointer;color:Blue;" onclick="Incr(this)">+</span></div>
+<div><span style="cursor:pointer;color:Blue;" onclick="Decr(this)">-</span><span class="ProdCount"><%=Math.Min(prodRef.Count, prodRef.Product.Count)%></span><span style="cursor:pointer;color:Blue;" onclick="Incr(this)">+</span></div>
 </td>
            <td class="TotalSum">
            </td>
            <td>
                <input type="hidden" name="item_name_<%=counter.ToString() %>" value="<%=prodRef.Product.Name%>"/>
                <input type="hidden" name="amount_<%=counter.ToString() %>" value="<%=(prodRef.Product.Price).ToString()%>"/>
-               <input type="hidden" name="quantity_<%=counter.ToString() %>" value="<%=(prodRef.Count).ToString()%>"/>
+               <input type="hidden" name="quantity_<%=counter.ToString() %>" value="<%=(Math.Min(prodRef.Count, prodRef.Product.Count)).ToString()%>"/>
            </td>
        </tr>
        <%
@@ -152,6 +157,8 @@
     </script> 
     <%if (UserOrder.OrdersRefProducts.Count != 0)
       { %>
+      <a href="javascript:SelDes(true)">Select all</a>
+      <a href="javascript:SelDes(false)">Deselect all</a>
     <asp:Button  OnClick="Save" ID="btnSave" runat="server" Text="Save" />
     <asp:Button  OnClick="Clear" ID="btnClear" runat="server" Text="Clear" />
     <input type="image" src="http://www.paypal.com/en_US/i/btn/x-click-but01.gif" onclick="PaypalSubmit()" alt="Make payments with PayPal - it's fast, free and secure!">
@@ -187,11 +194,6 @@
     <td><%=UserOrder.TotalSum%></td>
     </tr>
     </table>
-
-    <asp:ImageButton runat="server" ID="btnPaypal" AlternateText="checkout with paypal"
-        ImageUrl="https://www.paypal.com/en_US/i/btn/btn_xpressCheckout.gif" />
-    This will show the checkout with Paypal button on the page. Below is the onClick
-    event handler code:
     <%} %>
 
 </asp:Content>

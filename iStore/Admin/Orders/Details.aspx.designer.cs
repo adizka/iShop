@@ -13,12 +13,30 @@ namespace iStore.Admin.Orders {
     public partial class Details {
         
         /// <summary>
-        /// ordstatDdl control.
+        /// statusDdl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ordstatDdl;
+        protected global::System.Web.UI.WebControls.DropDownList statusDdl;
+        
+        /// <summary>
+        /// deliveryDdl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList deliveryDdl;
+        
+        /// <summary>
+        /// saveBtn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button saveBtn;
     }
 }

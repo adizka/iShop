@@ -29,15 +29,19 @@ namespace iStore.Admin.Orders
                         Where(o =>
                             (
                             o.OrderStatusID == int.Parse(statusDdl.SelectedValue)
-                            || o.PaymentTypeID == int.Parse(deliveryDdl.SelectedValue)
-                            || o.CreateDate >= DateTime.Now.AddHours(-int.Parse(dateDdl.SelectedValue))
+                            && o.PaymentTypeID == int.Parse(deliveryDdl.SelectedValue)
+                            && o.CreateDate >= DateTime.Now.AddHours(-int.Parse(dateDdl.SelectedValue)))
                             || o.User.Login.IndexOf(txt) != -1
                             || o.User.Email.IndexOf(txt) != -1
-                            ) && !o.IsActive
                             ).OrderBy(d=>d.CreateDate).ToList();
                 }
                 return _FilteredOrders;
             }
+        }
+
+        protected void GetByTransactionID(object obj, EventArgs args)
+        {
+            _FilteredOrders = obl.GetAllOrders().Where(o => o.TransactionID.IndexOf(txName.Text) != -1).ToList();
         }
 
         protected void Update(object obj, EventArgs args)
