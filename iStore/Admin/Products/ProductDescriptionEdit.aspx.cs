@@ -19,7 +19,11 @@ namespace iStore.Admin.Products
                 Response.Redirect(iStore.Site.SiteAdminUrl + "Products/?cid=" + Request.QueryString["cid"]);
             
             if (!IsPostBack)
+            {
                 txtBody.Text = ProductDescription;
+                divError.Visible = false;
+                divError.InnerHtml = string.Empty;
+            }
 
         }
 
@@ -58,6 +62,9 @@ namespace iStore.Admin.Products
         protected void SaveDescription(object sender, EventArgs e)
         {
             ppbl.UpdateProductDescription(txtBody.Text, CurrentProduct.ProductID);
+            divError.Visible = true;
+            divError.InnerHtml = "Описание продукта сохранено";
+
         }
     }
 }

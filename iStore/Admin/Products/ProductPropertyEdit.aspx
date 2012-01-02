@@ -18,9 +18,7 @@
 <asp:ScriptManager runat="server" ID="sm"></asp:ScriptManager>
 <asp:UpdatePanel runat="server" ID="up">
 <ContentTemplate>
-<script type="text/javascript" src="../Scripts/ProdPropertyEdit.js">
-
-</script>
+<script type="text/javascript" src="../Scripts/ProdPropertyEdit.js"></script>
 <p>
     <a href="<%= iStore.Site.SiteAdminUrl %>Products/?cid=<%= Request.QueryString["cid"] %>">Вернуться к списку товаров</a>
 </p>
@@ -28,6 +26,9 @@
 
 <div style="font-size:30px;text-align:center;">
 <%=Product.Name %>
+</div>
+<div class="Admin_LoginErrors" id="divError" runat="server">
+        
 </div>
     <div id="AddNewPropContainer">
        <a id="AddButton" href="javascript:ShowInputForm();">Add New Property</a>

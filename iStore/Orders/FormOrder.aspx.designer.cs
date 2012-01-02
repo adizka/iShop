@@ -7,36 +7,36 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace iStore.Admin.Products {
+namespace iStore.Orders {
     
     
-    public partial class ProductDescriptionEdit {
+    public partial class FormOrder {
         
         /// <summary>
-        /// divError control.
+        /// paymentDdl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divError;
+        protected global::System.Web.UI.WebControls.DropDownList paymentDdl;
         
         /// <summary>
-        /// txtBody control.
+        /// deliveryDdl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtBody;
+        protected global::System.Web.UI.WebControls.DropDownList deliveryDdl;
         
         /// <summary>
-        /// SaveBtn control.
+        /// payBtn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button SaveBtn;
+        protected global::System.Web.UI.WebControls.Button payBtn;
     }
 }

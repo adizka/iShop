@@ -3,33 +3,7 @@
 <%@ Register TagPrefix="iS" TagName="ValidateErrors" Src="~/Modules/Controls/Validators/ValidateErrors.ascx" %>
 
 <asp:Content ID="Content1" runat="server" ContentPlaceHolderID="head">
-<script type="text/javascript" src="../../Scripts/jquery.fancybox-2.0/jquery.easing-1.3.pack.js"></script>
-<script type="text/javascript" src="../../Scripts/jquery.fancybox-2.0/jquery.mousewheel-3.0.6.pack.js"></script>
-<script type="text/javascript" src="../../Scripts/jquery.fancybox-2.0/jquery.fancybox.pack.js"></script>
-<link rel="Stylesheet" type="text/css" href="../../Scripts/jquery.fancybox-2.0/jquery.fancybox.css" media="screen" />
-<style type="text/css">
-    .ProductEdit { width:600px; }    
-    .ProductEdit_Left { width:300px; float:left; }
-    .ProductEdit_Right { width:300px; float:right; }
-    .ProductEdit_Save {  padding-top:20px; } 
-    .ProductEdit_AddCategory { clear:both; padding-top:20px;}
-    #SelectCategoties { display: none;}
-</style>
 <script type="text/javascript">
-    $(document).ready(function () {
-        $(".various").fancybox({
-            maxWidth: 800,
-            maxHeight: 600,
-            fitToView: false,
-            width: '100%',
-            height: '100%',
-            autoSize: false,
-            closeClick: false,
-            openEffect: 'none',
-            closeEffect: 'none'
-        });
-    });
-
     function SetCategory(categoryId) {
         if ($("#chk" + categoryId).is(':checked')) {
             SetCategoryInHiddenField(categoryId);
@@ -58,7 +32,17 @@
             $("#<%=hf.ClientID %>").val(value);
         }
     }
+</script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#AddRemoveCategories').click(function () {
+            $("#SelectCategoties").toggle();
+        });
 
+        $('#selectCatLink').click(function () {
+            $("#SelectCategoties").css("display", "none");
+        });    
+    });
 </script>
 </asp:Content>
 <asp:Content ID="Content2" runat="server" ContentPlaceHolderID="main">
@@ -74,24 +58,25 @@
             </p>
             <p>
                 <asp:Label runat="server" ID="lblUnit" AssociatedControlID="txtUnit">Unit</asp:Label> 
-                <asp:TextBox runat="server" ID="txtUnit" Width="30" />   
+                <asp:TextBox runat="server" ID="txtUnit" Width="30" />
+            </p>
+            <p>
                 <asp:Label runat="server" ID="lblPrice" AssociatedControlID="txtPrice">Price</asp:Label>
                 <asp:TextBox runat="server" ID="txtPrice" Width="30" />
             </p>
             <p>
                 <asp:Label runat="server" ID="lblVisible" AssociatedControlID="chkVisible">is Visible</asp:Label>
                 <asp:CheckBox runat="server" ID="chkVisible" Checked="true" />
-
+            </p>
+            <p>
                 <asp:Label runat="server" ID="lblCount" AssociatedControlID="txtCount">Count</asp:Label>
                 <asp:TextBox runat="server" ID="txtCount" Width="30" />
             </p>
         </div>
-        <div class="ProductEdit_Right">
-            img
-        </div>
+       
     </div>
     <div class="ProductEdit_AddCategory">
-        <a class="various" href="#SelectCategoties">Add/Remove Categories</a>
+        <div id="AddRemoveCategories" class="Link">Add/Remove Categories</div>
         <div id="SelectCategoties">
             <% Guid currentCategoryId = Guid.NewGuid();
                if (currentCategory != null)
@@ -114,7 +99,7 @@
                     </span>
                 </p>
             <% } %>
-            <a href="#" >Выбрать</a>
+            <div  id="selectCatLink" class="Link">Выбрать</div>
         </div>
     </div>
     <p class="ProductEdit_Save">

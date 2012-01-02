@@ -8,7 +8,7 @@
     if (PageIndex !=0)
   { %>
   <span class="NavigateLastPage"><a href ="<%=NavigateUrl %>"?p=0<%=Params%>">first</a></span>
-  <span class="NavigateLastPage"><a href ="<%=NavigateUrl %>?p=<%=(PageIndex-1).ToString() + Params%>">prev</a></span>
+  <span class="NavigateLastPage"><a href ="<%=NavigateUrl %>?p=<%=(PageIndex-1).ToString() + Params%>">&larr;</a></span>
   <%if (FirstIdnex != 0)
     { %>
     <span>...</span>
@@ -30,7 +30,7 @@
     { %>
     <span>...</span>
     <%} %>
-  <span class="NavigateLastPage"><a href ="<%=NavigateUrl %>?p=<%=(PageIndex+1).ToString() + Params%>">next</a></span>
+  <span class="NavigateLastPage"><a href ="<%=NavigateUrl %>?p=<%=(PageIndex+1).ToString() + Params%>">&rarr;</a></span>
   <span class="NavigateLastPage"><a href ="<%=NavigateUrl %>?p=<%=(PagesCount-1).ToString() + Params%>">last</a></span>
   
     <%  

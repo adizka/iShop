@@ -7,6 +7,10 @@
              $('.acc_container').hide(); //Hide/close all containers
              var url = $(location).attr('href');
              var set = 0;
+             if (url.indexOf('Admin/Orders') != -1) {
+                 $('#admin_Orders').addClass('active').next().show();
+                 set = -1;
+             }
              if (url.indexOf('Admin/Pages') != -1) {
                  $('#admin_Pages').addClass('active').next().show();
                  set = -1;
@@ -38,12 +42,12 @@
      </script>
 <div class="container"> 
     <div class="ashpo_lat">
-	    <h2 class="acc_trigger"><a href="#"><%= global::Resources.Shops.Orders %></a></h2> 
+	    <h2 class="acc_trigger" id="admin_Orders"><a href="#"><%= global::Resources.Shops.Orders %></a></h2> 
 	    <div class="acc_container"> 
 		    <div class="block"> 
                     <ul>
-                        <li><a href="#"><%= global::Resources.Shops.OrdersList %></a></li>
-                        <li><a href="#"><%= global::Resources.Shops.OrdersHistory %></a></li>
+                        <li><a href="<%= iStore.Site.SiteAdminUrl %>Orders/OrderList.aspx"><%= global::Resources.Shops.OrdersList %></a></li>
+                       <%-- <li><a href="#"><%= global::Resources.Shops.OrdersHistory %></a></li>--%>
                     </ul>
             </div> 
 	    </div> 

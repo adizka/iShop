@@ -99,6 +99,8 @@ namespace iStore.Admin.Products
 
             ppbl.DeleteAllProperties(Product.ProductID);
             ppbl.AddProperties(Product.ProductID, props);
+            divError.Visible = true;
+            divError.InnerHtml = "Свойства продукта обновлены";
         }
     }
 }

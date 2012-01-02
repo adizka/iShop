@@ -9,7 +9,6 @@
     <title></title>
     <link href="Styles/Admin.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="<%= iStore.Site.SiteUrl %>Scripts/jquery.min.js"></script>
-    
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
@@ -26,7 +25,7 @@
             <div class="Admin_Menu">
                 <iS:AdminMenu runat="server" ID="am" />
             </div>
-            <div class="Admin_Center" style="padding-left:100px;">
+            <div class="Admin_Center">
                 <asp:ContentPlaceHolder ID="main" runat="server">                                                           
                 </asp:ContentPlaceHolder>
             </div>

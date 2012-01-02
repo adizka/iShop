@@ -14,7 +14,7 @@ namespace iStore.Modules.Controls.Pager
         protected override void OnInit(EventArgs e)
         {
             base.OnInit(e);
-            EntitiesPerPage = 15;
+            EntitiesPerPage = 5;
             NavigationNumbsCount = 5;
         }
         protected void Page_Load(object sender, EventArgs e)
