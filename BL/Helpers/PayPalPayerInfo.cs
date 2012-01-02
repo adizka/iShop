@@ -68,7 +68,7 @@ namespace BL.Helpers
         public Items Items { get; set; }
 
         public bool IsSucced { get { return val.StartsWith("SUCCESS"); } }
-        public decimal mc_gross { get { return decimal.Parse(GetPropertyByKey("mc_gross")); } }
+        public decimal mc_gross { get { return decimal.Parse(GetPropertyByKey("mc_gross").Replace('.',',')); } }
         public string protection_eligibility { get { return GetPropertyByKey("protection_eligibility"); } }
         public string receiver_email { get { return GetPropertyByKey("receiver_email"); } }
         public string address_status { get { return GetPropertyByKey("address_status"); } }

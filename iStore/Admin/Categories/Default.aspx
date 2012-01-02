@@ -1,6 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true"  MasterPageFile="~/Admin/Admin.Master"  CodeBehind="Default.aspx.cs" Inherits="iStore.Admin.Categories.Default" %>
 
-<%@ Register TagPrefix="iS" TagName="ValidateErrors" Src="~/Modules/Controls/Validators/ValidateErrors.ascx" %>
 <%@ Register TagPrefix="iS" TagName="BreadCrumbs" Src="~/Modules/Controls/BreadCrumbs/BreadCrumbs.ascx" %>
 <%@ Register TagPrefix="iS" TagName="Pager" Src="~/Modules/Controls/Pager/Pager.ascx" %>
 <asp:Content ID="Content1" runat="server" ContentPlaceHolderID="head">
@@ -13,7 +12,7 @@
         <a href="<%= iStore.Site.SiteAdminUrl %>Products/ProductEdit.aspx?cid=<%= Request.QueryString["cid"] %>">Добавить продукт в категорию</a>
     </p>
     <br />
-    <iS:ValidateErrors runat="server" ID="ve" Visible="false" />
+    <div class="Admin_LoginErrors" runat="server" id="divError" visible="false"></div>
 <div class="pader_category">
     <div class="top_repeater"></div>
     <div class="mid_repeater">

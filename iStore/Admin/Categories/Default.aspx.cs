@@ -67,18 +67,18 @@ namespace iStore.Admin.Categories
 
             int errorMessageId = cbl.DeleteCategoryByIdWithErrorMessage(id);
             string errorMessage = string.Empty;
+
+            divError.Visible = true;
+
             switch (errorMessageId)
             {
                 //HasChilds = 1, HasProducts = 2, Invalid = 3, Success = 4
-                case 1: { errorMessage = "Удаление не возможно. Категория имеет подкатегории."; break; };
-                case 2: { errorMessage = "Удаление не возможно. Категория имеет товары."; break; };
-                case 3: { errorMessage = "Удаление не возможно. Категория не выбрана."; break; };
-                default: errorMessage = "Удаление прошло успешно"; break;
+                case 1: { divError.InnerHtml = "Удаление не возможно. Категория имеет подкатегории."; break; };
+                case 2: { divError.InnerHtml = "Удаление не возможно. Категория имеет товары."; break; };
+                case 3: { divError.InnerHtml = "Удаление не возможно. Категория не выбрана."; break; };
+                default: divError.InnerHtml = "Удаление прошло успешно"; break;
             }
-            ve.Visible = true;
-            ve.ClearErrors();
-            ve.Errors = errorMessage;
-            ve.SetErrors();
+         
         }
     }
 }

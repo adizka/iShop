@@ -49,24 +49,28 @@ namespace iStore.Admin.Categories
 
         protected void Save(object sender, EventArgs e)
         {
-            string name = Server.HtmlEncode(txtName.Text);
+            string name = Server.HtmlEncode(txtName.Text.Trim());
             BL.Category category = CurrentCategory;
             string hf = ddlCategories.SelectedItem.Value;
             if (string.IsNullOrEmpty(name))
             {
-                ve.ClearErrors();
-                ve.Errors = "Не заполнили название";
-                ve.SetErrors();
+                divError.InnerHtml = "Не заполнили название";
+                divError.Visible = true;
                 return;
             }
 
+            if (txtName.Text.Length > 20)
+            {
+                divError.InnerHtml = "Имя не может быть длинее 20 символов";
+                divError.Visible = true;
+                return;
+            }
             if (cbl.CategoryNameInParentList(name, hf))
             {
                 if (category == null)
                 {
-                    ve.ClearErrors();
-                    ve.Errors = "Категория с таким именем уже существует";
-                    ve.SetErrors();
+                    divError.InnerHtml = "Категория с таким именем уже существует";
+                    divError.Visible = true;
                     return;
                 }
             }

@@ -194,6 +194,7 @@
     <Content Include="NewDeals\Default.aspx" />
     <Content Include="Orders\Default.aspx" />
     <Content Include="Orders\OrdersList.aspx" />
+    <Content Include="Orders\Thanks.aspx" />
     <Content Include="Pages\Default.aspx" />
     <Content Include="Products\ProductsList.aspx" />
     <Content Include="Products\Default.aspx" />
@@ -1039,6 +1040,12 @@
     </Compile>
     <Compile Include="Orders\OrdersList.aspx.designer.cs">
       <DependentUpon>OrdersList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Orders\Thanks.aspx.cs">
+      <DependentUpon>Thanks.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Orders\Thanks.aspx.designer.cs">
+      <DependentUpon>Thanks.aspx</DependentUpon>
     </Compile>
     <Compile Include="Page.Master.cs">
       <DependentUpon>Page.Master</DependentUpon>
