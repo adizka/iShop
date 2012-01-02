@@ -13,13 +13,13 @@ namespace iStore.Admin.Products {
     public partial class ProductDescriptionEdit {
         
         /// <summary>
-        /// ve control.
+        /// divError control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::iStore.Modules.Controls.Validators.ValidateErrors ve;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divError;
         
         /// <summary>
         /// txtBody control.

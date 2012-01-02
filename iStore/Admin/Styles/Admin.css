@@ -248,3 +248,11 @@ padding:2px 0 0 25px;
 height:23px;
 background:url(../../images/log_out.jpg) no-repeat;
 }
+
+  .ProductEdit { width:700px; }    
+    .ProductEdit_Left { width:700px;  }
+    
+    .ProductEdit_Save {  padding-top:20px; } 
+    .ProductEdit_AddCategory { padding-top:20px;}
+    #SelectCategoties { display: none;}
+    .Link { cursor:pointer; }

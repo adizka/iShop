@@ -9,7 +9,9 @@
         <a href="<%= iStore.Site.SiteAdminUrl %>Products/?cid=<%= Request.QueryString["cid"] %>">Вернуться к списку товаров</a>
     </p>
     <br />
-    <iS:ValidateErrors runat="server" ID="ve" />
+    <div class="Admin_LoginErrors" id="divError" runat="server">
+        
+    </div>
     <br />
     <p>
         Редактирование описания продукта <span><b><%= CurrentProduct.Name%></b></span>
