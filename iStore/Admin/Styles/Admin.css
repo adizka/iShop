@@ -1,5 +1,11 @@
 ﻿body { margin:0; padding:0; background:#ededed url(../../images/main_background.gif) repeat-y center top; }
 
+h1 {
+font-size:16px;
+padding:10px 0;
+color:#008ec3;
+}
+
 .Admin_Header {height:50px; width:1000px; margin:0 auto; background-color:#0f5a9a; color:White;} 
 .Admin_HeaderCompanyName {float:left; padding:13px 0 0 13px; font-size:18px;}
     .Admin_HeaderCompanyName span {
@@ -183,6 +189,7 @@ padding:0 10px 5px;
 
 .repparaq span {
 display:inline-block;
+vertical-align:middle;
 } .repparaq span a {color:#232323;}
     .repparaq span a:hover {text-decoration:none;}
 
@@ -203,6 +210,43 @@ width:75px;
 text-align:center;
 }
 
+.cat_span06 {
+width:490px;
+}
+
+.cat_span07 {
+width:100px;
+text-align:center;
+}
+
+.cat_span05 {
+width:540px;
+}
+
+.prod_span01 {
+width:270px;
+}
+
+.prod_span02 {
+width:50px;
+text-align:center;
+}
+
+.prod_span03 {
+width:85px;
+text-align:center;
+}
+
+.prod_span04 {
+width:65px;
+text-align:center;
+}
+
+.prod_span05 {
+width:75px;
+text-align:center;
+}
+
 .edit_ico {
 width:14px;
 height:13px;
@@ -213,10 +257,30 @@ text-decoration:none;
 border:none;
 }
 
+.photo_ico {
+width:16px;
+height:16px;
+background:url(../../images/photo_ico.png) no-repeat;
+display:inline-block;
+margin:0 2px;
+text-decoration:none;
+border:none;
+}
+
 .delete_ico {
 width:14px;
 height:13px;
 background:url(../../images/delete_btn.png) no-repeat;
+display:inline-block;
+margin:0 2px;
+text-decoration:none;
+border:none;
+}
+
+.view_ico {
+width:16px;
+height:13px;
+background:url(../../images/view_btn.png) no-repeat;
 display:inline-block;
 margin:0 2px;
 text-decoration:none;
@@ -249,10 +313,10 @@ height:23px;
 background:url(../../images/log_out.jpg) no-repeat;
 }
 
-  .ProductEdit { width:700px; }    
-    .ProductEdit_Left { width:700px;  }
-    
-    .ProductEdit_Save {  padding-top:20px; } 
-    .ProductEdit_AddCategory { padding-top:20px;}
-    #SelectCategoties { display: none;}
-    .Link { cursor:pointer; }
+.line_style span {
+display:inline-block;
+vertical-align:middle;
+} .line_style input {vertical-align:middle; display:inline-block; padding:0 5px; width:200px; border:solid #aaadb2 1px; margin-right:20px;}
+    .line_style p {padding:5px 0 10px;}
+
+.blue_yanc {color:#008ec3 !important;}

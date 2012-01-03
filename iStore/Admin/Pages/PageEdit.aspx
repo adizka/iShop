@@ -9,24 +9,24 @@
                 <iS:ValidateErrors runat="server" ID="ve" />
             </div>
             <div class="Title">
-                <%= global::Resources.Admin_Edits.PageEdit_Title %>
+                <h1><%= global::Resources.Admin_Edits.PageEdit_Title %> </h1>
             </div>
-            <div>
+            <div class="line_style">
                 <p>
-                    <%= global::Resources.Default.Name %>
+                    <span><%= global::Resources.Default.Name %></span> 
                     <asp:TextBox runat="server" ID="txtName"  />
-                </p>
-                <p>
-                    <%= global::Resources.Admin_Edits.Keywords%>
+                    <span><%= global::Resources.Admin_Edits.Keywords%></span> 
                     <asp:TextBox runat="server" ID="txtDesc"  />
                 </p>
                 <p>
-                    <%= global::Resources.Default.Body %>:
-                    <br />
                     <asp:TextBox runat="server" ID="txtBody" TextMode="MultiLine"/>
                 </p>
                 <p>
-                    <asp:Button runat="server" ID="btnSave"  Text="<%$ Resources:Default, Save %>" OnClick="Save" />
+                    <span class="universal_button">
+                        <span>
+                            <asp:LinkButton runat="server" ID="btnSave"  Text="<%$ Resources:Default, Save %>" OnClick="Save" />
+                        </span>
+                    </span>
                 </p>
             </div>
         </div>

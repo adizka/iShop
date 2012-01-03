@@ -210,22 +210,22 @@ padding:11px 0 0 20px;
                     }
                     
 .Menu { width: 200px;position: relative; text-align: left; }
-.MenuItemSecond { display:none; position:absolute; z-index:2; padding:0 10px; left:200px; top:1px; width:200px; background:black; border:solid 1px #464646; }
+.MenuItemSecond { display:none; position:absolute; z-index:2; padding:0; left:200px; top:1px; width:220px; background:black; border:solid 1px #464646; }
     .MenuItemSecond a {
         font-size:14px;
         color:#808080;
         display:block;
         text-decoration:none;
-        padding:5px 0 5px 0;
+        padding:5px 10px;
         border-bottom:dotted 1px #3c3934; 
         } .MenuItemSecond a:hover {color:White;}
-.MenuItemThird { display:none; position:absolute; z-index:3; padding:0 10px; left:220px; top:1px; width:200px; background:black; border:solid 1px #464646; }
+.MenuItemThird { display:none; position:absolute; z-index:3; padding:0; left:220px; top:1px; width:220px; background:black; border:solid 1px #464646; }
     .MenuItemThird a {
         font-size:14px;
         color:#808080;
         display:block;
         text-decoration:none;
-        padding:5px 0 5px 0;
+        padding:5px 10px;
         border-bottom:dotted 1px #3c3934; 
         } .MenuItemThird a:hover {color:White;}
 

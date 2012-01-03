@@ -175,6 +175,7 @@
     <Content Include="Images\minus.png" />
     <Content Include="Images\minus_btn.gif" />
     <Content Include="Images\new_flac.png" />
+    <Content Include="Images\photo_ico.png" />
     <Content Include="Images\plus.png" />
     <Content Include="Images\plus_btn.gif" />
     <Content Include="Images\register_btn.png" />
@@ -187,6 +188,7 @@
     <Content Include="Images\table_topergrey.png" />
     <Content Include="Images\table_toperwhite.png" />
     <Content Include="Images\top_log_plank.png" />
+    <Content Include="Images\view_btn.png" />
     <Content Include="Images\view_site.jpg" />
     <Content Include="Modules\Controls\AddToCard.ascx" />
     <Content Include="Modules\Controls\BreadCrumbs\BreadCrumbs.ascx" />

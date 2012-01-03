@@ -118,7 +118,7 @@
         <td align="left">
             <%=prodRef.Product.Name%>
         </td>
-        <td align="center" class="Price">
+        <td align="center">
             <%=prodRef.Product.Price%>
         </td>
         <td align="center">
@@ -128,7 +128,7 @@
                 <span class="plus_triger" onclick="Incr(this)"></span>
             </div>
         </td>
-        <td class="right_border TotalSum" align="center">4
+        <td class="right_border" align="center" class="TotalSum">4
                <input type="hidden" name="item_name_<%=counter.ToString() %>" value="<%=prodRef.Product.Name%>"/>
                <input type="hidden" name="amount_<%=counter.ToString() %>" value="<%=(prodRef.Product.Price).ToString()%>"/>
                <input type="hidden" name="quantity_<%=counter.ToString() %>" value="<%=(Math.Min(prodRef.Count, prodRef.Product.Count)).ToString()%>"/>

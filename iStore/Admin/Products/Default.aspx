@@ -8,26 +8,31 @@
 </asp:Content>
 <asp:Content ID="Content2" runat="server" ContentPlaceHolderID="main">
     <iS:BreadCrumbs runat="server" ID="bc" SiteMode="false" EntityType="Products" /> 
-    <asp:DropDownList runat="server" ID="ddlChildCategories"></asp:DropDownList>
-    <asp:Button runat="server" ID="btnRedirect" OnClick="RedirectToSelectedCategory" Text="Перейти"/>
-    <p>
+    <p class="BCCategories">
         <a href="<%= iStore.Site.SiteAdminUrl %>Products/ProductEdit.aspx?cid=<%= Request.QueryString["cid"] %>">Добавить продукт</a>
         <a href="">Сортировать продукты в данной категории</a>
     </p>
+    <asp:DropDownList runat="server" ID="ddlChildCategories"></asp:DropDownList>
+    <asp:Button runat="server" ID="btnRedirect" OnClick="RedirectToSelectedCategory" Text="Перейти"/>
     <br />
     <iS:ValidateErrors runat="server" ID="ve" Visible="false" />
-    <div class="rep">
-        <p class="repHeader">
-            <span>Name</span>
-            <span>Count</span>
-            <span>Price</span>
-            <span>Properies</span>
-            <span>Edit</span>
-            <span>Delete</span>
-            <span>Photo</span>
-            <span>Description</span>
-        </p>
-        <% if (!PageProducts.Any())
+    <div class="top_repeater"></div>
+        <div class="mid_repeater">
+            <p class="cat_h3">Products</p>
+        </div>
+        <div class="mid_repeatergrey">
+            <p class="repparaq">
+                <span class="prod_span01">Name</span>
+                <span class="prod_span02">Count</span>
+                <span class="prod_span02">Price</span>
+                <span class="prod_span03">Properies</span>
+                <span class="prod_span03">Description</span>
+                <span class="prod_span04">Photo</span>
+                <span class="prod_span05">Action</span>
+            </p>
+        </div>
+        <div class="mid_repeater">
+             <% if (!PageProducts.Any())
            { %>
                 <p>Нет товаров</p>
            <%} %>
@@ -36,35 +41,31 @@
                {
                     i++; cssClass = ((i % 2) == 1 ) ? "first" : "second";
         %>
-        <p class="repBody <%= cssClass %>">
-            <span>
+        <p class="repparaq <%= cssClass %>">
+            <span class="prod_span01">
                 <a href="<%= iStore.Site.SiteAdminUrl %>"><%= item.Product.Name %></a> 
             </span>
-            <span><%= item.Product.Count.ToString() %></span>
-            <span>
+            <span class="prod_span02"><%= item.Product.Count.ToString() %></span>
+            <span class="prod_span02">
                 <%= item.Product.Price.ToString() %>
             </span>
-            <span>
-                <a href="<%= iStore.Site.SiteAdminUrl %>Products/ProductPropertyEdit.aspx?pid=<%= item.ProductID.ToString() %>&cid=<%= Request.QueryString["cid"] %>">Properties</a>
+            <span class="prod_span03">
+                <a class="blue_yanc" href="<%= iStore.Site.SiteAdminUrl %>Products/ProductPropertyEdit.aspx?pid=<%= item.ProductID.ToString() %>&cid=<%= Request.QueryString["cid"] %>">properties</a>
             </span>
-            <span>
-                <a href="<%= iStore.Site.SiteAdminUrl %>Products/ProductEdit.aspx?pid=<%= item.ProductID.ToString() %>&cid=<%= Request.QueryString["cid"] %>">Edit</a>
+            <span class="prod_span03">
+                <a class="blue_yanc" href="<%= iStore.Site.SiteAdminUrl %>Products/ProductDescriptionEdit.aspx?pid=<%= item.ProductID.ToString() %>&cid=<%= Request.QueryString["cid"] %>">description</a>
             </span>
-            <span>
-                <a href="<%= iStore.Site.SiteAdminUrl %>">Delete</a>
+            <span class="prod_span04">
+                <a class="photo_ico" href="<%= iStore.Site.SiteAdminUrl %>Products/ProductsPhoto.aspx?pid=<%= item.ProductID.ToString() %>&cid=<%= Request.QueryString["cid"] %>"></a>
             </span>
-            <span>
-                <a href="<%= iStore.Site.SiteAdminUrl %>Products/ProductsPhoto.aspx?pid=<%= item.ProductID.ToString() %>&cid=<%= Request.QueryString["cid"] %>">
-                    Edit Photo
-                </a>
-            </span>
-            <span>
-                <a href="<%= iStore.Site.SiteAdminUrl %>Products/ProductDescriptionEdit.aspx?pid=<%= item.ProductID.ToString() %>&cid=<%= Request.QueryString["cid"] %>">
-                    Edit Description
-                </a>
+            <span class="prod_span05">
+                <a class="edit_ico" href="<%= iStore.Site.SiteAdminUrl %>Products/ProductEdit.aspx?pid=<%= item.ProductID.ToString() %>&cid=<%= Request.QueryString["cid"] %>"></a>
+                <a class="delete_ico" href="<%= iStore.Site.SiteAdminUrl %>"></a>
             </span>
         </p>       
         <% } %>
-    </div>
+        </div>
+        <div class="bot_repeater"></div>
+
     <iS:Pager runat="server" ID="pager"  AddInsParams="Products"></iS:Pager>
 </asp:Content>
