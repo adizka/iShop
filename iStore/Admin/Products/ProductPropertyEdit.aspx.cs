@@ -75,13 +75,37 @@ namespace iStore.Admin.Products
             pbl.CopyProperties(prodID, Product.ProductID);
 
         }
+        private class Supporting
+        {
+        public    int sort;
+        public    string name;
+            public string val;
+        }
         protected void Save(object obj, EventArgs args)
         {
 
-            var strProps = hf.Value.Split(new string[] { "!~!!~!!~!!~!" }, StringSplitOptions.RemoveEmptyEntries)
-                .Select(el => el.Trim().Split(new string[] { "!~!!~!" }, StringSplitOptions.RemoveEmptyEntries))
-                 .Select(e => new {Sort = int.Parse(e[2]), Name = e[0], Val = e[1]  }).OrderBy(s => s.Sort).ToList();
+            List<Supporting> strProps;
 
+            try
+            {
+                strProps = hf.Value.Split(new string[] { "!~!!~!!~!!~!" }, StringSplitOptions.RemoveEmptyEntries)
+                    .Select(el => el.Trim().Split(new string[] { "!~!!~!" }, StringSplitOptions.RemoveEmptyEntries))
+                     .Select(e => new Supporting (){sort = int.Parse(e[2]), name = e[0], val = e[1] }).OrderBy(s => s.sort).ToList();
+            }
+            catch
+            {
+                divError.Visible = true;
+                divError.InnerHtml = "Данные не были сохранены, перезагрузите страницу и попробуйте еще раз!";
+                return;
+            }
+
+            var maxLen = 50;
+            if (strProps.Any(p => p.name.Length > maxLen || p.val.Length > maxLen))
+            {
+                divError.Visible = true;
+                divError.InnerHtml = "Длина названия свойства не может превышать" + maxLen.ToString() + " символов";
+                return;
+            }
 
             List<BL.ProductProperty> props = new List<ProductProperty>();
             foreach (var item in strProps)
@@ -89,10 +113,10 @@ namespace iStore.Admin.Products
                 props.Add(
                     new BL.ProductProperty()
                     {
-                        PropertyName = Server.HtmlEncode(item.Name),
-                        PropertyValue = Server.HtmlEncode(item.Val),
+                        PropertyName = Server.HtmlEncode(item.name),
+                        PropertyValue = Server.HtmlEncode(item.val),
                         IsImportant = true,
-                        Sort = item.Sort 
+                        Sort = item.sort 
                     }
                 );
             }

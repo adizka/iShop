@@ -75,7 +75,7 @@ namespace BL.Modules.Products
                     prc.ID = Guid.NewGuid();
                     prc.CategoryID = categoryId;
                     prc.ProductID = productId;
-                    prc.Sort = product.ProductsRefCategories.Count;
+                    prc.Sort = category.ProductsRefCategories.Count();
                     product.ProductsRefCategories.Add(prc);
                     db.SubmitChanges();
                     addCategoryToProduct = true;
@@ -201,6 +201,23 @@ namespace BL.Modules.Products
         public IQueryable<ProductData> GetProductsByCategoryName(string name)
         {
             return new ShopDataContext().GetProductDataByCategoryName(name);
+        }
+
+        public void DeleteProduct(Guid prodID)
+        {
+            using (ShopDataContext db = new ShopDataContext())
+            {
+                var prod = db.Products.FirstOrDefault(p => p.ProductID == prodID);
+                if (prod == null)
+                    return;
+
+                db.ProductsRefCategories.DeleteAllOnSubmit(prod.ProductsRefCategories);
+                db.OrdersRefProducts.DeleteAllOnSubmit(prod.OrdersRefProducts);
+                db.ProductsRefProperies.DeleteAllOnSubmit(prod.ProductsRefProperies);
+                db.ProductProperties.DeleteAllOnSubmit(prod.ProductProperties);
+                db.Stocks.DeleteAllOnSubmit(prod.Stocks);
+                db.SubmitChanges();
+            }
         }
     }
 }

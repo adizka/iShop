@@ -102,8 +102,8 @@ namespace iStore.Admin.Products
                 {
                     if (_PageProducts == null)
                         _PageProducts = prcbl.GetAllProductsRefCategories().ToArray().Distinct(new BL.ProductsRefCategoryComparer())
-                            .Where((c, ind) => ind >= pager.PageIndex*pager.EntitiesPerPage
-                                               && ind < (pager.PageIndex + 1)*pager.EntitiesPerPage).ToList();
+                            .Where((c, ind) => ind >= pager.PageIndex * pager.EntitiesPerPage
+                                               && ind < (pager.PageIndex + 1) * pager.EntitiesPerPage).OrderBy(p => p.Sort).ToList();
                 }
                 else
                 {
@@ -111,10 +111,16 @@ namespace iStore.Admin.Products
                         _PageProducts = prcbl.GetProductRefCategoriesByCategoryId(CurrentCategoryId.Value).ToArray()
                             .Distinct(new BL.ProductsRefCategoryComparer())
                             .Where((c, ind) => ind >= pager.PageIndex * pager.EntitiesPerPage
-                                               && ind < (pager.PageIndex + 1) * pager.EntitiesPerPage).ToList();
+                                               && ind < (pager.PageIndex + 1) * pager.EntitiesPerPage).OrderBy(p => p.Sort).ToList();
                 }
                 return _PageProducts;
             }
+        }
+        protected void DeleteProduct(object obj, EventArgs args)
+        {
+            Guid prodID;
+            if(Guid.TryParse(hf.Value, out prodID))
+                pbl.DeleteProduct(prodID);
         }
     }
 }

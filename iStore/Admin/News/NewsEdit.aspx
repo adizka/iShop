@@ -12,6 +12,7 @@
             <div class="Title">
                 <h1><%= global::Resources.Admin_Edits.PageEdit_Title%></h1>
             </div>
+            <div runat="server" visible="false" id="errMsg"></div>
             <div class="line_style">
                 <p>
                     <span><%= global::Resources.Default.Title %> </span>

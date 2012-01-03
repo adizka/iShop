@@ -59,6 +59,14 @@ namespace iStore.Admin.Pages
                 ve.SetErrors();
                 return false;
             }
+            var maxLen = 25;
+            if (name.Length  > maxLen)
+            {
+                ve.Errors = "Длина названия свойства не может превышать" + maxLen.ToString() + " символов"; 
+                ve.SetErrors();
+                return false;
+            }
+
             if (pages.IsPageNameInDB(name))
             {
                 if (CurrentPageId == -1)

@@ -22,6 +22,15 @@ namespace iStore.Admin.News {
         protected global::iStore.Modules.Controls.Validators.ValidateErrors ve;
         
         /// <summary>
+        /// errMsg control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl errMsg;
+        
+        /// <summary>
         /// txtTitle control.
         /// </summary>
         /// <remarks>

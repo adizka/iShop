@@ -26,20 +26,27 @@ namespace iStore.Admin.News
                 }
                 Page.Title = PageTitle.Get(global::Resources.Admin_Edits.NewsEdit);
             }
+            errMsg.Visible = false;
         }
 
         protected void Save(object sender, EventArgs e)
         {
-            string title = HttpContext.Current.Server.HtmlEncode(txtTitle.Text);
-            string desc = HttpContext.Current.Server.HtmlEncode(txtDesc.Text);
+            string title = HttpContext.Current.Server.HtmlEncode(txtTitle.Text.Trim());
+            string desc = HttpContext.Current.Server.HtmlEncode(txtDesc.Text.Trim());
             string body = txtBody.Text;
-            if (string.IsNullOrEmpty(title))
+            var titleMaxLen = 25;
+            if (title.Length > titleMaxLen)
             {
-                title = string.Empty;
+                errMsg.Visible = true;
+                errMsg.InnerHtml = "Длина заголовка не может превышать" + titleMaxLen.ToString() + " символов";
+                return;
             }
-            if (string.IsNullOrEmpty(desc))
+            var descriptionMaxLen = 1000;
+            if (desc.Length  > descriptionMaxLen)
             {
-                desc = string.Empty;
+                errMsg.Visible = true;
+                errMsg.InnerHtml = "Длина описания не может превышать" + descriptionMaxLen.ToString() + " символов";
+                return;
             }
             if (string.IsNullOrEmpty(body))
             {

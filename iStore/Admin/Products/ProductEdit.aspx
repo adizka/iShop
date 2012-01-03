@@ -32,15 +32,14 @@
     }
 </script>
 <script type="text/javascript">
-    $(document).ready(function() {
+    function pageLoad() {
         $('#AddRemoveCategories').click(function () {
             $("#SelectCategoties").toggle();
         });
-
         $('#selectCatLink').click(function () {
             $("#SelectCategoties").css("display", "none");
-        });    
-    });
+        });
+    }
 </script>
 </asp:Content>
 <asp:Content ID="Content2" runat="server" ContentPlaceHolderID="main">

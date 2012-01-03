@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Transactions;
 
 namespace BL.Modules.Products
 {
@@ -62,6 +63,25 @@ namespace BL.Modules.Products
         public  IQueryable<BL.ProductsRefCategory> GetProductRefCategoriesByCategoryId(Guid categoryId)
         {
             return GetAllProductsRefCategories().Where(p => p.CategoryID == categoryId).OrderBy(s => s.Sort);
+        }
+
+        public void UpdateProductsRefCategoriesSort(List<Guid> prodIds)
+        {
+            using (var db = new ShopDataContext())
+            {
+                using (var ts = new TransactionScope())
+                {
+                    var index = 0;
+                    foreach (var item in prodIds)
+                    {
+                        var categ = db.ProductsRefCategories.First(c => c.ID == item);
+                        categ.Sort = index;
+                        index++;
+                    }
+                    db.SubmitChanges();
+                    ts.Complete();
+                }
+            }
         }
     }
 }

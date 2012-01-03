@@ -7,10 +7,23 @@
 <asp:Content ID="Content1" runat="server" ContentPlaceHolderID="head">
 </asp:Content>
 <asp:Content ID="Content2" runat="server" ContentPlaceHolderID="main">
+<script type="text/javascript">
+    function DeleteProduct(prodID) {
+        $("#hf").val(prodID);
+        $("#delBtn").click();
+    }
+</script>
+<div style="display:none;">
+<asp:Button runat="server" ID="delBtn" OnClick="DeleteProduct" ClientIDMode="Static" />
+<asp:HiddenField runat="server" ID="hf" ClientIDMode="Static" />
+</div>
     <iS:BreadCrumbs runat="server" ID="bc" SiteMode="false" EntityType="Products" /> 
     <p class="BCCategories">
         <a href="<%= iStore.Site.SiteAdminUrl %>Products/ProductEdit.aspx?cid=<%= Request.QueryString["cid"] %>">Добавить продукт</a>
-        <a href="">Сортировать продукты в данной категории</a>
+        <%if (CurrentCategoryId.HasValue)
+          {  %>
+        <a href="/Admin/Products/ProductSort.aspx?cid=<%=Request.QueryString["cid"]%>">Сортировать продукты в данной категории</a>
+        <%} %>
     </p>
     <asp:DropDownList runat="server" ID="ddlChildCategories"></asp:DropDownList>
     <asp:Button runat="server" ID="btnRedirect" OnClick="RedirectToSelectedCategory" Text="Перейти"/>
@@ -60,7 +73,7 @@
             </span>
             <span class="prod_span05">
                 <a class="edit_ico" href="<%= iStore.Site.SiteAdminUrl %>Products/ProductEdit.aspx?pid=<%= item.ProductID.ToString() %>&cid=<%= Request.QueryString["cid"] %>"></a>
-                <a class="delete_ico" href="<%= iStore.Site.SiteAdminUrl %>"></a>
+                <a class="delete_ico" href="javascript:DeleteProduct('<%= item.Product.ProductID %>')"></a>
             </span>
         </p>       
         <% } %>

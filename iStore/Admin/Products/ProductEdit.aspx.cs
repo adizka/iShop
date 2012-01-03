@@ -43,18 +43,14 @@ namespace iStore.Admin.Products
             divError.InnerHtml = string.Empty;
             divError.Visible = false;
             BL.Product product = currentProduct;
-            string name = Server.HtmlEncode(txtName.Text);
-            string unit = Server.HtmlEncode(txtUnit.Text);
-            float price = 0;
-            string scount = Server.HtmlEncode(txtCount.Text);
-            if (!CheckAll(name, unit, scount)) { return; }
-            int count = 0;
+            string name = Server.HtmlEncode(txtName.Text.Trim());
+            string unit = Server.HtmlEncode(txtUnit.Text.Trim());
+            string scount = Server.HtmlEncode(txtCount.Text.Trim());
+            var sprice = txtPrice.Text.Trim();
 
-            try { 
-                price = float.Parse( txtPrice.Text);
-                count = Convert.ToInt32(scount); 
-            }
-            catch { Response.Redirect(Request.Url.AbsolutePath); }
+            if (!CheckAll(name, unit, scount, sprice)) { return; }
+            int count = Convert.ToInt32(scount);
+            float price = float.Parse(sprice);
 
 
             var categoriesIDs = hf.Value.Split(new string[] { "!~!" }, StringSplitOptions.RemoveEmptyEntries).Select(id => new Guid(id)).ToList();
@@ -99,13 +95,34 @@ namespace iStore.Admin.Products
         #endregion
 
         #region Check
-        private bool CheckAll(string name, string unit, string count)
+        private bool CheckAll(string name, string unit, string count, string price)
         {
             divError.InnerHtml = string.Empty;
             divError.Visible = false;
+            int tmp;
+            if (!int.TryParse(count, out tmp))
+            {
+                divError.InnerHtml = "Неправильно указано количество товара";
+                divError.Visible = true;
+                return false;
+            }
+            float temp;
+            if (!float.TryParse(price, out temp))
+            {
+                divError.InnerHtml = "Неверный формат цены";
+                divError.Visible = true;
+                return false;
+            }
             if (string.IsNullOrEmpty(name))
             {
                 divError.InnerHtml = "Не заполненно поле Name";
+                divError.Visible = true;
+                return false;
+            }
+
+            if (name.Length > 20)
+            {
+                divError.InnerHtml = "Название продутка должно быть не более 20 символов";
                 divError.Visible = true;
                 return false;
             }
@@ -115,13 +132,14 @@ namespace iStore.Admin.Products
                 divError.Visible = true;
                 return false;
             }
-
-            if (string.IsNullOrEmpty(count))
+            
+            if (unit.Length > 10)
             {
-                divError.InnerHtml = "Не заполненно поле Count";
+                divError.InnerHtml = "Название единицы измерения должно быть более 10 символов";
                 divError.Visible = true;
                 return false;
             }
+
             return true;
         }
         #endregion
