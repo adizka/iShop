@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="iStore.Orders.Default" MasterPageFile="~/Site.Master" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="iStore.Orders.Default" MasterPageFile="~/Page.Master" %>
 
 <asp:Content ID="Content1" runat="server" ContentPlaceHolderID="HeadContent">
 </asp:Content>
@@ -13,7 +13,7 @@
 
         var selectedEl = " ";
         $("input:checkbox:checked", "#ProdTable").
-        each(function () {
+        each(function () {  
             selectedEl += $(this).attr("id") + "~";
         });
 
