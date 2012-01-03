@@ -11,6 +11,10 @@ table {
 	border-spacing: 0;
 }
 
+textarea {
+resize:none;    
+}
+
 .rightor ul {
     padding:0;
     margin:0;
@@ -33,17 +37,17 @@ input, fieldset,img {
 }
 
 h1 {
-font-family:ErasMediums, Arial;
+font-family:Arial;
 font-size:18px;
 color:#a94105;
-padding:5px 0 10px 0;
+padding:10px 0 10px 0;
 }
 
 h2 {
-font-family:ErasMediums, Arial;
+font-family:Arial;
 font-size:18px;
 color:#0c84c6;
-padding:5px 0 10px 0;
+padding:10px 0 10px 0;
 }
 
 a {
@@ -202,6 +206,7 @@ padding:11px 0 0 20px;
                     height:21px;
                     background:url(../images/go_search.gif) no-repeat left top;
                     float:left;
+                    cursor:pointer;
                     }
                     
 .Menu { width: 200px;position: relative; text-align: left; }
@@ -367,7 +372,7 @@ width:210px;
 }
 
 .Center_Right {
-margin-left:200px;    
+margin-left:210px;    
 }
 
 .add_to_cart {
@@ -383,15 +388,16 @@ padding:3px 0;
         width:140px;
         display:inline-block;
         text-align:right;
-        vertical-align:middle;
+        vertical-align:top;
         color:#393939;
         font-size:14px;
         padding:0 5px 0 0;
         } .Form p {padding:3px 0;}
-            .Form input[type="text"] {width:250px; border:solid #cbcbcb 1px;}
-            .Form input[type="password"] {width:250px; border:solid #cbcbcb 1px;}
-            .Form input[type="checkbox"] {width:14px; height:14px; vertical-align:middle;}
-            .Form span {color:#c21515; font-size:14px;}
+            .Form input[type="text"] {width:250px; font-size:14px; border:solid #cbcbcb 1px; vertical-align:top;}
+            .Form textarea {width:250px; height:120px; font-size:14px; border:solid #cbcbcb 1px; vertical-align:top;}
+            .Form input[type="password"] {width:250px; font-size:14px; border:solid #cbcbcb 1px; vertical-align:top;}
+            .Form input[type="checkbox"] {width:14px; height:14px; vertical-align:middle; vertical-align:top;}
+            .Form span {color:#c21515; font-size:14px; vertical-align:top;}
         
 .Admin_LoginErrors {
 border:solid 1px #af2121;
@@ -491,3 +497,99 @@ position:absolute;
 top:0;
 left:0;
 }
+
+.right_adrees {
+float:right;
+width:285px;
+} .right_adrees p {padding:3px 0; font-size:14px;}
+
+.left_prizm {
+margin:0 285px 0 0;
+}
+
+.cart_table th {
+background:#16120d;
+padding:10px 15px;
+color:White;
+font-size:14px;
+font-weight:bold;
+}
+
+.cart_table th {
+background:#16120d;
+padding:10px 15px;
+color:White;
+border-left:solid black 1px;
+border-right:solid black 1px;
+font-size:14px;
+font-weight:bold;
+}
+
+.cart_table td {
+background:white;
+padding:10px 15px;
+color:#3b3b3b;
+font-size:14px;
+font-weight:bold;
+border-bottom:solid #c2c2c2 1px;
+} .cart_table input[type="checkbox"] {
+        width:14px;
+        height:14px;
+        }
+
+.left_border {border-left:solid black 1px;}
+.right_border {border-right:solid black 1px;}
+
+.minus_triger {
+display:block;
+width:21px;
+height:21px;
+float:left;
+cursor:pointer;
+background:url(../images/minus_btn.gif) no-repeat;
+}
+
+.plus_triger {
+display:block;
+width:21px;
+height:21px;
+float:left;
+cursor:pointer;
+background:url(../images/plus_btn.gif) no-repeat;
+}
+
+.ProdCount {
+float:left;
+font-size:12px;
+border-bottom:solid #c0c0c0 1px;
+border-top:solid #c0c0c0 1px;
+padding:2px 0 2px 0;
+width:30px;
+text-align:center;
+}
+
+.cent_triger {
+width:72px;
+margin:0 auto;
+}
+
+.options_div {
+background:white;
+border:solid #726452 1px;
+width:759px;
+} .options_div p {padding:12px 15px; font-size:12px;}
+    .clear_select {margin:0 10px 0 0; vertical-align:middle;}
+
+.right_pay {
+float:right;
+margin:5px 15px 0 5px;  
+}
+
+
+
+
+
+
+
+
+

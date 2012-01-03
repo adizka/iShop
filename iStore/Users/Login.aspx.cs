@@ -25,6 +25,10 @@ namespace iStore.Users
                     divError.InnerHtml = "Invalid login-password pair";
                 }
             }
+            else
+            {
+                divError.Visible = false;
+            }
         }
         
         protected void Log_in(object sender, EventArgs e)

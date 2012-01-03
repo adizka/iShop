@@ -29,8 +29,8 @@ namespace iStore.Orders
                 // if (Request.QueryString["paymentSystem"] == "paypal")
                 {
                     var ppInfo = GetPaymentInfo();
-                    if (ppInfo.IsSucced 
-                        && Convert.ToDecimal(UserOrder.OrdersRefProducts.Sum(r => r.Product.Price * r.Count)) == ppInfo.mc_gross 
+                    if (ppInfo.IsSucced
+                        && Convert.ToDecimal(UserOrder.OrdersRefProducts.Sum(r => r.Product.Price * r.Count)) == ppInfo.mc_gross
                         && ppInfo.receiver_email == WebConfigurationManager.AppSettings["Login"])
                     {
 

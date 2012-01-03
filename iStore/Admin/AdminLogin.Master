@@ -11,7 +11,7 @@
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
-<body>
+<body style="background:white !important;">
     <form id="form1" runat="server">
     <div class="header">
         <a class="logo_anchor" href="http://wchsb.com/"></a>

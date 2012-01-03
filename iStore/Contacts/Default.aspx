@@ -4,38 +4,35 @@
 </asp:Content>
 <asp:Content ID="Content2" runat="server" ContentPlaceHolderID="MainContent">
 <script type="text/javascript" src="../../Scripts/jquery.fancybox-2.0/jquery.easing-1.3.pack.js"></script>
-<div>
-<p>
-<div>
-User Name:
+<div class="right_adrees">
+    <h1>Head Office</h1>
+    <p>123 Main Street </p>
+    <p>Los Angeles, CA, 94101 </p>
+    <p>Phone: +1 800 123 4567 </p>
+    <p>FAX: +1 800 891 2345 </p>
+    <p>Email: <a href="">testmail@sitename.com </a> </p>
 </div>
-<div>
-<asp:TextBox ID="userNameTxt" runat="server" Text=""></asp:TextBox>
+<div class="Form left_prizm">
+    <h1>Contact Us</h1>
+    <p>
+        <label>User Name:</label>
+        <asp:TextBox ID="userNameTxt" runat="server" Text=""></asp:TextBox>
+    </p>
+    <p>
+        <label>E-mail:</label>
+        <asp:TextBox ID="emailTxt" runat="server" Text=""></asp:TextBox>
+    </p>
+    <p>
+        <label>Message:</label>
+        <asp:TextBox ID="msgTxt" runat="server" Text="" TextMode="MultiLine"></asp:TextBox>
+    </p>
+    <p>
+        <label>&nbsp;</label>
+        <span class="universal_btn">
+            <span>
+                <asp:LinkButton ID="sendBtn" runat="server" Text="Send" OnClick="Send" />
+            </span>
+        </span>
+    </p>
 </div>
-</p>
-<p>
-<div>
-e-mail:
-</div>
-<div>
-<asp:TextBox ID="emailTxt" runat="server" Text=""></asp:TextBox>
-</div>
-</p>
-<p>
-<div>
-<div>
-message:
-</div>
-<div>
-<asp:TextBox ID="msgTxt" runat="server" Text="" TextMode="MultiLine"></asp:TextBox>
-</div>
-</div>
-</p>
-<p>
-<div>
-<asp:Button ID="sendBtn" runat="server" Text="Send" OnClick="Send"></asp:Button>
-</div>
-</p>
-</div>
-
 </asp:Content>
