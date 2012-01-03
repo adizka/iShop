@@ -7,7 +7,7 @@
 <asp:UpdatePanel runat="server" ID="up">
 <ContentTemplate>
    <h1>I forgot my password</h1>
-   <div class="Form"
+   <div class="Form">
        <p>
             <asp:Label runat="server" ID="lblLogin" AssociatedControlID="txtEmail">Username or email</asp:Label> 
             <asp:TextBox runat="server" ID="txtEmail"></asp:TextBox> 

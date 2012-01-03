@@ -64,7 +64,7 @@ namespace iStore.Users {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnChangePassword;
+        protected global::System.Web.UI.WebControls.LinkButton btnChangePassword;
         
         /// <summary>
         /// lblNewMail control.
@@ -100,6 +100,6 @@ namespace iStore.Users {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnChangeMail;
+        protected global::System.Web.UI.WebControls.LinkButton btnChangeMail;
     }
 }

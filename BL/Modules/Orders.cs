@@ -100,11 +100,11 @@ namespace BL.Modules.Orders
             }
         }
 
-        public bool TryFormOrder(PaymentTypes paymentType, Guid userID, DateTime paymentDate,string transactionID)
+        public bool TryFormOrder(PaymentTypes paymentType, Guid userID, DateTime paymentDate, string transactionID)
         {
             using (var db = new ShopDataContext())
             {
-                if(db.Orders.Any(o=>o.TransactionID == transactionID))
+                if (db.Orders.Any(o => o.TransactionID == transactionID))
                     return false;
 
                 var user = db.Users.First(u => u.UserID == userID);
@@ -166,17 +166,17 @@ namespace BL.Modules.Orders
                 return order;
 
             order = new Order()
-                {
-                    DeliveryTypeID = (int)DeliveryTypes.NotDelivered,
-                    IsActive = true,
-                    IsPaid = false,
-                    OrderID = Guid.NewGuid(),
-                    OrderStatusID = (int)OrderStatus.NotPaid,
-                    PaymentTypeID = (int)PaymentTypes.PayPal,
-                    UserID = userID,
-                    CreateDate = DateTime.Now,
-                    DeliveryDate = DateTime.Now
-                };
+            {
+                DeliveryTypeID = (int)DeliveryTypes.NotDelivered,
+                IsActive = true,
+                IsPaid = false,
+                OrderID = Guid.NewGuid(),
+                OrderStatusID = (int)OrderStatus.NotPaid,
+                PaymentTypeID = (int)PaymentTypes.PayPal,
+                UserID = userID,
+                CreateDate = DateTime.Now,
+                DeliveryDate = DateTime.Now
+            };
             user.Orders.Add(order);
             db.SubmitChanges();
 

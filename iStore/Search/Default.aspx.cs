@@ -41,7 +41,7 @@ namespace iStore.Search
             }
         }
 
-        Dictionary<Guid,IGrouping<Guid,BL.ProductData>> _PageProducts;
+        Dictionary<Guid, IGrouping<Guid, BL.ProductData>> _PageProducts;
         protected Dictionary<Guid, IGrouping<Guid, BL.ProductData>> PageProducts
         {
             get
@@ -50,14 +50,14 @@ namespace iStore.Search
                     _PageProducts = AllProducts.GroupBy(g => g.ProductID)
                         .Where((c, ind) => ind >= pager.PageIndex * pager.EntitiesPerPage
                                            && ind < (pager.PageIndex + 1) * pager.EntitiesPerPage).ToDictionary(x => x.Key);
-                
+
                 return _PageProducts;
             }
         }
 
         protected List<BL.Category> Categories
         {
-            get 
+            get
             {
                 return cbl.GetAllCategories().Where(c => c.Name.IndexOf(SearchCriteria) != -1).ToList();
             }

@@ -1,7 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true"  MasterPageFile="~/Admin/Admin.Master" CodeBehind="ProductEdit.aspx.cs" Inherits="iStore.Admin.Products.ProductEdit" %>
 
-<%@ Register TagPrefix="iS" TagName="ValidateErrors" Src="~/Modules/Controls/Validators/ValidateErrors.ascx" %>
-
 <asp:Content ID="Content1" runat="server" ContentPlaceHolderID="head">
 <script type="text/javascript">
     function SetCategory(categoryId) {
@@ -49,7 +47,10 @@
 <asp:ScriptManager runat="server" ID="sm"></asp:ScriptManager>
 <asp:UpdatePanel runat="server" ID="up">
 <ContentTemplate>
-     <iS:ValidateErrors runat="server" ID="ve" Visible="false" />
+     
+    <div class="Admin_LoginErrors" id="divError" runat="server">
+        
+    </div>
      <div class="ProductEdit">
         <div class="ProductEdit_Left">
             <p>

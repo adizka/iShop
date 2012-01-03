@@ -16,21 +16,21 @@ namespace BL.Modules.Products
                 product = new BL.Product();
                 BL.Modules.Products.ProductProperies ppbl = new ProductProperies();
 
-               
-                    product.ProductID = Guid.NewGuid();
-                    product.Name = name;
-                    product.CreateDate = DateTime.Now;
-                    product.Unit = unit;
-                    product.Price = price;
-                    product.InStock = (count > 0);
-                    product.IsVisible = isVisible;
-                    product.ProductTypeID = (int)ProductType.Types.Real;
-                    product.Count = count;
-                    db.Products.InsertOnSubmit(product);
-                    db.SubmitChanges();
-                    addProduct = ppbl.AddProductPhoto(BL.Site.DefaultPhotoPreview, BL.Site.DefaultPhotoOriginal, product.ProductID);
-                    addProduct = true;
-                
+
+                product.ProductID = Guid.NewGuid();
+                product.Name = name;
+                product.CreateDate = DateTime.Now;
+                product.Unit = unit;
+                product.Price = price;
+                product.InStock = (count > 0);
+                product.IsVisible = isVisible;
+                product.ProductTypeID = (int)ProductType.Types.Real;
+                product.Count = count;
+                db.Products.InsertOnSubmit(product);
+                db.SubmitChanges();
+                addProduct = ppbl.AddProductPhoto(BL.Site.DefaultPhotoPreview, BL.Site.DefaultPhotoOriginal, product.ProductID);
+                addProduct = true;
+
             }
             return addProduct;
         }
@@ -79,7 +79,7 @@ namespace BL.Modules.Products
                     product.ProductsRefCategories.Add(prc);
                     db.SubmitChanges();
                     addCategoryToProduct = true;
-                 }
+                }
             }
             return addCategoryToProduct;
         }

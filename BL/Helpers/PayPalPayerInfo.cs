@@ -50,7 +50,7 @@ namespace BL.Helpers
 
         public string GetPropertyByKey(string key)
         {
-            
+
             if (key == string.Empty)
                 return string.Empty;
 
@@ -68,7 +68,7 @@ namespace BL.Helpers
         public Items Items { get; set; }
 
         public bool IsSucced { get { return val.StartsWith("SUCCESS"); } }
-        public decimal mc_gross { get { return decimal.Parse(GetPropertyByKey("mc_gross").Replace('.',',')); } }
+        public decimal mc_gross { get { return decimal.Parse(GetPropertyByKey("mc_gross").Replace('.', ',')); } }
         public string protection_eligibility { get { return GetPropertyByKey("protection_eligibility"); } }
         public string receiver_email { get { return GetPropertyByKey("receiver_email"); } }
         public string address_status { get { return GetPropertyByKey("address_status"); } }
@@ -88,7 +88,7 @@ namespace BL.Helpers
                 return outputDateTime;
             }
         }
-        
+
         public string payment_status { get { return GetPropertyByKey("payment_status"); } }
         public string charset { get { return GetPropertyByKey("charset"); } }
         public string address_zip { get { return GetPropertyByKey("address_zip"); } }

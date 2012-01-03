@@ -13,7 +13,7 @@
 
         var selectedEl = " ";
         $("input:checkbox:checked", "#ProdTable").
-        each(function () {  
+        each(function () {
             selectedEl += $(this).attr("id") + "~";
         });
 
@@ -36,7 +36,7 @@
 
         $(".TotalSum", "#ProdTable").each(function () {
             var parent = $(this).parent();
-            var sum = $(".Price", parent).html() * $(".ProdCount", parent).html();  
+            var sum = $(".Price", parent).html() * $(".ProdCount", parent).html();
             $(this).html(sum);
 
         });
@@ -49,7 +49,7 @@
     }
 
     function Incr(el) {
-    
+
         var count = $($(el).parent().children()[1]).html() / 1;
 
         if (count == 1)
@@ -83,64 +83,62 @@
 
 </script>
 <form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
-<table id="ProdTable">
+<h1>Your Shopping Cart</h1>
+<table class="cart_table" width="760" cellpadding="0" cellspacing="" id="ProdTable">
     <tr>
-        <td>
-            Удалить
-        </td>
-        <td>
-            Название
-        </td>
-        <td>
-            Цена
-        </td>
-        <td>
-            Количество
-        </td>
-        <td>
-            Итого
-        </td>
-        <td>
+        <th align="center" width="70">
+            Delete
+        </th>
+        <th align="left">
+            Name
+        </th>
+        <th align="center" width="100">
+            Price
+        </th>
+        <th align="center" width="70">
+            Quantity
+        </th>
+        <th align="center" width="70">
+            Total
             <input type="hidden" name="cmd" value="_cart"/>
             <input type="hidden" name="upload" value="1"/>
             <input type="hidden" name="business" value='<%=ConfigurationManager.AppSettings["Login"] %>'/>
             <input type="hidden" name="currency_code" value="US"/>
-        </td>
-
+        </th>
     </tr>
 <%  int counter = 0;
       foreach (var prodRef in UserOrder.OrdersRefProducts)
       {
           counter++;
           %>
-       <tr>
-       <td>
-<input type="checkbox" onchange="Update()" id="<%=prodRef.ID%>" /> 
-</td>  
-<td>
-<%=prodRef.Product.Name%>
-</td>
-<td class="Price">
-<%=prodRef.Product.Price%>
-</td>
-<td >
-<div><span style="cursor:pointer;color:Blue;" onclick="Decr(this)">-</span><span class="ProdCount"><%=Math.Min(prodRef.Count, prodRef.Product.Count)%></span><span style="cursor:pointer;color:Blue;" onclick="Incr(this)">+</span></div>
-</td>
-           <td class="TotalSum">
-           </td>
-           <td>
+    <tr>
+        <td class="left_border" align="center">
+            <input type="checkbox" onchange="Update()" id="<%=prodRef.ID%>" /> 
+        </td>  
+        <td align="left">
+            <%=prodRef.Product.Name%>
+        </td>
+        <td align="center">
+            <%=prodRef.Product.Price%>
+        </td>
+        <td align="center">
+            <div class="cent_triger">
+                <span class="minus_triger" onclick="Decr(this)"></span>
+                <span class="ProdCount"><%=Math.Min(prodRef.Count, prodRef.Product.Count)%></span>
+                <span class="plus_triger" onclick="Incr(this)"></span>
+            </div>
+        </td>
+        <td class="right_border" align="center" class="TotalSum">4
                <input type="hidden" name="item_name_<%=counter.ToString() %>" value="<%=prodRef.Product.Name%>"/>
                <input type="hidden" name="amount_<%=counter.ToString() %>" value="<%=(prodRef.Product.Price).ToString()%>"/>
                <input type="hidden" name="quantity_<%=counter.ToString() %>" value="<%=(Math.Min(prodRef.Count, prodRef.Product.Count)).ToString()%>"/>
-           </td>
-       </tr>
+        </td>
+    </tr>
        <%
       } %>
-    
     <tr>
-    <td>Итого</td><td></td><td></td>
-    <td></td>
-    <td id="TotalSumID"></td>
+        <td class="left_border">Итого</td><td></td><td></td><td></td>
+        <td class="right_border" align="center" id="TotalSumID">500</td>
     </tr>
     </table>
     </form>
@@ -157,11 +155,23 @@
     </script> 
     <%if (UserOrder.OrdersRefProducts.Count != 0)
       { %>
-      <a href="javascript:SelDes(true)">Select all</a>
-      <a href="javascript:SelDes(false)">Deselect all</a>
-    <asp:Button  OnClick="Save" ID="btnSave" runat="server" Text="Save" />
-    <asp:Button  OnClick="Clear" ID="btnClear" runat="server" Text="Clear" />
-    <input type="image" src="http://www.paypal.com/en_US/i/btn/x-click-but01.gif" onclick="PaypalSubmit()" alt="Make payments with PayPal - it's fast, free and secure!">
+    <div class="options_div">
+        <input class="right_pay" type="image" src="http://www.paypal.com/en_US/i/btn/x-click-but01.gif" onclick="PaypalSubmit()" alt="Make payments with PayPal - it's fast, free and secure!">
+        <p>
+            <a class="clear_select" href="javascript:SelDes(true)">select all</a>
+            <a class="clear_select" href="javascript:SelDes(false)">deselect all</a>
+            <span class="universal_btn">
+                <span>
+                    <asp:LinkButton OnClick="Save" ID="btnSave" runat="server" Text="Save" />
+                </span>
+            </span> &nbsp
+            <span class="universal_btn">
+                <span>
+                    <asp:LinkButton OnClick="Clear" ID="btnClear" runat="server" Text="Clear" />
+                </span>
+            </span>
+        </p>
+    </div>
     <%} %>
     <%}
   else

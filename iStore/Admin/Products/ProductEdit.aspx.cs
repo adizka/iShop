@@ -32,12 +32,16 @@ namespace iStore.Admin.Products
                     txtCount.Text = product.Count.ToString();
                     txtUnit.Text = product.Unit;
                 }
+                divError.InnerHtml = string.Empty;
+                divError.Visible = false;
             }
         }
 
         #region SaveProduct
         protected void Save(object sender, EventArgs e)
         {
+            divError.InnerHtml = string.Empty;
+            divError.Visible = false;
             BL.Product product = currentProduct;
             string name = Server.HtmlEncode(txtName.Text);
             string unit = Server.HtmlEncode(txtUnit.Text);
@@ -57,7 +61,8 @@ namespace iStore.Admin.Products
 
             if (categoriesIDs.Count == 0)
             {
-                ve.SetErrors("Товар должен принадлежать какой-либо категории");
+                divError.InnerHtml = "Товар должен принадлежать какой-либо категории";
+                divError.Visible = true;
                 return;
             }
 
@@ -70,10 +75,8 @@ namespace iStore.Admin.Products
                 }
                 else
                 {
-                    ve.Visible = true;
-                    ve.ClearErrors();
-                    ve.Errors = "Продукт не был добавлен.";
-                    ve.SetErrors();
+                    divError.InnerHtml = "Продукт не был добавлен.";
+                    divError.Visible = true;
                     return;
                 }
             }
@@ -86,10 +89,8 @@ namespace iStore.Admin.Products
                 }
                 else
                 {
-                    ve.Visible = true;
-                    ve.ClearErrors();
-                    ve.Errors = "Продукт не был обновлён.";
-                    ve.SetErrors();
+                    divError.InnerHtml = "Продукт не был обновлён.";
+                    divError.Visible = true;
                     return;
                 }
             }
@@ -100,29 +101,25 @@ namespace iStore.Admin.Products
         #region Check
         private bool CheckAll(string name, string unit, string count)
         {
+            divError.InnerHtml = string.Empty;
+            divError.Visible = false;
             if (string.IsNullOrEmpty(name))
             {
-                ve.Visible = true;
-                ve.ClearErrors();
-                ve.Errors = "Не заполненно поле Name";
-                ve.SetErrors();
+                divError.InnerHtml = "Не заполненно поле Name";
+                divError.Visible = true;
                 return false;
             }
             if (string.IsNullOrEmpty(unit))
             {
-                ve.Visible = true;
-                ve.ClearErrors();
-                ve.Errors = "Не заполненно поле Unit";
-                ve.SetErrors();
+                divError.InnerHtml = "Не заполненно поле Unit";
+                divError.Visible = true;
                 return false;
             }
 
             if (string.IsNullOrEmpty(count))
             {
-                ve.Visible = true;
-                ve.ClearErrors();
-                ve.Errors = "Не заполненно поле Count";
-                ve.SetErrors();
+                divError.InnerHtml = "Не заполненно поле Count";
+                divError.Visible = true;
                 return false;
             }
             return true;

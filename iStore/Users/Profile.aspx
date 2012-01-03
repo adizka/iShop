@@ -14,29 +14,45 @@
 <asp:ScriptManager runat="server" ID="sm"></asp:ScriptManager>
 <asp:UpdatePanel runat="server" ID="up">
 <ContentTemplate>
-    <p>
+    <h1>
         User profile (<%= auth.CurrentUser.Login%>)
-    </p>
-    <p>
+    </h1>
+<%--<p>
         <a href="#" onclick="ChangePassword();">Change Password</a>
-    </p>
-    <p id="changePassword" style="display: none;">
-        <asp:Label runat="server" ID="lblNewPassword">New Password</asp:Label>
+    </p>--%>
+<div id="changePassword" class="Form">
+    <p>
+        <asp:Label AssociatedControlID="txtNewPassword" runat="server" ID="lblNewPassword">New Password</asp:Label>
         <asp:TextBox runat="server" TextMode="Password" ID="txtNewPassword"></asp:TextBox>
         <asp:Label runat="server" ID="lblNewPasswordError"></asp:Label>
-        <br />
-        <asp:Button runat="server" ID="btnChangePassword" OnClick="ChangePassword" Text="Change" />
     </p>
     <p>
-        <a href="#" onclick="ChangeMail();">Change Email</a>
+        <label>&nbsp;</label>
+        <span class="universal_btn">
+            <span>
+                <asp:LinkButton runat="server" ID="btnChangePassword" OnClick="ChangePassword" Text="Change" />
+            </span>
+        </span>
     </p>
-    <p id="changeMail" style="display: none;">
-        <asp:Label runat="server" ID="lblNewMail">New Email</asp:Label>
+</div>
+<div id="changeMail" class="Form">
+<%--<p>
+        <a href="#" onclick="ChangeMail();">Change Email</a>
+    </p>--%>
+    <p>
+        <asp:Label AssociatedControlID="txtNewMail" runat="server" ID="lblNewMail">New Email</asp:Label>
         <asp:TextBox runat="server" ID="txtNewMail"></asp:TextBox>
         <asp:Label runat="server" ID="lblNewMailError"></asp:Label>
-        <br />
-        <asp:Button runat="server" ID="btnChangeMail" OnClick="ChangeMail" Text="Change" />
     </p>
+    <p>
+        <label>&nbsp;</label>
+        <span class="universal_btn">
+            <span>
+                <asp:LinkButton runat="server" ID="btnChangeMail" OnClick="ChangeMail" Text="Change" />
+            </span>
+        </span>
+    </p>
+</div>
 </ContentTemplate>
 </asp:UpdatePanel>
 </asp:Content>

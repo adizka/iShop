@@ -173,8 +173,10 @@
     <Content Include="Images\mid_btn_marv.png" />
     <Content Include="Images\mid_log_plank.png" />
     <Content Include="Images\minus.png" />
+    <Content Include="Images\minus_btn.gif" />
     <Content Include="Images\new_flac.png" />
     <Content Include="Images\plus.png" />
+    <Content Include="Images\plus_btn.gif" />
     <Content Include="Images\register_btn.png" />
     <Content Include="Images\right_btnangleb.png" />
     <Content Include="Images\right_btn_marv.png" />

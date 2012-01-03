@@ -16,7 +16,7 @@ namespace BL
     }
     public enum OrderStatus
     {
-        NotPaid  = 1,
+        NotPaid = 1,
         Paid = 2
     }
     public enum DeliveryTypes
