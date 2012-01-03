@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
+using System.Configuration;
 namespace BL.Modules.Orders
 {
     public class Orders
@@ -26,7 +26,7 @@ namespace BL.Modules.Orders
                 {
                     order = new Order()
                     {
-                        DeliveryTypeID = (int)DeliveryTypes.NonameType,
+                        DeliveryTypeID = (int)DeliveryTypes.NotDelivered,
                         IsActive = true,
                         IsPaid = false,
                         OrderID = Guid.NewGuid(),
@@ -93,7 +93,7 @@ namespace BL.Modules.Orders
 
                 foreach (var item in refs)
                 {
-                    item.Count = newCounts.First(c => c.ID == item.ID).Count;
+                    item.Count = (Math.Min(newCounts.First(c => c.ID == item.ID).Count, item.Product.Count));
                 }
 
                 db.SubmitChanges();
@@ -112,15 +112,21 @@ namespace BL.Modules.Orders
 
                 if (order == null)
                     return false;
-                
+
+                foreach (var item in order.OrdersRefProducts)
+                {
+                    item.Product.Count -= item.Count;
+                    item.Product.IsVisible = item.Product.Count > 0;
+                }
                 order.IsActive = false;
+                order.IsPaid = true;
                 order.PaymentTypeID = (int)paymentType;
                 order.OrderStatusID = (int)BL.OrderStatus.Paid;
                 order.TotalSum = Convert.ToDecimal(order.OrdersRefProducts.Sum(r => r.Product.Price * r.Count));
                 order.CreateDate = paymentDate;
                 order.TransactionID = transactionID;
-                //order.DeliveryDate  ??????????????????????????
-                //order.DeliveryType = ?????????????????????????
+                order.DeliveryDate = DateTime.Now.AddHours(double.Parse(ConfigurationManager.AppSettings["DeliveryTime"]));
+                order.DeliveryTypeID = (int)DeliveryTypes.NotDelivered;
                 db.SubmitChanges();
             }
             return true;
@@ -161,7 +167,7 @@ namespace BL.Modules.Orders
 
             order = new Order()
                 {
-                    DeliveryTypeID = (int)DeliveryTypes.NonameType,
+                    DeliveryTypeID = (int)DeliveryTypes.NotDelivered,
                     IsActive = true,
                     IsPaid = false,
                     OrderID = Guid.NewGuid(),
@@ -175,6 +181,20 @@ namespace BL.Modules.Orders
             db.SubmitChanges();
 
             return order;
+        }
+
+        public void UpdateOrder(Guid orderID, int statusID, int deliveryID)
+        {
+            using (var db = new ShopDataContext())
+            {
+                var ord = db.Orders.First(o => o.OrderID == orderID);
+                ord.IsPaid = (statusID == (int)BL.OrderStatus.Paid);
+                ord.IsActive = ord.IsPaid;
+                ord.DeliveryDate = DateTime.Now;
+                ord.DeliveryTypeID = deliveryID;
+                ord.OrderStatusID = statusID;
+                db.SubmitChanges();
+            }
         }
     }
 }

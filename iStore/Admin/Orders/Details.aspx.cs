@@ -11,7 +11,11 @@ namespace iStore.Admin.Orders
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            ordstatDdl.SelectedIndex = Order.OrderStatusID - 1;
+            if (!IsPostBack)
+            {
+                statusDdl.SelectedIndex = Order.OrderStatusID - 1;
+                deliveryDdl.SelectedIndex = Order.DeliveryTypeID - 1;
+            }
         }
 
         iStore.Modules.Logic.Auth.Users ubl = new iStore.Modules.Logic.Auth.Users();
@@ -38,9 +42,11 @@ namespace iStore.Admin.Orders
 
         protected void Save(object obj, EventArgs args)
         {
-            //var statusID = int.Parse(ordstatDdl.SelectedValue);
-            //var deliveryDate =  
-            //obl.UpdateOrder(Order.OrderID, statusID,deliveryDate, deliveryTypeID);
+            var statusID = int.Parse(statusDdl.SelectedValue);
+            var deliveryID = int.Parse(deliveryDdl.SelectedValue);
+
+            obl.UpdateOrder(Order.OrderID, statusID, deliveryID);
+            _order = null;
         }
     }
 }

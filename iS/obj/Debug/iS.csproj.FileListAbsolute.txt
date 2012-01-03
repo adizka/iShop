@@ -1,7 +1,0 @@
-F:\Projects\MarvelShop\iS\iS\bin\iS.dll
-F:\Projects\MarvelShop\iS\iS\bin\iS.pdb
-F:\Projects\MarvelShop\iS\iS\obj\Debug\ResolveAssemblyReference.cache
-F:\Projects\MarvelShop\iS\iS\obj\Debug\iS.dll
-F:\Projects\MarvelShop\iS\iS\obj\Debug\iS.pdb
-F:\Projects\MarvelShop\iS\iS\bin\BL.dll
-F:\Projects\MarvelShop\iS\iS\bin\BL.pdb

@@ -42,7 +42,6 @@
     <% } %>
     </div>
     <div class="UserCart">
-        <h2>Shopping cart</h2>
         <iS:Cart runat="server" ></iS:Cart>
     </div>
 <%--end 1--%>
