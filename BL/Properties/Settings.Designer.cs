@@ -28,10 +28,10 @@ namespace BL.Properties {
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
 
 
-        //[global::System.Configuration.DefaultSettingValueAttribute("Data Source=(local);Initial Catalog=MarvelDB;Integrated Security=True" + 
-          //  "")]
+      //[global::System.Configuration.DefaultSettingValueAttribute("Data Source=(local);Initial Catalog=MarvelDB;Integrated Security=True" + 
+        //  "")]
         [global::System.Configuration.DefaultSettingValueAttribute("Data Source=ITCOMP\\TEST;Initial Catalog=MarvelDB;Persist Security Info=True;User " +
-             "ID=sa;Password=yefim")]
+            "ID=sa;Password=yefim")]
         public string MarvelDBConnectionString {
             get {
                 return ((string)(this["MarvelDBConnectionString"]));

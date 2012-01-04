@@ -50,37 +50,36 @@
     }
 
 </script>
-<asp:HiddenField ID="hd" runat="server" />
-<div style="width:100%">
-<div style="width:100%;float:left">
-    
+<asp:HiddenField ID="hd" runat="server" /> 
       <%
         int index = -1;
         foreach (var item in SiblingCategories)
         {
             index++;
       %>
-      <div>
+    <div class="ProductPropertyItem">
             <span class="MoveUp">
-            
-            <a href="javascript:MoveUp(<%=index %>);">
-            Вверх 
-            </a>
+                <a class="MoveUp" href="javascript:MoveUp(<%=index %>);">Up</a>
             </span>
             <span class="MoveDown">
-            <a href="javascript:MoveDown(<%=index %>);">Вниз
-            </a></span>
+                <a class="MoveDown" href="javascript:MoveDown(<%=index %>);">Down</a>
+            </span>
             <script type="text/javascript">
                 catIds.push("<%= item.CategoryID%>");
             </script>
             <span class="CategoryName" id="CategoryName<%=index %>">
-            <%= item.Name%>
+                <%= item.Name%>
             </span>
-           </div>
+    </div>
             <%} %>
-</div>
-<asp:Button ID="Button1" Text="Save" OnClick="SaveCategoriesRate" runat="server"/>
-</div>
+    <div class="ProductEdit_Save">
+                    <span class="universal_button">
+                        <span>
+                            <asp:LinkButton ID="Button1" Text="Save" OnClick="SaveCategoriesRate" runat="server"/>
+                        </span>
+                    </span>
+        
+    </div>
 
 
 </asp:Content>  

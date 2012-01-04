@@ -18,6 +18,14 @@
 <asp:HiddenField runat="server" ID="hf" ClientIDMode="Static" />
 </div>
     <iS:BreadCrumbs runat="server" ID="bc" SiteMode="false" EntityType="Products" /> 
+    <p class="right_category">
+        <asp:DropDownList runat="server" ID="ddlChildCategories"></asp:DropDownList>
+        <span class="universal_button">
+            <span>
+                <asp:LinkButton runat="server" ID="btnRedirect" OnClick="RedirectToSelectedCategory" Text="view"/>
+            </span>
+        </span>
+    </p>
     <p class="BCCategories">
         <a href="<%= iStore.Site.SiteAdminUrl %>Products/ProductEdit.aspx?cid=<%= Request.QueryString["cid"] %>">Добавить продукт</a>
         <%if (CurrentCategoryId.HasValue)
@@ -25,8 +33,6 @@
         <a href="/Admin/Products/ProductSort.aspx?cid=<%=Request.QueryString["cid"]%>">Сортировать продукты в данной категории</a>
         <%} %>
     </p>
-    <asp:DropDownList runat="server" ID="ddlChildCategories"></asp:DropDownList>
-    <asp:Button runat="server" ID="btnRedirect" OnClick="RedirectToSelectedCategory" Text="Перейти"/>
     <br />
     <iS:ValidateErrors runat="server" ID="ve" Visible="false" />
     <div class="top_repeater"></div>
@@ -47,7 +53,7 @@
         <div class="mid_repeater">
              <% if (!PageProducts.Any())
            { %>
-                <p>Нет товаров</p>
+                <p class="no_goods">Нет товаров</p>
            <%} %>
         <% int i = 0; string cssClass = string.Empty;
            foreach (var item in PageProducts)

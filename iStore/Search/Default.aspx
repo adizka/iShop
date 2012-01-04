@@ -18,36 +18,37 @@
 
         <% if (!PageProducts.Any())
            { %>
-                <p>Нет товаров</p>
+                <p class="pad_nogoods">Not found, try again.</p>
            <%} %>
         <% int i = 0; string cssClass = string.Empty;
            foreach (var item in PageProducts)
                {
                    var prod = item.Value.First();
         %>
-        <div style="width:100%;float:left;">
-        <div style="float:left;">
+<div class="ProductsList">
+    <div class="image_ploater">
         <img src="/Content/Products/Preview/<%=GetPreviewUrl(prod) %>" />
+    </div>
+    <div class="info_blocked">
+        <div class="ProductName">
+            <a href='/Products/?pid=<%=item.Key%>'><%=prod.Name%></a>
         </div>
-        <div style="float:left;">
-        <a href='/Products/?pid=<%=item.Key%>'>
-        <%=prod.Name%></a>
-        Categories: (
-        <%foreach (var cats in item.Value)
-          {
-              %>
-              <a href="/Categories/?cid=<%=cats.CategoryID%>"><%= cats.CategoryName%></a> 
-              <%
-          } %>)
-        <br />
+        <div class="ProductInfo">
+            Categories: (
+            <%foreach (var cats in item.Value)
+              {
+                  %>
+                  <a href="/Categories/?cid=<%=cats.CategoryID%>"><%= cats.CategoryName%></a> 
+                  <%
+              } %>)
         </div>
-        <div style="float:right;">
-        Our price:
-        <br /> 
-        <%=prod.Price%>$
+    </div>
+    <div class="price_blocked">
+        <p class="price_paraq">Our price:</p>
+        <p class="price_paraq2"> <%=prod.Price%>$ </p>
         <%=GetRenderedControl(prod)%>
-        </div>
-        </div>
+    </div>
+</div>
         <br />
         <% } %>
 

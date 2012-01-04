@@ -202,7 +202,7 @@ namespace BL.Modules.Products
         {
             return new ShopDataContext().GetProductDataByCategoryName(name);
         }
-
+        
         public void DeleteProduct(Guid prodID)
         {
             using (ShopDataContext db = new ShopDataContext())

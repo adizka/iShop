@@ -7,6 +7,7 @@
 <asp:UpdatePanel runat="server" ID="up">
 <ContentTemplate>
    <div class="Admin_LoginErrors" id="divError" runat="server"></div>
+   <div class="line_style ProductEdit_Save">
     <p>
         <asp:Label runat="server" ID="lblName" AssociatedControlID="txtName">Category Name</asp:Label>
 
@@ -15,9 +16,13 @@
         <asp:DropDownList ID="ddlCategories" runat="server" AutoPostBack="true" AppendDataBoundItems="true">
             <asp:ListItem Value="parent">-- pick one --</asp:ListItem>
         </asp:DropDownList>
-
-        <asp:Button runat="server" ID="btnSaveCategory" Text="Сохранить" OnClick="Save" />
+                    <span class="universal_button">
+                        <span>
+                            <asp:LinkButton runat="server" ID="btnSaveCategory" Text="Save" OnClick="Save" />
+                        </span>
+                    </span>
     </p>
+    </div>
 </ContentTemplate>
 </asp:UpdatePanel>
-</asp:Content>  
+</asp:Content>   

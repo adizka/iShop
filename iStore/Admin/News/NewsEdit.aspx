@@ -1,14 +1,10 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true"  MasterPageFile="~/Admin/Admin.Master" CodeBehind="NewsEdit.aspx.cs" Inherits="iStore.Admin.News.NewsEdit" %>
 
-<%@ Register TagPrefix="iS" TagName="ValidateErrors" Src="~/Modules/Controls/Validators/ValidateErrors.ascx" %>
-
 <asp:Content runat="server" ContentPlaceHolderID="head"></asp:Content>
 
 <asp:Content runat="server" ContentPlaceHolderID="main">
     <div class="Admin_AddOrUpdate">
-            <div class="Admin_AddOrUpdateErrors">
-                <iS:ValidateErrors runat="server" ID="ve" />
-            </div>
+            
             <div class="Title">
                 <h1><%= global::Resources.Admin_Edits.PageEdit_Title%></h1>
             </div>

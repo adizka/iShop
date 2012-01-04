@@ -2,7 +2,6 @@
 <%@ Register TagPrefix="iS" TagName="ValidateErrors" Src="~/Modules/Controls/Validators/ValidateErrors.ascx" %>
 
 <asp:Content runat="server" ContentPlaceHolderID="head"></asp:Content>
-
 <asp:Content runat="server" ContentPlaceHolderID="main">
         <div class="Admin_AddOrUpdate">
             <div class="Admin_AddOrUpdateErrors">

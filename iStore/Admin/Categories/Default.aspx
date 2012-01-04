@@ -5,6 +5,7 @@
 <asp:Content ID="Content1" runat="server" ContentPlaceHolderID="head">
 </asp:Content>
 <asp:Content ID="Content2" runat="server" ContentPlaceHolderID="main">
+
     <iS:BreadCrumbs runat="server" ID="bc" SiteMode="false" EntityType="Categories" />
     <p class="BCCategories">
         <a href="<%= iStore.Site.SiteAdminUrl %>Categories/CategoryEdit.aspx?parentId=<%= Request.QueryString["cid"] %>">Добавить категорию</a>

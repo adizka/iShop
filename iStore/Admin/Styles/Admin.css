@@ -317,6 +317,111 @@ background:url(../../images/log_out.jpg) no-repeat;
 display:inline-block;
 vertical-align:middle;
 } .line_style input {vertical-align:middle; display:inline-block; padding:0 5px; width:200px; border:solid #aaadb2 1px; margin-right:20px;}
-    .line_style p {padding:5px 0 10px;}
+    .line_style select {vertical-align:middle; display:inline-block; padding:0 0 0 5px; width:200px; border:solid #aaadb2 1px; margin-right:20px;}
+        .line_style p {padding:5px 0 10px;}
 
 .blue_yanc {color:#008ec3 !important;}
+.no_goods {padding:2px 10px;}
+
+.right_category {
+float:right;
+padding: 15px 50px 0 0;
+}
+
+.ProductEdit_Left {padding:10px 0 0 0;}
+
+.ProductEdit_Left label {
+width:65px;
+text-align:right;
+display:inline-block;
+vertical-align:middle;
+} .ProductEdit_Left p {padding:2px 0;}
+    .ProductEdit_Left input[type="checkbox"] {width:14px; height:14px; vertical-align:middle;}
+        .ProductEdit_Left input[type="text"] {border:solid #aaadb2 1px; width:200px; vertical-align:middle; display:inline-block;}
+        
+.small_count {
+width:85px !important;    
+}
+
+.Link label {
+width:65px;
+display:inline-block;
+} .Link span {
+    color:#008ec3;
+    border-bottom:dotted 1px #008ec3;
+    cursor:pointer;
+    } .Link span:hover {border-bottom:solid 1px #008ec3;}
+    
+.paraq_linear {
+display:inline-block;
+vertical-align:middle;    
+} .paraq_linear label {
+        width:300px !important;
+        vertical-align:middle;
+        display:inline-block;
+        text-align:left !important;
+        } .paraq_linear input {
+                width:14px;
+                height:14px;
+                vertical-align:middle;
+                display:inline-block;
+                }
+
+.list_of_category {
+padding:0 10px;    
+}
+
+.ProductEdit_Save {
+padding:5px 15px 15px 15px;    
+}
+
+.pro_cat_name {
+text-align:left;
+padding:0 15px;
+font-size:18px;
+font-weight:bold;
+}
+
+#AddNewPropContainer {
+padding:10px 15px;
+}
+
+.dootted_anchord {
+color:#008ec3;
+border-bottom:dotted #008ec3 1px;
+text-decoration:none;
+cursor:pointer;
+} .dootted_anchord:hover {border-bottom:solid #008ec3 1px;}
+    #AddNewPropContainer input {width:200px; border:solid #aaadb2 1px;}
+
+.ProductPropertyItem {
+padding:4px 0;
+margin:0 15px;
+border-bottom:solid #c7c7c7 1px;
+} .ProductPropertyItem span {
+        display:inline-block;
+        margin:0 10px 0 0;
+        }
+
+.MoveUp {color:#008ec3; cursor:pointer; border-bottom:dotted #008ec3 1px;}
+.MoveDown {color:#008ec3; cursor:pointer; border-bottom:dotted #008ec3 1px;}
+.MoveUp:hover {border-bottom:solid #008ec3 1px;}
+.MoveDown:hover {border-bottom:solid #008ec3 1px;}
+
+.PropertyName {width:500px;}
+.SortIndex {width:40px;}
+
+.copy_contacter {
+padding:15px 15px 5px;
+} .copy_contacter p {padding:4px 0;}
+    .copy_contacter select {width:200px; border:solid #aaadb2 1px; margin-right:10px;}
+
+
+
+
+
+
+
+
+
+

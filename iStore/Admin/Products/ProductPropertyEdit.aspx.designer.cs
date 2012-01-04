@@ -55,7 +55,7 @@ namespace iStore.Admin.Products {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button AddPropertiesbtn1;
+        protected global::System.Web.UI.WebControls.LinkButton AddPropertiesbtn1;
         
         /// <summary>
         /// apddl control.
@@ -73,7 +73,7 @@ namespace iStore.Admin.Products {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button AddPropertiesbtn2;
+        protected global::System.Web.UI.WebControls.LinkButton AddPropertiesbtn2;
         
         /// <summary>
         /// btnSave control.
@@ -82,7 +82,7 @@ namespace iStore.Admin.Products {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSave;
+        protected global::System.Web.UI.WebControls.LinkButton btnSave;
         
         /// <summary>
         /// hf control.

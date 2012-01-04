@@ -5,21 +5,23 @@
 </asp:Content>
 <asp:Content ID="Content2" runat="server" ContentPlaceHolderID="main">
 <div>    
-    <p>
+    <p class="BCCategories">
         <a href="<%= iStore.Site.SiteAdminUrl %>Products/?cid=<%= Request.QueryString["cid"] %>">Вернуться к списку товаров</a>
     </p>
     <br />
     <div class="Admin_LoginErrors" id="divError" runat="server">
         
     </div>
-    <br />
-    <p>
-        Редактирование описания продукта <span><b><%= CurrentProduct.Name%></b></span>
-    </p>
-    <p>
-        <asp:TextBox runat="server" ID="txtBody" TextMode="MultiLine" />
-    </p>
-        <script src="<%= iStore.Site.SiteUrl %>Scripts/fck/fckeditor.js" type="text/javascript"></script>
+    <div class="line_style ProductEdit_Save">
+        <p>
+            <span>Edit product</span> <span><b><%= CurrentProduct.Name%></b></span>
+        </p>
+        <p>
+            <asp:TextBox runat="server" ID="txtBody" TextMode="MultiLine" />
+        </p> 
+    </div>
+    <div class="ProductEdit_Save">
+    <script src="<%= iStore.Site.SiteUrl %>Scripts/fck/fckeditor.js" type="text/javascript"></script>
     <script type="text/javascript">
         window.onload = function () {
             var sBasePath = '<%= iStore.Site.SiteUrl %>Scripts/FCK/';
@@ -34,12 +36,16 @@
             oFCKeditor.ReplaceTextarea();
         }
     </script>
-    <asp:Button runat="server" ID="SaveBtn" OnClick="SaveDescription" Text="Save" />
+                    <span class="universal_button">
+                        <span>
+                            <asp:LinkButton runat="server" ID="SaveBtn" OnClick="SaveDescription" Text="Save" />
+                        </span>
+                    </span>
+    </div>
 
-     <p>
+    <p class="BCCategories">
         <a href="<%= iStore.Site.SiteAdminUrl %>Products/?cid=<%= Request.QueryString["cid"] %>">Вернуться к списку товаров</a>
     </p>
-    <br />
 </div>
 
 </asp:Content>

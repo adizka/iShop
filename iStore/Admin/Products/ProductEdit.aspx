@@ -47,66 +47,75 @@
 <asp:UpdatePanel runat="server" ID="up">
 <ContentTemplate>
      
-    <div class="Admin_LoginErrors" id="divError" runat="server">
-        
-    </div>
+    <div class="Admin_LoginErrors" id="divError" runat="server"></div>
      <div class="ProductEdit">
         <div class="ProductEdit_Left">
             <p>
-                <asp:Label runat="server" ID="lblName" AssociatedControlID="txtName">Name</asp:Label>   
+                <asp:Label runat="server" ID="lblName" AssociatedControlID="txtName">Name:</asp:Label>   
                 <asp:TextBox runat="server" ID="txtName" />
             </p>
             <p>
-                <asp:Label runat="server" ID="lblUnit" AssociatedControlID="txtUnit">Unit</asp:Label> 
-                <asp:TextBox runat="server" ID="txtUnit" Width="30" />
+                <asp:Label runat="server" ID="lblUnit" AssociatedControlID="txtUnit">Unit:</asp:Label> 
+                <asp:TextBox CssClass="small_count" runat="server" ID="txtUnit" />
             </p>
             <p>
-                <asp:Label runat="server" ID="lblPrice" AssociatedControlID="txtPrice">Price</asp:Label>
-                <asp:TextBox runat="server" ID="txtPrice" Width="30" />
+                <asp:Label runat="server" ID="lblPrice" AssociatedControlID="txtPrice">Price:</asp:Label>
+                <asp:TextBox CssClass="small_count" runat="server" ID="txtPrice"  />
             </p>
             <p>
-                <asp:Label runat="server" ID="lblVisible" AssociatedControlID="chkVisible">is Visible</asp:Label>
-                <asp:CheckBox runat="server" ID="chkVisible" Checked="true" />
+                <asp:Label runat="server" ID="lblCount" AssociatedControlID="txtCount">Count:</asp:Label>
+                <asp:TextBox CssClass="small_count" runat="server" ID="txtCount" />
             </p>
             <p>
-                <asp:Label runat="server" ID="lblCount" AssociatedControlID="txtCount">Count</asp:Label>
-                <asp:TextBox runat="server" ID="txtCount" Width="30" />
+                <asp:Label runat="server" ID="lblVisible" AssociatedControlID="chkVisible">Is visible:</asp:Label>
+                <asp:CheckBox CssClass="small_count" runat="server" ID="chkVisible" Checked="true" />
             </p>
+            <div class="ProductEdit_AddCategory">
+                <div class="Link">
+                    <p>
+                        <label>&nbsp;</label>
+                        <span id="AddRemoveCategories">Add/Remove Categories</span> 
+                    </p>
+                </div>
+                <div class="list_of_category" id="SelectCategoties">
+                    <% Guid currentCategoryId = Guid.NewGuid();
+                       if (currentCategory != null)
+                       {
+                           currentCategoryId = currentCategory.CategoryID;
+                       }
+                       foreach (BL.Category item in allCategories)
+                       { %>
+                        <p class="paraq_linear">
+                                <% if (allCategoriesRefsCurrentProduct.Any(r => r.CategoryID == item.CategoryID) || (item.CategoryID == currentCategoryId))
+                                   { %>
+                                        <% hf.Value = hf.Value + "!~!" + item.CategoryID.ToString(); %>
+                                        <input type="checkbox" id="chk<%= item.CategoryID.ToString() %>" checked="checked" onclick="SetCategory('<%= item.CategoryID.ToString() %>');" />
+                                    <% } else 
+                                   { %>
+                                        <input type="checkbox" id="chk<%= item.CategoryID.ToString() %>" onclick="SetCategory('<%= item.CategoryID.ToString() %>');"  />
+                                 <% } %>
+                                 <label for="chk<%= item.CategoryID.ToString() %>"><%= item.Name %></label>
+                        </p>
+                    <% } %>
+                    <%--<div class="Link">
+                        <p>
+                            <label>&nbsp;</label>
+                            <span id="selectCatLink">Выбрать</span> 
+                        </p>
+                    </div>--%>
+                </div>
+            </div>
         </div>
-       
     </div>
-    <div class="ProductEdit_AddCategory">
-        <div id="AddRemoveCategories" class="Link">Add/Remove Categories</div>
-        <div id="SelectCategoties">
-            <% Guid currentCategoryId = Guid.NewGuid();
-               if (currentCategory != null)
-               {
-                   currentCategoryId = currentCategory.CategoryID;
-               }
-               foreach (BL.Category item in allCategories)
-               { %>
-                <p>
-                    <span>
-                        <label for="chk<%= item.CategoryID.ToString() %>"><%= item.Name %></label>
-                        <% if (allCategoriesRefsCurrentProduct.Any(r => r.CategoryID == item.CategoryID) || (item.CategoryID == currentCategoryId))
-                           { %>
-                                <% hf.Value = hf.Value + "!~!" + item.CategoryID.ToString(); %>
-                                <input type="checkbox" id="chk<%= item.CategoryID.ToString() %>" checked="checked" onclick="SetCategory('<%= item.CategoryID.ToString() %>');" />
-                            <% } else 
-                           { %>
-                                <input type="checkbox" id="chk<%= item.CategoryID.ToString() %>" onclick="SetCategory('<%= item.CategoryID.ToString() %>');"  />
-                         <% } %>
-                    </span>
-                </p>
-            <% } %>
-            <div  id="selectCatLink" class="Link">Выбрать</div>
-        </div>
-    </div>
+    
     <p class="ProductEdit_Save">
-        <asp:Button runat="server" ID="btnSave" Text="Save"  OnClick="Save" />
+        <span class="universal_button">
+            <span>
+                <asp:LinkButton runat="server" ID="btnSave" Text="Save"  OnClick="Save" />
+            </span>
+        </span>
     </p>
     <asp:HiddenField runat="server" ID="hf" />
-    
     </ContentTemplate>
 </asp:UpdatePanel>
 
