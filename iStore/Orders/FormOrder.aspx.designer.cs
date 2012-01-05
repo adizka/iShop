@@ -13,30 +13,102 @@ namespace iStore.Orders {
     public partial class FormOrder {
         
         /// <summary>
-        /// paymentDdl control.
+        /// errMsg control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList paymentDdl;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl errMsg;
         
         /// <summary>
-        /// deliveryDdl control.
+        /// FirstNameTxt control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList deliveryDdl;
+        protected global::System.Web.UI.WebControls.TextBox FirstNameTxt;
         
         /// <summary>
-        /// payBtn control.
+        /// LastNameTxt control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button payBtn;
+        protected global::System.Web.UI.WebControls.TextBox LastNameTxt;
+        
+        /// <summary>
+        /// address1Txt control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox address1Txt;
+        
+        /// <summary>
+        /// address2Txt control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox address2Txt;
+        
+        /// <summary>
+        /// cityTxt control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox cityTxt;
+        
+        /// <summary>
+        /// provinceTxt control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox provinceTxt;
+        
+        /// <summary>
+        /// zipTxt control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox zipTxt;
+        
+        /// <summary>
+        /// countryDdl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList countryDdl;
+        
+        /// <summary>
+        /// phoneTxt control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox phoneTxt;
+        
+        /// <summary>
+        /// emailTxt control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox emailTxt;
     }
 }

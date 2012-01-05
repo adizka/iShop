@@ -6,6 +6,12 @@ using System.Collections;
 
 namespace BL
 {
+
+    public class ProductInfo
+    {
+        public string name;
+        public int quantity;
+    }
     partial class ProductType
     {
         enum Type

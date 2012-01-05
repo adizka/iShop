@@ -26,53 +26,59 @@ namespace iStore.Orders
 
             if (!Page.IsPostBack)
             {
-                // if (Request.QueryString["paymentSystem"] == "paypal")
+                if (PaymentInfo.IsSucced
+                    && PaymentInfo.receiver_email == WebConfigurationManager.AppSettings["Login"])
                 {
-                    var ppInfo = GetPaymentInfo();
-                    if (ppInfo.IsSucced
-                        && Convert.ToDecimal(UserOrder.OrdersRefProducts.Sum(r => r.Product.Price * r.Count)) == ppInfo.mc_gross
-                        && ppInfo.receiver_email == WebConfigurationManager.AppSettings["Login"])
-                    {
 
-                        if (obl.TryFormOrder(BL.PaymentTypes.PayPal, ubl.CurrentUser.UserID, ppInfo.payment_date, ppInfo.txn_id))
-                            msg.InnerHtml = "Transaction complete successfuly! :)";
-                        else
-                            msg.InnerHtml = "You transaction had already been passed! :)";
-                    }
+                    if (obl.TryFormOrder(BL.PaymentTypes.PayPal, PaymentInfo))
+                        msg.InnerHtml = "Transaction complete successfuly! :)";
                     else
-                    {
-                        msg.InnerHtml = "You had paid incorrect sum ):";
-                    }
+                        msg.InnerHtml = "You transaction had already been passed! :)";
+                }
+                else
+                {
+                    msg.InnerHtml = "You had paid incorrect sum ):";
                 }
             }
         }
 
 
-        BL.Helpers.PayPalPayerInfo GetPaymentInfo()
+        BL.Helpers.PayPalPayerInfo _PaymentInfo;
+        BL.Helpers.PayPalPayerInfo PaymentInfo
         {
-            var authToken = WebConfigurationManager.AppSettings["PDTToken"];
+            get
+            {
+                if (_PaymentInfo != null)
+                    return _PaymentInfo;
 
-            var txToken = Request.QueryString.Get("tx");
 
-            var query = string.Format("cmd=_notify-synch&tx={0}&at={1}",
-                                  txToken, authToken);
+                var authToken = WebConfigurationManager.AppSettings["PDTToken"];
 
-            string url = WebConfigurationManager.AppSettings["PayPalPaymentUrlTest"];
-            HttpWebRequest req = (HttpWebRequest)WebRequest.Create(url);
+                var txToken = Request.QueryString.Get("txn_id");
+                if (string.IsNullOrEmpty(txToken))
+                    txToken = Request.QueryString.Get("tx");
 
-            req.Method = "POST";
-            req.ContentType = "application/x-www-form-urlencoded";
-            req.ContentLength = query.Length;
+                var query = string.Format("cmd=_notify-synch&tx={0}&at={1}",
+                                      txToken, authToken);
 
-            StreamWriter stOut = new StreamWriter(req.GetRequestStream(),
-                                     System.Text.Encoding.ASCII);
-            stOut.Write(query);
-            stOut.Close();
+                string url = WebConfigurationManager.AppSettings["PayPalPaymentUrlTest"];
+                HttpWebRequest req = (HttpWebRequest)WebRequest.Create(url);
 
-            StreamReader stIn = new StreamReader(req.GetResponse().GetResponseStream());
-            var strResponse = stIn.ReadToEnd();
-            stIn.Close();
-            return new BL.Helpers.PayPalPayerInfo(HttpUtility.UrlDecode(strResponse));
+                req.Method = "POST";
+                req.ContentType = "application/x-www-form-urlencoded";
+                req.ContentLength = query.Length;
+
+                StreamWriter stOut = new StreamWriter(req.GetRequestStream(),
+                                         System.Text.Encoding.ASCII);
+                stOut.Write(query);
+                stOut.Close();
+
+                StreamReader stIn = new StreamReader(req.GetResponse().GetResponseStream());
+                var strResponse = stIn.ReadToEnd();
+                stIn.Close();
+                _PaymentInfo = new BL.Helpers.PayPalPayerInfo(HttpUtility.UrlDecode(strResponse));
+                return _PaymentInfo;
+            }
         }
 
         BL.Order _UserOrder;
@@ -81,7 +87,7 @@ namespace iStore.Orders
             get
             {
                 if (_UserOrder == null)
-                    _UserOrder = obl.GetUserOrderedProducts(ubl.CurrentUser.UserID).FirstOrDefault(o => o.IsActive);
+                    _UserOrder = obl.GetOrderById(PaymentInfo.OrderID);
                 return _UserOrder;
             }
             set

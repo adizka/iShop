@@ -197,6 +197,7 @@
     <Content Include="Modules\Controls\Validators\ValidateErrors.ascx" />
     <Content Include="NewDeals\Default.aspx" />
     <Content Include="Orders\Default.aspx" />
+    <Content Include="Orders\FormOrder.aspx" />
     <Content Include="Orders\OrdersList.aspx" />
     <Content Include="Orders\Thanks.aspx" />
     <Content Include="Pages\Default.aspx" />
@@ -1037,6 +1038,13 @@
     </Compile>
     <Compile Include="Orders\Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Orders\FormOrder.aspx.cs">
+      <DependentUpon>FormOrder.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Orders\FormOrder.aspx.designer.cs">
+      <DependentUpon>FormOrder.aspx</DependentUpon>
     </Compile>
     <Compile Include="Orders\OrdersList.aspx.cs">
       <DependentUpon>OrdersList.aspx</DependentUpon>

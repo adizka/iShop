@@ -50,7 +50,7 @@ namespace iStore.Admin.Products
 
             if (!CheckAll(name, unit, scount, sprice)) { return; }
             int count = Convert.ToInt32(scount);
-            float price = float.Parse(sprice);
+            decimal price = decimal.Parse(sprice);
 
 
             var categoriesIDs = hf.Value.Split(new string[] { "!~!" }, StringSplitOptions.RemoveEmptyEntries).Select(id => new Guid(id)).ToList();
@@ -106,8 +106,8 @@ namespace iStore.Admin.Products
                 divError.Visible = true;
                 return false;
             }
-            float temp;
-            if (!float.TryParse(price, out temp))
+            decimal temp;
+            if (!decimal.TryParse(price, out temp))
             {
                 divError.InnerHtml = "Неверный формат цены";
                 divError.Visible = true;

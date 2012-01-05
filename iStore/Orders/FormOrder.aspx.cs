@@ -5,21 +5,44 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using log4net;
+using System.Text.RegularExpressions;
 
 namespace iStore.Orders
 {
     public partial class FormOrder : System.Web.UI.Page
     {
-        
+
         iStore.Modules.Logic.Auth.Users ubl = new iStore.Modules.Logic.Auth.Users();
         BL.Modules.Orders.Orders obl = new BL.Modules.Orders.Orders();
         BL.Modules.Products.Products pbl = new BL.Modules.Products.Products();
-
         protected void Page_Load(object sender, EventArgs e)
         {
- 
+            if (UserOrder == null)
+                Response.Redirect("~/Orders/OrdersList.aspx");
+
+
+            if (!IsPostBack)
+            {
+                countryDdl.DataSource = (new BL.Modules.Countries.Countries().GetAllCountries());
+                countryDdl.DataTextField = "Name";
+                countryDdl.DataValueField = "ID";
+                countryDdl.DataBind();
+
+                address1Txt.Text = UserOrder.Address1;
+                address2Txt.Text = UserOrder.Address2;
+                FirstNameTxt.Text = UserOrder.FirstName;
+                LastNameTxt.Text = UserOrder.LastName;
+                cityTxt.Text = UserOrder.City;
+                provinceTxt.Text = UserOrder.StateProvinceRegion;
+                zipTxt.Text = UserOrder.zipcode;
+                countryDdl.SelectedValue = UserOrder.CountryID.ToString();
+                phoneTxt.Text = UserOrder.PhoneNumber;
+                emailTxt.Text = UserOrder.email;
+            }
+
+            IsDataAccepted = false;
         }
-        
+
         BL.Order _UserOrder;
         protected BL.Order UserOrder
         {
@@ -27,20 +50,97 @@ namespace iStore.Orders
             {
                 if (_UserOrder == null)
                     _UserOrder = obl.GetUserOrderedProducts(ubl.CurrentUser.UserID).FirstOrDefault(o => o.IsActive);
+
                 return _UserOrder;
             }
-            set
-            {
-                _UserOrder = value;
-            }
         }
+        static string emailPatern = @"^([0-9a-zA-Z]([-.\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\w]*[0-9a-zA-Z]\.)+[a-zA-Z]{2,9})$";
+        static Regex emailValidator = new Regex(emailPatern);
+        private bool CheckData(string firstName, string lastName, string address1, string address2, string city, string province, string zip, string phone, string email, int countryID)
+        {
+                    
+            errMsg.Visible = false;
+            errMsg.InnerHtml = "Please fill:<br/>";
+
+            if (string.IsNullOrWhiteSpace(firstName))
+            {
+                errMsg.InnerHtml += "first name<br/>";
+                errMsg.Visible = true;
+            }
+            if (string.IsNullOrWhiteSpace(lastName))
+            {
+                errMsg.InnerHtml += "first name<br/>";
+                errMsg.Visible = true;
+            }
+
+            if (string.IsNullOrWhiteSpace(address1))
+            {
+                errMsg.InnerHtml += "address 1<br/>";
+                errMsg.Visible = true;
+            }
+            if (string.IsNullOrWhiteSpace(city))
+            {
+                errMsg.InnerHtml += "City<br/>";
+                errMsg.Visible = true;
+            }
+            if (string.IsNullOrWhiteSpace(province))
+            {
+                errMsg.InnerHtml += "State/Province/Region<br/>";
+                errMsg.Visible = true;
+            }
+            int temp;
+            if (!int.TryParse(zip, out temp))
+            {
+                errMsg.InnerHtml += "Zip code<br/>";
+                errMsg.Visible = true;
+            }
+            if (string.IsNullOrWhiteSpace(phone))
+            {
+                errMsg.InnerHtml += "Phone number<br/>";
+                errMsg.Visible = true;
+            }
+            if (new BL.Modules.Countries.Countries().GetCountryByID(countryID) == null)
+            {
+                errMsg.InnerHtml += "Select correct country<br/>";
+                errMsg.Visible = true;
+            }
+
+            if (!emailValidator.IsMatch(email) && !string.IsNullOrWhiteSpace(email))
+            {
+                errMsg.InnerHtml += "fill out valid e-mail<br/>";
+                errMsg.Visible = true;
+            }
+            return !errMsg.Visible;
+        }
+
         protected void Pay(object obj, EventArgs args)
         {
-            if (UserOrder == null || UserOrder.OrdersRefProducts.Count == 0)
+
+            var firstName = HttpUtility.HtmlEncode( FirstNameTxt.Text.Trim());
+            var lastName = HttpUtility.HtmlEncode(LastNameTxt.Text.Trim());
+            var address1 = HttpUtility.HtmlEncode( address1Txt.Text.Trim());
+            var address2 = HttpUtility.HtmlEncode(address2Txt.Text.Trim());
+            var city = HttpUtility.HtmlEncode( cityTxt.Text.Trim());
+            var email = emailTxt.Text.Trim();
+            var province = HttpUtility.HtmlEncode( provinceTxt.Text.Trim());
+            var zip =  HttpUtility.HtmlEncode( zipTxt.Text.Trim());
+            var phone =  HttpUtility.HtmlEncode( phoneTxt.Text.Trim());
+            var strCountryID = countryDdl.SelectedValue;
+            int countryID;
+            if (!int.TryParse(strCountryID, out countryID))
                 return;
 
-            obl.FormOrder(BL.PaymentTypes.PayPal,ubl.CurrentUser.UserID);
-            UserOrder = null;
+            if (!CheckData(firstName, lastName,address1,address2, city, province, zip, phone, email, countryID))
+                return;
+
+            email = string.IsNullOrWhiteSpace(email) ? ubl.CurrentUser.Email : HttpUtility.HtmlEncode(email);
+
+            obl.UpdateOrderUserData(UserOrder.OrderID, firstName, lastName, address1, address2, city, province, zip, phone, email, countryID);
+            _UserOrder = null;
+
+            IsDataAccepted = true;
         }
+
+        public bool IsDataAccepted { get; set; }
     }
 }

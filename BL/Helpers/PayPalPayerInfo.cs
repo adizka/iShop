@@ -68,6 +68,8 @@ namespace BL.Helpers
         public Items Items { get; set; }
 
         public bool IsSucced { get { return val.StartsWith("SUCCESS"); } }
+        public Guid OrderID { get { return new Guid(GetPropertyByKey("custom")); } }
+        public string SpecialNote { get { return GetPropertyByKey("memo"); } }
         public decimal mc_gross { get { return decimal.Parse(GetPropertyByKey("mc_gross").Replace('.', ',')); } }
         public string protection_eligibility { get { return GetPropertyByKey("protection_eligibility"); } }
         public string receiver_email { get { return GetPropertyByKey("receiver_email"); } }
@@ -100,7 +102,7 @@ namespace BL.Helpers
         public string payer_status { get { return GetPropertyByKey("payer_status"); } }
         public string business { get { return GetPropertyByKey("business"); } }
         public string address_country { get { return GetPropertyByKey("address_country"); } }
-        public string num_cart_items { get { return GetPropertyByKey("num_cart_items"); } }
+        public uint ItemsCount { get { return uint.Parse( GetPropertyByKey("num_cart_items")); } }
         public string address_city { get { return GetPropertyByKey("address_city"); } }
         public string payer_email { get { return GetPropertyByKey("payer_email"); } }
         public string txn_id { get { return GetPropertyByKey("txn_id"); } }

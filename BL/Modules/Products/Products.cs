@@ -8,7 +8,7 @@ namespace BL.Modules.Products
 {
     public class Products
     {
-        public bool AddProduct(string name, string unit, float price, bool isVisible, int count, out BL.Product product)
+        public bool AddProduct(string name, string unit, decimal price, bool isVisible, int count, out BL.Product product)
         {
             bool addProduct = false;
             using (ShopDataContext db = new ShopDataContext())
@@ -35,7 +35,7 @@ namespace BL.Modules.Products
             return addProduct;
         }
 
-        public bool UpdateProduct(Guid productId, string name, string unit, float price, bool isVisible, int count)
+        public bool UpdateProduct(Guid productId, string name, string unit, decimal price, bool isVisible, int count)
         {
             bool updateProduct = false;
 
