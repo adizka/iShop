@@ -112,6 +112,42 @@ namespace iStore.Admin.Products {
         protected global::System.Web.UI.WebControls.TextBox txtCount;
         
         /// <summary>
+        /// lblTax control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblTax;
+        
+        /// <summary>
+        /// taxTxt control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox taxTxt;
+        
+        /// <summary>
+        /// lblShipping control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblShipping;
+        
+        /// <summary>
+        /// shippingTxt control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox shippingTxt;
+        
+        /// <summary>
         /// lblVisible control.
         /// </summary>
         /// <remarks>

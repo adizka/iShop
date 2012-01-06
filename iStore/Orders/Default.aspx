@@ -195,5 +195,5 @@
     </tr>
     </table>
     <%} %>
-
+    <a href="/Orders/OrdersList.aspx">Перейти к остории заказов</a>
 </asp:Content>

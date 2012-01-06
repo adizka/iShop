@@ -67,6 +67,14 @@
                 <asp:TextBox CssClass="small_count" runat="server" ID="txtCount" />
             </p>
             <p>
+                <asp:Label runat="server" ID="lblTax" AssociatedControlID="taxTxt">Tax per unit:</asp:Label>
+                <asp:TextBox CssClass="small_count" runat="server" ID="taxTxt" />
+            </p>
+            <p>
+                <asp:Label runat="server" ID="lblShipping" AssociatedControlID="shippingTxt">Shipping per unit:</asp:Label>
+                <asp:TextBox CssClass="small_count" runat="server" ID="shippingTxt" />
+            </p>
+            <p>
                 <asp:Label runat="server" ID="lblVisible" AssociatedControlID="chkVisible">Is visible:</asp:Label>
                 <asp:CheckBox CssClass="small_count" runat="server" ID="chkVisible" Checked="true" />
             </p>
