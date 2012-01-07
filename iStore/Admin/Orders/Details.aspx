@@ -86,6 +86,94 @@
     </table>
   <asp:Button runat="server" ID="saveBtn" OnClick="Save" Text="Save" />
 
+  <%if (Order.IsPaid)
+    { %>
+    <br />
+    Shipping address:<br />
+    <table>
+        <tr>
+            <td>
+                First name:
+            </td>
+            <td>
+                <%=Order.FirstName %>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Last name:
+            </td>
+            <td>
+                <%=Order.LastName %>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Address line 1:
+            </td>
+            <td>
+                <%=Order.Address1 %>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Address line 2:
+            </td>
+            <td>
+                <%=Order.Address2 %>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                City:
+            </td>
+            <td>
+                <%=Order.City %>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Country:
+            </td>
+            <td>
+                <%=Order.Country.Name +"("+Order.Country.ShortName +")"%>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Zip code:
+            </td>
+            <td>
+                <%=Order.zipcode.ToString() %>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Contact e-mail:
+            </td>
+            <td>
+                <%=Order.email %>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Phone number:
+            </td>
+            <td>
+                <%=Order.PhoneNumber%>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Special notes:
+            </td>
+            <td>
+                <%=Order.SpecialNote %>
+            </td>
+        </tr>
+    </table>
+    <%} %>
+
   <a href="/Admin/Orders/OrderList.aspx">вернуться к списку!</a>
 
 
