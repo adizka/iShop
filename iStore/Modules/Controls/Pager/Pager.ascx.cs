@@ -9,7 +9,7 @@ namespace iStore.Modules.Controls.Pager
 {
     public partial class Pager : System.Web.UI.UserControl
     {
-        public enum EntityType {  Categories, Products, Orders, Users,  Stock }
+        public enum EntityType { Categories, Products, Orders, Users, Stock }
 
         protected override void OnInit(EventArgs e)
         {
@@ -19,7 +19,7 @@ namespace iStore.Modules.Controls.Pager
         }
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+
         }
 
         string _NavigateUrl;
@@ -39,12 +39,12 @@ namespace iStore.Modules.Controls.Pager
         {
             get
             {
-                if(_params !=null)
+                if (_params != null)
                     return _params;
 
                 foreach (var key in Request.QueryString.AllKeys)
                 {
-                    if(key == "p")
+                    if (key == "p")
                         continue;
                     _params += "&" + key + "=" + Request.QueryString[key];
                 }
@@ -54,21 +54,27 @@ namespace iStore.Modules.Controls.Pager
 
         public int EntityCount { get; set; }
 
+        object PageIndexObj;
+        int _PageIndex;
         public int PageIndex
         {
             get
             {
-                try
-                {
-                    int index = int.Parse(Request.QueryString["p"]);
-                    if (index < 0)
-                        return 0;
-                    else if (EntityCount / EntitiesPerPage < index)
-                        return EntityCount / EntitiesPerPage - ((EntityCount % EntitiesPerPage != 0) ? 0 : 1);
-                    return index;
-                }
-                catch { }
-                return 0;
+                if (PageIndexObj == null)
+                    try
+                    {
+                        _PageIndex = int.Parse(Request.QueryString["p"]);
+                        if (_PageIndex < 0)
+                            _PageIndex = 0;
+                        else if (EntityCount / EntitiesPerPage < _PageIndex)
+                            _PageIndex = EntityCount / EntitiesPerPage - ((EntityCount % EntitiesPerPage != 0) ? 0 : 1);
+                    }
+                    catch { _PageIndex = 0; }
+                    finally
+                    {
+                        PageIndexObj = new object();
+                    }
+                return _PageIndex;
             }
         }
 
@@ -76,38 +82,56 @@ namespace iStore.Modules.Controls.Pager
 
         public int NavigationNumbsCount { get; set; }
 
+        object FirstIdnexObj;
+        int _FirstIdnex;
         protected int FirstIdnex
         {
             get
             {
-
-                if (PageIndex <= (NavigationNumbsCount - 1) / 2)
-                    return 0;
-                else if (PageIndex >= PagesCount - (NavigationNumbsCount - 1) / 2 - 1)
-                    return Math.Max(0, PagesCount - NavigationNumbsCount);
-                else
-                    return PageIndex - (NavigationNumbsCount - 1) / 2;
+                if (FirstIdnexObj == null)
+                {
+                    if (PageIndex <= (NavigationNumbsCount - 1) / 2)
+                        _FirstIdnex = 0;
+                    else if (PageIndex >= PagesCount - (NavigationNumbsCount - 1) / 2 - 1)
+                        _FirstIdnex = Math.Max(0, PagesCount - NavigationNumbsCount);
+                    else
+                        _FirstIdnex = PageIndex - (NavigationNumbsCount - 1) / 2;
+                    FirstIdnexObj = new object();
+                }
+                return _FirstIdnex;
             }
         }
 
+        object LastIdnexObj;
+        int _LastIdnex;
         protected int LastIdnex
         {
             get
             {
-                return ((FirstIdnex + NavigationNumbsCount < PagesCount)
-                    ? FirstIdnex + NavigationNumbsCount
-                    : PagesCount);
+                if (LastIdnexObj == null)
+                {
+                    _LastIdnex = ((FirstIdnex + NavigationNumbsCount < PagesCount)
+                        ? FirstIdnex + NavigationNumbsCount
+                        : PagesCount);
+                    LastIdnexObj = new object();
+                }
+                return _LastIdnex;
             }
         }
-      
+
+        object PagesCountObj;
+        int _PagesCount;
         protected int PagesCount
         {
             get
             {
-                return EntityCount / EntitiesPerPage - ((EntityCount % EntitiesPerPage != 0) ? 0 : 1) + 1;
+                if (PagesCountObj == null)
+                {
+                    _PagesCount = EntityCount / EntitiesPerPage - ((EntityCount % EntitiesPerPage != 0) ? 0 : 1) + 1;
+                    PagesCountObj = new object();
+                }
+                return _PagesCount;
             }
         }
-
-        //pager.AddInsParams = "cid=" + Request.QueryString["cid"];
     }
 }

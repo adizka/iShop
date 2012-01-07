@@ -52,9 +52,11 @@ namespace iStore.Admin.Products
             get
             {
                 if (_prodCountInd == null)
+                {
                     _ProductsCount = pbl.GetAllProducts().Count();
+                    _prodCountInd = new object();
+                }
 
-                _prodCountInd = new object();
                 return _ProductsCount;
             }
         }
@@ -102,16 +104,14 @@ namespace iStore.Admin.Products
                 {
                     if (_PageProducts == null)
                         _PageProducts = prcbl.GetAllProductsRefCategories().ToArray().Distinct(new BL.ProductsRefCategoryComparer())
-                            .Where((c, ind) => ind >= pager.PageIndex * pager.EntitiesPerPage
-                                               && ind < (pager.PageIndex + 1) * pager.EntitiesPerPage).OrderBy(p => p.Sort).ToList();
+                            .Skip(pager.PageIndex * pager.EntitiesPerPage).Take(pager.EntitiesPerPage).OrderBy(p => p.Sort).ToList();
                 }
                 else
                 {
                     if (_PageProducts == null)
                         _PageProducts = prcbl.GetProductRefCategoriesByCategoryId(CurrentCategoryId.Value).ToArray()
                             .Distinct(new BL.ProductsRefCategoryComparer())
-                            .Where((c, ind) => ind >= pager.PageIndex * pager.EntitiesPerPage
-                                               && ind < (pager.PageIndex + 1) * pager.EntitiesPerPage).OrderBy(p => p.Sort).ToList();
+                            .Skip(pager.PageIndex * pager.EntitiesPerPage).Take(pager.EntitiesPerPage).OrderBy(p => p.Sort).ToList();
                 }
                 return _PageProducts;
             }

@@ -32,8 +32,7 @@
            { %>
                 <p class="repparaq">Нет категорий</p>
            <%} %>
-        <% int i = 0; string cssClass = string.Empty; foreach (var item in allCategories.ToList()
-               .Where((c, ind) => ind >= pager.PageIndex * pager.EntitiesPerPage && ind < (pager.PageIndex + 1) * pager.EntitiesPerPage))
+        <% int i = 0; string cssClass = string.Empty; foreach (var item in allCategories.Skip(pager.PageIndex * pager.EntitiesPerPage).Take(pager.EntitiesPerPage))
                {
                     i++; cssClass = ((i % 2) == 1 ) ? "first" : "second";
         %>

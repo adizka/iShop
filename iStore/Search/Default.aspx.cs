@@ -48,8 +48,7 @@ namespace iStore.Search
             {
                 if (_PageProducts == null)
                     _PageProducts = AllProducts.GroupBy(g => g.ProductID)
-                        .Where((c, ind) => ind >= pager.PageIndex * pager.EntitiesPerPage
-                                           && ind < (pager.PageIndex + 1) * pager.EntitiesPerPage).ToDictionary(x => x.Key);
+                        .Skip(pager.PageIndex * pager.EntitiesPerPage).Take(pager.EntitiesPerPage).ToDictionary(x => x.Key);
 
                 return _PageProducts;
             }
@@ -101,7 +100,5 @@ namespace iStore.Search
                 return _searchCriteria;
             }
         }
-
-
     }
 }

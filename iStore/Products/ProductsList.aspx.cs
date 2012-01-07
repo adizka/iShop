@@ -84,8 +84,7 @@ namespace iStore.Products
                     if (_PageProducts == null)
                         _PageProducts = prcbl.GetAllProductsRefCategories().
                             ToArray().Distinct(new BL.ProductsRefCategoryComparer())
-                            .Where((c, ind) => ind >= pager.PageIndex * pager.EntitiesPerPage
-                                               && ind < (pager.PageIndex + 1) * pager.EntitiesPerPage).ToList();
+                            .Skip(pager.PageIndex * pager.EntitiesPerPage).Take(pager.EntitiesPerPage).ToList();
                 }
                 else
                 {
@@ -94,8 +93,7 @@ namespace iStore.Products
                             .Where(p => ChildCategories.Contains(p.CategoryID))
                             .ToArray()
                             .Distinct(new BL.ProductsRefCategoryComparer())
-                            .Where((c, ind) => ind >= pager.PageIndex * pager.EntitiesPerPage
-                                               && ind < (pager.PageIndex + 1) * pager.EntitiesPerPage).ToList();
+                            .Skip(pager.PageIndex * pager.EntitiesPerPage).Take(pager.EntitiesPerPage).ToList();
                 }
                 return _PageProducts;
             }

@@ -51,9 +51,7 @@ namespace iStore.Categories
             {
                 BL.Category category = CurrentCategory;
                 if (category == null) return null;
-                return Prcbl.GetProductRefCategoriesByCategoryId(category.CategoryID).ToList()
-                    .Where((c, ind) => ind >= pager.PageIndex * pager.EntitiesPerPage
-                                               && ind < (pager.PageIndex + 1) * pager.EntitiesPerPage).AsQueryable();
+                return Prcbl.GetProductRefCategoriesByCategoryId(category.CategoryID).Skip(pager.PageIndex * pager.EntitiesPerPage).Take(pager.EntitiesPerPage);
             }
         }
 

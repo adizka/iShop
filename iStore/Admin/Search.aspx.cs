@@ -13,7 +13,7 @@ namespace iStore.Admin
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            pager.EntityCount = Products.Count;
         }
 
         List<BL.Product> _products;
@@ -39,15 +39,6 @@ namespace iStore.Admin
                 return _products;
             }
         }
-
-        public int ProductsCount
-        {
-            get
-            {
-                return Products.Count;
-            }
-        }
-
 
         object _priceToInd;
         decimal _priceTo;

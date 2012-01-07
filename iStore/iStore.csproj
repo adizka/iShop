@@ -100,6 +100,8 @@
     <Content Include="Admin\SearchControl.ascx" />
     <Content Include="Admin\ShopProperties\Default.aspx" />
     <Content Include="Admin\ShopProperties\PropertyEdit.aspx" />
+    <Content Include="Admin\Statistics\OrderDetails.aspx" />
+    <Content Include="Admin\Statistics\Userslist.aspx" />
     <Content Include="Admin\Styles\Admin.css" />
     <Content Include="Admin\Styles\images\ui-bg_diagonals-thick_18_b81900_40x40.png" />
     <Content Include="Admin\Styles\images\ui-bg_diagonals-thick_20_666666_40x40.png" />
@@ -656,6 +658,7 @@
     <Content Include="Scripts\MostPopularProducts.js" />
     <Content Include="Search\Default.aspx" />
     <Content Include="Search\Search.ascx" />
+    <Content Include="Admin\Statistics\UserOrdersHistory.aspx" />
     <Content Include="Styles\close.png" />
     <Content Include="Styles\Controls.css" />
     <Content Include="Styles\flowplayer.png" />
@@ -866,6 +869,20 @@
     </Compile>
     <Compile Include="Admin\ShopProperties\PropertyEdit.aspx.designer.cs">
       <DependentUpon>PropertyEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Statistics\OrderDetails.aspx.cs">
+      <DependentUpon>OrderDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Statistics\OrderDetails.aspx.designer.cs">
+      <DependentUpon>OrderDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Statistics\Userslist.aspx.cs">
+      <DependentUpon>Userslist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Statistics\Userslist.aspx.designer.cs">
+      <DependentUpon>Userslist.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_GlobalResources\Admin_Edits.designer.cs">
       <AutoGen>True</AutoGen>
@@ -1102,6 +1119,13 @@
     </Compile>
     <Compile Include="Search\Search.ascx.designer.cs">
       <DependentUpon>Search.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Statistics\UserOrdersHistory.aspx.cs">
+      <DependentUpon>UserOrdersHistory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Statistics\UserOrdersHistory.aspx.designer.cs">
+      <DependentUpon>UserOrdersHistory.aspx</DependentUpon>
     </Compile>
     <Compile Include="Site.cs" />
     <Compile Include="Site.Master.cs">
