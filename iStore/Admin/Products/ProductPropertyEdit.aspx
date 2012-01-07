@@ -42,8 +42,8 @@
                 <span class="MoveDown">Down</span>
                 <span class="PropertyName"><b><%=item.PropertyName %>: </b> <%=item.PropertyValue %></span>
                 <span class="SortIndex"><%=sortIndex.ToString()%></span>
-                <span class="edit_ico"></span>
-                <span class="delete_ico"></span>
+                <span class="edit_ico EditButton"></span>
+                <span class="delete_ico DeleteButton"></span>
         </div>
         <%} %>
     </div>

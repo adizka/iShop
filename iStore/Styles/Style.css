@@ -566,6 +566,7 @@ border-top:solid #c0c0c0 1px;
 padding:2px 0 2px 0;
 width:30px;
 text-align:center;
+background:white;
 }
 
 .cent_triger {
@@ -585,13 +586,62 @@ float:right;
 margin:5px 15px 0 5px;  
 }
 
-
 .pad_nogoods {
 padding:15px;    
 }
 
+.right_pricer {
+float:right;
+color:#a94105;
+font-size:30px;
+display:block;
+padding:5px 5px 0 0;
+}
 
+.ProducContainer {
+padding:0 10px 0 15px;
+}
 
+.prod_diverst {
+border-bottom:dotted #9e9e9e 1px;
+min-height:240px;
+margin:5px 0 10px 0;
+}
 
+.desriptiones {
+border-bottom:dotted #9e9e9e 1px;
+min-height:240px;
+margin:5px 0 10px 0;
+padding:5px 0 10px 0;
+}
 
+.realte_pro {
+border-bottom:dotted #9e9e9e 1px;
+min-height:240px;
+padding:5px 0 10px 0;
+}
 
+.prod_diverst img {
+width:230px;
+height:205px;
+border:solid #d4bcae 1px;
+margin:0 10px 0 0;
+} .prod_diverst p {
+        padding:3px 0;
+        }
+        
+.bold_span {font-weight:bold;}
+.cart_item {padding:3px 0;}
+.prod_descrip {
+fon-size:18px;
+font-weight:bold;
+padding:0 0 10px 0;
+}
+
+.goods_linear {
+display:inline-block;
+vertical-align:top;
+width:150px;
+margin:0 30px 0 0;
+} .goods_linear img {border:solid #d4bcae 1px; width:150px; height:150px; }
+    .goods_linear a {font-size:14px;}

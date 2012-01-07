@@ -147,6 +147,16 @@ color:#008ec3;
 } .BCCategories a {color:#008ec3; margin:0 5px 0 0;}
     .BCCategories a:hover {text-decoration:none;}
     
+.bread_crumbs {
+color:#a94105;
+background:#e8e8e8;
+border:solid #c9c9c9 1px;
+font-size:11px;
+margin: 10px 15px;
+padding: 5px 10px;
+} .bread_crumbs a {color:#a94105; margin:0 5px 0 0; font-size:11px;}
+    .bread_crumbs a:hover {text-decoration:none;}
+    
 .pader_category {
 padding:0 0 0 15px;    
 }
@@ -254,6 +264,7 @@ background:url(../../images/edit_btn.png) no-repeat;
 display:inline-block;
 margin:0 2px;
 text-decoration:none;
+cursor:pointer;
 border:none;
 }
 
@@ -264,6 +275,7 @@ background:url(../../images/photo_ico.png) no-repeat;
 display:inline-block;
 margin:0 2px;
 text-decoration:none;
+cursor:pointer;
 border:none;
 }
 
@@ -274,6 +286,7 @@ background:url(../../images/delete_btn.png) no-repeat;
 display:inline-block;
 margin:0 2px;
 text-decoration:none;
+cursor:pointer;
 border:none;
 }
 
@@ -284,6 +297,7 @@ background:url(../../images/view_btn.png) no-repeat;
 display:inline-block;
 margin:0 2px;
 text-decoration:none;
+cursor:pointer;
 border:none;
 }
 
@@ -402,13 +416,21 @@ border-bottom:solid #c7c7c7 1px;
         display:inline-block;
         margin:0 10px 0 0;
         }
+        
+ .adizkope {
+padding:4px 0;
+margin:0 15px;
+border-bottom:solid #c7c7c7 1px;
+}  .adizkope span {display:inline-block; margin:0 10px 0 0;}
+
+.PropertyName {font-weight:bold;}
 
 .MoveUp {color:#008ec3; cursor:pointer; border-bottom:dotted #008ec3 1px;}
 .MoveDown {color:#008ec3; cursor:pointer; border-bottom:dotted #008ec3 1px;}
 .MoveUp:hover {border-bottom:solid #008ec3 1px;}
 .MoveDown:hover {border-bottom:solid #008ec3 1px;}
 
-.PropertyName {width:500px;}
+.usniver_product {width:500px;}
 .SortIndex {width:40px;}
 
 .copy_contacter {
@@ -416,7 +438,9 @@ padding:15px 15px 5px;
 } .copy_contacter p {padding:4px 0;}
     .copy_contacter select {width:200px; border:solid #aaadb2 1px; margin-right:10px;}
 
-
+.Admin_LoginErrors {
+padding:5p 15px;
+}
 
 
 

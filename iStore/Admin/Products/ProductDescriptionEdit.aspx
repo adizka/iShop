@@ -36,7 +36,7 @@
             oFCKeditor.ReplaceTextarea();
         }
     </script>
-                    <span class="universal_button">
+                    <span class="universal_button"> 
                         <span>
                             <asp:LinkButton runat="server" ID="SaveBtn" OnClick="SaveDescription" Text="Save" />
                         </span>
