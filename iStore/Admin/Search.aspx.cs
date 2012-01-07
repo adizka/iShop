@@ -50,15 +50,15 @@ namespace iStore.Admin
 
 
         object _priceToInd;
-        double _priceTo;
-        double PriceTo
+        decimal _priceTo;
+        decimal PriceTo
         {
             get
             {
                 if (_priceToInd == null)
                 {
-                    if (!double.TryParse(Request.QueryString["prt"], out _priceTo))
-                        _priceTo = double.MaxValue;
+                    if (!decimal.TryParse(Request.QueryString["prt"], out _priceTo))
+                        _priceTo = decimal.MaxValue;
                     _priceToInd = new object();
                 }
                 return _priceTo;
@@ -66,14 +66,14 @@ namespace iStore.Admin
         }
 
         object _priceFromInd;
-        double _priceFrom;
-        double PriceFrom
+        decimal _priceFrom;
+        decimal PriceFrom
         {
             get
             {
                 if (_priceFromInd == null)
                 {
-                    if (!double.TryParse(Request.QueryString["prf"], out _priceFrom))
+                    if (!decimal.TryParse(Request.QueryString["prf"], out _priceFrom))
                         _priceFrom = 0;
                     _priceFromInd = new object();
                 }

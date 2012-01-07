@@ -8,7 +8,7 @@ namespace BL.Modules.Products
 {
     public class Products
     {
-        public bool AddProduct(string name, string unit, float price, bool isVisible, int count, out BL.Product product)
+        public bool AddProduct(string name, string unit, decimal price, bool isVisible, int count, decimal tax, decimal shipping, out BL.Product product)
         {
             bool addProduct = false;
             using (ShopDataContext db = new ShopDataContext())
@@ -26,6 +26,8 @@ namespace BL.Modules.Products
                 product.IsVisible = isVisible;
                 product.ProductTypeID = (int)ProductType.Types.Real;
                 product.Count = count;
+                product.Tax = tax;
+                product.Shipping = shipping;
                 db.Products.InsertOnSubmit(product);
                 db.SubmitChanges();
                 addProduct = ppbl.AddProductPhoto(BL.Site.DefaultPhotoPreview, BL.Site.DefaultPhotoOriginal, product.ProductID);
@@ -35,7 +37,7 @@ namespace BL.Modules.Products
             return addProduct;
         }
 
-        public bool UpdateProduct(Guid productId, string name, string unit, float price, bool isVisible, int count)
+        public bool UpdateProduct(Guid productId, string name, string unit, decimal price, bool isVisible, int count, decimal tax, decimal shipping)
         {
             bool updateProduct = false;
 
@@ -52,6 +54,8 @@ namespace BL.Modules.Products
                         product.IsVisible = isVisible;
                         product.InStock = (count > 0);
                         product.Count = count;
+                        product.Tax = tax;
+                        product.Shipping = shipping;
                         updateProduct = true;
                         db.SubmitChanges();
                         ts.Complete();
@@ -202,7 +206,7 @@ namespace BL.Modules.Products
         {
             return new ShopDataContext().GetProductDataByCategoryName(name);
         }
-        
+
         public void DeleteProduct(Guid prodID)
         {
             using (ShopDataContext db = new ShopDataContext())

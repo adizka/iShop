@@ -34,7 +34,8 @@ namespace BL.Modules.Orders
                         PaymentTypeID = (int)PaymentTypes.PayPal,
                         UserID = userID,
                         CreateDate = DateTime.Now,
-                        DeliveryDate = DateTime.Now
+                        DeliveryDate = DateTime.Now,
+                        CountryID = 1
                     };
                     db.Orders.InsertOnSubmit(order);
                 }
@@ -100,17 +101,20 @@ namespace BL.Modules.Orders
             }
         }
 
-        public bool TryFormOrder(PaymentTypes paymentType, Guid userID, DateTime paymentDate, string transactionID)
+        public bool TryFormOrder(PaymentTypes paymentType, Helpers.PayPalPayerInfo paymentInfo)
         {
             using (var db = new ShopDataContext())
             {
-                if (db.Orders.Any(o => o.TransactionID == transactionID))
-                    return false;
-
-                var user = db.Users.First(u => u.UserID == userID);
-                var order = user.Orders.FirstOrDefault(o => o.IsActive);
+                if (db.Orders.Any(o => o.TransactionID == paymentInfo.txn_id))
+                    return true;
+                UpdateCounts(paymentInfo.OrderID);
+                var order = db.Orders.FirstOrDefault(o => o.OrderID == paymentInfo.OrderID && !o.IsPaid);
 
                 if (order == null)
+                    return false;
+
+                var totalSum = order.OrdersRefProducts.Sum(r => (r.Product.Price + r.Product.Tax + r.Product.Shipping) * r.Count);
+                if (totalSum != paymentInfo.mc_gross)
                     return false;
 
                 foreach (var item in order.OrdersRefProducts)
@@ -118,15 +122,17 @@ namespace BL.Modules.Orders
                     item.Product.Count -= item.Count;
                     item.Product.IsVisible = item.Product.Count > 0;
                 }
+
                 order.IsActive = false;
                 order.IsPaid = true;
                 order.PaymentTypeID = (int)paymentType;
                 order.OrderStatusID = (int)BL.OrderStatus.Paid;
                 order.TotalSum = Convert.ToDecimal(order.OrdersRefProducts.Sum(r => r.Product.Price * r.Count));
-                order.CreateDate = paymentDate;
-                order.TransactionID = transactionID;
+                order.CreateDate = paymentInfo.payment_date;
+                order.TransactionID = paymentInfo.txn_id;
                 order.DeliveryDate = DateTime.Now.AddHours(double.Parse(ConfigurationManager.AppSettings["DeliveryTime"]));
                 order.DeliveryTypeID = (int)DeliveryTypes.NotDelivered;
+                order.SpecialNote = paymentInfo.SpecialNote;
                 db.SubmitChanges();
             }
             return true;
@@ -175,7 +181,8 @@ namespace BL.Modules.Orders
                 PaymentTypeID = (int)PaymentTypes.PayPal,
                 UserID = userID,
                 CreateDate = DateTime.Now,
-                DeliveryDate = DateTime.Now
+                DeliveryDate = DateTime.Now,
+                CountryID = 1
             };
             user.Orders.Add(order);
             db.SubmitChanges();
@@ -193,6 +200,48 @@ namespace BL.Modules.Orders
                 ord.DeliveryDate = DateTime.Now;
                 ord.DeliveryTypeID = deliveryID;
                 ord.OrderStatusID = statusID;
+                db.SubmitChanges();
+            }
+        }
+
+        public void UpdateCounts(Guid orderID)
+        {
+            using (var db = new ShopDataContext())
+            {
+                var order = db.Orders.FirstOrDefault(o => o.IsActive && o.OrderID == orderID);
+
+                if (order == null)
+                    return;
+
+                foreach (var item in order.OrdersRefProducts)
+                {
+                    item.Count = (Math.Min(item.Count, item.Product.Count));
+                }
+
+                db.SubmitChanges();
+            }
+        }
+
+        public void UpdateOrderUserData(Guid orderID, string firstName, string lastName, string address1, string address2, string city, string province, string zip, string phone, string email, int countryID)
+        {
+            using (var db = new ShopDataContext())
+            {
+                var order = db.Orders.FirstOrDefault(o => o.OrderID == orderID);
+
+                if (order == null)
+                    return;
+
+                order.CountryID = countryID;
+                order.FirstName = firstName;
+                order.LastName = lastName;
+                order.Address1 = address1;
+                order.Address2 = address2;
+                order.City = city;
+                order.PhoneNumber = phone;
+                order.StateProvinceRegion = province;
+                order.zipcode = zip;
+                order.email = email;
+
                 db.SubmitChanges();
             }
         }

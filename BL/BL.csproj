@@ -56,6 +56,7 @@
     <Compile Include="Helpers\PayPalPayerInfo.cs" />
     <Compile Include="Modules\Categories\Categories.cs" />
     <Compile Include="Modules\Categories\Properties.cs" />
+    <Compile Include="Modules\Countries\Countries.cs" />
     <Compile Include="Modules\News\News.cs" />
     <Compile Include="Modules\Orders.cs" />
     <Compile Include="Modules\Pages\Pages.cs" />

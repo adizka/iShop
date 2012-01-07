@@ -22,7 +22,7 @@ namespace iStore.Orders
             get
             {
                 if (_UserOrder == null)
-                    _UserOrder = obl.GetUserOrderedProducts(ubl.CurrentUser.UserID).ToList();
+                    _UserOrder = obl.GetUserOrderedProducts(ubl.CurrentUser.UserID).OrderByDescending(o=>o.CreateDate).ToList();
                 return _UserOrder;
             }
         }

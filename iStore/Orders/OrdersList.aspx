@@ -28,7 +28,7 @@
 
       <tr>
       <td>
-           <a href="<%=iStore.Site.SiteUrl + "Orders/?oid=" + item.OrderID.ToString() %>"><%= item.CreateDate %></a>
+           <a href="<%=iStore.Site.SiteUrl + "Orders/?oid=" + item.OrderID.ToString() %>"><%= (item.IsActive)?"Current cart": item.CreateDate.ToShortDateString() %></a>
         </td>
         <td>
             <%=(item.OrderStatusID == (int)BL.OrderStatus.Paid)?item.TotalSum.ToString():item.OrdersRefProducts.Sum(r=>r.Product.Price* r.Count).ToString() %>

@@ -36,8 +36,9 @@
 
         $(".TotalSum", "#ProdTable").each(function () {
             var parent = $(this).parent();
-            var sum = $(".Price", parent).html() * $(".ProdCount", parent).html();
-            $(this).html(sum);
+            $(".Price", parent).html(($(".Price", parent).html().replace(",", ".")/1).toFixed(2));
+            var sum = $(".Price", parent).html().replace(",", ".") * $(".ProdCount", parent).html();
+            $(this).html(sum.toFixed(2));
 
         });
 
@@ -45,7 +46,7 @@
         $(".TotalSum", "#ProdTable").each(function () {
             total += $(this).html() / 1;
         });
-        $("#TotalSumID").html(total);
+        $("#TotalSumID").html(total.toFixed(2));
     }
 
     function Incr(el) {
@@ -82,7 +83,7 @@
     }
 
 </script>
-<form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
+
 <h1>Your Shopping Cart</h1>
 <table class="cart_table" width="760" cellpadding="0" cellspacing="" id="ProdTable">
     <tr>
@@ -100,10 +101,6 @@
         </th>
         <th align="center" width="70">
             Total
-            <input type="hidden" name="cmd" value="_cart"/>
-            <input type="hidden" name="upload" value="1"/>
-            <input type="hidden" name="business" value='<%=ConfigurationManager.AppSettings["Login"] %>'/>
-            <input type="hidden" name="currency_code" value="US"/>
         </th>
     </tr>
 <%  int counter = 0;
@@ -128,35 +125,28 @@
                 <span class="plus_triger" onclick="Incr(this)"></span>
             </div>
         </td>
-        <td class="right_border TotalSum" align="center">4
-               <input type="hidden" name="item_name_<%=counter.ToString() %>" value="<%=prodRef.Product.Name%>"/>
-               <input type="hidden" name="amount_<%=counter.ToString() %>" value="<%=(prodRef.Product.Price).ToString()%>"/>
-               <input type="hidden" name="quantity_<%=counter.ToString() %>" value="<%=(Math.Min(prodRef.Count, prodRef.Product.Count)).ToString()%>"/>
-        </td>
+        <td class="right_border TotalSum" align="center"></td>
     </tr>
        <%
       } %>
     <tr>
-        <td class="left_border">Итого</td><td></td><td></td><td></td>
-        <td class="right_border" align="center" id="TotalSumID">500</td>
+        <td class="left_border">Sub Total</td><td></td><td></td><td></td>
+        <td class="right_border" align="center" id="TotalSumID"></td>
     </tr>
     </table>
-    </form>
     <asp:HiddenField ID="hf" runat="server" ClientIDMode="Static" ></asp:HiddenField>
-    <script type="text/javascript" >
+    <script type="text/javascript" > 
         function pageLoad() {
             Update();
         }
         Update();
-        function PaypalSubmit() {
-            $("form").attr("action", '<%=ConfigurationManager.AppSettings["PayPalPaymentUrlTest"] %>');
-            $("form").submit();
-        }
     </script> 
     <%if (UserOrder.OrdersRefProducts.Count != 0)
       { %>
     <div class="options_div">
-        <input class="right_pay" type="image" src="http://www.paypal.com/en_US/i/btn/x-click-but01.gif" onclick="PaypalSubmit()" alt="Make payments with PayPal - it's fast, free and secure!">
+              <span class="right_pay"><span>
+                  <asp:LinkButton runat="server" CssClass="right_pay" OnClick="FromOrder" Text="Order" />
+              </span></span>
         <p>
             <a class="clear_select" href="javascript:SelDes(true)">select all</a>
             <a class="clear_select" href="javascript:SelDes(false)">deselect all</a>
@@ -205,5 +195,5 @@
     </tr>
     </table>
     <%} %>
-
+    <a href="/Orders/OrdersList.aspx">Перейти к остории заказов</a>
 </asp:Content>

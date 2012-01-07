@@ -154,6 +154,14 @@ namespace BL
             }
         }
 
+        public System.Data.Linq.Table<Country> Countries
+        {
+            get
+            {
+                return this.GetTable<Country>();
+            }
+        }
+
         public System.Data.Linq.Table<Language> Languages
         {
             get
@@ -1181,6 +1189,144 @@ namespace BL
 
     }
 
+    [global::System.Data.Linq.Mapping.TableAttribute(Name = "dbo.Countries")]
+    public partial class Country : INotifyPropertyChanging, INotifyPropertyChanged
+    {
+
+        private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+
+        private int _ID;
+
+        private string _Name;
+
+        private string _ShortName;
+
+        private EntitySet<Order> _Orders;
+
+        #region Extensibility Method Definitions
+        partial void OnLoaded();
+        partial void OnValidate(System.Data.Linq.ChangeAction action);
+        partial void OnCreated();
+        partial void OnIDChanging(int value);
+        partial void OnIDChanged();
+        partial void OnNameChanging(string value);
+        partial void OnNameChanged();
+        partial void OnShortNameChanging(string value);
+        partial void OnShortNameChanged();
+        #endregion
+
+        public Country()
+        {
+            this._Orders = new EntitySet<Order>(new Action<Order>(this.attach_Orders), new Action<Order>(this.detach_Orders));
+            OnCreated();
+        }
+
+        [global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_ID", AutoSync = AutoSync.OnInsert, DbType = "Int NOT NULL IDENTITY", IsPrimaryKey = true, IsDbGenerated = true)]
+        public int ID
+        {
+            get
+            {
+                return this._ID;
+            }
+            set
+            {
+                if ((this._ID != value))
+                {
+                    this.OnIDChanging(value);
+                    this.SendPropertyChanging();
+                    this._ID = value;
+                    this.SendPropertyChanged("ID");
+                    this.OnIDChanged();
+                }
+            }
+        }
+
+        [global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_Name", DbType = "NVarChar(150) NOT NULL", CanBeNull = false)]
+        public string Name
+        {
+            get
+            {
+                return this._Name;
+            }
+            set
+            {
+                if ((this._Name != value))
+                {
+                    this.OnNameChanging(value);
+                    this.SendPropertyChanging();
+                    this._Name = value;
+                    this.SendPropertyChanged("Name");
+                    this.OnNameChanged();
+                }
+            }
+        }
+
+        [global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_ShortName", DbType = "NVarChar(50) NOT NULL", CanBeNull = false)]
+        public string ShortName
+        {
+            get
+            {
+                return this._ShortName;
+            }
+            set
+            {
+                if ((this._ShortName != value))
+                {
+                    this.OnShortNameChanging(value);
+                    this.SendPropertyChanging();
+                    this._ShortName = value;
+                    this.SendPropertyChanged("ShortName");
+                    this.OnShortNameChanged();
+                }
+            }
+        }
+
+        [global::System.Data.Linq.Mapping.AssociationAttribute(Name = "Country_Order", Storage = "_Orders", ThisKey = "ID", OtherKey = "CountryID")]
+        public EntitySet<Order> Orders
+        {
+            get
+            {
+                return this._Orders;
+            }
+            set
+            {
+                this._Orders.Assign(value);
+            }
+        }
+
+        public event PropertyChangingEventHandler PropertyChanging;
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected virtual void SendPropertyChanging()
+        {
+            if ((this.PropertyChanging != null))
+            {
+                this.PropertyChanging(this, emptyChangingEventArgs);
+            }
+        }
+
+        protected virtual void SendPropertyChanged(String propertyName)
+        {
+            if ((this.PropertyChanged != null))
+            {
+                this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            }
+        }
+
+        private void attach_Orders(Order entity)
+        {
+            this.SendPropertyChanging();
+            entity.Country = this;
+        }
+
+        private void detach_Orders(Order entity)
+        {
+            this.SendPropertyChanging();
+            entity.Country = null;
+        }
+    }
+
     [global::System.Data.Linq.Mapping.TableAttribute(Name = "dbo.DeliveryTypes")]
     public partial class DeliveryType : INotifyPropertyChanging, INotifyPropertyChanged
     {
@@ -1591,7 +1737,31 @@ namespace BL
 
         private string _TransactionID;
 
+        private int _CountryID;
+
+        private string _FirstName;
+
+        private string _Address1;
+
+        private string _City;
+
+        private string _StateProvinceRegion;
+
+        private string _zipcode;
+
+        private string _PhoneNumber;
+
+        private string _Address2;
+
+        private string _email;
+
+        private string _LastName;
+
+        private string _SpecialNote;
+
         private EntitySet<OrdersRefProduct> _OrdersRefProducts;
+
+        private EntityRef<Country> _Country;
 
         private EntityRef<DeliveryType> _DeliveryType;
 
@@ -1627,11 +1797,34 @@ namespace BL
         partial void OnDeliveryTypeIDChanged();
         partial void OnTransactionIDChanging(string value);
         partial void OnTransactionIDChanged();
+        partial void OnCountryIDChanging(int value);
+        partial void OnCountryIDChanged();
+        partial void OnFirstNameChanging(string value);
+        partial void OnFirstNameChanged();
+        partial void OnAddress1Changing(string value);
+        partial void OnAddress1Changed();
+        partial void OnCityChanging(string value);
+        partial void OnCityChanged();
+        partial void OnStateProvinceRegionChanging(string value);
+        partial void OnStateProvinceRegionChanged();
+        partial void OnzipcodeChanging(string value);
+        partial void OnzipcodeChanged();
+        partial void OnPhoneNumberChanging(string value);
+        partial void OnPhoneNumberChanged();
+        partial void OnAddress2Changing(string value);
+        partial void OnAddress2Changed();
+        partial void OnemailChanging(string value);
+        partial void OnemailChanged();
+        partial void OnLastNameChanging(string value);
+        partial void OnLastNameChanged();
+        partial void OnSpecialNoteChanging(string value);
+        partial void OnSpecialNoteChanged();
         #endregion
 
         public Order()
         {
             this._OrdersRefProducts = new EntitySet<OrdersRefProduct>(new Action<OrdersRefProduct>(this.attach_OrdersRefProducts), new Action<OrdersRefProduct>(this.detach_OrdersRefProducts));
+            this._Country = default(EntityRef<Country>);
             this._DeliveryType = default(EntityRef<DeliveryType>);
             this._OrderStatuse = default(EntityRef<OrderStatuse>);
             this._PaymentType = default(EntityRef<PaymentType>);
@@ -1875,6 +2068,230 @@ namespace BL
             }
         }
 
+        [global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_CountryID", DbType = "Int NOT NULL")]
+        public int CountryID
+        {
+            get
+            {
+                return this._CountryID;
+            }
+            set
+            {
+                if ((this._CountryID != value))
+                {
+                    if (this._Country.HasLoadedOrAssignedValue)
+                    {
+                        throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+                    }
+                    this.OnCountryIDChanging(value);
+                    this.SendPropertyChanging();
+                    this._CountryID = value;
+                    this.SendPropertyChanged("CountryID");
+                    this.OnCountryIDChanged();
+                }
+            }
+        }
+
+        [global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_FirstName", DbType = "NVarChar(50)")]
+        public string FirstName
+        {
+            get
+            {
+                return this._FirstName;
+            }
+            set
+            {
+                if ((this._FirstName != value))
+                {
+                    this.OnFirstNameChanging(value);
+                    this.SendPropertyChanging();
+                    this._FirstName = value;
+                    this.SendPropertyChanged("FirstName");
+                    this.OnFirstNameChanged();
+                }
+            }
+        }
+
+        [global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_Address1", DbType = "NVarChar(150)")]
+        public string Address1
+        {
+            get
+            {
+                return this._Address1;
+            }
+            set
+            {
+                if ((this._Address1 != value))
+                {
+                    this.OnAddress1Changing(value);
+                    this.SendPropertyChanging();
+                    this._Address1 = value;
+                    this.SendPropertyChanged("Address1");
+                    this.OnAddress1Changed();
+                }
+            }
+        }
+
+        [global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_City", DbType = "NVarChar(50)")]
+        public string City
+        {
+            get
+            {
+                return this._City;
+            }
+            set
+            {
+                if ((this._City != value))
+                {
+                    this.OnCityChanging(value);
+                    this.SendPropertyChanging();
+                    this._City = value;
+                    this.SendPropertyChanged("City");
+                    this.OnCityChanged();
+                }
+            }
+        }
+
+        [global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_StateProvinceRegion", DbType = "NVarChar(150)")]
+        public string StateProvinceRegion
+        {
+            get
+            {
+                return this._StateProvinceRegion;
+            }
+            set
+            {
+                if ((this._StateProvinceRegion != value))
+                {
+                    this.OnStateProvinceRegionChanging(value);
+                    this.SendPropertyChanging();
+                    this._StateProvinceRegion = value;
+                    this.SendPropertyChanged("StateProvinceRegion");
+                    this.OnStateProvinceRegionChanged();
+                }
+            }
+        }
+
+        [global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_zipcode", DbType = "NVarChar(50)")]
+        public string zipcode
+        {
+            get
+            {
+                return this._zipcode;
+            }
+            set
+            {
+                if ((this._zipcode != value))
+                {
+                    this.OnzipcodeChanging(value);
+                    this.SendPropertyChanging();
+                    this._zipcode = value;
+                    this.SendPropertyChanged("zipcode");
+                    this.OnzipcodeChanged();
+                }
+            }
+        }
+
+        [global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_PhoneNumber", DbType = "NVarChar(50)")]
+        public string PhoneNumber
+        {
+            get
+            {
+                return this._PhoneNumber;
+            }
+            set
+            {
+                if ((this._PhoneNumber != value))
+                {
+                    this.OnPhoneNumberChanging(value);
+                    this.SendPropertyChanging();
+                    this._PhoneNumber = value;
+                    this.SendPropertyChanged("PhoneNumber");
+                    this.OnPhoneNumberChanged();
+                }
+            }
+        }
+
+        [global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_Address2", DbType = "NVarChar(150)")]
+        public string Address2
+        {
+            get
+            {
+                return this._Address2;
+            }
+            set
+            {
+                if ((this._Address2 != value))
+                {
+                    this.OnAddress2Changing(value);
+                    this.SendPropertyChanging();
+                    this._Address2 = value;
+                    this.SendPropertyChanged("Address2");
+                    this.OnAddress2Changed();
+                }
+            }
+        }
+
+        [global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_email", DbType = "NVarChar(150)")]
+        public string email
+        {
+            get
+            {
+                return this._email;
+            }
+            set
+            {
+                if ((this._email != value))
+                {
+                    this.OnemailChanging(value);
+                    this.SendPropertyChanging();
+                    this._email = value;
+                    this.SendPropertyChanged("email");
+                    this.OnemailChanged();
+                }
+            }
+        }
+
+        [global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_LastName", DbType = "NVarChar(50)")]
+        public string LastName
+        {
+            get
+            {
+                return this._LastName;
+            }
+            set
+            {
+                if ((this._LastName != value))
+                {
+                    this.OnLastNameChanging(value);
+                    this.SendPropertyChanging();
+                    this._LastName = value;
+                    this.SendPropertyChanged("LastName");
+                    this.OnLastNameChanged();
+                }
+            }
+        }
+
+        [global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_SpecialNote", DbType = "NVarChar(500)")]
+        public string SpecialNote
+        {
+            get
+            {
+                return this._SpecialNote;
+            }
+            set
+            {
+                if ((this._SpecialNote != value))
+                {
+                    this.OnSpecialNoteChanging(value);
+                    this.SendPropertyChanging();
+                    this._SpecialNote = value;
+                    this.SendPropertyChanged("SpecialNote");
+                    this.OnSpecialNoteChanged();
+                }
+            }
+        }
+
         [global::System.Data.Linq.Mapping.AssociationAttribute(Name = "Order_OrdersRefProduct", Storage = "_OrdersRefProducts", ThisKey = "OrderID", OtherKey = "OrderID")]
         public EntitySet<OrdersRefProduct> OrdersRefProducts
         {
@@ -1885,6 +2302,40 @@ namespace BL
             set
             {
                 this._OrdersRefProducts.Assign(value);
+            }
+        }
+
+        [global::System.Data.Linq.Mapping.AssociationAttribute(Name = "Country_Order", Storage = "_Country", ThisKey = "CountryID", OtherKey = "ID", IsForeignKey = true)]
+        public Country Country
+        {
+            get
+            {
+                return this._Country.Entity;
+            }
+            set
+            {
+                Country previousValue = this._Country.Entity;
+                if (((previousValue != value)
+                            || (this._Country.HasLoadedOrAssignedValue == false)))
+                {
+                    this.SendPropertyChanging();
+                    if ((previousValue != null))
+                    {
+                        this._Country.Entity = null;
+                        previousValue.Orders.Remove(this);
+                    }
+                    this._Country.Entity = value;
+                    if ((value != null))
+                    {
+                        value.Orders.Add(this);
+                        this._CountryID = value.ID;
+                    }
+                    else
+                    {
+                        this._CountryID = default(int);
+                    }
+                    this.SendPropertyChanged("Country");
+                }
             }
         }
 
@@ -2946,7 +3397,7 @@ namespace BL
 
         private string _Unit;
 
-        private float _Price;
+        private decimal _Price;
 
         private bool _InStock;
 
@@ -2957,6 +3408,10 @@ namespace BL
         private int _ProductTypeID;
 
         private int _Count;
+
+        private decimal _Shipping;
+
+        private decimal _Tax;
 
         private EntitySet<OrdersRefProduct> _OrdersRefProducts;
 
@@ -2982,7 +3437,7 @@ namespace BL
         partial void OnCreateDateChanged();
         partial void OnUnitChanging(string value);
         partial void OnUnitChanged();
-        partial void OnPriceChanging(float value);
+        partial void OnPriceChanging(decimal value);
         partial void OnPriceChanged();
         partial void OnInStockChanging(bool value);
         partial void OnInStockChanged();
@@ -2994,6 +3449,10 @@ namespace BL
         partial void OnProductTypeIDChanged();
         partial void OnCountChanging(int value);
         partial void OnCountChanged();
+        partial void OnShippingChanging(decimal value);
+        partial void OnShippingChanged();
+        partial void OnTaxChanging(decimal value);
+        partial void OnTaxChanged();
         #endregion
 
         public Product()
@@ -3087,8 +3546,8 @@ namespace BL
             }
         }
 
-        [global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_Price", DbType = "Real NOT NULL")]
-        public float Price
+        [global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_Price", DbType = "Decimal(18,2) NOT NULL")]
+        public decimal Price
         {
             get
             {
@@ -3211,6 +3670,45 @@ namespace BL
             }
         }
 
+        [global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_Shipping", DbType = "Decimal(18,2) NOT NULL")]
+        public decimal Shipping
+        {
+            get
+            {
+                return this._Shipping;
+            }
+            set
+            {
+                if ((this._Shipping != value))
+                {
+                    this.OnShippingChanging(value);
+                    this.SendPropertyChanging();
+                    this._Shipping = value;
+                    this.SendPropertyChanged("Shipping");
+                    this.OnShippingChanged();
+                }
+            }
+        }
+
+        [global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_Tax", DbType = "Decimal(18,2) NOT NULL")]
+        public decimal Tax
+        {
+            get
+            {
+                return this._Tax;
+            }
+            set
+            {
+                if ((this._Tax != value))
+                {
+                    this.OnTaxChanging(value);
+                    this.SendPropertyChanging();
+                    this._Tax = value;
+                    this.SendPropertyChanged("Tax");
+                    this.OnTaxChanged();
+                }
+            }
+        }
 
         [global::System.Data.Linq.Mapping.AssociationAttribute(Name = "Product_OrdersRefProduct", Storage = "_OrdersRefProducts", ThisKey = "ProductID", OtherKey = "ProductID")]
         public EntitySet<OrdersRefProduct> OrdersRefProducts
@@ -3251,7 +3749,7 @@ namespace BL
             }
         }
 
-        [global::System.Data.Linq.Mapping.AssociationAttribute(Name = "Product_ProductsRefPropety", Storage = "_ProductsRefProperies", ThisKey = "ProductID", OtherKey = "ProductID")]
+        [global::System.Data.Linq.Mapping.AssociationAttribute(Name = "Product_ProductsRefPropery", Storage = "_ProductsRefProperies", ThisKey = "ProductID", OtherKey = "ProductID")]
         public EntitySet<ProductsRefProperty> ProductsRefProperies
         {
             get

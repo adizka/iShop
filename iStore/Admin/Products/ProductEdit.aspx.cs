@@ -15,7 +15,7 @@ namespace iStore.Admin.Products
     public partial class ProductEdit : System.Web.UI.Page
     {
         BL.Modules.Products.Products pbl = new BL.Modules.Products.Products();
-        BL.Modules.Categories.Categories cbl = new BL.Modules.Categories.Categories();        
+        BL.Modules.Categories.Categories cbl = new BL.Modules.Categories.Categories();
         Stock sbl = new Stock();
         ProductRefCategories prcbl = new ProductRefCategories();
         ProductProperies prop = new ProductProperies();
@@ -46,11 +46,16 @@ namespace iStore.Admin.Products
             string name = Server.HtmlEncode(txtName.Text.Trim());
             string unit = Server.HtmlEncode(txtUnit.Text.Trim());
             string scount = Server.HtmlEncode(txtCount.Text.Trim());
+            string strShipping = Server.HtmlEncode(shippingTxt.Text.Trim());
+            string strTax = Server.HtmlEncode(taxTxt.Text.Trim());
             var sprice = txtPrice.Text.Trim();
 
-            if (!CheckAll(name, unit, scount, sprice)) { return; }
+            if (!CheckAll(name, unit, scount, sprice, strTax, strShipping)) { return; }
             int count = Convert.ToInt32(scount);
-            float price = float.Parse(sprice);
+
+            decimal tax = decimal.Parse(strTax);
+            decimal shipping = decimal.Parse(strShipping);
+            decimal price = decimal.Parse(sprice);
 
 
             var categoriesIDs = hf.Value.Split(new string[] { "!~!" }, StringSplitOptions.RemoveEmptyEntries).Select(id => new Guid(id)).ToList();
@@ -64,7 +69,7 @@ namespace iStore.Admin.Products
 
             if (product == null)
             {
-                bool isAdd = pbl.AddProduct(name, unit, price, chkVisible.Checked, count, out product);
+                bool isAdd = pbl.AddProduct(name, unit, price, chkVisible.Checked, count, tax, shipping, out product);
                 if (isAdd)
                 {
                     prcbl.AddCategoriesToProduct(categoriesIDs, product.ProductID);
@@ -78,7 +83,7 @@ namespace iStore.Admin.Products
             }
             else
             {
-                bool isUpdate = pbl.UpdateProduct(product.ProductID, name, unit,  price, chkVisible.Checked, count);
+                bool isUpdate = pbl.UpdateProduct(product.ProductID, name, unit, price, chkVisible.Checked, count, tax, shipping);
                 if (isUpdate)
                 {
                     prcbl.UpdateCategoriesToProduct(categoriesIDs, product.ProductID);
@@ -95,7 +100,7 @@ namespace iStore.Admin.Products
         #endregion
 
         #region Check
-        private bool CheckAll(string name, string unit, string count, string price)
+        private bool CheckAll(string name, string unit, string count, string price, string tax, string shipping)
         {
             divError.InnerHtml = string.Empty;
             divError.Visible = false;
@@ -106,13 +111,28 @@ namespace iStore.Admin.Products
                 divError.Visible = true;
                 return false;
             }
-            float temp;
-            if (!float.TryParse(price, out temp))
+            decimal temp;
+            if (!decimal.TryParse(price, out temp))
             {
                 divError.InnerHtml = "Неверный формат цены";
                 divError.Visible = true;
                 return false;
             }
+
+            if (!decimal.TryParse(tax, out temp))
+            {
+                divError.InnerHtml = "Неверный формат налоговой стаки с единицы товара";
+                divError.Visible = true;
+                return false;
+            }
+
+            if (!decimal.TryParse(shipping, out temp))
+            {
+                divError.InnerHtml = "Неверный формат shippinga";
+                divError.Visible = true;
+                return false;
+            }
+
             if (string.IsNullOrEmpty(name))
             {
                 divError.InnerHtml = "Не заполненно поле Name";
@@ -132,7 +152,7 @@ namespace iStore.Admin.Products
                 divError.Visible = true;
                 return false;
             }
-            
+
             if (unit.Length > 10)
             {
                 divError.InnerHtml = "Название единицы измерения должно быть более 10 символов";
@@ -162,7 +182,7 @@ namespace iStore.Admin.Products
                     return null;
                 }
                 try
-                { 
+                {
                     Guid id = new Guid(sid);
                     BL.Category category = cbl.GetCategoryById(id);
                     if (category != null)

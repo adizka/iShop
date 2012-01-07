@@ -64,18 +64,20 @@ namespace iStore.Orders
             }
             catch (Exception e)
             {
-                var a = e;
                 return;
             }
-            Guid oid;
-            if (!Guid.TryParse(Request.QueryString["oid"], out oid))
-                return;
-            obl.Remove(toDelete, ubl.CurrentUser.UserID, oid);
-            obl.UpdateCounts(newCounts, ubl.CurrentUser.UserID, oid);
+
+            obl.Remove(toDelete, ubl.CurrentUser.UserID, UserOrder.OrderID);
+            obl.UpdateCounts(newCounts, ubl.CurrentUser.UserID, UserOrder.OrderID);
         }
         protected void Clear(object obj, EventArgs args)
         {
             obl.ClearCart(ubl.CurrentUser.UserID, UserOrder.OrderID);
+        }
+        protected void FromOrder(object obj, EventArgs args)
+        {
+            Save(obj, args);
+            Response.Redirect(iStore.Site.SiteUrl + "Orders/FormOrder.aspx");
         }
     }
 }
