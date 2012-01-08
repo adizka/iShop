@@ -676,6 +676,8 @@
     <Content Include="Users\Login.aspx" />
     <Content Include="Users\Profile.aspx" />
     <Content Include="Users\Register.aspx" />
+    <Content Include="Users\RestorePassword.aspx" />
+    <Content Include="Users\UserConfirmation.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -1162,6 +1164,20 @@
     </Compile>
     <Compile Include="Users\Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Users\RestorePassword.aspx.cs">
+      <DependentUpon>RestorePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Users\RestorePassword.aspx.designer.cs">
+      <DependentUpon>RestorePassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Users\UserConfirmation.aspx.cs">
+      <DependentUpon>UserConfirmation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Users\UserConfirmation.aspx.designer.cs">
+      <DependentUpon>UserConfirmation.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

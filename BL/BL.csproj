@@ -57,6 +57,7 @@
     <Compile Include="Modules\Categories\Categories.cs" />
     <Compile Include="Modules\Categories\Properties.cs" />
     <Compile Include="Modules\Countries\Countries.cs" />
+    <Compile Include="Modules\Mail\Mail.cs" />
     <Compile Include="Modules\News\News.cs" />
     <Compile Include="Modules\Orders.cs" />
     <Compile Include="Modules\Pages\Pages.cs" />
@@ -105,9 +106,7 @@
       <DependentUpon>Shop.dbml</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Modules\Mail\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
