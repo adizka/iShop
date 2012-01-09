@@ -78,7 +78,7 @@ namespace iStore.Users
             ubl.SetNewPasswordByUserId(User.UserID, passwd1.Text);
             errMsg.InnerHtml = "Ваш пароль успешно востановлен";
             errMsg.Visible = true;
-            errMsg.Visible = false;
+            NewPasswordForm.Visible = false;
         }
     }
 }

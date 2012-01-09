@@ -53,7 +53,10 @@ namespace iStore.Admin.Products
             {
                 if (_prodCountInd == null)
                 {
-                    _ProductsCount = pbl.GetAllProducts().Count();
+                    if (CurrentCategoryId.HasValue)
+                        _ProductsCount = prcbl.GetProductRefCategoriesByCategoryId(CurrentCategoryId.Value).Count();
+                    else
+                        _ProductsCount = pbl.GetAllProducts().Count();
                     _prodCountInd = new object();
                 }
 
