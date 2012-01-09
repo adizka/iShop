@@ -26,16 +26,17 @@ namespace iStore.Modules.Controls.NewProducts
                 if (_newProducts == null)
                 {
                     if (CurrentCategoryId.HasValue)
-                        _newProducts = prcbl.GetProductRefCategoriesByCategoryId(CurrentCategoryId.Value).OrderByDescending(p => p.Product.CreateDate).Take(Count).ToList();
+                        _newProducts = prcbl.GetProductRefCategoriesByCategoryId(CurrentCategoryId.Value).OrderByDescending(p => p.Product.CreateDate).Take(RowsCount * ColumnsCount).ToList();
                     else
-                        _newProducts = pbl.GetAllProducts().OrderByDescending(p => p.CreateDate).Take(Count).Select(p => p.ProductsRefCategories.First()).ToList();
+                        _newProducts = pbl.GetAllProducts().OrderByDescending(p => p.CreateDate).Take(RowsCount * ColumnsCount).Select(p => p.ProductsRefCategories.First()).ToList();
                 }
 
                 return _newProducts;
             }
         }
 
-        public int Count { get; set; }
+        public int RowsCount { get; set; }
+        public int ColumnsCount { get; set; }
 
         protected string GetPreviewUrl(BL.Product prod)
         {

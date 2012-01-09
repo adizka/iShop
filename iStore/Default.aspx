@@ -10,6 +10,6 @@
         <h1>New Deals</h1>    
     </div>
     <div class="last_goods">
-    <iS:NewDeals runat="server" Count="4" />
+    <iS:NewDeals runat="server" RowsCount="1" ColumnsCount="4" />
     </div>
 </asp:Content>

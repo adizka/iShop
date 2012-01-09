@@ -22,7 +22,7 @@
             <%= item.Product.Name%></a>
         <%=GetRenderedControl(item)%>
         </span>
-    <%if (counter % 4 == 0)
+    <%if (counter % ColumnsCount == 0)
       {%>
     <br />
     <%} counter++;
