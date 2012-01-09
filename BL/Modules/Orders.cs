@@ -107,7 +107,7 @@ namespace BL.Modules.Orders
             {
                 if (db.Orders.Any(o => o.TransactionID == paymentInfo.txn_id))
                     return true;
-                UpdateCounts(paymentInfo.OrderID);
+                
                 var order = db.Orders.FirstOrDefault(o => o.OrderID == paymentInfo.OrderID && !o.IsPaid);
 
                 if (order == null)
@@ -134,6 +134,7 @@ namespace BL.Modules.Orders
                 order.DeliveryTypeID = (int)DeliveryTypes.NotDelivered;
                 order.SpecialNote = paymentInfo.SpecialNote;
                 db.SubmitChanges();
+                BL.Modules.Mail.Mail.OrderAccepted(order.User);
             }
             return true;
         }
@@ -182,7 +183,7 @@ namespace BL.Modules.Orders
                 UserID = userID,
                 CreateDate = DateTime.Now,
                 DeliveryDate = DateTime.Now,
-                CountryID = 1
+                CountryID = db.Countries.First().ID
             };
             user.Orders.Add(order);
             db.SubmitChanges();

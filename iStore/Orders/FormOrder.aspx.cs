@@ -12,11 +12,15 @@ namespace iStore.Orders
     public partial class FormOrder : System.Web.UI.Page
     {
 
-        iStore.Modules.Logic.Auth.Users ubl = new iStore.Modules.Logic.Auth.Users();
+        iStore.Modules.Logic.Auth.Users auth = new iStore.Modules.Logic.Auth.Users();
         BL.Modules.Orders.Orders obl = new BL.Modules.Orders.Orders();
         BL.Modules.Products.Products pbl = new BL.Modules.Products.Products();
         protected void Page_Load(object sender, EventArgs e)
         {
+
+            if (auth.CurrentUser == null)
+                Response.Redirect(iStore.Site.SiteUrl + "Users/Login.aspx");
+
             if (UserOrder == null)
                 Response.Redirect("~/Orders/OrdersList.aspx");
 
@@ -49,7 +53,7 @@ namespace iStore.Orders
             get
             {
                 if (_UserOrder == null)
-                    _UserOrder = obl.GetUserOrderedProducts(ubl.CurrentUser.UserID).FirstOrDefault(o => o.IsActive);
+                    _UserOrder = obl.GetUserOrderedProducts(auth.CurrentUser.UserID).FirstOrDefault(o => o.IsActive);
 
                 return _UserOrder;
             }
@@ -133,7 +137,7 @@ namespace iStore.Orders
             if (!CheckData(firstName, lastName,address1,address2, city, province, zip, phone, email, countryID))
                 return;
 
-            email = string.IsNullOrWhiteSpace(email) ? ubl.CurrentUser.Email : HttpUtility.HtmlEncode(email);
+            email = string.IsNullOrWhiteSpace(email) ? auth.CurrentUser.Email : HttpUtility.HtmlEncode(email);
 
             obl.UpdateOrderUserData(UserOrder.OrderID, firstName, lastName, address1, address2, city, province, zip, phone, email, countryID);
             _UserOrder = null;

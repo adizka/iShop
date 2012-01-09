@@ -9,7 +9,7 @@ namespace BL.Modules.Users
     public class Users
     {
         ShopDataContext db = new ShopDataContext();
-        
+
         public IQueryable<BL.User> GetAllUsers()
         {
             return db.Users;
@@ -42,7 +42,7 @@ namespace BL.Modules.Users
                 db.Users.InsertOnSubmit(user);
                 db.SubmitChanges();
                 ts.Complete();
-            }   
+            }
         }
 
         public bool UpdateUser(Guid userId, string login, string email)
@@ -59,14 +59,14 @@ namespace BL.Modules.Users
                 }
                 return true;
             }
-            return false;                        
+            return false;
         }
 
         public bool UpdateUserRolesAndUserRightsByUserId(Guid userId, int userRight, int userRole)
         {
             BL.User user = db.Users.Where(u => u.UserID == userId).FirstOrDefault();
             if (user != null)
-            { 
+            {
                 using (var ts = new TransactionScope())
                 {
                     user.UserRoleID = userRole;
@@ -76,12 +76,12 @@ namespace BL.Modules.Users
                 }
                 return true;
             }
-            return false;            
+            return false;
         }
 
         public bool ActivateUser(string mail, Guid condirmationId)
         {
-            BL.User user = db.Users.Where(u => u.Email == mail).FirstOrDefault();
+            BL.User user = db.Users.FirstOrDefault(u => u.Email == mail);
             if (user != null)
             {
                 if (condirmationId == user.ConfirmationID)
@@ -89,6 +89,7 @@ namespace BL.Modules.Users
                     using (var ts = new TransactionScope())
                     {
                         user.IsActive = true;
+                        user.ConfirmationID = null;
                         db.SubmitChanges();
                         ts.Complete();
                     }
@@ -103,7 +104,7 @@ namespace BL.Modules.Users
             BL.User user = db.Users.Where(u => u.Email.ToUpper() == email.ToUpper()).FirstOrDefault();
             return (user != null);
         }
-            
+
         public bool isLoginInDB(string login)
         {
             BL.User user = db.Users.Where(u => u.Login.ToUpper() == login.ToUpper()).FirstOrDefault();
@@ -122,7 +123,7 @@ namespace BL.Modules.Users
         {
             BL.User user = db.Users.Where(u => u.UserID == userId).FirstOrDefault();
             if (user != null)
-            { 
+            {
                 BL.Helpers.MD5CryptoServiceProvider md5 = new BL.Helpers.MD5CryptoServiceProvider();
                 if (md5.getMd5Hash(oldPassword) == user.Password)
                 {
@@ -152,7 +153,7 @@ namespace BL.Modules.Users
                 return true;
             }
             return false;
-        }    
+        }
 
         public BL.User ConfirmUser(string email, Guid confirmationId)
         {
@@ -178,6 +179,7 @@ namespace BL.Modules.Users
                     using (var ts = new TransactionScope())
                     {
                         user.Password = md5.getMd5Hash(password);
+                        user.ConfirmationID = null;
                         db.SubmitChanges();
                         ts.Complete();
                     }
@@ -203,8 +205,19 @@ namespace BL.Modules.Users
         }
 
         public BL.User GetUserByLoginOrEmail(string login)
-        { 
-            return db.Users.Where(u => u.Login == login || u.Email == login).FirstOrDefault();
-        }        
+        {
+            return db.Users.FirstOrDefault(u => u.Login == login || u.Email == login);
+        }
+
+        public User SetConfirmationID(Guid userID)
+        {
+            var user = db.Users.FirstOrDefault(u => u.UserID == userID);
+            if (user == null)
+                return user;
+
+            user.ConfirmationID = Guid.NewGuid();
+            db.SubmitChanges();
+            return user;
+        }
     }
 }

@@ -23,10 +23,12 @@ namespace iStore.Users
         {
             string login = Server.HtmlEncode(txtEmail.Text);
             var ubl = new BL.Modules.Users.Users();
-            if (ubl.isLoginAndMailNotInDb(login))
+            var user = ubl.GetUserByLoginOrEmail(login);
+            if (user != null)
             {
+                user = ubl.SetConfirmationID(user.UserID);
+                BL.Modules.Mail.Mail.RestorePassword(user);
                 lblEmailError.Text = "Your password has been sent but please ensure you check your SPAM filters if it doesn't arrive.";
-                //Как дадут данные, будем отправлять письмо
             }
             else
             {

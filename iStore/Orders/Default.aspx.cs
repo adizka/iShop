@@ -13,11 +13,15 @@ namespace iStore.Orders
     public partial class Default : System.Web.UI.Page
     {
 
-        iStore.Modules.Logic.Auth.Users ubl = new iStore.Modules.Logic.Auth.Users();
+        iStore.Modules.Logic.Auth.Users auth = new iStore.Modules.Logic.Auth.Users();
         BL.Modules.Orders.Orders obl = new BL.Modules.Orders.Orders();
         BL.Modules.Products.Products pbl = new BL.Modules.Products.Products();
         protected void Page_Load(object sender, EventArgs e)
         {
+
+            if (auth.CurrentUser == null)
+                Response.Redirect(iStore.Site.SiteUrl + "Users/Login.aspx");
+
             if (UserOrder == null)
                 Response.Redirect("~/Orders/OrdersList.aspx");
         }
@@ -31,13 +35,13 @@ namespace iStore.Orders
                 {
                     Guid oid;
                     if (!Guid.TryParse(Request.QueryString["oid"], out oid))
-                        _UserOrder = obl.GetUserOrderedProducts(ubl.CurrentUser.UserID).FirstOrDefault(o => o.IsActive);
+                        _UserOrder = obl.GetUserOrderedProducts(auth.CurrentUser.UserID).FirstOrDefault(o => o.IsActive);
                     else
                     {
-                        _UserOrder = obl.GetUserOrderedProducts(ubl.CurrentUser.UserID).FirstOrDefault(o => o.OrderID == oid);
+                        _UserOrder = obl.GetUserOrderedProducts(auth.CurrentUser.UserID).FirstOrDefault(o => o.OrderID == oid);
                     }
                     if (_UserOrder == null)
-                        _UserOrder = obl.CreateOrder(ubl.CurrentUser.UserID);
+                        _UserOrder = obl.CreateOrder(auth.CurrentUser.UserID);
                 }
                 return _UserOrder;
             }
@@ -67,12 +71,12 @@ namespace iStore.Orders
                 return;
             }
 
-            obl.Remove(toDelete, ubl.CurrentUser.UserID, UserOrder.OrderID);
-            obl.UpdateCounts(newCounts, ubl.CurrentUser.UserID, UserOrder.OrderID);
+            obl.Remove(toDelete, auth.CurrentUser.UserID, UserOrder.OrderID);
+            obl.UpdateCounts(newCounts, auth.CurrentUser.UserID, UserOrder.OrderID);
         }
         protected void Clear(object obj, EventArgs args)
         {
-            obl.ClearCart(ubl.CurrentUser.UserID, UserOrder.OrderID);
+            obl.ClearCart(auth.CurrentUser.UserID, UserOrder.OrderID);
         }
         protected void FromOrder(object obj, EventArgs args)
         {

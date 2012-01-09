@@ -553,9 +553,11 @@ namespace BL
 
         private int _UserRightID;
 
-        private Guid _ConfirmationID;
+        private System.Nullable<System.Guid> _ConfirmationID;
 
         private bool _IsActive;
+
+        private EntitySet<UserSession> _UsersSessions;
 
         private EntitySet<Order> _Orders;
 
@@ -581,15 +583,15 @@ namespace BL
         partial void OnUserRoleIDChanged();
         partial void OnUserRightIDChanging(int value);
         partial void OnUserRightIDChanged();
-        partial void OnConfirmationIDChanging(System.Guid value);
+        partial void OnConfirmationIDChanging(System.Nullable<System.Guid> value);
         partial void OnConfirmationIDChanged();
         partial void OnIsActiveChanging(bool value);
         partial void OnIsActiveChanged();
-
         #endregion
 
         public User()
         {
+            this._UsersSessions = new EntitySet<UserSession>(new Action<UserSession>(this.attach_UsersSessions), new Action<UserSession>(this.detach_UsersSessions));
             this._Orders = new EntitySet<Order>(new Action<Order>(this.attach_Orders), new Action<Order>(this.detach_Orders));
             this._UserProperties = new EntitySet<UserProperty>(new Action<UserProperty>(this.attach_UserProperties), new Action<UserProperty>(this.detach_UserProperties));
             this._UserRight = default(EntityRef<UserRight>);
@@ -725,8 +727,8 @@ namespace BL
             }
         }
 
-        [global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_ConfirmationID", DbType = "UniqueIdentifier Not NULL")]
-        public System.Guid ConfirmationID
+        [global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_ConfirmationID", DbType = "UniqueIdentifier")]
+        public System.Nullable<System.Guid> ConfirmationID
         {
             get
             {
@@ -745,7 +747,7 @@ namespace BL
             }
         }
 
-        [global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_IsActive", DbType = "Bit Not NULL")]
+        [global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_IsActive", DbType = "Bit NOT NULL")]
         public bool IsActive
         {
             get
@@ -762,6 +764,19 @@ namespace BL
                     this.SendPropertyChanged("IsActive");
                     this.OnIsActiveChanged();
                 }
+            }
+        }
+
+        [global::System.Data.Linq.Mapping.AssociationAttribute(Name = "User_UsersSession", Storage = "_UsersSessions", ThisKey = "UserID", OtherKey = "UserID")]
+        public EntitySet<UserSession> UsersSessions
+        {
+            get
+            {
+                return this._UsersSessions;
+            }
+            set
+            {
+                this._UsersSessions.Assign(value);
             }
         }
 
@@ -877,6 +892,18 @@ namespace BL
             {
                 this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
             }
+        }
+
+        private void attach_UsersSessions(UserSession entity)
+        {
+            this.SendPropertyChanging();
+            entity.User = this;
+        }
+
+        private void detach_UsersSessions(UserSession entity)
+        {
+            this.SendPropertyChanging();
+            entity.User = null;
         }
 
         private void attach_Orders(Order entity)
@@ -1106,29 +1133,33 @@ namespace BL
     [global::System.Data.Linq.Mapping.TableAttribute(Name = "dbo.UsersSessions")]
     public partial class UserSession : INotifyPropertyChanging, INotifyPropertyChanged
     {
+
         private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 
-        private Guid _SessionID;
+        private System.Guid _SessionID;
 
-        private Guid _UserID;
+        private System.Guid _UserID;
+
+        private EntityRef<User> _User;
 
         #region Extensibility Method Definitions
         partial void OnLoaded();
         partial void OnValidate(System.Data.Linq.ChangeAction action);
         partial void OnCreated();
-        partial void OnSessionIDChanging(Guid value);
+        partial void OnSessionIDChanging(System.Guid value);
         partial void OnSessionIDChanged();
-        partial void OnUserIDChanging(Guid value);
+        partial void OnUserIDChanging(System.Guid value);
         partial void OnUserIDChanged();
         #endregion
 
         public UserSession()
         {
+            this._User = default(EntityRef<User>);
             OnCreated();
         }
 
         [global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_SessionID", DbType = "UniqueIdentifier NOT NULL", IsPrimaryKey = true)]
-        public Guid SessionID
+        public System.Guid SessionID
         {
             get
             {
@@ -1148,7 +1179,7 @@ namespace BL
         }
 
         [global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_UserID", DbType = "UniqueIdentifier NOT NULL")]
-        public Guid UserID
+        public System.Guid UserID
         {
             get
             {
@@ -1158,11 +1189,49 @@ namespace BL
             {
                 if ((this._UserID != value))
                 {
+                    if (this._User.HasLoadedOrAssignedValue)
+                    {
+                        throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+                    }
                     this.OnUserIDChanging(value);
                     this.SendPropertyChanging();
                     this._UserID = value;
                     this.SendPropertyChanged("UserID");
                     this.OnUserIDChanged();
+                }
+            }
+        }
+
+        [global::System.Data.Linq.Mapping.AssociationAttribute(Name = "User_UsersSession", Storage = "_User", ThisKey = "UserID", OtherKey = "UserID", IsForeignKey = true)]
+        public User User
+        {
+            get
+            {
+                return this._User.Entity;
+            }
+            set
+            {
+                User previousValue = this._User.Entity;
+                if (((previousValue != value)
+                            || (this._User.HasLoadedOrAssignedValue == false)))
+                {
+                    this.SendPropertyChanging();
+                    if ((previousValue != null))
+                    {
+                        this._User.Entity = null;
+                        previousValue.UsersSessions.Remove(this);
+                    }
+                    this._User.Entity = value;
+                    if ((value != null))
+                    {
+                        value.UsersSessions.Add(this);
+                        this._UserID = value.UserID;
+                    }
+                    else
+                    {
+                        this._UserID = default(System.Guid);
+                    }
+                    this.SendPropertyChanged("User");
                 }
             }
         }
@@ -1186,7 +1255,6 @@ namespace BL
                 this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
             }
         }
-
     }
 
     [global::System.Data.Linq.Mapping.TableAttribute(Name = "dbo.Countries")]
