@@ -1,15 +1,6 @@
 <Configuration>
   <RecentFiles>
     <RecentFiles>
-      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Design/f:Menu.ascx" caret="754" fromTop="15" />
-      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Modules/d:Controls/f:Cart.ascx.cs" caret="2092" fromTop="10" />
-      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Admin/d:Design/f:Header.ascx" caret="529" fromTop="8" />
-      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Modules/d:Controls/f:AddToCard.ascx.cs" caret="686" fromTop="12" />
-      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Design/f:Header.ascx" caret="1202" fromTop="18" />
-      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Design/f:AutorizationControl.ascx" caret="393" fromTop="6" />
-      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Admin/d:Products/f:ProductsPhoto.aspx" caret="1153" fromTop="14" />
-      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Styles/f:Controls.css" caret="24" fromTop="0" />
-      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Styles/f:Style.css" caret="2199" fromTop="0" />
       <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/f:Site.Master" caret="731" fromTop="12" />
       <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Admin/d:Products/f:ProductEdit.aspx.cs" caret="1162" fromTop="7" />
       <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Admin/d:Products/f:ProductEdit.aspx" caret="615" fromTop="11" />
@@ -17,26 +8,31 @@
       <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Admin/d:Products/f:ProductSort.aspx" caret="459" fromTop="8" />
       <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Admin/d:Products/f:ProductSort.aspx.cs" caret="0" fromTop="0" />
       <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Admin/d:Products/f:ProductDescriptionEdit.aspx.cs" caret="1948" fromTop="9" />
-      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Admin/d:Products/f:ProductPropertyEdit.aspx.cs" caret="3109" fromTop="18" />
       <File id="F811AF93-8440-4DC9-A7AA-BCA306A0B8B2/d:Modules/d:Users/f:UsersSessions.cs" caret="188" fromTop="7" />
       <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Users/f:Login.aspx" caret="70" fromTop="0" />
       <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Admin/d:Products/f:ProductDescriptionEdit.aspx" caret="1677" fromTop="34" />
-      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Admin/d:Products/f:ProductPropertyEdit.aspx" caret="1423" fromTop="14" />
-      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Design/f:Menu2.ascx" caret="0" fromTop="0" />
       <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Scripts/f:Menu.js" caret="97" fromTop="6" />
       <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Orders/f:Default.aspx" caret="782" fromTop="20" />
       <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Search/f:Default.aspx.cs" caret="1641" fromTop="0" />
       <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Admin/d:Pages/f:Default.aspx" caret="991" fromTop="16" />
-      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Admin/d:Products/f:Default.aspx" caret="1597" fromTop="0" />
-      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Admin/d:Styles/f:Admin.css" caret="7087" fromTop="19" />
-      <File id="F811AF93-8440-4DC9-A7AA-BCA306A0B8B2/d:Properties/f:Settings.Designer.cs" caret="297" fromTop="6" />
-      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Admin/d:Categories/f:Default.aspx" caret="2874" fromTop="16" />
+      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Admin/d:Categories/f:Default.aspx" caret="2321" fromTop="20" />
+      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Admin/d:Styles/f:Admin.css" caret="7247" fromTop="19" />
+      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/f:Web.config" caret="3038" fromTop="70" />
+      <File id="F811AF93-8440-4DC9-A7AA-BCA306A0B8B2/d:Helpers/f:MailHepler.cs" caret="2029" fromTop="39" />
+      <File id="F811AF93-8440-4DC9-A7AA-BCA306A0B8B2/d:Helpers/f:MD5CryptoServiceProvider.cs" caret="419" fromTop="16" />
+      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Orders/f:Default.aspx.cs" caret="1608" fromTop="9" />
+      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/f:Default.aspx.cs" caret="1492" fromTop="36" />
+      <File id="F811AF93-8440-4DC9-A7AA-BCA306A0B8B2/d:Properties/f:Settings.Designer.cs" caret="442" fromTop="12" />
+      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Users/f:ForgotPassword.aspx" caret="1190" fromTop="26" />
+      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Users/f:Register.aspx" caret="658" fromTop="0" />
+      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Admin/d:Products/f:ProductPropertyEdit.aspx.cs" caret="1889" fromTop="33" />
+      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Design/f:Header.ascx" caret="1464" fromTop="30" />
+      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Admin/d:Products/f:ProductPropertyEdit.aspx" caret="5355" fromTop="38" />
+      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Design/f:AutorizationControl.ascx" caret="1139" fromTop="4" />
+      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Design/f:Menu2.ascx" caret="1364" fromTop="4" />
+      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Admin/d:Products/f:Default.aspx" caret="2780" fromTop="4" />
     </RecentFiles>
     <RecentEdits>
-      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Admin/d:Products/f:ProductEdit.aspx" caret="2465" fromTop="20" />
-      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Admin/d:Products/f:ProductEdit.aspx" caret="2909" fromTop="19" />
-      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Admin/d:Products/f:ProductEdit.aspx" caret="356" fromTop="5" />
-      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Admin/d:Products/f:ProductEdit.aspx" caret="389" fromTop="8" />
       <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Admin/d:Products/f:ProductEdit.aspx" caret="1676" fromTop="24" />
       <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Admin/d:Products/f:ProductEdit.aspx" caret="3239" fromTop="11" />
       <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Admin/d:Products/f:ProductEdit.aspx" caret="4559" fromTop="13" />
@@ -53,7 +49,7 @@
       <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Admin/d:Products/f:ProductPropertyEdit.aspx" caret="1189" fromTop="11" />
       <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Admin/d:Products/f:ProductPropertyEdit.aspx" caret="3407" fromTop="13" />
       <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Admin/d:Products/f:ProductPropertyEdit.aspx" caret="1495" fromTop="13" />
-      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Admin/d:Products/f:ProductPropertyEdit.aspx.cs" caret="4023" fromTop="27" />
+      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Admin/d:Products/f:ProductPropertyEdit.aspx.cs" caret="4117" fromTop="27" />
       <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Admin/d:Products/f:ProductDescriptionEdit.aspx" caret="714" fromTop="13" />
       <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Admin/d:Products/f:ProductDescriptionEdit.aspx.cs" caret="883" fromTop="21" />
       <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Admin/d:Products/f:ProductDescriptionEdit.aspx.cs" caret="2016" fromTop="10" />
@@ -63,6 +59,10 @@
       <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Orders/f:Default.aspx" caret="138" fromTop="0" />
       <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Orders/f:Default.aspx" caret="637" fromTop="15" />
       <File id="F811AF93-8440-4DC9-A7AA-BCA306A0B8B2/d:Properties/f:Settings.Designer.cs" caret="1363" fromTop="18" />
+      <File id="F811AF93-8440-4DC9-A7AA-BCA306A0B8B2/d:Properties/f:Settings.Designer.cs" caret="1800" fromTop="34" />
+      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Design/f:Header.ascx" caret="855" fromTop="16" />
+      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Admin/d:Products/f:ProductPropertyEdit.aspx.cs" caret="2099" fromTop="23" />
+      <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Admin/d:Products/f:Default.aspx" caret="3006" fromTop="13" />
     </RecentEdits>
   </RecentFiles>
   <NAntValidationSettings>
@@ -173,7 +173,7 @@
       <Item value="asp:DropDownList" priority="6" />
       <Item value="Value" priority="14" />
       <Item value="ListItemControlBuilder`0" priority="6" />
-      <Item value="target" priority="7" />
+      <Item value="target" priority="14" />
       <Item value="Title" priority="13" />
       <Item value="ScriptManager`0" priority="34" />
       <Item value="UpdatePanel`0" priority="34" />
@@ -270,7 +270,7 @@
       <Item value="return" priority="895" />
       <Item value="foreach" priority="442" />
       <Item value="Request" priority="730" />
-      <Item value="item" priority="794" />
+      <Item value="item" priority="826" />
       <Item value="continue" priority="31" />
       <Item value="_params`0" priority="63" />
       <Item value="key" priority="63" />
@@ -437,6 +437,8 @@
       <Item value="u" priority="63" />
       <Item value="divError" priority="191" />
       <Item value="DetailsView`0" priority="31" />
+      <Item value="Product" priority="31" />
+      <Item value="ProductPropertyConstants`0" priority="26" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.Collections.Generic.Dictionary`2">
       <Item value="Add`0" priority="27" />
@@ -472,7 +474,7 @@
     </ItemStatistics>
     <ItemStatistics item="Qualified:@iStore.Site">
       <Item value="SiteAdminUrl" priority="292" />
-      <Item value="SiteUrl" priority="893" />
+      <Item value="SiteUrl" priority="920" />
       <Item value="FileUploadProductPhotoPreview" priority="53" />
       <Item value="FileUploadProductPhotoOriginal" priority="53" />
       <Item value="PreUrlProductOriginalImage" priority="26" />
@@ -492,6 +494,7 @@
       <Item value="CategoryID" priority="76" />
       <Item value="Sort" priority="26" />
       <Item value="Product" priority="26" />
+      <Item value="ProductID" priority="26" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:BL.Product">
       <Item value="ProductID" priority="134" />
@@ -499,7 +502,7 @@
       <Item value="Price" priority="26" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.Guid">
-      <Item value="ToString`0" priority="647" />
+      <Item value="ToString`0" priority="674" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.Web.HttpResponse">
       <Item value="Redirect`0" priority="323" />
@@ -718,7 +721,7 @@
     </ItemStatistics>
     <ItemStatistics item="Qualified:BL.ProductProperty">
       <Item value="ProductID" priority="26" />
-      <Item value="PropertyName" priority="80" />
+      <Item value="PropertyName" priority="108" />
       <Item value="PropertyValue" priority="26" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.Data.Linq.EntitySet`1">
@@ -781,6 +784,9 @@
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.Single">
       <Item value="ToString`0" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@BL.ProductPropertyConstants">
+      <Item value="ProductDescription" priority="26" />
     </ItemStatistics>
   </CompletionStatisticsManager>
 </Configuration>

@@ -32,7 +32,7 @@ namespace BL.Properties {
         //  "")]
         //[global::System.Configuration.DefaultSettingValueAttribute("Data Source=ITCOMP\\TEST;Initial Catalog=MarvelDB;Persist Security Info=True;User " +
         //    "ID=sa;Password=yefim")]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(local)\\sqlexpress;Initial Catalog=MarvelDB;Integrated Security=True" +
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(local);Initial Catalog=MarvelDB;Integrated Security=True" +
           "")]
         public string MarvelDBConnectionString {
             get {
