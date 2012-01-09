@@ -14,7 +14,7 @@
         <span class="Header_CompanyName"><%= iStore.Site.ProjectName.ToUpper() %> Ltd.</span>
         <span class="Header_Links">
             <a href="<%= iStore.Site.SiteUrl %>">HOME</a>
-            <a target="_blank" href="<%= iStore.Site.SiteAdminUrl %>">ADMIN LOGIN</a>
+            <a target="_blank" href="<%= iStore.Site.SiteAdminUrl %>Products/">ADMIN LOGIN</a>
         </span>
         <iS:AuthorizationControl runat="server" ID="authorization" />
    </div>

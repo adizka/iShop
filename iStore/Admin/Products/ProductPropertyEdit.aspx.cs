@@ -43,7 +43,8 @@ namespace iStore.Admin.Products
                 if (_ProductsProperies == null)
                     _ProductsProperies = Product.ProductProperties.Where(p =>
                         p.PropertyName != ProductPropertyConstants.ProductPhotoPreview
-                        && p.PropertyName != ProductPropertyConstants.ProductPhotoOriginal).OrderBy(p => p.Sort).ToList();
+                        && p.PropertyName != ProductPropertyConstants.ProductPhotoOriginal
+                            && p.PropertyName != ProductPropertyConstants.ProductDescription).OrderBy(p => p.Sort).ToList();
 
                 return _ProductsProperies;
             }

@@ -62,7 +62,7 @@
         %>
         <p class="repparaq <%= cssClass %>">
             <span class="prod_span01">
-                <a href="<%= iStore.Site.SiteAdminUrl %>"><%= item.Product.Name %></a> 
+                <a target="_blank" href="<%= iStore.Site.SiteUrl %>Products/?pid=<%= item.ProductID.ToString() %>"><%= item.Product.Name %></a> 
             </span>
             <span class="prod_span02"><%= item.Product.Count.ToString() %></span>
             <span class="prod_span02">
