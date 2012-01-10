@@ -22,6 +22,21 @@ namespace iStore.Modules.Controls
                 hf.Value = "1";
         }
 
+        object _GlobalIDObj;
+        Guid _GlobalID;
+        protected Guid GlobalID
+        {
+            get
+            {
+                if (_GlobalIDObj == null)
+                {
+                    _GlobalIDObj = new object();
+                    _GlobalID = Guid.NewGuid();
+                }
+                return _GlobalID;
+            }
+        }
+
         public Guid ProductId
         {
             get

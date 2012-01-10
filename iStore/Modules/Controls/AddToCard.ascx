@@ -1,10 +1,11 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="AddToCard.ascx.cs" Inherits="iStore.Modules.Controls.AddToCard" %>
-<div id="<%= this.ClientID%>">
+
+<div id="<%= GlobalID%>">
     <div class="cart_item"  >
     <div runat="server" id="CounterContainer"  visible="<%#IsCounterVisible %>">
-        <span class="minus_triger" onclick="Decr(this,'<%=hf.ClientID %>')"></span>
-        <span class="ProdCount">1</span>
-        <span class="plus_triger" onclick="Incr(this,'<%=hf.ClientID %>')"></span>
+        <span class="minus_triger" id="dec" onclick="Decr('<%=GlobalID %>','<%=hf.ClientID %>')"></span>
+        <span class="ProdCount" id="cCont">1</span>
+        <span class="plus_triger" id="inc" onclick="Incr('<%=GlobalID %>','<%=hf.ClientID %>')"></span>
         </div>
         &nbsp;&nbsp;
         <asp:Button ID="addBtn" CssClass="add_to_cart" Text="" OnClick="AddToCart" runat="server" />

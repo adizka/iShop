@@ -40,13 +40,16 @@ namespace BL.Modules.Products
             return add;
         }
 
+        object obj = new object();
         public bool UpdateCategoriesToProduct(List<Guid> categoriesIds, Guid productId)
         {
-            
-            BL.Modules.Products.Products pbl = new BL.Modules.Products.Products();
+            lock (obj)
+            {
+                BL.Modules.Products.Products pbl = new BL.Modules.Products.Products();
 
-            pbl.DeleteProductCategories(productId);
-            return AddCategoriesToProduct(categoriesIds, productId); 
+                pbl.DeleteProductCategories(productId);
+                return AddCategoriesToProduct(categoriesIds, productId);
+            }
         }
 
         public  IQueryable<BL.ProductsRefCategory> GetAllProductsRefCategories()

@@ -86,5 +86,5 @@
         </div>
         <div class="bot_repeater"></div>
 
-    <iS:Pager runat="server" ID="pager"  AddInsParams="Products"></iS:Pager>
+    <iS:Pager runat="server" ID="pager"></iS:Pager>
 </asp:Content>

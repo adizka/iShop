@@ -22,7 +22,10 @@ namespace iStore.Admin.Products
             if (!IsPostBack)
             {
                 var relatedProds = Product.ProductsRefCategories.SelectMany(c => c.Category.ProductsRefCategories.Select(r => r.Product)).
-                Distinct().Where(p => p.ProductID != Product.ProductID).OrderBy(p => p.Name);
+                Distinct().Where(p => p.ProductID != Product.ProductID).OrderBy(p => p.Name).ToList();
+
+                if (relatedProds.Count == 0)
+                    FromCat.Visible = false;
 
                 cpddl.DataSource = relatedProds;
                 cpddl.DataTextField = "Name";
@@ -30,6 +33,8 @@ namespace iStore.Admin.Products
                 cpddl.DataBind();
                 var allProds = pbl.GetAllProducts().ToList();
                 apddl.DataSource = allProds.Where(p => p.ProductID != Product.ProductID).OrderBy(p => p.Name);
+                if (allProds.Count == 1)
+                    FromAllCat.Visible = false;
                 apddl.DataTextField = "Name";
                 apddl.DataValueField = "ProductID";
                 apddl.DataBind();
@@ -68,9 +73,11 @@ namespace iStore.Admin.Products
 
         protected void Copy(object obj, EventArgs args)
         {
-            Guid prodID = (obj.Equals(AddPropertiesbtn1)) ?
-                new Guid(cpddl.SelectedValue)
-                : new Guid(apddl.SelectedValue);
+            Guid prodID;
+            if (!Guid.TryParse(obj.Equals(AddPropertiesbtn1)
+                ? cpddl.SelectedValue
+                : apddl.SelectedValue, out prodID))
+                return;
 
 
             pbl.CopyProperties(prodID, Product.ProductID);
@@ -78,8 +85,8 @@ namespace iStore.Admin.Products
         }
         private class Supporting
         {
-        public    int sort;
-        public    string name;
+            public int sort;
+            public string name;
             public string val;
         }
         protected void Save(object obj, EventArgs args)
@@ -91,7 +98,7 @@ namespace iStore.Admin.Products
             {
                 strProps = hf.Value.Split(new string[] { "!~!!~!!~!!~!" }, StringSplitOptions.RemoveEmptyEntries)
                     .Select(el => el.Trim().Split(new string[] { "!~!!~!" }, StringSplitOptions.RemoveEmptyEntries))
-                     .Select(e => new Supporting (){sort = int.Parse(e[2]), name = e[0], val = e[1] }).OrderBy(s => s.sort).ToList();
+                     .Select(e => new Supporting() { sort = int.Parse(e[2]), name = e[0], val = e[1] }).OrderBy(s => s.sort).ToList();
             }
             catch
             {
@@ -117,7 +124,7 @@ namespace iStore.Admin.Products
                         PropertyName = Server.HtmlEncode(item.name),
                         PropertyValue = Server.HtmlEncode(item.val),
                         IsImportant = true,
-                        Sort = item.sort 
+                        Sort = item.sort
                     }
                 );
             }

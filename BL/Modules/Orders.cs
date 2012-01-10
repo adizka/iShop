@@ -45,13 +45,13 @@ namespace BL.Modules.Orders
                     var ord = order.OrdersRefProducts.FirstOrDefault(r => r.ProductID == item.ID);
                     if (ord != null)
                     {
-                        ord.Count += item.Count;
+                        ord.Count = Math.Min(ord.Count + item.Count, ord.Product.Count);
                     }
                     else
                     {
                         ord = new OrdersRefProduct()
                         {
-                            Count = item.Count,
+                            Count = Math.Min(item.Count, ord.Product.Count),
                             ProductID = item.ID,
                             ID = Guid.NewGuid(),
                             CreateDate = DateTime.Now,

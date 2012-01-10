@@ -1,26 +1,26 @@
-﻿function Incr(el, cont) {
+﻿function Incr(parentEl, cont) {
 
-    var count = $(".ProdCount" ,$(el).parent()).html() / 1;
+    var count = $(".ProdCount", $("#" + parentEl)).html() / 1;
 
     if (count == 1)
-        $($(el).parent().children()[0]).css("cursor", "pointer")
+        $("#dec", $("#" + parentEl)).css("cursor", "pointer")
 
-    $(".ProdCount", $(el).parent()).html(count + 1);
-    $("#" + cont, $(el).parent().parent()).val(count + 1);
+    $("#cCont", $("#" + parentEl)).html(count + 1);
+    $("#" + cont, $("#" + parentEl)).val(count + 1);
 }
-function Decr(el, cont) {
+function Decr(parentEl, cont) {
 
-    var count =$(".ProdCount" ,$(el).parent()).html() / 1;
+    var count = $("#cCont", $("#" + parentEl)).html() / 1;
 
     if (count == 1) {
-        $(el).css("cursor", "");
+        $("#dec", $("#" + parentEl)).css("cursor", "");
         return;
     }
     else {
-        $(el).css("cursor", "pointer");
+        $("#dec", $("#" + parentEl)).css("cursor", "pointer");
     }
 
-    $(".ProdCount" ,$(el).parent()).html(count - 1);
-    
-    $("#" + cont, $(el).parent().parent()).val(count - 1);
+    $("#cCont", $("#" + parentEl)).html(count - 1);
+
+    $("#" + cont, $("#" + parentEl)).val(count - 1);
 }

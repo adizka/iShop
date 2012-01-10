@@ -14,6 +14,9 @@ namespace BL.Modules.Products
             using (ShopDataContext db = new ShopDataContext())
             {
                 product = new BL.Product();
+                if (db.Products.Any(p => p.Name == name))
+                    return false;
+                
                 BL.Modules.Products.ProductProperies ppbl = new ProductProperies();
 
 
@@ -43,7 +46,9 @@ namespace BL.Modules.Products
 
             using (ShopDataContext db = new ShopDataContext())
             {
-                BL.Product product = GetProductById(productId);
+                BL.Product product = db.Products.FirstOrDefault(p => p.ProductID == productId);
+                if (product.Name != name && db.Products.Count(p => p.Name == name) == 1)
+                    return false;
                 if (product != null)
                 {
                     using (var ts = new TransactionScope())
@@ -75,6 +80,9 @@ namespace BL.Modules.Products
                 BL.Product product = db.Products.FirstOrDefault(p => p.ProductID == productId);
                 if (product != null)
                 {
+                    if (product.ProductsRefCategories.Any(c => c.CategoryID == category.CategoryID))
+                        return false;
+
                     BL.ProductsRefCategory prc = new ProductsRefCategory();
                     prc.ID = Guid.NewGuid();
                     prc.CategoryID = categoryId;
@@ -95,6 +103,15 @@ namespace BL.Modules.Products
 
             BL.ShopDataContext ctx = new ShopDataContext();
             var refs = ctx.ProductsRefCategories.Where(r => r.ProductID == productID);
+
+            foreach (var item in refs)
+            {
+                var catRef = item.Category.ProductsRefCategories.Where(s => s.Sort > item.Sort);
+                foreach (var refs1 in catRef)
+                {
+                    refs1.Sort--;
+                }
+            }
 
             ctx.ProductsRefCategories.DeleteAllOnSubmit(refs);
             ctx.SubmitChanges();
@@ -220,6 +237,7 @@ namespace BL.Modules.Products
                 db.ProductsRefProperies.DeleteAllOnSubmit(prod.ProductsRefProperies);
                 db.ProductProperties.DeleteAllOnSubmit(prod.ProductProperties);
                 db.Stocks.DeleteAllOnSubmit(prod.Stocks);
+                db.Products.DeleteOnSubmit(prod);
                 db.SubmitChanges();
             }
         }

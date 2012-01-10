@@ -16,11 +16,12 @@ namespace iStore.Admin.Products
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            pager.EntityCount = ProductsCount;
+
             if (!IsPostBack)
             {
                 if (AllChildCategories != null)
                 {
-                    pager.EntityCount = ProductsCount;
                     ddlChildCategories.DataSource = AllChildCategories;
                     ddlChildCategories.DataValueField = "CategoryID";
                     ddlChildCategories.DataTextField = "Name";
@@ -124,6 +125,8 @@ namespace iStore.Admin.Products
             Guid prodID;
             if(Guid.TryParse(hf.Value, out prodID))
                 pbl.DeleteProduct(prodID);
+            _prodCountInd = null;
+            _PageProducts = null;
         }
     }
 }

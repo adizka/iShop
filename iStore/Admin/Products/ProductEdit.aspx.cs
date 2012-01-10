@@ -31,6 +31,8 @@ namespace iStore.Admin.Products
                     txtPrice.Text = product.Price.ToString();
                     txtCount.Text = product.Count.ToString();
                     txtUnit.Text = product.Unit;
+                    shippingTxt.Text = product.Shipping.ToString();
+                    taxTxt.Text = product.Tax.ToString();
                 }
                 divError.InnerHtml = string.Empty;
                 divError.Visible = false;
@@ -58,7 +60,7 @@ namespace iStore.Admin.Products
             decimal price = decimal.Parse(sprice);
 
 
-            var categoriesIDs = hf.Value.Split(new string[] { "!~!" }, StringSplitOptions.RemoveEmptyEntries).Select(id => new Guid(id)).ToList();
+            var categoriesIDs = hf.Value.Split(new string[] { "!~!" }, StringSplitOptions.RemoveEmptyEntries).Select(id => new Guid(id)).Distinct().ToList();
 
             if (categoriesIDs.Count == 0)
             {
@@ -76,7 +78,7 @@ namespace iStore.Admin.Products
                 }
                 else
                 {
-                    divError.InnerHtml = "Продукт не был добавлен.";
+                    divError.InnerHtml = "Продукт c таким именем уже существует.";
                     divError.Visible = true;
                     return;
                 }
@@ -90,7 +92,7 @@ namespace iStore.Admin.Products
                 }
                 else
                 {
-                    divError.InnerHtml = "Продукт не был обновлён.";
+                    divError.InnerHtml = "Продукт c таким именем уже существует.";
                     divError.Visible = true;
                     return;
                 }

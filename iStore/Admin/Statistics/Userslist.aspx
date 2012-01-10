@@ -10,5 +10,5 @@
     %>
     <p><a href="<%=iStore.Site.SiteAdminUrl%>Statistics/UserOrdersHistory.aspx?uid=<%=item.UserID.ToString() %>"><%=item.Login %></a> <%=item.Email %>  <%=item.IsActive?"active":"not active" %></p>
     <%  } %>
-    <iS:Pager runat="server" ID="pager"  AddInsParams="Products"></iS:Pager>
+    <iS:Pager runat="server" ID="pager"></iS:Pager>
 </asp:Content>

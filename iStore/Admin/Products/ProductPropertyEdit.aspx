@@ -50,7 +50,7 @@
 
    
     <div class="copy_contacter" id="CopyingPropertyContainer" >
-        <div>
+        <div runat="server" id="FromCat">
         <p>
             Копировать свойства выбранного продукта который входит в категории текущего продукта
         </p>
@@ -63,7 +63,7 @@
             </span>
         </p>
         </div>
-        <div>
+        <div runat="server" id="FromAllCat">
         <p>
             Копировать свойства выбранного продукта
         </p>

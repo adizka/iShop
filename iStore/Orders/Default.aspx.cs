@@ -24,6 +24,11 @@ namespace iStore.Orders
 
             if (UserOrder == null)
                 Response.Redirect("~/Orders/OrdersList.aspx");
+            if (!IsPostBack)
+            {
+                obl.UpdateCounts(UserOrder.OrderID);
+                _UserOrder = null;
+            }
         }
 
         BL.Order _UserOrder;
