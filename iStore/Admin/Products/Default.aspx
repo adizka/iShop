@@ -82,5 +82,5 @@
         </div>
         <div class="bot_repeater"></div>
 
-    <iS:Pager runat="server" ID="pager"></iS:Pager>
+    <iS:Pager runat="server" ID="pager" EntitiesPerPage="10"></iS:Pager>
 </asp:Content>

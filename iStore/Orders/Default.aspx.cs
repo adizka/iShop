@@ -56,7 +56,6 @@ namespace iStore.Orders
         {
             if (!UserOrder.IsActive)
                 return;
-            List<Guid> toDelete;
             List<BL.ProductCounter> newCounts;
             try
             {
@@ -66,7 +65,6 @@ namespace iStore.Orders
                 var es = data[1].Split(new string[] { "~~" }, StringSplitOptions.RemoveEmptyEntries)
                 .Select(s => s.Split(new char[] { '~' }, StringSplitOptions.RemoveEmptyEntries)).First();
 
-                toDelete = data[0].Split(new char[] { '~', ' ' }, StringSplitOptions.RemoveEmptyEntries).Select(i => new Guid(i)).ToList();
                 newCounts = data[1].Split(new string[] { "~~" }, StringSplitOptions.RemoveEmptyEntries)
                     .Select(s => s.Split(new char[] { '~' }, StringSplitOptions.RemoveEmptyEntries)).
                     Where(r => r.Count() > 0).Select(pc => new BL.ProductCounter() { Count = int.Parse(pc[1]), ID = new Guid(pc[0]) }).ToList();
@@ -76,8 +74,29 @@ namespace iStore.Orders
                 return;
             }
 
-            obl.Remove(toDelete, auth.CurrentUser.UserID, UserOrder.OrderID);
             obl.UpdateCounts(newCounts, auth.CurrentUser.UserID, UserOrder.OrderID);
+        }
+        protected void DeleteSelected(object obj, EventArgs args)
+        {
+            if (!UserOrder.IsActive)
+                return;
+            List<Guid> toDelete;
+            try
+            {
+
+                var data = hf.Value.Split(new string[] { "~~~" }, StringSplitOptions.RemoveEmptyEntries);
+
+                var es = data[1].Split(new string[] { "~~" }, StringSplitOptions.RemoveEmptyEntries)
+                .Select(s => s.Split(new char[] { '~' }, StringSplitOptions.RemoveEmptyEntries)).First();
+
+                toDelete = data[0].Split(new char[] { '~', ' ' }, StringSplitOptions.RemoveEmptyEntries).Select(i => new Guid(i)).ToList();
+            }
+            catch (Exception e)
+            {
+                return;
+            }
+
+            obl.Remove(toDelete, auth.CurrentUser.UserID, UserOrder.OrderID);
         }
         protected void Clear(object obj, EventArgs args)
         {

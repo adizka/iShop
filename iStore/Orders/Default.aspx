@@ -20,7 +20,7 @@
         });
 
         selectedEl += "~~~";
-        $("input:checkbox:not(:checked)", "#ProdTable").
+        $("input:checkbox", "#ProdTable").
         each(function () {
             if ($(".ProdCount", $(this).parent().parent()).html() / 1 < 1 || isNaN($(".ProdCount", $(this).parent().parent()).html()))
                 $(".ProdCount", $(this).parent().parent()).html("1");
@@ -160,6 +160,11 @@
             <span class="universal_btn">
                 <span>
                     <asp:LinkButton OnClick="Clear" ID="btnClear" runat="server" Text="Clear" />
+                </span>
+            </span>
+            <span class="universal_btn">
+                <span>
+                    <asp:LinkButton OnClick="DeleteSelected" ID="delSelected" runat="server" Text="Delete Selected" />
                 </span>
             </span>
         </p>
