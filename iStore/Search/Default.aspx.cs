@@ -22,7 +22,6 @@ namespace iStore.Search
         protected void Page_Load(object sender, EventArgs e)
         {
             pager.EntityCount = AllProducts.Distinct(comparer).Count();
-            HttpUtility.UrlDecode();
         }
 
         List<BL.ProductData> _allProducts;
