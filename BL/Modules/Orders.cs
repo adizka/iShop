@@ -110,7 +110,7 @@ namespace BL.Modules.Orders
             {
                 if (db.Orders.Any(o => o.TransactionID == paymentInfo.txn_id))
                     return true;
-                
+
                 var order = db.Orders.FirstOrDefault(o => o.OrderID == paymentInfo.OrderID && !o.IsPaid);
 
                 if (order == null)

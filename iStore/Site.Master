@@ -10,15 +10,21 @@
     <title></title>
     <link href="Styles/Style.css" rel="stylesheet" type="text/css" />
     <link href="Styles/Controls.css" rel="Stylesheet" type="text/css" />
-    <link rel="Stylesheet" type="text/css" href="Scripts/jquery.fancybox-2.0/jquery.fancybox.css" media="screen" />
     <script type="text/javascript" src="Scripts/jquery.min.js"></script>
     <script type="text/javascript" src="<%= iStore.Site.SiteUrl %>Scripts/Menu.js"></script>
     <script type="text/javascript" src="<%= iStore.Site.SiteUrl %>Scripts/MostPopularProducts.js"></script>
+    <script type="text/javascript" src="<%= iStore.Site.SiteUrl %>Scripts/flowplayerOverlay/jquery.tools.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $("a[rel]").overlay({ mask: '#777', effect: 'apple' });
+        });
+    </script>
     <asp:ContentPlaceHolder ID="HeadContent" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
     <form id="MainPageForm" runat="server">
+    <div class="container">
         <div class="Header_All">
             <div class="MarginBoth">
                 <iS:Header runat="server" ID="header" />
@@ -31,7 +37,7 @@
                 <asp:ContentPlaceHolder ID="MainContent" runat="server" />
             </div>
         </div>
-
+    </div>
         <div class="Footer">
             <div class="MarginBoth">
                 <iS:Footer runat="server" ID="footer" />

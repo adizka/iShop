@@ -1,6 +1,7 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="PropertyEdit.aspx.cs" Inherits="iStore.Admin.ShopProperty.PropertyEdit" MasterPageFile="~/Admin/Admin.Master" %>
 
 
+
 <asp:Content runat="server" ContentPlaceHolderID="head"></asp:Content>
 <asp:Content runat="server" ContentPlaceHolderID="main">
 <div>    

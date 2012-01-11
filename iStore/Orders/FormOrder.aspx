@@ -5,6 +5,9 @@
 <asp:Content ID="Content2" runat="server" ContentPlaceHolderID="MainContent">
 <script type="text/javascript" src="../../Scripts/jquery.fancybox-2.0/jquery.easing-1.3.pack.js"></script>
 
+
+
+
 <script type="text/javascript">
     
     var tax = <%= ConfigurationManager.AppSettings["Tax"]%>;
@@ -49,63 +52,53 @@
     <div id="errMsg" runat="server" class="">
     </div>
     <form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
-    <div style="border: 1px solid black;">
+    <h1>Orders</h1>
+    <div class="Form">
         <p>
-            <b>First Name</b><br />
-            <asp:TextBox runat="server" ID="FirstNameTxt">
-            </asp:TextBox>
+            <label class="more_width">First Name</label>
+            <asp:TextBox runat="server" ID="FirstNameTxt"></asp:TextBox>
         </p>
         <p>
-            <b>Last Name</b><br />
-            <asp:TextBox runat="server" ID="LastNameTxt">
-            </asp:TextBox>
+            <label class="more_width">Last Name</label>
+            <asp:TextBox runat="server" ID="LastNameTxt"></asp:TextBox>
         </p>
         <p>
-            <b>Address 1</b><br />
-            <asp:TextBox runat="server" TextMode="MultiLine" ID="address1Txt">
-            </asp:TextBox>
+            <label class="more_width">Address 1</label>
+            <asp:TextBox runat="server" TextMode="MultiLine" ID="address1Txt"></asp:TextBox>
         </p>
         <p>
-            <b>Address 2 (optional)</b><br />
-            <asp:TextBox runat="server" TextMode="MultiLine" ID="address2Txt">
-            </asp:TextBox>
+            <label class="more_width">Address 2 (optional)</label>
+            <asp:TextBox runat="server" TextMode="MultiLine" ID="address2Txt"></asp:TextBox>
         </p>
         <p>
-            <b>City</b><br />
-            <asp:TextBox runat="server" ID="cityTxt">
-            </asp:TextBox>
+            <label class="more_width">City</label>
+            <asp:TextBox runat="server" ID="cityTxt"></asp:TextBox>
         </p>
         <p>
-            <b>State/Province/Region</b><br />
-            <asp:TextBox runat="server" ID="provinceTxt">
-            </asp:TextBox>
+            <label class="more_width">State/Province/Region</label>
+            <asp:TextBox runat="server" ID="provinceTxt"></asp:TextBox>
         </p>
         <p>
-            <b>Zip code:</b><br />
-            <asp:TextBox runat="server" ID="zipTxt">
-            </asp:TextBox>
+            <label class="more_width">Zip code:</label>
+            <asp:TextBox runat="server" ID="zipTxt"></asp:TextBox>
         </p>
         <p>
-            <b>Country</b><br />
-            <asp:DropDownList runat="server" ID="countryDdl">
-            </asp:DropDownList>
+            <label class="more_width">Country</label>
+            <asp:DropDownList runat="server" ID="countryDdl"></asp:DropDownList>
         </p>
         <p>
-            <b>Phone number</b><br />
-            <asp:TextBox runat="server" ID="phoneTxt">
-            </asp:TextBox>
+            <label class="more_width">Phone number</label>
+            <asp:TextBox runat="server" ID="phoneTxt"></asp:TextBox>
         </p>
         <p>
-            <b>e-mail</b><br />
-            <asp:TextBox runat="server" ID="emailTxt">
-            </asp:TextBox>
+            <label class="more_width">e-mail</label>
+            <asp:TextBox runat="server" ID="emailTxt"></asp:TextBox>
         </p>
     </div>
     <%if (UserOrder.OrdersRefProducts.Count != 0)
       { %>
     <div class="options_div">
-    <asp:ImageButton CommandName="Make payments with PayPal - it's fast, free and secure!" CssClass="right_pay" ImageUrl="http://www.paypal.com/en_US/i/btn/x-click-but01.gif" runat="server" OnClick="Pay" Text="Pay" />
-        
+        <asp:ImageButton CommandName="Make payments with PayPal - it's fast, free and secure!" CssClass="right_pay" ImageUrl="http://www.paypal.com/en_US/i/btn/x-click-but01.gif" runat="server" OnClick="Pay" Text="Pay" /> 
     </div>
     <%} %>
 <h1>Your Shopping Cart</h1>

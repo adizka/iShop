@@ -3,31 +3,31 @@
 <asp:Content ID="Content1" runat="server" ContentPlaceHolderID="HeadContent">
 </asp:Content>
 <asp:Content ID="Content2" runat="server" ContentPlaceHolderID="MainContent">
-<table id="ProdTable">
+<h1>Orders List</h1>
+<table class="cart_table" width="100%" id="ProdTable" cellpadding="0" cellspacing="0">
     <tr>
-        <td>
-            Заказ от числа:
-        </td>
-        <td>
-            Ceмма
-        </td>
-        <td>
-            Статус
-        </td>
-        <td>
-        Доставлено:
-        </td>
-        <td>
-            Способ оплаты:
-        </td>
+        <th>
+            Order date
+        </th>
+        <th>
+            Sum
+        </th>
+        <th>
+            Status
+        </th>
+        <th>
+            Delivered
+        </th>
+        <th>
+            Pay type
+        </th>
     </tr>
 
 <%foreach (var item in UserOrders)
   {
       %>
-
-      <tr>
-      <td>
+    <tr>
+        <td>
            <a href="<%=iStore.Site.SiteUrl + "Orders/?oid=" + item.OrderID.ToString() %>"><%= (item.IsActive)?"Current cart": item.CreateDate.ToShortDateString() %></a>
         </td>
         <td>
@@ -42,7 +42,7 @@
         <td>
             <%= (item.OrderStatusID == (int)BL.OrderStatus.Paid)? item.PaymentType.PaymentType1:string.Empty %>
         </td>
-      </tr>
+    </tr>
 
       <%
   } %>

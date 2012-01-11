@@ -9,6 +9,11 @@
     <title></title>
     <link href="Styles/Admin.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="<%= iStore.Site.SiteUrl %>Scripts/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("span.universal_button:not(:has(a))").hide();
+        });
+    </script>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>

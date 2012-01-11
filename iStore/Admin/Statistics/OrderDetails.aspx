@@ -9,7 +9,7 @@
 
         $(".TotalSum", "#ProdTable").each(function () {
             var parent = $(this).parent();
-            $(".Price", parent).html(($(".Price", parent).html().replace(",", ".")/1).toFixed(2));
+            $(".Price", parent).html(($(".Price", parent).html().replace(",", ".") / 1).toFixed(2));
             var sum = $(".Price", parent).html().replace(",", ".") * $(".ProdCount", parent).html();
             $(this).html(sum.toFixed(2));
 
@@ -66,6 +66,6 @@
     </tr>
     </table>
         <script type="text/javascript" >
-        Update();
+            Update();
     </script> 
 </asp:Content>

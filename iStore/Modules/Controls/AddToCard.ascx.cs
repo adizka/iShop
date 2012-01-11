@@ -11,7 +11,7 @@ namespace iStore.Modules.Controls
 {
     public partial class AddToCard : System.Web.UI.UserControl
     {
-        
+
         BL.Modules.Categories.Categories cbl = new BL.Modules.Categories.Categories();
         BL.Modules.Orders.Orders obl = new BL.Modules.Orders.Orders();
         iStore.Modules.Logic.Auth.Users auth = new iStore.Modules.Logic.Auth.Users();

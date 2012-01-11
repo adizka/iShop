@@ -5,6 +5,7 @@
 </asp:Content>
 <asp:Content ID="Content2" runat="server" ContentPlaceHolderID="main">
 <div>    
+
     <p class="BCCategories">
         <a href="<%= iStore.Site.SiteAdminUrl %>Products/?cid=<%= Request.QueryString["cid"] %>">Вернуться к списку товаров</a>
     </p>

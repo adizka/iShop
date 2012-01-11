@@ -25,7 +25,7 @@ namespace iStore.Admin.Statistics
             {
                 if (_PageUsers == null)
                     _PageUsers = ubl.GetAllUsers().OrderBy(u => u.Login).Skip(pager.PageIndex * pager.EntitiesPerPage).Take(pager.EntitiesPerPage).OrderBy(u => u.Login).ToList();
-             
+
                 return _PageUsers;
             }
         }

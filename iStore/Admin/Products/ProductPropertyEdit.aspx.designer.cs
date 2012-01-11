@@ -40,15 +40,6 @@ namespace iStore.Admin.Products {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl divError;
         
         /// <summary>
-        /// FromCat control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl FromCat;
-        
-        /// <summary>
         /// cpddl control.
         /// </summary>
         /// <remarks>
@@ -65,15 +56,6 @@ namespace iStore.Admin.Products {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton AddPropertiesbtn1;
-        
-        /// <summary>
-        /// FromAllCat control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl FromAllCat;
         
         /// <summary>
         /// apddl control.

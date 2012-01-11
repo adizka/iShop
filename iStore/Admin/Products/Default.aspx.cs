@@ -10,9 +10,9 @@ namespace iStore.Admin.Products
 {
     public partial class Default : System.Web.UI.Page
     {
-        public  BL.Modules.Categories.Categories cbl = new BL.Modules.Categories.Categories();
-        public  BL.Modules.Products.Products pbl = new BL.Modules.Products.Products();
-        public  BL.Modules.Products.ProductRefCategories prcbl = new BL.Modules.Products.ProductRefCategories();
+        public BL.Modules.Categories.Categories cbl = new BL.Modules.Categories.Categories();
+        public BL.Modules.Products.Products pbl = new BL.Modules.Products.Products();
+        public BL.Modules.Products.ProductRefCategories prcbl = new BL.Modules.Products.ProductRefCategories();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -40,7 +40,7 @@ namespace iStore.Admin.Products
             }
         }
 
-        protected  void RedirectToSelectedCategory(object sender, EventArgs e)
+        protected void RedirectToSelectedCategory(object sender, EventArgs e)
         {
             string hf = ddlChildCategories.SelectedItem.Value;
             Response.Redirect(iStore.Site.SiteAdminUrl + "Products/?cid=" + hf);
@@ -67,8 +67,8 @@ namespace iStore.Admin.Products
 
         public Guid? CurrentCategoryId
         {
-            get 
-            { 
+            get
+            {
                 string scid = Request.QueryString["cid"];
                 Guid cid;
                 try
@@ -123,7 +123,7 @@ namespace iStore.Admin.Products
         protected void DeleteProduct(object obj, EventArgs args)
         {
             Guid prodID;
-            if(Guid.TryParse(hf.Value, out prodID))
+            if (Guid.TryParse(hf.Value, out prodID))
                 pbl.DeleteProduct(prodID);
             _prodCountInd = null;
             _PageProducts = null;

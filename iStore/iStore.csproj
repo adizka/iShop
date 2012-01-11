@@ -43,18 +43,12 @@
     <Reference Include="AjaxControlToolkit.resources">
       <HintPath>C:\Users\abdullaev.WCH\Desktop\AjaxControlToolkit.resources.dll</HintPath>
     </Reference>
-    <Reference Include="iStore, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\iStore.dll</HintPath>
-    </Reference>
-    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\log4net.dll</HintPath>
+    <Reference Include="log4net">
+      <HintPath>C:\Users\vadimz\Desktop\log4net.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="paypal_base, Version=4.4.53.0, Culture=neutral, PublicKeyToken=b37401294aaf5617">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\paypal_base.dll</HintPath>
+    <Reference Include="paypal_base">
+      <HintPath>C:\Users\vadimz\Desktop\paypal_base.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -101,6 +95,7 @@
     <Content Include="Admin\ShopProperties\Default.aspx" />
     <Content Include="Admin\ShopProperties\PropertyEdit.aspx" />
     <Content Include="Admin\Statistics\OrderDetails.aspx" />
+    <Content Include="Admin\Statistics\UserOrdersHistory.aspx" />
     <Content Include="Admin\Statistics\Userslist.aspx" />
     <Content Include="Admin\Styles\Admin.css" />
     <Content Include="Admin\Styles\images\ui-bg_diagonals-thick_18_b81900_40x40.png" />
@@ -125,12 +120,37 @@
     <Content Include="bin\iStore.pdb" />
     <Content Include="Categories\Default.aspx" />
     <Content Include="Contacts\Default.aspx" />
+    <Content Include="Content\Products\Original\01f6c59a-d4da-4fba-b6da-99d586ec83be91x+sXsqBvL._AA1500_.jpg" />
     <Content Include="Content\Products\Original\11dc51d1-0466-4640-98b7-735514d588fd777.jpg" />
+    <Content Include="Content\Products\Original\17b75f97-d154-45e9-9fd2-abef5efda56e81OA5D+6-dL._AA1500_.jpg" />
+    <Content Include="Content\Products\Original\3ba91d3a-244e-45ad-9fc8-68224c839d57KW-slate-03-tn._V166950138_.jpg" />
+    <Content Include="Content\Products\Original\3f3cc60c-044f-4b9c-a171-317d3c29600481OA5D+6-dL._AA1500_.jpg" />
+    <Content Include="Content\Products\Original\47ae3f22-88b1-4c90-ba00-b4bf5d68217181OA5D+6-dL._AA1500_.jpg" />
+    <Content Include="Content\Products\Original\491a59b7-5754-4d9f-9574-03568bdc65b9KW-slate-02-lg._V166950133_.jpg" />
+    <Content Include="Content\Products\Original\536231bf-4ec7-48f5-9ddb-b5cc9d817a4a81bqXS6AxPL._AA1500_.jpg" />
+    <Content Include="Content\Products\Original\57637bac-7298-4174-9c26-9de7576fbdb981bqXS6AxPL._AA1500_.jpg" />
+    <Content Include="Content\Products\Original\6a017171-7590-4ffc-a4cf-ce719c370aa191x+sXsqBvL._AA1500_.jpg" />
+    <Content Include="Content\Products\Original\734ad72c-90fc-4b67-badc-3cc11f15c0c191x+sXsqBvL._AA1500_.jpg" />
+    <Content Include="Content\Products\Original\80372df9-e327-4b54-8e65-c4c520bd3546KW-slate-03-lg._V166950133_.jpg" />
+    <Content Include="Content\Products\Original\80beb431-41f8-4ad3-903a-0187c8748d5d81bqXS6AxPL._AA1500_.jpg" />
+    <Content Include="Content\Products\Original\9c270f1a-d374-4abd-85fe-e84dba4026d591x+sXsqBvL._AA1500_.jpg" />
+    <Content Include="Content\Products\Original\a5388b55-8032-4baf-af70-3c43577203ec41tsgV8GiWL._SL135_.jpg" />
     <Content Include="Content\Products\Original\a575d9f6-77f1-4aa9-95f7-a06309d3090a392469.jpg" />
+    <Content Include="Content\Products\Original\a82d1557-ff64-4e92-956b-04233dd8bdc681OA5D+6-dL._AA1500_.jpg" />
+    <Content Include="Content\Products\Original\b5c2cdb0-1649-4b7f-911d-e593f6da65ac81bqXS6AxPL._AA1500_.jpg" />
+    <Content Include="Content\Products\Original\b9c89b47-2e30-4531-a8ae-081dbd0a133281bqXS6AxPL._AA1500_.jpg" />
     <Content Include="Content\Products\Original\DefaultOriginal.png" />
+    <Content Include="Content\Products\Original\e8cd19e5-8a77-424d-ace0-9cff92285ae9654249_prosto-rasslabsya.jpg" />
+    <Content Include="Content\Products\Original\ec087640-e9f7-4bf4-81a0-eb85872e36af91x+sXsqBvL._AA1500_.jpg" />
+    <Content Include="Content\Products\Original\fa0751c2-fa2e-44f7-98a2-917783cb044bKW-slate-04-lg._V166788375_.jpg" />
+    <Content Include="Content\Products\Original\nophoto.png" />
+    <Content Include="Content\Products\Preview\5a83d8a9-36fb-4452-b4ec-498cd7b35a59KW-slate-02-tn._V166950138_.jpg" />
     <Content Include="Content\Products\Preview\b914362f-1e8a-4fca-9363-b9211ee00951777.jpg" />
+    <Content Include="Content\Products\Preview\d1a548e9-8c89-4b96-84b2-969cbf80994741tsgV8GiWL._SL135_.jpg" />
+    <Content Include="Content\Products\Preview\d1e91151-8d06-4e63-bfe9-af51604cbf26foowfqdcf.jpg" />
     <Content Include="Content\Products\Preview\dc4fd9c4-ea19-47ec-b050-f3fa1858a6fb3.2.jpg" />
     <Content Include="Content\Products\Preview\DefaultPreview.png" />
+    <Content Include="Content\Products\Preview\f53e43de-b63a-4c8a-9bc3-a2902a16165afoowfqdcf.jpg" />
     <Content Include="Delivery\Default.aspx" />
     <Content Include="Design\AutorizationControl.ascx" />
     <Content Include="Design\Footer.ascx" />
@@ -164,6 +184,11 @@
     <Content Include="Images\left_btnangleb.png" />
     <Content Include="Images\left_btn_marv.png" />
     <Content Include="Images\left_trigermarv.png" />
+    <Content Include="Images\lightbox-blank.gif" />
+    <Content Include="Images\lightbox-btn-close.gif" />
+    <Content Include="Images\lightbox-btn-next.gif" />
+    <Content Include="Images\lightbox-btn-prev.gif" />
+    <Content Include="Images\lightbox-ico-loading.gif" />
     <Content Include="Images\login_btn.png" />
     <Content Include="Images\logo.png" />
     <Content Include="Images\logo_admin.jpg" />
@@ -195,7 +220,6 @@
     <Content Include="Modules\Controls\AddToCard.ascx" />
     <Content Include="Modules\Controls\BreadCrumbs\BreadCrumbs.ascx" />
     <Content Include="Modules\Controls\Cart.ascx" />
-    <Content Include="Modules\Controls\NewProducts\NewProducts.ascx" />
     <Content Include="Modules\Controls\Pager\Pager.ascx" />
     <Content Include="Modules\Controls\Validators\ValidateErrors.ascx" />
     <Content Include="NewDeals\Default.aspx" />
@@ -654,12 +678,24 @@
     <Content Include="Scripts\FCK\fckstyles.xml" />
     <Content Include="Scripts\flowplayerOverlay\jquery.tools.min.js" />
     <Content Include="Scripts\jquery-1.6.4.js" />
+    <Content Include="Scripts\jquery.fancybox-2.0\blank.gif" />
+    <Content Include="Scripts\jquery.fancybox-2.0\fancybox_loading.gif" />
+    <Content Include="Scripts\jquery.fancybox-2.0\fancybox_sprite.png" />
+    <Content Include="Scripts\jquery.fancybox-2.0\helpers\fancybox_buttons.png" />
+    <Content Include="Scripts\jquery.fancybox-2.0\helpers\jquery.fancybox-buttons.css" />
+    <Content Include="Scripts\jquery.fancybox-2.0\helpers\jquery.fancybox-buttons.js" />
+    <Content Include="Scripts\jquery.fancybox-2.0\helpers\jquery.fancybox-thumbs.css" />
+    <Content Include="Scripts\jquery.fancybox-2.0\helpers\jquery.fancybox-thumbs.js" />
+    <Content Include="Scripts\jquery.fancybox-2.0\jquery.easing-1.3.pack.js" />
+    <Content Include="Scripts\jquery.fancybox-2.0\jquery.fancybox.css" />
+    <Content Include="Scripts\jquery.fancybox-2.0\jquery.fancybox.js" />
+    <Content Include="Scripts\jquery.fancybox-2.0\jquery.fancybox.pack.js" />
+    <Content Include="Scripts\jquery.fancybox-2.0\jquery.mousewheel-3.0.6.pack.js" />
     <Content Include="Scripts\jquery.min.js" />
     <Content Include="Scripts\Menu.js" />
     <Content Include="Scripts\MostPopularProducts.js" />
     <Content Include="Search\Default.aspx" />
     <Content Include="Search\Search.ascx" />
-    <Content Include="Admin\Statistics\UserOrdersHistory.aspx" />
     <Content Include="Styles\close.png" />
     <Content Include="Styles\Controls.css" />
     <Content Include="Styles\flowplayer.png" />
@@ -668,11 +704,9 @@
     <Content Include="Styles\Site.css" />
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
-    <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
-    <Content Include="Scripts\jquery-1.4.1.js" />
-    <Content Include="Scripts\jquery-1.4.1.min.js" />
     <Content Include="Styles\Style.css" />
     <Content Include="Styles\white.png" />
+    <Content Include="Test.aspx" />
     <Content Include="Users\ForgotPassword.aspx" />
     <Content Include="Users\Login.aspx" />
     <Content Include="Users\Profile.aspx" />
@@ -880,6 +914,13 @@
     <Compile Include="Admin\Statistics\OrderDetails.aspx.designer.cs">
       <DependentUpon>OrderDetails.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\Statistics\UserOrdersHistory.aspx.cs">
+      <DependentUpon>UserOrdersHistory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Statistics\UserOrdersHistory.aspx.designer.cs">
+      <DependentUpon>UserOrdersHistory.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\Statistics\Userslist.aspx.cs">
       <DependentUpon>Userslist.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1019,13 +1060,6 @@
       <DependentUpon>Cart.ascx</DependentUpon>
     </Compile>
     <Compile Include="Modules\Controls\Colors.cs" />
-    <Compile Include="Modules\Controls\NewProducts\NewProducts.ascx.cs">
-      <DependentUpon>NewProducts.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Modules\Controls\NewProducts\NewProducts.ascx.designer.cs">
-      <DependentUpon>NewProducts.ascx</DependentUpon>
-    </Compile>
     <Compile Include="Modules\Controls\Pager\Pager.ascx.cs">
       <DependentUpon>Pager.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1130,13 +1164,6 @@
     <Compile Include="Search\Search.ascx.designer.cs">
       <DependentUpon>Search.ascx</DependentUpon>
     </Compile>
-    <Compile Include="Admin\Statistics\UserOrdersHistory.aspx.cs">
-      <DependentUpon>UserOrdersHistory.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Admin\Statistics\UserOrdersHistory.aspx.designer.cs">
-      <DependentUpon>UserOrdersHistory.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Site.cs" />
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
@@ -1144,6 +1171,13 @@
     </Compile>
     <Compile Include="Site.Master.designer.cs">
       <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Test.aspx.cs">
+      <DependentUpon>Test.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Test.aspx.designer.cs">
+      <DependentUpon>Test.aspx</DependentUpon>
     </Compile>
     <Compile Include="Users\ForgotPassword.aspx.cs">
       <DependentUpon>ForgotPassword.aspx</DependentUpon>
@@ -1259,6 +1293,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Page.Master" />
+    <None Include="Content\Products\Original\.gitignore" />
+    <None Include="Content\Products\Preview\.gitignore" />
     <None Include="Scripts\FCK\editor\dialog\fck_spellerpages\spellerpages\server-scripts\spellchecker.cfm" />
     <None Include="Scripts\FCK\editor\dialog\fck_spellerpages\spellerpages\server-scripts\spellchecker.php" />
     <None Include="Scripts\FCK\editor\dialog\fck_spellerpages\spellerpages\server-scripts\spellchecker.pl" />

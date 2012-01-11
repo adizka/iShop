@@ -1,6 +1,7 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Menu.ascx.cs" Inherits="iStore.Admin.Design.Menu" %>
 
 
+
 <div class="admin_Menu">
      <script type="text/javascript">
          $(document).ready(function () {
@@ -101,7 +102,7 @@
 	<div class="acc_container"> 
 		<div class="block"> 
 		        <ul>
-                    <li><a href="#"><%= global::Resources.Shops.Statistics %></a></li>
+                    <li><a href="<%= iStore.Site.SiteAdminUrl %>Statistics/UsersList.aspx"><%= global::Resources.Shops.Statistics %></a></li>
                 </ul>
         </div> 
 	</div> 

@@ -30,15 +30,16 @@ namespace iStore.Categories
                 string cid = Request.QueryString["cid"];
                 Guid id;
                 if (string.IsNullOrEmpty(cid)) return null;
-                try { id = new Guid(cid); } catch { return null; }
+                try { id = new Guid(cid); }
+                catch { return null; }
                 return Cbl.GetCategoryById(id);
             }
         }
 
         public IQueryable<BL.ProductsRefCategory> GetProductsRefCurrentCategory
         {
-            get 
-            { 
+            get
+            {
                 BL.Category category = CurrentCategory;
                 if (category == null) return null;
                 return Prcbl.GetProductRefCategoriesByCategoryId(category.CategoryID);
@@ -57,7 +58,7 @@ namespace iStore.Categories
 
         public IList<BL.ProductsRefCategory> GetProductsRefCurrentCategoryList
         {
-            get 
+            get
             {
                 return GetProductsRefCurrentCategory.ToList();
             }
@@ -65,8 +66,8 @@ namespace iStore.Categories
 
         public IQueryable<BL.Category> GetChildCategoryWhereParentIsCurrentCategory
         {
-            get 
-            { 
+            get
+            {
                 BL.Category category = CurrentCategory;
                 if (category == null) return null;
                 return Cbl.GetCategoriesByParentId(category.CategoryID);
@@ -85,7 +86,11 @@ namespace iStore.Categories
 
         public IQueryable<BL.ProductProperty> GetProductPropery(Guid productId)
         {
-            return Ppbl.GetAllProperyByProductId(productId).Take(6);
+            return Ppbl.GetAllProperyByProductId(productId).Where(p => p.PropertyName != BL.ProductPropertyConstants.ProductDescription
+                            && p.PropertyName != BL.ProductPropertyConstants.ProductPhotoOriginal
+                            && p.PropertyName != BL.ProductPropertyConstants.ProductPhotoPreview
+                            && p.PropertyName != BL.ProductPropertyConstants.ProductPhotoOriginal2
+                            && p.PropertyName != BL.ProductPropertyConstants.ProductPhotoOriginal3).Take(6);
         }
 
         protected string GetRenderedControl(BL.ProductsRefCategory item)

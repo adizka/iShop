@@ -8,6 +8,7 @@ namespace iStore.Admin.Categories
 {
     public class Categories
     {
+
         BL.Modules.Categories.Categories cbl = new BL.Modules.Categories.Categories();
 
         public string Name { get; set; }

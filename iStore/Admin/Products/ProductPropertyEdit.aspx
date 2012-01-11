@@ -1,15 +1,16 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ProductPropertyEdit.aspx.cs"
     Inherits="iStore.Admin.Products.ProductPropertyEdit" MasterPageFile="~/Admin/Admin.Master" %>
 
+
 <%@ Register TagPrefix="iS" TagName="ValidateErrors" Src="~/Modules/Controls/Validators/ValidateErrors.ascx" %>
 <asp:content id="Content1" runat="server" contentplaceholderid="head">
-<script type="text/javascript" src="../../Scripts/jquery.fancybox-2.0/jquery.easing-1.3.pack.js"></script>
+    <script type="text/javascript" src="../../Scripts/jquery.fancybox-2.0/jquery.easing-1.3.pack.js"></script>
 <script type="text/javascript" src="../../Scripts/jquery.fancybox-2.0/jquery.mousewheel-3.0.6.pack.js"></script>
 <script type="text/javascript" src="../../Scripts/jquery.fancybox-2.0/jquery.fancybox.pack.js"></script>
 <link rel="Stylesheet" type="text/css" href="../../Scripts/jquery.fancybox-2.0/jquery.fancybox.css" media="screen" />
 </asp:content>
 <asp:content id="Content2" runat="server" contentplaceholderid="main">
-<asp:ScriptManager runat="server" ID="sm"></asp:ScriptManager>
+    <asp:ScriptManager runat="server" ID="sm"></asp:ScriptManager>
 <asp:UpdatePanel runat="server" ID="up">
 <ContentTemplate>
 <script type="text/javascript" src="../Scripts/ProdPropertyEdit.js"></script>
@@ -40,7 +41,10 @@
         <div class="ProductPropertyItem">
                 <span class="MoveUp">Up</span>
                 <span class="MoveDown">Down</span>
-                <span class="PropertyName"><b><%=item.PropertyName %>: </b> <%=item.PropertyValue %></span>
+                <span class="usniver_product">
+                    <span class="PropertyName"><%=item.PropertyName %>:</span>
+                    <span class="PropertyValue"> <%=item.PropertyValue %></span> 
+                </span>
                 <span class="SortIndex"><%=sortIndex.ToString()%></span>
                 <span class="edit_ico EditButton"></span>
                 <span class="delete_ico DeleteButton"></span>
@@ -50,7 +54,7 @@
 
    
     <div class="copy_contacter" id="CopyingPropertyContainer" >
-        <div runat="server" id="FromCat">
+        <div>
         <p>
             Копировать свойства выбранного продукта который входит в категории текущего продукта
         </p>
@@ -63,7 +67,7 @@
             </span>
         </p>
         </div>
-        <div runat="server" id="FromAllCat">
+        <div>
         <p>
             Копировать свойства выбранного продукта
         </p>
@@ -77,14 +81,16 @@
         </p>
         </div>
     </div>
-    <div class="ProductPropertyItemTemplate" style="display:none;">
-                <span class="MoveUp" style="cursor:pointer;color:Blue;">MoveUp</span>
-                <span class="MoveDown" style="cursor:pointer;color:Blue;">MoveDown</span>
-                <span class="PropertyName"></span>
-                <span class="PropertyValue"></span>
+    <div class="ProductPropertyItemTemplate adizkope" style="display:none;">
+                <span class="MoveUp">Up</span>
+                <span class="MoveDown">Down</span>
+                <span class="usniver_product">
+                    <span class="PropertyName"></span>
+                    <span class="PropertyValue"></span>
+                </span>
                 <span class="SortIndex"></span>
-                <span class="DeleteButton" style="cursor:pointer;color:Blue;">Del</span>
-                <span class="EditButton" style="cursor:pointer;color:Blue;">Edit</span>
+                <span class="EditButton"></span>
+                <span class="DeleteButton"></span>
     </div>
     <div id="EditPropertyTemplate" style="display: none;z-index:100;height:100%;width:100%;">
         <span>

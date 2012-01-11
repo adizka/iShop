@@ -5,6 +5,7 @@ function PackVals(name, val, sortInd) {
 }
 
 
+
 function AssignEvents() {
     $('.DeleteButton').unbind('click');
     $(".DeleteButton").each(function () { $(this).click(function () { return DeleteProperty(this); }); });

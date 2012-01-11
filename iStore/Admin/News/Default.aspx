@@ -5,6 +5,7 @@
 <asp:Content runat="server" ContentPlaceHolderID="head"></asp:Content>
 <asp:Content runat="server" ContentPlaceHolderID="main">
 <br />
+<div class="pader_category">
     <div class="top_repeater"></div>
         <div class="mid_repeater">
             <p class="cat_h3">News</p>
@@ -37,5 +38,5 @@
        <% } %>
         </div>
         <div class="bot_repeater"></div>
-
+</div>
 </asp:Content>

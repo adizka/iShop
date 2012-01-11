@@ -10,14 +10,14 @@ namespace iStore.Admin.Statistics
     public partial class OrderDetails : System.Web.UI.Page
     {
         BL.Modules.Orders.Orders obl = new BL.Modules.Orders.Orders();
-        
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Order == null)
                 Response.Redirect(iStore.Site.SiteAdminUrl + "Statistics/Userslist.aspx");
         }
 
-        
+
 
         BL.Order _Order;
         protected BL.Order Order

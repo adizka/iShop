@@ -36,7 +36,7 @@ namespace iStore.Admin.Login
             if (ubl.AuthorizationAdmin(login, password, saveMe))
             {
                 string url = ConfigurationManager.AppSettings["SiteUrl"].ToString() + "Admin/";
-                HttpContext.Current.Response.Redirect(url);
+                HttpContext.Current.Response.Redirect(iStore.Site.SiteAdminUrl + "Products/");
             }
             else
             {

@@ -32,10 +32,14 @@ namespace BL.Modules.Products
             BL.Modules.Products.Products pbl = new BL.Modules.Products.Products();
 
             ShopDataContext db = new ShopDataContext();
-            
+
             foreach (Guid item in categoriesIds)
             {
-                add = pbl.AddCategoryToProduct(item, productId, db);
+                BL.ProductsRefCategory prod = db.ProductsRefCategories.Where(c => c.CategoryID == item && c.ProductID == productId).FirstOrDefault();
+                if (prod == null)
+                {
+                    add = pbl.AddCategoryToProduct(item, productId, db);
+                }
             }
             return add;
         }
@@ -52,7 +56,7 @@ namespace BL.Modules.Products
             }
         }
 
-        public  IQueryable<BL.ProductsRefCategory> GetAllProductsRefCategories()
+        public IQueryable<BL.ProductsRefCategory> GetAllProductsRefCategories()
         {
             ShopDataContext db = new ShopDataContext();
             return db.ProductsRefCategories.OrderBy(p => p.CategoryID);
@@ -63,7 +67,7 @@ namespace BL.Modules.Products
             return GetAllProductsRefCategories().Where(p => p.ProductID == productId).OrderBy(p => p.Sort);
         }
 
-        public  IQueryable<BL.ProductsRefCategory> GetProductRefCategoriesByCategoryId(Guid categoryId)
+        public IQueryable<BL.ProductsRefCategory> GetProductRefCategoriesByCategoryId(Guid categoryId)
         {
             return GetAllProductsRefCategories().Where(p => p.CategoryID == categoryId).OrderBy(s => s.Sort);
         }

@@ -28,6 +28,7 @@
             </span>      
     <% } %>    
 </div> 
+
 <br />
     <% foreach (var productRefCat in GetPageProductsRefCurrentCategory)
        { %>
@@ -40,7 +41,7 @@
                     </div>
                     <div class="info_blocked">
                         <div class="ProductName">
-                            <%= productRefCat.Product.Name %>
+                            <a href="<%= iStore.Site.SiteUrl %>Products/?pid=<%= productRefCat.ProductID.ToString() %>"><%= productRefCat.Product.Name %></a>
                         </div>
                         <div class="ProductInfo">
                         <% foreach (var property in GetProductPropery(productRefCat.ProductID))

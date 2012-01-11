@@ -5,6 +5,8 @@ using System.Text;
 using System.Collections;
 using System.Web;
 
+
+
 namespace BL
 {
 
@@ -80,10 +82,14 @@ namespace BL
             return obj.ProductID.GetHashCode();
         }
     }
+
+
     public class ProductPropertyConstants
     {
         public const string ProductPhotoPreview = "ProductPhotoPreview";
         public const string ProductPhotoOriginal = "ProductPhotoOriginal";
+        public const string ProductPhotoOriginal2 = "ProductPhotoOriginal2";
+        public const string ProductPhotoOriginal3 = "ProductPhotoOriginal3";
         public const string ProductDescription = "ProductDescription";
     }
 

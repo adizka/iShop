@@ -6,6 +6,8 @@
 <asp:Content runat="server" ContentPlaceHolderID="head">
 <style type="text/css">
    
+   
+   
 </style>
 </asp:Content>
 <asp:Content runat="server" ContentPlaceHolderID="main">
