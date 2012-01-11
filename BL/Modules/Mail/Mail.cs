@@ -8,6 +8,7 @@ namespace BL.Modules.Mail
 {
     public class Mail
     {
+
         public static void Registration(BL.User user)
         {
             string m_subject = "Регистрация на сайте marvelworldwide.com";

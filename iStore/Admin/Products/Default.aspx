@@ -28,10 +28,6 @@
     </p>
     <p class="BCCategories">
         <a href="<%= iStore.Site.SiteAdminUrl %>Products/ProductEdit.aspx?cid=<%= Request.QueryString["cid"] %>">Добавить продукт</a>
-        <%if (CurrentCategoryId.HasValue)
-          {  %>
-        <a href="/Admin/Products/ProductSort.aspx?cid=<%=Request.QueryString["cid"]%>">Сортировать продукты в данной категории</a>
-        <%} %>
     </p>
     <br />
     <iS:ValidateErrors runat="server" ID="ve" Visible="false" />

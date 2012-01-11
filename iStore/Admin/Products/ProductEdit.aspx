@@ -1,5 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true"  MasterPageFile="~/Admin/Admin.Master" CodeBehind="ProductEdit.aspx.cs" Inherits="iStore.Admin.Products.ProductEdit" %>
 
+
 <asp:Content ID="Content1" runat="server" ContentPlaceHolderID="head">
 <script type="text/javascript">
     function SetCategory(categoryId) {

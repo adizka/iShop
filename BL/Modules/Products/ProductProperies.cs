@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Transactions;
 
+
+
 namespace BL.Modules.Products
 {
     public class ProductProperies
@@ -11,7 +13,9 @@ namespace BL.Modules.Products
         public enum ProductPhoto
         {
             ProductPhotoPreview,
-            ProductPhotoOriginal
+            ProductPhotoOriginal,
+            ProductPhotoOriginal2,
+            ProductPhotoOriginal3
         }
 
         public void AddProperty(Guid productID, string propertyName, string propertyValue, bool isImportant)
@@ -194,6 +198,90 @@ namespace BL.Modules.Products
             return string.Empty;
         }
 
+
+        public string GetProductOriginal2ByProductId(Guid productId)
+        {
+            ShopDataContext db = new ShopDataContext();
+            BL.ProductProperty productProperty = db.ProductProperties.Where(p => p.ProductID == productId && p.PropertyName == ProductPhoto.ProductPhotoOriginal2.ToString()).FirstOrDefault();
+            if (productProperty != null)
+            {
+                return productProperty.PropertyValue;
+            }
+            else
+            {
+                return "nophoto.png";                 
+            }
+        }
+        public string GetProductOriginal3ByProductId(Guid productId)
+        {
+            ShopDataContext db = new ShopDataContext();
+            BL.ProductProperty productProperty = db.ProductProperties.Where(p => p.ProductID == productId && p.PropertyName == ProductPhoto.ProductPhotoOriginal3.ToString()).FirstOrDefault();
+            if (productProperty != null)
+            {
+                return productProperty.PropertyValue;
+            }
+            else
+            {
+                return "nophoto.png";
+            }
+        }
+
+
+        public bool AddProdProp(string name, string value, Guid productId)
+        {
+            bool allRight = false;
+            using (var db = new ShopDataContext())
+            {
+                BL.ProductProperty productProp = new BL.ProductProperty();
+                productProp.ProductID = productId;
+                productProp.PropertyID = Guid.NewGuid();
+                productProp.IsImportant = true;
+                productProp.PropertyName = name;
+                productProp.PropertyValue = value;
+                productProp.Sort = 0;
+                db.ProductProperties.InsertOnSubmit(productProp);
+                db.SubmitChanges();
+                allRight = true;
+            }
+            return allRight;
+        }
+
+        public string GetProductOriginalIdByProductId(Guid productId)
+        {
+            ShopDataContext db = new ShopDataContext();
+            BL.ProductProperty productProperty = db.ProductProperties.Where(p => p.ProductID == productId && p.PropertyName == ProductPhoto.ProductPhotoOriginal.ToString()).FirstOrDefault();
+            if (productProperty != null)
+            {
+                return productProperty.PropertyID.ToString();
+            }
+            return string.Empty;
+        }
+
+
+        public string GetProductOriginalId2ByProductId(Guid productId)
+        {
+            ShopDataContext db = new ShopDataContext();
+            BL.ProductProperty productProperty = db.ProductProperties.Where(p => p.ProductID == productId && p.PropertyName == ProductPhoto.ProductPhotoOriginal2.ToString()).FirstOrDefault();
+            if (productProperty != null)
+            {
+                return productProperty.PropertyID.ToString();
+            }
+            return string.Empty;
+        }
+
+
+        public string GetProductOriginalId3ByProductId(Guid productId)
+        {
+            ShopDataContext db = new ShopDataContext();
+            BL.ProductProperty productProperty = db.ProductProperties.Where(p => p.ProductID == productId && p.PropertyName == ProductPhoto.ProductPhotoOriginal3.ToString()).FirstOrDefault();
+            if (productProperty != null)
+            {
+                return productProperty.PropertyID.ToString();
+            }
+            return string.Empty;
+        }
+
+
         public bool UpdateProductPhotoPreview(string url, Guid productId)
         {
             bool allRight = false;
@@ -209,6 +297,23 @@ namespace BL.Modules.Products
             {
                 AddProperty(productId, ProductPhoto.ProductPhotoPreview.ToString(), url, true);
                 allRight = true;
+            }
+            return allRight;
+        }
+
+        public bool UpdateProductPhotoProperty(string url, Guid propId)
+        {
+            bool allRight = false;
+            using (ShopDataContext db = new ShopDataContext())
+            {
+                BL.ProductProperty productProperty = db.ProductProperties.Where(p => p.PropertyID == propId).FirstOrDefault();
+                if (productProperty != null)
+                {
+                    productProperty.PropertyValue = url;
+                    db.SubmitChanges();
+                    db.Refresh(System.Data.Linq.RefreshMode.OverwriteCurrentValues, db.ProductProperties);
+                    allRight = true;
+                }
             }
             return allRight;
         }

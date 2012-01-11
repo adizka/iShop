@@ -6,6 +6,7 @@
 <asp:Content ID="Content1" runat="server" ContentPlaceHolderID="head">
 </asp:Content>
 <asp:Content ID="Content2" runat="server" ContentPlaceHolderID="main">
+
  
  <div style="float:left;width:100%;">
  <iS:SearchControl runat="server" ID="SearchControl" ></iS:SearchControl>

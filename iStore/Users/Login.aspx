@@ -4,9 +4,6 @@
 <asp:Content runat="server" ID="hc" ContentPlaceHolderID="HeadContent"></asp:Content>
 <asp:Content runat="server" ID="mc" ContentPlaceHolderID="MainContent">
 
-<style type="text/css">
-    .LoginForm {  }
-</style>
 <h1>Log in</h1> 
 <asp:ScriptManager runat="server" ID="sm"></asp:ScriptManager>
 <asp:UpdatePanel runat="server" ID="up">
@@ -21,7 +18,7 @@
         </p>
         <p>
             <asp:Label runat="server" ID="lblPassword" AssociatedControlID="txtPassword">Password</asp:Label>
-            <asp:TextBox runat="server" ID="txtPassword" ></asp:TextBox>
+            <asp:TextBox runat="server" ID="txtPassword" TextMode="Password" ></asp:TextBox>
             <a class="forgot_pass" href="<%= iStore.Site.SiteUrl %>Users/ForgotPassword.aspx">Forgot your password?</a>
         </p>
         <p>

@@ -31,8 +31,6 @@ namespace iStore.Admin.Products
                     txtPrice.Text = product.Price.ToString();
                     txtCount.Text = product.Count.ToString();
                     txtUnit.Text = product.Unit;
-                    shippingTxt.Text = product.Shipping.ToString();
-                    taxTxt.Text = product.Tax.ToString();
                 }
                 divError.InnerHtml = string.Empty;
                 divError.Visible = false;
@@ -60,7 +58,7 @@ namespace iStore.Admin.Products
             decimal price = decimal.Parse(sprice);
 
 
-            var categoriesIDs = hf.Value.Split(new string[] { "!~!" }, StringSplitOptions.RemoveEmptyEntries).Select(id => new Guid(id)).Distinct().ToList();
+            var categoriesIDs = hf.Value.Split(new string[] { "!~!" }, StringSplitOptions.RemoveEmptyEntries).Select(id => new Guid(id)).ToList();
 
             if (categoriesIDs.Count == 0)
             {
@@ -74,11 +72,11 @@ namespace iStore.Admin.Products
                 bool isAdd = pbl.AddProduct(name, unit, price, chkVisible.Checked, count, tax, shipping, out product);
                 if (isAdd)
                 {
-                    prcbl.AddCategoriesToProduct(categoriesIDs, product.ProductID);
+                    isAdd = prcbl.AddCategoriesToProduct(categoriesIDs, product.ProductID);
                 }
                 else
                 {
-                    divError.InnerHtml = "Продукт c таким именем уже существует.";
+                    divError.InnerHtml = "Продукт не был добавлен.";
                     divError.Visible = true;
                     return;
                 }
@@ -92,7 +90,7 @@ namespace iStore.Admin.Products
                 }
                 else
                 {
-                    divError.InnerHtml = "Продукт c таким именем уже существует.";
+                    divError.InnerHtml = "Продукт не был обновлён.";
                     divError.Visible = true;
                     return;
                 }
@@ -142,9 +140,9 @@ namespace iStore.Admin.Products
                 return false;
             }
 
-            if (name.Length > 20)
+            if (name.Length > 50)
             {
-                divError.InnerHtml = "Название продутка должно быть не более 20 символов";
+                divError.InnerHtml = "Название продутка должно быть не более 50 символов";
                 divError.Visible = true;
                 return false;
             }

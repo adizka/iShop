@@ -1,31 +1,30 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Page.master.cs" Inherits="iStore.Page" %>
-
 <%@ Register tagPrefix="iS" tagName="Header" src="Design/Header.ascx" %>
 <%@ Register tagPrefix="iS" tagName="Footer" src="Design/Footer.ascx" %>
 <%@ Register tagPrefix="iS" tagName="Menu" src="Design/Menu2.ascx" %>
- 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head runat="server">
     <title></title>
     <link href="Styles/Style.css" rel="stylesheet" type="text/css" />
     <link href="Styles/Controls.css" rel="Stylesheet" type="text/css" />
-    <link rel="Stylesheet" type="text/css" href="Scripts/jquery.fancybox-2.0/jquery.fancybox.css"" media="screen" />
     <script type="text/javascript" src="<%= iStore.Site.SiteUrl %>Scripts/jquery.min.js"></script>
     <script type="text/javascript" src="<%= iStore.Site.SiteUrl %>Scripts/Menu.js"></script>
     <script type="text/javascript" src="<%= iStore.Site.SiteUrl %>Scripts/MostPopularProducts.js"></script>
-    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
-    </asp:ContentPlaceHolder>
+    <script src="<%= iStore.Site.SiteUrl %>Scripts/jquery.fancybox-2.0/jquery.mousewheel-3.0.6.pack.js" type="text/javascript"></script>
+    <script src="<%= iStore.Site.SiteUrl %>Scripts/jquery.fancybox-2.0/jquery.fancybox.pack.js" type="text/javascript"></script>
+    <link href="Scripts/jquery.fancybox-2.0/jquery.fancybox.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server" />
+    
 </head>
 <body>
     <form id="MainPageForm" runat="server">
-        
+    <div class="container">
         <div class="Header_All">
             <div class="MarginBoth">
                 <iS:Header runat="server" ID="header" />
             </div>
         </div>
-        
         <div class="Center">
             <div class="MarginBoth">
                 <div class="Center_Left">
@@ -38,7 +37,8 @@
                 </div>
             </div>
             <div class="clear"></div>
-        </div>  
+        </div>
+    </div>
         <div class="Footer">
             <div class="MarginBoth">
                 <iS:Footer runat="server" ID="footer" />

@@ -8,10 +8,10 @@
 <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainContent">
 <script type="text/javascript">
     function addTocart(prodID, count) {
-        var hds = $("[type=hidden]", "#<%=addtoCart.ClientID %>");
+        var hds = $("[type=hidden]", "#<%=addtoCart.GlobalID %>");
         $(hds[0]).val(count);
         $(hds[1]).val(prodID);
-        $("[type=submit]", "#<%=addtoCart.ClientID %>").click();
+        $("[type=submit]", "#<%=addtoCart.GlobalID %>").click();
     }
 </script>
 <iS:BreadCrumbs runat="server" ID="bc" SiteMode="true" EntityType="Categories" />
@@ -28,6 +28,7 @@
             </span>      
     <% } %>    
 </div> 
+
 <br />
     <% foreach (var productRefCat in GetPageProductsRefCurrentCategory)
        { %>
@@ -40,7 +41,7 @@
                     </div>
                     <div class="info_blocked">
                         <div class="ProductName">
-                            <%= productRefCat.Product.Name %>
+                            <a href="<%= iStore.Site.SiteUrl %>Products/?pid=<%= productRefCat.ProductID.ToString() %>"><%= productRefCat.Product.Name %></a>
                         </div>
                         <div class="ProductInfo">
                         <% foreach (var property in GetProductPropery(productRefCat.ProductID))

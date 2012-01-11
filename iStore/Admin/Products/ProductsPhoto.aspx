@@ -1,8 +1,9 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ProductsPhoto.aspx.cs" MasterPageFile="~/Admin/Admin.Master" Inherits="iStore.Admin.Products.ProductsPhoto" %>
 
+
 <%@ Register TagPrefix="iS" TagName="ValidateErrors" Src="~/Modules/Controls/Validators/ValidateErrors.ascx" %>
 <asp:Content ID="Content1" runat="server" ContentPlaceHolderID="head">
-<script type="text/javascript" src="../../Scripts/jquery.fancybox-2.0/jquery.easing-1.3.pack.js"></script>
+    <script type="text/javascript" src="../../Scripts/jquery.fancybox-2.0/jquery.easing-1.3.pack.js"></script>
 <script type="text/javascript" src="../../Scripts/jquery.fancybox-2.0/jquery.mousewheel-3.0.6.pack.js"></script>
 <script type="text/javascript" src="../../Scripts/jquery.fancybox-2.0/jquery.fancybox.pack.js"></script>
 <link rel="Stylesheet" type="text/css" href="../../Scripts/jquery.fancybox-2.0/jquery.fancybox.css" media="screen" />
@@ -19,52 +20,87 @@
         });
     });
  </script>
+ <style type="text/css">
+    .fancybox-inner { text-align:center; vertical-align:middle; display:table-cell; } 
+ </style>
 </asp:Content>
 <asp:Content ID="Content2" runat="server" ContentPlaceHolderID="main">
-<div>    
-    <p>
+    <p class="BCCategories">
         <a href="<%= iStore.Site.SiteAdminUrl %>Products/?cid=<%= Request.QueryString["cid"] %>">Вернуться к списку товаров</a>
     </p>
-    <br />
     <iS:ValidateErrors runat="server" ID="ve" />
-    <br />
-    <p>
-        Редактирование фотографии для продукта <span><b><%= CuurentProduct.Name %></b></span>
+<div class="copy_contacter">
+    <p class="prod_h6">
+        Edit product photo <span><b><%= CuurentProduct.Name %></b></span>
     </p>
     <p>
-        <img src="<%= CurrentProductPreview %>" alt="<%= CuurentProduct.Name %>" style="max-height: 200px; max-width:200px;" />
+        Change Preview
     </p>
     <p>
-         <a class="various" href="#OriginalImage">Просмотреть полный размер</a>
-         <img id="OriginalImage" src="<%= CurrentProductOriginal %>" alt="<%= CuurentProduct.Name %>" style="display: none;" />
+        <asp:FileUpload size="49" runat="server" ID="upPreview" />
+        <span class="universal_button">
+            <span>
+                <asp:LinkButton runat="server" ID="btnSavePreview" OnClick="SavePreview" Text="Upload" />
+            </span>
+        </span>
+        &nbsp;
+        <span class="universal_button">
+            <span>
+                <a class="various" href="#PreviewImage">View</a>
+            </span>
+        </span>
+        <img id="PreviewImage" src="<%= CurrentProductPreview %>" alt="<%= CuurentProduct.Name %>" style="display: none;" />
     </p>
     <p>
-        Изменить изображение            
-    </p>
-    <br />
-    <p>
-        <asp:Label runat="server" id="lblPreview" AssociatedControlID="upPreview">Изменение Preview</asp:Label>
-        <asp:FileUpload runat="server" ID="upPreview" /><br />
-        <asp:Button runat="server" ID="btnSavePreview" OnClick="SavePreview" Text="Загрузить Preview" />
+        Change Original Photo 
     </p>
     <p>
-        <img src="<%= iStore.Site.SiteUrl %>Images/hint.png" alt="Подсказка"   />
+        <asp:FileUpload size="49" runat="server" ID="upOriginal" />
+        <span class="universal_button">
+            <span>
+                <asp:LinkButton runat="server" ID="btnSaveOriginal" OnClick="SaveOriginal" Text="Upload" />
+            </span>
+        </span>
+        &nbsp;
+        <span class="universal_button">
+            <span>
+                <a class="various" href="#OriginalImage">View</a>
+            </span>
+        </span>
+        <img id="OriginalImage" src="<%= CurrentProductOriginal %>" alt="<%= CuurentProduct.Name %>" style="display: none; max-width:800px;" />
+        <br />
+        <asp:FileUpload size="49" runat="server" ID="upOriginal2" />
+        <span class="universal_button">
+            <span>
+                <asp:LinkButton runat="server" ID="btnSaveOriginal2" OnClick="SaveOriginal2" Text="Upload" />
+            </span>
+        </span>
+        &nbsp;
+        <span class="universal_button">
+            <span>
+                <a class="various" href="#OriginalImage2">View</a>
+            </span>
+        </span>
+        <img id="OriginalImage2" src="<%= CurrentProductOriginal2 %>" alt="<%= CuurentProduct.Name %>" style="display: none; max-width:800px;" />
+        <br />
+        <asp:FileUpload size="49" runat="server" ID="upOriginal3" />
+        <span class="universal_button">
+            <span>
+                <asp:LinkButton runat="server" ID="btnSaveOriginal3" OnClick="SaveOriginal3" Text="Upload" />
+            </span>
+        </span>
+        &nbsp;
+        <span class="universal_button">
+            <span>
+                <a class="various" href="#OriginalImage3">View</a>
+            </span>
+        </span>
+        <img id="OriginalImage3" src="<%= CurrentProductOriginal3 %>" alt="<%= CuurentProduct.Name %>" style="display: none; max-width:800px;" />
     </p>
-    <br /><br />
-    <p>
-        <b>Всего загружено <%=OriginalCount %> photo</b><br />
-        <asp:Label runat="server" ID="lblOriginal">Изменение Original</asp:Label>
-        <asp:FileUpload runat="server" ID="upOriginal" /><br />
-        <asp:Button runat="server" ID="btnSaveOriginal" OnClick="SaveOriginal" Text="Загрузить Original" />
-    </p>
-    <p> 
-        <img src="<%= iStore.Site.SiteUrl %>Images/hint.png" alt="Подсказка" />    
-    </p>
-    <br />
-     <p>
+
+</div>
+    <p class="BCCategories">
         <a href="<%= iStore.Site.SiteAdminUrl %>Products/?cid=<%= Request.QueryString["cid"] %>">Вернуться к списку товаров</a>
     </p>
-    <br />
-</div>
 
 </asp:Content>

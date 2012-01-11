@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -22,7 +23,7 @@ namespace iStore.Users
                 return;
             }
 
-            
+
             if (User == null)
             {
                 errMsg.Visible = true;
@@ -47,9 +48,9 @@ namespace iStore.Users
         BL.User _User;
         BL.User User
         {
-            get 
+            get
             {
-                if(_User == null)
+                if (_User == null)
                     _User = ubl.GetUserByLoginOrEmail(Request.QueryString["email"]);
 
                 return _User;
@@ -78,7 +79,7 @@ namespace iStore.Users
             ubl.SetNewPasswordByUserId(User.UserID, passwd1.Text);
             errMsg.InnerHtml = "Ваш пароль успешно востановлен";
             errMsg.Visible = true;
-            NewPasswordForm.Visible = false;
+            errMsg.Visible = false;
         }
     }
 }

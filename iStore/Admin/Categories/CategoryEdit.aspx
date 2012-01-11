@@ -2,6 +2,7 @@
 
 <asp:Content ID="Content1" runat="server" ContentPlaceHolderID="head">
 </asp:Content>
+
 <asp:Content ID="Content2" runat="server" ContentPlaceHolderID="main">
 <asp:ScriptManager runat="server" ID="sm"></asp:ScriptManager>
 <asp:UpdatePanel runat="server" ID="up">

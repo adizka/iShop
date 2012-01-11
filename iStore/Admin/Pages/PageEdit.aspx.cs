@@ -41,12 +41,12 @@ namespace iStore.Admin.Pages
             string name = HttpContext.Current.Server.HtmlEncode(txtName.Text);
             string keywords = HttpContext.Current.Server.HtmlEncode(txtDesc.Text.Replace(" ", "_"));
             string body = txtBody.Text;
-            bool AllRight = CheckAll(name, keywords, body);
+            bool AllRight = CheckAll(keywords, name, body);
             if (!AllRight)
             {
                 return;
             }
-            pages.AddOrUpdatePage(CurrentPageId, name, keywords, body);
+            pages.AddOrUpdatePage(CurrentPageId, keywords, name, body);
             HttpContext.Current.Response.Redirect(iStore.Site.SiteAdminUrl + "Pages/");
         }
 

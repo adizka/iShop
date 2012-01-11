@@ -17,7 +17,7 @@ namespace iStore.Users
             if (string.IsNullOrWhiteSpace(email))
             {
                 errMsg.Visible = true;
-                errMsg.InnerHtml = "Вы не регистрировались в нашей системе.";
+                errMsg.InnerHtml = "You are not register in our system.";
                 return;
             }
 
@@ -25,26 +25,26 @@ namespace iStore.Users
             if (user == null)
             {
                 errMsg.Visible = true;
-                errMsg.InnerHtml = "Вы не регистрировались в нашей системе.";
+                errMsg.InnerHtml = "You are not register in our system.";
                 return;
             }
             else if (user.ConfirmationID == null)
             {
                 errMsg.Visible = true;
-                errMsg.InnerHtml = "Вы уже зарегистрированны.";
+                errMsg.InnerHtml = "You already register.";
                 return;
             }
             else if (string.IsNullOrWhiteSpace(confirmationID) || user.ConfirmationID.ToString().ToUpper() != Request.QueryString["id"].ToUpper())
             {
                 errMsg.Visible = true;
-                errMsg.InnerHtml = "Ваша ссылка не активна.";
+                errMsg.InnerHtml = "Your link disabled.";
                 return;
             }
 
             ubl.ActivateUser(user.Email, user.ConfirmationID.Value);
 
             errMsg.Visible = true;
-            errMsg.InnerHtml = "Ваш аккаунт успешно активирован.";
+            errMsg.InnerHtml = "Your account has been successfully activated.";
             BL.Modules.Mail.Mail.Registration(user);
         }
     }

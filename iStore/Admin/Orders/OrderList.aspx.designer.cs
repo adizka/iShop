@@ -49,15 +49,6 @@ namespace iStore.Admin.Orders {
         protected global::System.Web.UI.WebControls.DropDownList dateDdl;
         
         /// <summary>
-        /// txBtn control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button txBtn;
-        
-        /// <summary>
         /// txName control.
         /// </summary>
         /// <remarks>
@@ -65,5 +56,14 @@ namespace iStore.Admin.Orders {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txName;
+        
+        /// <summary>
+        /// txBtn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton txBtn;
     }
 }

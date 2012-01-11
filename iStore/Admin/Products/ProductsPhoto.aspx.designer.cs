@@ -22,15 +22,6 @@ namespace iStore.Admin.Products {
         protected global::iStore.Modules.Controls.Validators.ValidateErrors ve;
         
         /// <summary>
-        /// lblPreview control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblPreview;
-        
-        /// <summary>
         /// upPreview control.
         /// </summary>
         /// <remarks>
@@ -46,16 +37,7 @@ namespace iStore.Admin.Products {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSavePreview;
-        
-        /// <summary>
-        /// lblOriginal control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblOriginal;
+        protected global::System.Web.UI.WebControls.LinkButton btnSavePreview;
         
         /// <summary>
         /// upOriginal control.
@@ -73,6 +55,42 @@ namespace iStore.Admin.Products {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSaveOriginal;
+        protected global::System.Web.UI.WebControls.LinkButton btnSaveOriginal;
+        
+        /// <summary>
+        /// upOriginal2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.FileUpload upOriginal2;
+        
+        /// <summary>
+        /// btnSaveOriginal2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton btnSaveOriginal2;
+        
+        /// <summary>
+        /// upOriginal3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.FileUpload upOriginal3;
+        
+        /// <summary>
+        /// btnSaveOriginal3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton btnSaveOriginal3;
     }
 }

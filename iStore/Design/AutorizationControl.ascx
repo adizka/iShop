@@ -1,17 +1,11 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="AutorizationControl.ascx.cs" Inherits="iStore.Design.AutorizationControl" %>
 
-<script type="text/javascript" src="<%= iStore.Site.SiteUrl %>Scripts/flowplayerOverlay/jquery.tools.min.js"></script>
-<script type="text/javascript">
-      $(function () {
-          $("a[rel]").overlay({ mask: '#777', effect: 'apple' });
-      });
-</script>
-
 <% if (CurrentUser == null) { %>
 <span class="not_loginyet">
     NOT LOGGED YET <br />
     <span>
-        <a class="Header_LoginLink" rel="#Header_Login" type="button">sign in</a> or 
+        <%--<a class="Header_LoginLink" rel="#Header_Login" type="button">sign in</a> or --%>
+        <a href="<%= iStore.Site.SiteUrl %>Users/Login.aspx">sign in</a> or 
         <a href="<%= iStore.Site.SiteUrl %>Users/Register.aspx">register</a>
     </span>
 </span>

@@ -51,7 +51,7 @@ namespace BL.Modules.Orders
                     {
                         ord = new OrdersRefProduct()
                         {
-                            Count = Math.Min(item.Count, db.Products.First(p=>p.ProductID== item.ID).Count),
+                            Count = Math.Min(item.Count, db.Products.First(p => p.ProductID == item.ID).Count),
                             ProductID = item.ID,
                             ID = Guid.NewGuid(),
                             CreateDate = DateTime.Now,
@@ -107,7 +107,7 @@ namespace BL.Modules.Orders
             {
                 if (db.Orders.Any(o => o.TransactionID == paymentInfo.txn_id))
                     return true;
-                
+
                 var order = db.Orders.FirstOrDefault(o => o.OrderID == paymentInfo.OrderID && !o.IsPaid);
 
                 if (order == null)

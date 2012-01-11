@@ -28,6 +28,7 @@
         <div class="Admin_LoginForm">
             <div class="top_loged"></div>
             <div class="mid_loged">
+
                 <p>
                     <span class="spn_spec">Username </span>
                     <asp:TextBox runat="server" ID="txtLogin" AutoPostBack="true" />

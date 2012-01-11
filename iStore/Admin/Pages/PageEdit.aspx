@@ -1,6 +1,7 @@
 ﻿<%@ Page MasterPageFile="~/Admin/Admin.Master"  Language="C#" AutoEventWireup="true" CodeBehind="PageEdit.aspx.cs" Inherits="iStore.Admin.Pages.PageEdit" %>
 <%@ Register TagPrefix="iS" TagName="ValidateErrors" Src="~/Modules/Controls/Validators/ValidateErrors.ascx" %>
 
+
 <asp:Content runat="server" ContentPlaceHolderID="head"></asp:Content>
 <asp:Content runat="server" ContentPlaceHolderID="main">
         <div class="Admin_AddOrUpdate">
