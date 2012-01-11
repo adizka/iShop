@@ -16,6 +16,8 @@ namespace BL.Modules.Products
             using (ShopDataContext db = new ShopDataContext())
             {
                 product = new BL.Product();
+                if (db.Products.Any(p => p.Name == name))
+                    return false;
                 BL.Modules.Products.ProductProperies ppbl = new ProductProperies();
 
 
@@ -45,7 +47,9 @@ namespace BL.Modules.Products
 
             using (ShopDataContext db = new ShopDataContext())
             {
-                BL.Product product = GetProductById(productId);
+                BL.Product product = db.Products.FirstOrDefault(p => p.ProductID == productId);
+                if (product.Name != name && db.Products.Count(p => p.Name == name) == 1)
+                    return false;
                 if (product != null)
                 {
                     using (var ts = new TransactionScope())
@@ -77,6 +81,8 @@ namespace BL.Modules.Products
                 BL.Product product = db.Products.FirstOrDefault(p => p.ProductID == productId);
                 if (product != null)
                 {
+                    if (product.ProductsRefCategories.Any(c => c.CategoryID == category.CategoryID))
+                        return false;
                     BL.ProductsRefCategory prc = new ProductsRefCategory();
                     prc.ID = Guid.NewGuid();
                     prc.CategoryID = categoryId;
