@@ -10,7 +10,18 @@ ALTER FUNCTION [dbo].[GetProductDataByProductName](
 	@SearchCriteria nvarchar(200))
 RETURNS TABLE
 as
-return select  prod.* , prodProp.[PropertyValue], cat.[CategoryID], cat.[Name] as CategoryName
+return 		
+	select prod.[Name]
+	  ,prod.[ProductID]
+      ,prod.[CreateDate]
+      ,prod.[Unit]
+      ,prod.[Price]
+      ,prod.[InStock]
+      ,prod.[IsVisible]
+      ,prod.[CurrencyType]
+      ,prod.[ProductTypeID]
+      ,prod.[Count]
+	  ,prodProp.[PropertyValue],cat.[CategoryID], cat.[Name] as CategoryName
 			from [dbo].[ProductsRefCategories] ref
 				inner join [dbo].[Products] prod on (prod.ProductID = ref.ProductID)
 				inner join [dbo].[ProductProperties] prodProp on (prodProp.ProductID = prod.ProductID)

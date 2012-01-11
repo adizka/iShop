@@ -49,9 +49,12 @@ namespace BL.Modules.Orders
                     }
                     else
                     {
+                        var prod = db.Products.First(p => p.ProductID == item.ID);
+                        if (prod == null)
+                            continue;
                         ord = new OrdersRefProduct()
                         {
-                            Count = Math.Min(item.Count, db.Products.First(p=>p.ProductID== item.ID).Count),
+                            Count = Math.Min(item.Count, prod.Count),
                             ProductID = item.ID,
                             ID = Guid.NewGuid(),
                             CreateDate = DateTime.Now,

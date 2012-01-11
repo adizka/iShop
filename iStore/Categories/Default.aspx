@@ -8,10 +8,10 @@
 <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainContent">
 <script type="text/javascript">
     function addTocart(prodID, count) {
-        var hds = $("[type=hidden]", "#<%=addtoCart.ClientID %>");
+        var hds = $("[type=hidden]", "#<%=addtoCart.GlobalID %>");
         $(hds[0]).val(count);
         $(hds[1]).val(prodID);
-        $("[type=submit]", "#<%=addtoCart.ClientID %>").click();
+        $("[type=submit]", "#<%=addtoCart.GlobalID %>").click();
     }
 </script>
 <iS:BreadCrumbs runat="server" ID="bc" SiteMode="true" EntityType="Categories" />
