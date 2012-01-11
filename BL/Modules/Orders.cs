@@ -51,7 +51,7 @@ namespace BL.Modules.Orders
                     {
                         ord = new OrdersRefProduct()
                         {
-                            Count = Math.Min(item.Count, ord.Product.Count),
+                            Count = Math.Min(item.Count, db.Products.First(p=>p.ProductID== item.ID).Count),
                             ProductID = item.ID,
                             ID = Guid.NewGuid(),
                             CreateDate = DateTime.Now,

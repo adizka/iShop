@@ -24,7 +24,7 @@ namespace iStore.Modules.Controls
 
         object _GlobalIDObj;
         Guid _GlobalID;
-        protected Guid GlobalID
+        public Guid GlobalID
         {
             get
             {
