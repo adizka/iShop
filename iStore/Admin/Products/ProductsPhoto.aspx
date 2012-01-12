@@ -26,13 +26,14 @@
 </asp:Content>
 <asp:Content ID="Content2" runat="server" ContentPlaceHolderID="main">
     <p class="BCCategories">
-        <a href="<%= iStore.Site.SiteAdminUrl %>Products/?cid=<%= Request.QueryString["cid"] %>">Вернуться к списку товаров</a>
+        <a href="<%= iStore.Site.SiteAdminUrl %>Products/?cid=<%= Request.QueryString["cid"] %>">Back to product list</a>
     </p>
     <iS:ValidateErrors runat="server" ID="ve" />
 <div class="copy_contacter">
     <p class="prod_h6">
         Edit product photo <span><b><%= CuurentProduct.Name %></b></span>
     </p>
+
     <p>
         Change Preview
     </p>
@@ -100,7 +101,7 @@
 
 </div>
     <p class="BCCategories">
-        <a href="<%= iStore.Site.SiteAdminUrl %>Products/?cid=<%= Request.QueryString["cid"] %>">Вернуться к списку товаров</a>
+        <a href="<%= iStore.Site.SiteAdminUrl %>Products/?cid=<%= Request.QueryString["cid"] %>">Back to product list</a>
     </p>
 
 </asp:Content>

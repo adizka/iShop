@@ -67,6 +67,7 @@ namespace BL.Modules.Orders
             }
         }
 
+
         public void Remove(List<Guid> toDelete, Guid userID, Guid orderID)
         {
             using (var db = new ShopDataContext())

@@ -5197,15 +5197,15 @@ namespace BL
     public partial class ProductData
     {
 
-        private System.Guid _ProductID;
-
         private string _Name;
+
+        private System.Guid _ProductID;
 
         private System.DateTime _CreateDate;
 
         private string _Unit;
 
-        private float _Price;
+        private decimal _Price;
 
         private bool _InStock;
 
@@ -5227,22 +5227,6 @@ namespace BL
         {
         }
 
-        [global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_ProductID", DbType = "UniqueIdentifier NOT NULL")]
-        public System.Guid ProductID
-        {
-            get
-            {
-                return this._ProductID;
-            }
-            set
-            {
-                if ((this._ProductID != value))
-                {
-                    this._ProductID = value;
-                }
-            }
-        }
-
         [global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_Name", DbType = "NVarChar(MAX) NOT NULL", CanBeNull = false)]
         public string Name
         {
@@ -5255,6 +5239,22 @@ namespace BL
                 if ((this._Name != value))
                 {
                     this._Name = value;
+                }
+            }
+        }
+
+        [global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_ProductID", DbType = "UniqueIdentifier NOT NULL")]
+        public System.Guid ProductID
+        {
+            get
+            {
+                return this._ProductID;
+            }
+            set
+            {
+                if ((this._ProductID != value))
+                {
+                    this._ProductID = value;
                 }
             }
         }
@@ -5291,8 +5291,8 @@ namespace BL
             }
         }
 
-        [global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_Price", DbType = "Real NOT NULL")]
-        public float Price
+        [global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_Price", DbType = "Decimal(18,2) NOT NULL")]
+        public decimal Price
         {
             get
             {

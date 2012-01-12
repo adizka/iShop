@@ -8,11 +8,12 @@
 
     <iS:BreadCrumbs runat="server" ID="bc" SiteMode="false" EntityType="Categories" />
     <p class="BCCategories">
-        <a href="<%= iStore.Site.SiteAdminUrl %>Categories/CategoryEdit.aspx?parentId=<%= Request.QueryString["cid"] %>">Добавить категорию</a>
-        <a href="<%= iStore.Site.SiteAdminUrl %>Categories/CategorySort.aspx?cid=<%= Request.QueryString["cid"] %>">Сортировать категории</a>
-        <a href="<%= iStore.Site.SiteAdminUrl %>Products/ProductEdit.aspx?cid=<%= Request.QueryString["cid"] %>">Добавить продукт в категорию</a>
+        <a href="<%= iStore.Site.SiteAdminUrl %>Categories/CategoryEdit.aspx?parentId=<%= Request.QueryString["cid"] %>">Add category</a>
+        <a href="<%= iStore.Site.SiteAdminUrl %>Categories/CategorySort.aspx?cid=<%= Request.QueryString["cid"] %>">Sort categories</a>
+        <a href="<%= iStore.Site.SiteAdminUrl %>Products/ProductEdit.aspx?cid=<%= Request.QueryString["cid"] %>">Add product to category</a>
     </p>
     <br />
+
     <div class="Admin_LoginErrors" runat="server" id="divError" visible="false"></div>
 <div class="pader_category">
     <div class="top_repeater"></div>
@@ -30,7 +31,7 @@
     <div class="mid_repeater">
         <% if (!allCategories.Any())
            { %>
-                <p class="repparaq">Нет категорий</p>
+                <p class="repparaq">No categories</p>
            <%} %>
         <% int i = 0; string cssClass = string.Empty; foreach (var item in allCategories.Skip(pager.PageIndex * pager.EntitiesPerPage).Take(pager.EntitiesPerPage))
                {

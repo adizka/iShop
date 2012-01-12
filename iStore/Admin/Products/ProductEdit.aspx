@@ -32,6 +32,7 @@
         }
     }
 </script>
+
 <script type="text/javascript">
     function pageLoad() {
         $('#AddRemoveCategories').click(function () {

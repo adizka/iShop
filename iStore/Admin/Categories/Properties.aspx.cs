@@ -59,7 +59,7 @@ namespace iStore.Admin.Categories
             {
                 ve.Visible = true;
                 ve.ClearErrors();
-                ve.Errors = "Сохранить не удалось, поле Name незаполнено";
+                ve.Errors = "Please enter Name";
                 ve.SetErrors();
                 return;
             }
@@ -67,7 +67,7 @@ namespace iStore.Admin.Categories
             {
                 ve.Visible = true;
                 ve.ClearErrors();
-                ve.Errors = "Сохранить не удалось, поле Value незаполнено";
+                ve.Errors = "Please enter Value";
                 ve.SetErrors();
                 return;
             }
@@ -84,7 +84,7 @@ namespace iStore.Admin.Categories
                 {
                     ve.Visible = true;
                     ve.ClearErrors();
-                    ve.Errors = "Сохранить не удалось";
+                    ve.Errors = "Can not save";
                     ve.SetErrors();
                     return;
                 }

@@ -106,7 +106,7 @@ namespace iStore.Admin.Products
             catch
             {
                 divError.Visible = true;
-                divError.InnerHtml = "Данные не были сохранены, перезагрузите страницу и попробуйте еще раз!";
+                divError.InnerHtml = "Save failed. Please reload and try again!";
                 return;
             }
 
@@ -114,7 +114,7 @@ namespace iStore.Admin.Products
             if (strProps.Any(p => p.name.Length > maxLen || p.val.Length > maxLen))
             {
                 divError.Visible = true;
-                divError.InnerHtml = "Длина названия свойства не может превышать" + maxLen.ToString() + " символов";
+                divError.InnerHtml = "Name  must be no longer than " + maxLen.ToString() + " characters";
                 return;
             }
 
@@ -135,7 +135,7 @@ namespace iStore.Admin.Products
             ppbl.DeleteAllProperties(Product.ProductID);
             ppbl.AddProperties(Product.ProductID, props);
             divError.Visible = true;
-            divError.InnerHtml = "Свойства продукта обновлены";
+            divError.InnerHtml = "Product properties has been updated";
         }
     }
 }

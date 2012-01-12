@@ -17,6 +17,7 @@ namespace BL.Modules.Users
             return db.Users;
         }
 
+
         /// <summary>
         /// Registration User, Send Mail With ConfirmI
         /// </summary>
@@ -45,6 +46,7 @@ namespace BL.Modules.Users
                 db.SubmitChanges();
                 ts.Complete();
             }
+            BL.Modules.Mail.Mail.Registration(user);
         }
 
         public bool UpdateUser(Guid userId, string login, string email)
@@ -219,6 +221,7 @@ namespace BL.Modules.Users
 
             user.ConfirmationID = Guid.NewGuid();
             db.SubmitChanges();
+            db.Refresh(System.Data.Linq.RefreshMode.OverwriteCurrentValues);
             return user;
         }
     }

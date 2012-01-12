@@ -16,11 +16,11 @@ namespace BL.Modules.Products
             using (ShopDataContext db = new ShopDataContext())
             {
                 product = new BL.Product();
+                
                 if (db.Products.Any(p => p.Name == name))
                     return false;
                 BL.Modules.Products.ProductProperies ppbl = new ProductProperies();
-
-
+                
                 product.ProductID = Guid.NewGuid();
                 product.Name = name;
                 product.CreateDate = DateTime.Now;
@@ -178,7 +178,10 @@ namespace BL.Modules.Products
 
                 foreach (var item in fromProd.ProductProperties.Where(p =>
                         p.PropertyName != ProductPropertyConstants.ProductPhotoPreview
-                        && p.PropertyName != ProductPropertyConstants.ProductPhotoOriginal).OrderBy(pp => pp.Sort))
+                        && p.PropertyName != ProductPropertyConstants.ProductPhotoOriginal
+                        && p.PropertyName != ProductPropertyConstants.ProductDescription 
+                        && p.PropertyName != ProductPropertyConstants.ProductPhotoOriginal2
+                        && p.PropertyName != ProductPropertyConstants.ProductPhotoOriginal3).OrderBy(pp => pp.Sort))
                 {
                     var newProp = new ProductProperty()
                     {

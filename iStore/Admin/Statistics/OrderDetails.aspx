@@ -22,50 +22,46 @@
         $("#TotalSumID").html(total.toFixed(2));
     }
 </script>
-<h1>Shopping Cart</h1>
-
-<table class="cart_table" width="760" cellpadding="0" cellspacing="" id="ProdTable">
-    <tr>
-        <th align="left">
-            Name
-        </th>
-        <th align="center" width="100">
-            Price
-        </th>
-        <th align="center" width="70">
-            Quantity
-        </th>
-        <th align="center" width="70">
-            Total
-        </th>
-    </tr>
-<%  int counter = 0;
-      foreach (var prodRef in Order.OrdersRefProducts)
-      {
-          counter++;
-          %>
-    <tr>
-        <td class="left_border" align="left">
-            <%=prodRef.Product.Name%>
-        </td>
-        <td align="center" class="Price">
-            <%=prodRef.Product.Price%>
-        </td>
-        <td align="center">
-            <div class="cent_triger">
-                <span class="ProdCount"><%=Math.Min(prodRef.Count, prodRef.Product.Count)%></span>
-            </div>
-        </td>
-        <td class="right_border TotalSum" align="center"></td>
-    </tr>
-       <%
-      } %>
-    <tr>
-        <td class="left_border">Sub Total</td><td></td><td></td>
-        <td class="right_border" align="center" id="TotalSumID"></td>
-    </tr>
-    </table>
-        <script type="text/javascript" >
+<br />
+<div class="pader_category" id="ProdTable">
+<div class="top_repeater"></div>
+        <div class="mid_repeater">
+            <p class="cat_h3">Shopping Cart</p>
+        </div>
+        <div class="mid_repeatergrey">
+            <p class="repparaq">
+                <span class="prod_span01">Name</span>
+                <span class="prod_span06">Price</span>
+                <span class="prod_span06">Quantity</span>
+                <span class="prod_span06">Total</span>
+            </p>
+        </div>
+        <div class="mid_repeater">
+        <%  int counter = 0;
+              foreach (var prodRef in Order.OrdersRefProducts)
+              {
+                  counter++;
+                  %>
+            <p class="repparaq">
+                <span class="prod_span01"><%=prodRef.Product.Name%></span>
+                <span class="prod_span06"><%=prodRef.Product.Price%></span>
+                <span class="prod_span06"><span class="ProdCount"><%=Math.Min(prodRef.Count, prodRef.Product.Count)%></span></span>
+                <span class="prod_span06 TotalSum">Total</span>
+            </p>
+           <%
+          } %>
+        </div>
+        <div class="mid_repeater">
+            <p class="repparaq">
+                <span class="prod_span01">Sub Total:</span>
+                <span class="prod_span06">&nbsp;</span>
+                <span class="prod_span06">&nbsp;</span>
+                <span class="prod_span06" id="TotalSumID">500</span>
+            </p>
+        </div>
+        <div class="bot_repeater"></div>
+    <script type="text/javascript" >
             Update();
     </script> 
+</div>
 </asp:Content>

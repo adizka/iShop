@@ -1,0 +1,50 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Paypal.master.cs" Inherits="iStore.Paypal" %>
+
+<%@ Register tagPrefix="iS" tagName="Header" src="Design/Header.ascx" %>
+<%@ Register tagPrefix="iS" tagName="Footer" src="Design/Footer.ascx" %>
+<%@ Register tagPrefix="iS" tagName="Menu" src="Design/Menu2.ascx" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head id="Head1" runat="server">
+    <title></title>
+    <link href="Styles/Style.css" rel="stylesheet" type="text/css" />
+    <link href="Styles/Controls.css" rel="Stylesheet" type="text/css" />
+    <script type="text/javascript" src="<%= iStore.Site.SiteUrl %>Scripts/jquery.min.js"></script>
+    <script type="text/javascript" src="<%= iStore.Site.SiteUrl %>Scripts/Menu.js"></script>
+    <script type="text/javascript" src="<%= iStore.Site.SiteUrl %>Scripts/MostPopularProducts.js"></script>
+    <script src="<%= iStore.Site.SiteUrl %>Scripts/jquery.fancybox-2.0/jquery.mousewheel-3.0.6.pack.js" type="text/javascript"></script>
+    <script src="<%= iStore.Site.SiteUrl %>Scripts/jquery.fancybox-2.0/jquery.fancybox.pack.js" type="text/javascript"></script>
+    <link href="Scripts/jquery.fancybox-2.0/jquery.fancybox.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server" />
+    
+</head>
+<body>
+    <form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post" id="MainPageForm" runat="server">
+    <div class="container">
+        <div class="Header_All">
+            <div class="MarginBoth">
+                <iS:Header runat="server" ID="header" />
+            </div>
+        </div>
+        <div class="Center">
+            <div class="MarginBoth">
+                <div class="Center_Left">
+                    <iS:Menu runat="server" ID="menu" />
+                </div>
+                <div class="Center_Right">
+                    <div class="CenterPad">
+                        <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+                    </div>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+        <div class="Footer">
+            <div class="MarginBoth">
+                <iS:Footer runat="server" ID="footer" />
+            </div>
+        </div>
+    </form>
+</body>
+</html>

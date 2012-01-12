@@ -32,7 +32,7 @@ namespace BL.Modules.Pages
             {
                 if (string.IsNullOrEmpty(keywords))
                 {
-                    page.Keywords = string.Empty;
+                   page.Keywords = string.Empty;
                 }
                 else
                 {

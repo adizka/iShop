@@ -113,6 +113,18 @@
     <Content Include="Admin\Styles\images\ui-icons_ffd27a_256x240.png" />
     <Content Include="Admin\Styles\images\ui-icons_ffffff_256x240.png" />
     <Content Include="Admin\Styles\jquery-ui-1.8.16.custom.css" />
+    <Content Include="App_GlobalResources\Admin_Edits.ru-RU.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Admin_Edits.ru-RU.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\Default.ru-RU.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Default.ru-RU.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\Shops.ru-RU.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Shops.ru-RU.designer.cs</LastGenOutput>
+    </Content>
     <Content Include="bin\BL.dll" />
     <Content Include="bin\FCKEditorWebForms.dll" />
     <Content Include="bin\FredCK.FCKeditorV2.dll" />
@@ -934,9 +946,9 @@
       <DependentUpon>Admin_Edits.resx</DependentUpon>
     </Compile>
     <Compile Include="App_GlobalResources\Admin_Edits.ru-RU.designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
       <DependentUpon>Admin_Edits.ru-RU.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
     </Compile>
     <Compile Include="App_GlobalResources\Admin_Lists.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -949,9 +961,9 @@
       <DependentUpon>Default.resx</DependentUpon>
     </Compile>
     <Compile Include="App_GlobalResources\Default.ru-RU.designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
       <DependentUpon>Default.ru-RU.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
     </Compile>
     <Compile Include="App_GlobalResources\Errors.designer.cs">
       <AutoGen>True</AutoGen>
@@ -964,9 +976,9 @@
       <DependentUpon>Shops.resx</DependentUpon>
     </Compile>
     <Compile Include="App_GlobalResources\Shops.ru-RU.designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
       <DependentUpon>Shops.ru-RU.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
     </Compile>
     <Compile Include="Categories\Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
@@ -1135,6 +1147,13 @@
     <Compile Include="Pages\Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Paypal.Master.cs">
+      <DependentUpon>Paypal.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paypal.Master.designer.cs">
+      <DependentUpon>Paypal.Master</DependentUpon>
+    </Compile>
     <Compile Include="Products\ProductsList.aspx.cs">
       <DependentUpon>ProductsList.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1256,33 +1275,15 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_GlobalResources\Admin_Edits.ru-RU.resx">
-      <Generator>GlobalResourceProxyGenerator</Generator>
-      <LastGenOutput>Admin_Edits.ru-RU.designer.cs</LastGenOutput>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="App_GlobalResources\Default.resx">
       <Generator>GlobalResourceProxyGenerator</Generator>
       <LastGenOutput>Default.Designer.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_GlobalResources\Default.ru-RU.resx">
-      <Generator>GlobalResourceProxyGenerator</Generator>
-      <LastGenOutput>Default.ru-RU.designer.cs</LastGenOutput>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="App_GlobalResources\Shops.resx">
       <Generator>GlobalResourceProxyGenerator</Generator>
       <LastGenOutput>Shops.designer.cs</LastGenOutput>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="App_GlobalResources\Shops.ru-RU.resx">
-      <Generator>GlobalResourceProxyGenerator</Generator>
-      <LastGenOutput>Shops.ru-RU.designer.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <ItemGroup>
@@ -1295,6 +1296,7 @@
     <Content Include="Page.Master" />
     <None Include="Content\Products\Original\.gitignore" />
     <None Include="Content\Products\Preview\.gitignore" />
+    <Content Include="Paypal.Master" />
     <None Include="Scripts\FCK\editor\dialog\fck_spellerpages\spellerpages\server-scripts\spellchecker.cfm" />
     <None Include="Scripts\FCK\editor\dialog\fck_spellerpages\spellerpages\server-scripts\spellchecker.php" />
     <None Include="Scripts\FCK\editor\dialog\fck_spellerpages\spellerpages\server-scripts\spellchecker.pl" />

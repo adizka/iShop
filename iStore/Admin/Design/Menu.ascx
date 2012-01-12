@@ -42,6 +42,7 @@
          });
      </script>
 <div class="container"> 
+
     <div class="ashpo_lat">
 	    <h2 class="acc_trigger" id="admin_Orders"><a href="#"><%= global::Resources.Shops.Orders %></a></h2> 
 	    <div class="acc_container"> 
@@ -125,6 +126,9 @@
     <h2 class="acc_trigger"><a href="#"><%= global::Resources.Shops.ShopProperties %></a></h2> 
 	<div class="acc_container"> 
 		<div class="block"> 
+            <ul>
+                <li><a href="<%= iStore.Site.SiteAdminUrl %>ShopProperties/">Shop properties</a></li>
+            </ul>
         </div> 
 	</div>
     </div>

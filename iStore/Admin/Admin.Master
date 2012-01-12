@@ -16,6 +16,7 @@
     </script>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
+
 </head>
 <body>
     <% if (!ubl.CurrentUserIdAdministrator)  { string url = iStore.Site.SiteAdminUrl + "Login/"; HttpContext.Current.Response.Redirect(url); } %>

@@ -38,12 +38,12 @@ namespace iStore.Users
             {
                 if (ubl.ChangePassword(auth.CurrentUser.UserID, auth.CurrentUser.Password, password))
                 {
-                    lblNewMail.Text = "Пароль изменён";
+                    lblNewMail.Text = "Password has been changed";
                 }
             }
             else
             {
-                lblNewMail.Text = "Пароль должен быть длинее 4х симоволов";
+                lblNewMail.Text = "Password must be at least 4 characters";
             }
         }
 
@@ -57,24 +57,24 @@ namespace iStore.Users
                 {
                     if (ubl.isEmailInDB(email))
                     {
-                        lblNewMailError.Text = "Email занят";
+                        lblNewMailError.Text = "Please chouse other email";
                     }
                     else
                     {
                         if (ubl.UpdateUser(auth.CurrentUser.UserID, auth.CurrentUser.Login, email))
                         {
-                            lblNewMailError.Text = "Email изменён";
+                            lblNewMailError.Text = "Email has been changed";
                         }
                     }
                 }
                 else
                 {
-                    lblNewMailError.Text = "Невалидный Email";
+                    lblNewMailError.Text = "Wrong Email";
                 }
             }
             else
             {
-                lblNewMailError.Text = "Невалидный Email";
+                lblNewMailError.Text = "Wrong Email";
             }
         }
 

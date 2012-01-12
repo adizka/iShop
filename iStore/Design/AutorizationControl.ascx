@@ -15,6 +15,7 @@
         <asp:Label runat="server" ID="lblLogin" AssociatedControlID="txtLogin">User name:</asp:Label><br />
         <asp:TextBox runat="server" ID="txtLogin"></asp:TextBox>
     </p>
+
     <p>
         <asp:Label runat="server" ID="lblPassword" AssociatedControlID="txtPassword">Password:</asp:Label><br />
         <asp:TextBox runat="server" ID="txtPassword" TextMode="Password"></asp:TextBox>

@@ -27,6 +27,7 @@
                         <asp:ListItem Text="Not delivered" Value="2"></asp:ListItem>
                     </asp:DropDownList>
                 </span>
+
                 <span class="order_span02">
                     Date <br />
                     <asp:DropDownList CssClass="field_universe" runat="server" ID="dateDdl" OnSelectedIndexChanged="Update" AutoPostBack="True">
@@ -52,14 +53,14 @@
         </div>
         <div class="mid_repeatergrey">
             <p class="repparaq">
-                <span class="order_span05">Login:</span>
-                <span class="order_span05">Order date:</span>
-                <span class="order_span07">Sum:</span>
-                <span class="order_span08">Status:</span>
-                <span class="order_span09">Payment:</span>
-                <span class="order_span09">Delivery:</span>
-                <span class="order_span05">Del. date:</span>
-                <span class="order_span10">Trans ID:</span>
+                <span class="order_span05">Login</span>
+                <span class="order_span05">Order date</span>
+                <span class="order_span07">Sum</span>
+                <span class="order_span08">Status</span>
+                <span class="order_span09">Payment</span>
+                <span class="order_span09">Delivery</span>
+                <span class="order_span05">Del. date</span>
+                <span class="order_span10">Trans ID</span>
             </p>
         </div>
     <div class="mid_repeater">

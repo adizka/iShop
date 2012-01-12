@@ -25,6 +25,8 @@ namespace BL.Modules.Products
             return add;
         }
 
+
+
         public bool AddCategoriesToProduct(List<Guid> categoriesIds, Guid productId)
         {
             bool add = true;

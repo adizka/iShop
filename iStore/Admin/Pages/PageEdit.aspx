@@ -4,6 +4,7 @@
 
 <asp:Content runat="server" ContentPlaceHolderID="head"></asp:Content>
 <asp:Content runat="server" ContentPlaceHolderID="main">
+<div class="pader_category">
         <div class="Admin_AddOrUpdate">
             <div class="Admin_AddOrUpdateErrors">
                 <iS:ValidateErrors runat="server" ID="ve" />
@@ -31,6 +32,7 @@
             </div>
         </div>
     <script src="<%= iStore.Site.SiteUrl %>Scripts/fck/fckeditor.js" type="text/javascript"></script>
+
     <script type="text/javascript">
 
         function replaceAll() {
@@ -52,4 +54,5 @@
             oFCKeditor.ReplaceTextarea();
         }
     </script>
+</div>
 </asp:Content>

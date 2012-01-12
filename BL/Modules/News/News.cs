@@ -48,6 +48,7 @@ namespace BL.Modules.News
                 BL.News news = db.News.Where(n => n.NewsID == id).FirstOrDefault();
                 if (news != null)
                 {
+                    
                     using (var ts = new TransactionScope())
                     {
                         news.NewsBody = body;

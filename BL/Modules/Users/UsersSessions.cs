@@ -37,6 +37,7 @@ namespace BL.Modules.Users
             }
         }
 
+
         public void AddSession(Guid sessionId, Guid userId)
         {
             BL.UserSession newSession = new BL.UserSession();

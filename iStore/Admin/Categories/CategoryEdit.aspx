@@ -17,13 +17,10 @@
         <asp:DropDownList ID="ddlCategories" runat="server" AutoPostBack="true" AppendDataBoundItems="true">
             <asp:ListItem Value="parent">-- pick one --</asp:ListItem>
         </asp:DropDownList>
-                    <span class="universal_button">
-                        <span>
-                            <asp:LinkButton runat="server" ID="btnSaveCategory" Text="Save" OnClick="Save" />
-                        </span>
-                    </span>
+        <span class="universal_button"><span><asp:LinkButton runat="server" ID="btnSaveCategory" Text="Save" OnClick="Save" /></span></span>
     </p>
     </div>
 </ContentTemplate>
 </asp:UpdatePanel>
 </asp:Content>   
+

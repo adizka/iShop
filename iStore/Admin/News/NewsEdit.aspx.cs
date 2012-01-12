@@ -38,14 +38,14 @@ namespace iStore.Admin.News
             if (title.Length > titleMaxLen)
             {
                 errMsg.Visible = true;
-                errMsg.InnerHtml = "Длина заголовка не может превышать" + titleMaxLen.ToString() + " символов";
+                errMsg.InnerHtml = "Title  must be no longer than " + titleMaxLen.ToString() + " characters";
                 return;
             }
             var descriptionMaxLen = 1000;
             if (desc.Length  > descriptionMaxLen)
             {
                 errMsg.Visible = true;
-                errMsg.InnerHtml = "Длина описания не может превышать" + descriptionMaxLen.ToString() + " символов";
+                errMsg.InnerHtml = "Description must be no longer than " + descriptionMaxLen.ToString() + " characters";
                 return;
             }
             if (string.IsNullOrEmpty(body))
