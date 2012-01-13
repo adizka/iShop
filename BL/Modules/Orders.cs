@@ -118,7 +118,7 @@ namespace BL.Modules.Orders
                     return false;
 
                 var totalSum = order.OrdersRefProducts.Sum(r => (r.Product.Price + r.Product.Tax + r.Product.Shipping) * r.Count);
-                if (totalSum != paymentInfo.mc_gross)
+                if (totalSum != paymentInfo.payment_gross)
                     return false;
 
                 foreach (var item in order.OrdersRefProducts)
@@ -143,6 +143,44 @@ namespace BL.Modules.Orders
             return true;
         }
 
+        public bool TryFormOrderIPN(PaymentTypes paymentType, string transactionID, Guid orderID, decimal payment_gross, 
+            DateTime payment_date, string specialNotes)
+        {
+            using (var db = new ShopDataContext())
+            {
+                if (db.Orders.Any(o => o.TransactionID == transactionID))
+                    return true;
+
+                var order = db.Orders.FirstOrDefault(o => o.OrderID == orderID && !o.IsPaid);
+
+                if (order == null)
+                    return false;
+
+                var totalSum = order.OrdersRefProducts.Sum(r => (r.Product.Price + r.Product.Tax + r.Product.Shipping) * r.Count);
+                if (totalSum != payment_gross)
+                    return false;
+
+                foreach (var item in order.OrdersRefProducts)
+                {
+                    item.Product.Count -= item.Count;
+                    item.Product.IsVisible = item.Product.Count > 0;
+                }
+
+                order.IsActive = false;
+                order.IsPaid = true;
+                order.PaymentTypeID = (int)paymentType;
+                order.OrderStatusID = (int)BL.OrderStatus.Paid;
+                order.TotalSum = Convert.ToDecimal(order.OrdersRefProducts.Sum(r => r.Product.Price * r.Count));
+                order.CreateDate = payment_date;
+                order.TransactionID = transactionID;
+                order.DeliveryDate = DateTime.Now.AddHours(double.Parse(ConfigurationManager.AppSettings["DeliveryTime"]));
+                order.DeliveryTypeID = (int)DeliveryTypes.NotDelivered;
+                order.SpecialNote = specialNotes;
+                db.SubmitChanges();
+                BL.Modules.Mail.Mail.OrderAccepted(order.User);
+            }
+            return true;
+        }
         public IQueryable<Order> GetAllOrders()
         {
             return new ShopDataContext().Orders;

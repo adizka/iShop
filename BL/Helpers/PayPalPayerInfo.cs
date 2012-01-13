@@ -119,6 +119,6 @@ namespace BL.Helpers
         public string mc_currency { get { return GetPropertyByKey("mc_currency"); } }
         public string residence_country { get { return GetPropertyByKey("residence_country"); } }
         public string transaction_subject { get { return GetPropertyByKey("transaction_subject"); } }
-        public string payment_gross { get { return GetPropertyByKey("payment_gross"); } }
+        public decimal payment_gross { get { return decimal.Parse(GetPropertyByKey("payment_gross")); } }
     }
 }

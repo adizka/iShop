@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="FormOrder.aspx.cs" Inherits="iStore.Orders.FormOrder"  MasterPageFile="~/Page.Master"%>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="FormOrder.aspx.cs" Inherits="iStore.Orders.FormOrder"  MasterPageFile="~/Paypal.Master"%>
 
 <asp:Content ID="Content1" runat="server" ContentPlaceHolderID="HeadContent">
 </asp:Content>
@@ -179,7 +179,9 @@
     </table>
         <script type="text/javascript" >
         Update();
+        $("form").attr("action", "FormOrder.aspx");
         <%if(IsDataAccepted) {%>
+        
             var action = $("form").attr("action");
             $("form").attr("action", '<%=ConfigurationManager.AppSettings["PayPalPaymentUrlTest"] %>');
             $("form").submit();

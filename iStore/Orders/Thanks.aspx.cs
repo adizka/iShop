@@ -87,7 +87,7 @@ namespace iStore.Orders
             get
             {
                 if (_UserOrder == null)
-                    _UserOrder = obl.GetOrderById(PaymentInfo.OrderID);
+                    _UserOrder = obl.GetOrderById(new Guid(Request.QueryString["cm"]));
                 return _UserOrder;
             }
             set

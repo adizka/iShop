@@ -1126,6 +1126,9 @@
     <Compile Include="Orders\OrdersList.aspx.designer.cs">
       <DependentUpon>OrdersList.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Orders\PayPalIPN.ashx.cs">
+      <DependentUpon>PayPalIPN.ashx</DependentUpon>
+    </Compile>
     <Compile Include="Orders\Thanks.aspx.cs">
       <DependentUpon>Thanks.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1297,6 +1300,7 @@
     <None Include="Content\Products\Original\.gitignore" />
     <None Include="Content\Products\Preview\.gitignore" />
     <Content Include="Paypal.Master" />
+    <Content Include="Orders\PayPalIPN.ashx" />
     <None Include="Scripts\FCK\editor\dialog\fck_spellerpages\spellerpages\server-scripts\spellchecker.cfm" />
     <None Include="Scripts\FCK\editor\dialog\fck_spellerpages\spellerpages\server-scripts\spellchecker.php" />
     <None Include="Scripts\FCK\editor\dialog\fck_spellerpages\spellerpages\server-scripts\spellchecker.pl" />
