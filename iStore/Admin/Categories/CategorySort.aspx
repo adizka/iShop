@@ -8,7 +8,6 @@
 
 <asp:Content ID="Content2" runat="server" ContentPlaceHolderID="main">
 <script type="text/javascript">
-
     var catIds = [];
 
     function MoveUp(index) {
@@ -25,6 +24,7 @@
         UpdateResult();
                 
     }
+
     function MoveDown(index) {
         if (index == <%=SiblingCategories.Count()-1 %>)
             return;

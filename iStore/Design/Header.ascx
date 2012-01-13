@@ -9,6 +9,7 @@
             <img src="<%= iStore.Site.SiteUrl %>Images/marvel_logo.png" alt="logo" border="0" />
         </a>
     </div>
+
     <div class="Header_Items">
         <div class="Header_ItemsTop">
         <span class="Header_CompanyName"><%= iStore.Site.ProjectName.ToUpper() %> Ltd.</span>

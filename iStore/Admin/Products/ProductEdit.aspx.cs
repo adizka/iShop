@@ -64,7 +64,7 @@ namespace iStore.Admin.Products
 
             if (categoriesIDs.Count == 0)
             {
-                divError.InnerHtml = "Товар должен принадлежать какой-либо категории";
+                divError.InnerHtml = "Please chouse categories";
                 divError.Visible = true;
                 return;
             }
@@ -78,7 +78,7 @@ namespace iStore.Admin.Products
                 }
                 else
                 {
-                    divError.InnerHtml = "Продукт с таким именем уже существует.";
+                    divError.InnerHtml = "";
                     divError.Visible = true;
                     return;
                 }
@@ -92,7 +92,7 @@ namespace iStore.Admin.Products
                 }
                 else
                 {
-                    divError.InnerHtml = "Продукт с таким именем уже существует.";
+                    divError.InnerHtml = "Product with the same name exist.";
                     divError.Visible = true;
                     return;
                 }
@@ -109,55 +109,55 @@ namespace iStore.Admin.Products
             int tmp;
             if (!int.TryParse(count, out tmp))
             {
-                divError.InnerHtml = "Неправильно указано количество товара";
+                divError.InnerHtml = "Wrong count format";
                 divError.Visible = true;
                 return false;
             }
             decimal temp;
             if (!decimal.TryParse(price, out temp))
             {
-                divError.InnerHtml = "Неверный формат цены";
+                divError.InnerHtml = "Wrong price format";
                 divError.Visible = true;
                 return false;
             }
 
             if (!decimal.TryParse(tax, out temp))
             {
-                divError.InnerHtml = "Неверный формат налоговой стаки с единицы товара";
+                divError.InnerHtml = "Wrong tax per unit format";
                 divError.Visible = true;
                 return false;
             }
 
             if (!decimal.TryParse(shipping, out temp))
             {
-                divError.InnerHtml = "Неверный формат shippinga";
+                divError.InnerHtml = "Wrong shipping format";
                 divError.Visible = true;
                 return false;
             }
 
             if (string.IsNullOrEmpty(name))
             {
-                divError.InnerHtml = "Не заполненно поле Name";
+                divError.InnerHtml = "Please enter Name";
                 divError.Visible = true;
                 return false;
             }
 
             if (name.Length > 50)
             {
-                divError.InnerHtml = "Название продутка должно быть не более 50 символов";
+                divError.InnerHtml = "Product name  must be no longer than 50 characters";
                 divError.Visible = true;
                 return false;
             }
             if (string.IsNullOrEmpty(unit))
             {
-                divError.InnerHtml = "Не заполненно поле Unit";
+                divError.InnerHtml = "Please enter Unit";
                 divError.Visible = true;
                 return false;
             }
 
             if (unit.Length > 10)
             {
-                divError.InnerHtml = "Название единицы измерения должно быть более 10 символов";
+                divError.InnerHtml = "Unit  must be no longer than 10 characters";
                 divError.Visible = true;
                 return false;
             }

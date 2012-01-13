@@ -62,7 +62,7 @@ namespace iStore.Admin.Pages
             var maxLen = 25;
             if (name.Length  > maxLen)
             {
-                ve.Errors = "Длина названия свойства не может превышать" + maxLen.ToString() + " символов"; 
+                ve.Errors = "Name must be no longer than   " + maxLen.ToString() + " characters"; 
                 ve.SetErrors();
                 return false;
             }

@@ -39,7 +39,7 @@ namespace iStore.Design
 
         public IQueryable<BL.Category> GetCategoryByParent(Guid id)
         {
-            return Cbl.GetCategoriesByParentId(id);
+            return Cbl.GetCategoriesByParentId(id).OrderBy(c => c.Sort);
         }
     }
 }

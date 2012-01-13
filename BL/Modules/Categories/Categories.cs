@@ -10,6 +10,7 @@ namespace BL.Modules.Categories
 {
     public class Categories
     {
+
         public enum DeleteErrors { HasChilds = 1, HasProducts = 2, Invalid = 3, Success = 4 }
 
         public void AddCategory(string name, Guid? parentId)
@@ -86,6 +87,7 @@ namespace BL.Modules.Categories
                         index++;
                     }
                     db.SubmitChanges();
+                    db.Refresh(System.Data.Linq.RefreshMode.OverwriteCurrentValues);
                     ts.Complete();
                 }
             }
@@ -95,6 +97,24 @@ namespace BL.Modules.Categories
         {
             ShopDataContext db = new ShopDataContext();
             return db.Categories.OrderByDescending(c => c.Name);
+        }
+
+        public IQueryable<BL.Category> GetCategoriesWithotChild(Guid? carId)
+        {
+            IQueryable<BL.Category> allCategories = GetAllCategories();
+            if (carId == null) return allCategories;
+            Guid id = carId.Value;
+            IQueryable<BL.Category> childs = GetCategoriesByParentId(id);
+            List<BL.Category> cats = new List<Category>();
+            foreach (var item in allCategories)
+            {
+                BL.Category tempCat = childs.Where(c => c.CategoryID == item.CategoryID).FirstOrDefault();
+                if (tempCat == null && item.CategoryID != id)
+                {
+                    cats.Add(item);
+                }
+            }
+            return cats.AsQueryable();
         }
 
         public int DeleteCategoryByIdWithErrorMessage(Guid id)
@@ -142,7 +162,7 @@ namespace BL.Modules.Categories
         public IQueryable<BL.Category> GetAllRootCatgories()
         {
             ShopDataContext db = new ShopDataContext();
-            return db.Categories.Where(c => c.ParentID == null);
+            return db.Categories.Where(c => c.ParentID == null).OrderBy(c => c.Sort);
         }
 
         public bool NameInBD(string name)

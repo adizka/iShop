@@ -15,7 +15,7 @@ namespace iStore.Admin.Categories
         {
             if (!IsPostBack)
             {
-                ddlCategories.DataSource = allCategories;
+                ddlCategories.DataSource = allCategoriesList;
                 ddlCategories.DataValueField = "CategoryID";
                 ddlCategories.DataTextField = "Name";
                 ddlCategories.DataBind();
@@ -54,14 +54,14 @@ namespace iStore.Admin.Categories
             string hf = ddlCategories.SelectedItem.Value;
             if (string.IsNullOrEmpty(name))
             {
-                divError.InnerHtml = "Не заполнили название";
+                divError.InnerHtml = "Please enter name";
                 divError.Visible = true;
                 return;
             }
 
             if (txtName.Text.Length > 20)
             {
-                divError.InnerHtml = "Имя не может быть длинее 20 символов";
+                divError.InnerHtml = "Name  must be no longer than 20 characters";
                 divError.Visible = true;
                 return;
             }
@@ -69,7 +69,7 @@ namespace iStore.Admin.Categories
             {
                 if (category == null)
                 {
-                    divError.InnerHtml = "Категория с таким именем уже существует";
+                    divError.InnerHtml = "Please chouse other category name";
                     divError.Visible = true;
                     return;
                 }
@@ -110,6 +110,20 @@ namespace iStore.Admin.Categories
             get
             {
                 return cbl.GetAllCategories().OrderBy(c => c.Sort);
+            }
+        }
+
+
+        public IList<BL.Category> allCategoriesList
+        {
+            get 
+            {
+                IList<BL.Category> allcategories = allCategories.ToList();
+                if (CurrentCategory == null)
+                {
+                    return allcategories;
+                }
+                return cbl.GetCategoriesWithotChild(CurrentCategory.CategoryID).ToList();
             }
         }
 

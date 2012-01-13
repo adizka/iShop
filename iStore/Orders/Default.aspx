@@ -8,9 +8,7 @@
 <%if (UserOrder.IsActive)
   { %>
 
-
-
-<script type="text/javascript">
+  <script type="text/javascript">
     function Update() {
 
         var selectedEl = " ";
@@ -156,7 +154,7 @@
                 <span>
                     <asp:LinkButton OnClick="Save" ID="btnSave" runat="server" Text="Save" />
                 </span>
-            </span> &nbsp
+            </span> 
             <span class="universal_btn">
                 <span>
                     <asp:LinkButton OnClick="Clear" ID="btnClear" runat="server" Text="Clear" />
@@ -202,5 +200,5 @@
     </tr>
     </table>
     <%} %>
-    <a href="/Orders/OrdersList.aspx">Перейти к остории заказов</a>
+    <a href="/Orders/OrdersList.aspx">Orders history</a>
 </asp:Content>

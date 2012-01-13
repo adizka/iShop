@@ -40,6 +40,7 @@
    
     }
 
+
     function UpdateResult()
     {
         var result = "";
@@ -66,11 +67,11 @@
             <span class="MoveUp">
             
             <a href="javascript:MoveUp(<%=index %>);">
-            Вверх 
+            Up
             </a>
             </span>
             <span class="MoveDown">
-            <a href="javascript:MoveDown(<%=index %>);">Вниз
+            <a href="javascript:MoveDown(<%=index %>);">Down
             </a></span>
             <script type="text/javascript">
                 catIds.push("<%= item.ID%>");

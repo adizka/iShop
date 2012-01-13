@@ -5196,244 +5196,244 @@ namespace BL
 
     public partial class ProductData
     {
-		
-		private string _Name;
-		
-		private System.Guid _ProductID;
-		
-		private System.DateTime _CreateDate;
-		
-		private string _Unit;
-		
-		private decimal _Price;
-		
-		private bool _InStock;
-		
-		private bool _IsVisible;
-		
-		private int _CurrencyType;
-		
-		private int _ProductTypeID;
-		
-		private int _Count;
-		
-		private string _PropertyValue;
-		
-		private System.Guid _CategoryID;
-		
-		private string _CategoryName;
+
+        private string _Name;
+
+        private System.Guid _ProductID;
+
+        private System.DateTime _CreateDate;
+
+        private string _Unit;
+
+        private decimal _Price;
+
+        private bool _InStock;
+
+        private bool _IsVisible;
+
+        private int _CurrencyType;
+
+        private int _ProductTypeID;
+
+        private int _Count;
+
+        private string _PropertyValue;
+
+        private System.Guid _CategoryID;
+
+        private string _CategoryName;
 
         public ProductData()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
-		public string Name
-		{
-			get
-			{
-				return this._Name;
-			}
-			set
-			{
-				if ((this._Name != value))
-				{
-					this._Name = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProductID", DbType="UniqueIdentifier NOT NULL")]
-		public System.Guid ProductID
-		{
-			get
-			{
-				return this._ProductID;
-			}
-			set
-			{
-				if ((this._ProductID != value))
-				{
-					this._ProductID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreateDate", DbType="DateTime NOT NULL")]
-		public System.DateTime CreateDate
-		{
-			get
-			{
-				return this._CreateDate;
-			}
-			set
-			{
-				if ((this._CreateDate != value))
-				{
-					this._CreateDate = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Unit", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
-		public string Unit
-		{
-			get
-			{
-				return this._Unit;
-			}
-			set
-			{
-				if ((this._Unit != value))
-				{
-					this._Unit = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Price", DbType="Decimal(18,2) NOT NULL")]
-		public decimal Price
-		{
-			get
-			{
-				return this._Price;
-			}
-			set
-			{
-				if ((this._Price != value))
-				{
-					this._Price = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_InStock", DbType="Bit NOT NULL")]
-		public bool InStock
-		{
-			get
-			{
-				return this._InStock;
-			}
-			set
-			{
-				if ((this._InStock != value))
-				{
-					this._InStock = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsVisible", DbType="Bit NOT NULL")]
-		public bool IsVisible
-		{
-			get
-			{
-				return this._IsVisible;
-			}
-			set
-			{
-				if ((this._IsVisible != value))
-				{
-					this._IsVisible = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CurrencyType", DbType="Int NOT NULL")]
-		public int CurrencyType
-		{
-			get
-			{
-				return this._CurrencyType;
-			}
-			set
-			{
-				if ((this._CurrencyType != value))
-				{
-					this._CurrencyType = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProductTypeID", DbType="Int NOT NULL")]
-		public int ProductTypeID
-		{
-			get
-			{
-				return this._ProductTypeID;
-			}
-			set
-			{
-				if ((this._ProductTypeID != value))
-				{
-					this._ProductTypeID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Count", DbType="Int NOT NULL")]
-		public int Count
-		{
-			get
-			{
-				return this._Count;
-			}
-			set
-			{
-				if ((this._Count != value))
-				{
-					this._Count = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PropertyValue", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
-		public string PropertyValue
-		{
-			get
-			{
-				return this._PropertyValue;
-			}
-			set
-			{
-				if ((this._PropertyValue != value))
-				{
-					this._PropertyValue = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CategoryID", DbType="UniqueIdentifier NOT NULL")]
-		public System.Guid CategoryID
-		{
-			get
-			{
-				return this._CategoryID;
-			}
-			set
-			{
-				if ((this._CategoryID != value))
-				{
-					this._CategoryID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CategoryName", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
-		public string CategoryName
-		{
-			get
-			{
-				return this._CategoryName;
-			}
-			set
-			{
-				if ((this._CategoryName != value))
-				{
-					this._CategoryName = value;
-				}
-			}
-		}
-	}
+        {
+        }
+
+        [global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_Name", DbType = "NVarChar(MAX) NOT NULL", CanBeNull = false)]
+        public string Name
+        {
+            get
+            {
+                return this._Name;
+            }
+            set
+            {
+                if ((this._Name != value))
+                {
+                    this._Name = value;
+                }
+            }
+        }
+
+        [global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_ProductID", DbType = "UniqueIdentifier NOT NULL")]
+        public System.Guid ProductID
+        {
+            get
+            {
+                return this._ProductID;
+            }
+            set
+            {
+                if ((this._ProductID != value))
+                {
+                    this._ProductID = value;
+                }
+            }
+        }
+
+        [global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_CreateDate", DbType = "DateTime NOT NULL")]
+        public System.DateTime CreateDate
+        {
+            get
+            {
+                return this._CreateDate;
+            }
+            set
+            {
+                if ((this._CreateDate != value))
+                {
+                    this._CreateDate = value;
+                }
+            }
+        }
+
+        [global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_Unit", DbType = "NVarChar(MAX) NOT NULL", CanBeNull = false)]
+        public string Unit
+        {
+            get
+            {
+                return this._Unit;
+            }
+            set
+            {
+                if ((this._Unit != value))
+                {
+                    this._Unit = value;
+                }
+            }
+        }
+
+        [global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_Price", DbType = "Decimal(18,2) NOT NULL")]
+        public decimal Price
+        {
+            get
+            {
+                return this._Price;
+            }
+            set
+            {
+                if ((this._Price != value))
+                {
+                    this._Price = value;
+                }
+            }
+        }
+
+        [global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_InStock", DbType = "Bit NOT NULL")]
+        public bool InStock
+        {
+            get
+            {
+                return this._InStock;
+            }
+            set
+            {
+                if ((this._InStock != value))
+                {
+                    this._InStock = value;
+                }
+            }
+        }
+
+        [global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_IsVisible", DbType = "Bit NOT NULL")]
+        public bool IsVisible
+        {
+            get
+            {
+                return this._IsVisible;
+            }
+            set
+            {
+                if ((this._IsVisible != value))
+                {
+                    this._IsVisible = value;
+                }
+            }
+        }
+
+        [global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_CurrencyType", DbType = "Int NOT NULL")]
+        public int CurrencyType
+        {
+            get
+            {
+                return this._CurrencyType;
+            }
+            set
+            {
+                if ((this._CurrencyType != value))
+                {
+                    this._CurrencyType = value;
+                }
+            }
+        }
+
+        [global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_ProductTypeID", DbType = "Int NOT NULL")]
+        public int ProductTypeID
+        {
+            get
+            {
+                return this._ProductTypeID;
+            }
+            set
+            {
+                if ((this._ProductTypeID != value))
+                {
+                    this._ProductTypeID = value;
+                }
+            }
+        }
+
+        [global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_Count", DbType = "Int NOT NULL")]
+        public int Count
+        {
+            get
+            {
+                return this._Count;
+            }
+            set
+            {
+                if ((this._Count != value))
+                {
+                    this._Count = value;
+                }
+            }
+        }
+
+        [global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_PropertyValue", DbType = "NVarChar(MAX) NOT NULL", CanBeNull = false)]
+        public string PropertyValue
+        {
+            get
+            {
+                return this._PropertyValue;
+            }
+            set
+            {
+                if ((this._PropertyValue != value))
+                {
+                    this._PropertyValue = value;
+                }
+            }
+        }
+
+        [global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_CategoryID", DbType = "UniqueIdentifier NOT NULL")]
+        public System.Guid CategoryID
+        {
+            get
+            {
+                return this._CategoryID;
+            }
+            set
+            {
+                if ((this._CategoryID != value))
+                {
+                    this._CategoryID = value;
+                }
+            }
+        }
+
+        [global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_CategoryName", DbType = "NVarChar(MAX) NOT NULL", CanBeNull = false)]
+        public string CategoryName
+        {
+            get
+            {
+                return this._CategoryName;
+            }
+            set
+            {
+                if ((this._CategoryName != value))
+                {
+                    this._CategoryName = value;
+                }
+            }
+        }
+    }
 }
 #pragma warning restore 1591

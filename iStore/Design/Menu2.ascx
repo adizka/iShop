@@ -3,7 +3,6 @@
 <%@ Register TagPrefix="iS" TagName="Cart" Src="~/Modules/Controls/Cart.ascx" %>
 <div class="Menu">
 <%-- 1--%>
-
     <div class="MenuItemFirst">
         <% int i = -1; string topStyle = string.Empty;  
         foreach (var item in ParentCategory) 

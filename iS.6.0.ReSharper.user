@@ -1,7 +1,6 @@
 <Configuration>
   <RecentFiles>
     <RecentFiles>
-      <File id="F811AF93-8440-4DC9-A7AA-BCA306A0B8B2/d:Properties/f:Settings.Designer.cs" caret="1147" fromTop="16" />
       <File id="F811AF93-8440-4DC9-A7AA-BCA306A0B8B2/d:Modules/d:Products/f:ProductRefCategories.cs" caret="2157" fromTop="20" />
       <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Admin/d:Products/f:ProductsPhoto.aspx" caret="1147" fromTop="2" />
       <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Categories/f:Default.aspx.cs" caret="3243" fromTop="19" />
@@ -12,7 +11,7 @@
       <File id="F811AF93-8440-4DC9-A7AA-BCA306A0B8B2/f:DAL.cs" caret="2000" fromTop="25" />
       <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Products/f:Default.aspx.cs" caret="5320" fromTop="16" />
       <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/f:Page.Master" caret="0" fromTop="0" />
-      <File id="6DBE1F13-2DFD-41DF-AA69-2BBDDBEB23C6/f:test.aspx" caret="832" fromTop="21" />
+      <File id="F811AF93-8440-4DC9-A7AA-BCA306A0B8B2/d:Properties/f:Settings.Designer.cs" caret="1600" fromTop="12" />
     </RecentFiles>
     <RecentEdits>
       <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Categories/f:Default.aspx.cs" caret="3546" fromTop="22" />
@@ -36,6 +35,7 @@
       <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Products/f:Default.aspx" caret="1261" fromTop="0" />
       <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Products/f:Default.aspx" caret="3389" fromTop="17" />
       <File id="3083DBB5-4EC3-4C0A-9EEE-6883DBCA17EA/d:Products/f:Default.aspx" caret="1659" fromTop="9" />
+      <File id="F811AF93-8440-4DC9-A7AA-BCA306A0B8B2/d:Properties/f:Settings.Designer.cs" caret="1864" fromTop="15" />
     </RecentEdits>
   </RecentFiles>
   <CompletionStatisticsManager>

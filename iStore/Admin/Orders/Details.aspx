@@ -7,27 +7,28 @@
 <table>
     <tr>
         <td>
-            Заказ от числа:
+            Order date
         </td>
         <td>
-            Cумма
+            Sum
         </td>
         <td>
-            Статус
+            Status
         </td>
         <td>
-        Доставлено:
+        Delivered
         </td>
         <td>
-            Способ оплаты:
+            Payment type
         </td>
-        <td>Способ доставки:</td>
+        <td>Delivery type</td>
         <td>Login:</td>
                 <td>
             Transaction ID
         </td>
     </tr>
       <tr>
+
      <td>
            <a href="<%=iStore.Site.SiteUrl + "Admin/Orders/Details.aspx?oid=" + Order.OrderID.ToString() %>"><%= Order.CreateDate %></a>
         </td>
@@ -65,10 +66,10 @@
  <table id="Table1">
     <tr>
         <td>
-            Название
+            Name
         </td>
         <td>
-            Количество
+            Count
         </td>
     </tr>
 <%  
@@ -175,7 +176,7 @@
     </table>
     <%} %>
 
-  <a href="/Admin/Orders/OrderList.aspx">вернуться к списку!</a>
+  <a href="/Admin/Orders/OrderList.aspx">Back to order list!</a>
 
 
 </asp:Content>

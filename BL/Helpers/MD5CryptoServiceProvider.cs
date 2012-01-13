@@ -12,6 +12,7 @@ namespace BL.Helpers
         /// MD5
         /// </summary>
 
+
         // Hash an input string and return the hash as
         // a 32 character hexadecimal string.
         public string getMd5Hash(string input)

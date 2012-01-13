@@ -22,7 +22,6 @@
             Pay type
         </th>
     </tr>
-
 <%foreach (var item in UserOrders)
   {
       %>

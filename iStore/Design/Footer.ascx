@@ -10,4 +10,5 @@
 <div class="right_foot">
     <p class="copyright_txt">Copyright 2011 Marvel Worldwide, Ltd. USA. All Rights Reserved.</p>
 </div>
+
 <div class="clear"></div>

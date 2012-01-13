@@ -13,7 +13,6 @@
         $("[type=submit]", "#<%=addtoCart.GlobalID %>").click();
     }
 </script>
-
 <div class="rep">
 
         <% if (!PageProducts.Any())
@@ -27,7 +26,7 @@
         %>
 <div class="ProductsList">
     <div class="image_ploater">
-        <img src="/Content/Products/Preview/<%=GetPreviewUrl(prod) %>" />
+        <img src="/Content/Products/Preview/<%=GetPreviewUrl(prod) %>"  />
     </div>
     <div class="info_blocked">
         <div class="ProductName">
@@ -67,7 +66,6 @@
                 <%= item.Name %>
                      </a>
                 </li>
-        
         <%}
           %>
           </ul>

@@ -15,7 +15,7 @@
 <ContentTemplate>
 <script type="text/javascript" src="../Scripts/ProdPropertyEdit.js"></script>
 <p class="BCCategories">
-    <a href="<%= iStore.Site.SiteAdminUrl %>Products/?cid=<%= Request.QueryString["cid"] %>">Вернуться к списку товаров</a>
+    <a href="<%= iStore.Site.SiteAdminUrl %>Products/?cid=<%= Request.QueryString["cid"] %>">Back to product list</a>
 </p>
 <div class="pro_cat_name">
     <%=Product.Name %> (edit product )
@@ -31,6 +31,7 @@
         <div id="WarningMsg" style="display:none;">This property is allready exist.</div>
     </div>
 
+
     <div id="ProductPropertyContainer">
         <%
             int sortIndex = -1;
@@ -42,7 +43,7 @@
                 <span class="MoveUp">Up</span>
                 <span class="MoveDown">Down</span>
                 <span class="usniver_product">
-                    <span class="PropertyName"><%=item.PropertyName %>:</span>
+                    <span class="PropertyName"><%=item.PropertyName %></span>
                     <span class="PropertyValue"> <%=item.PropertyValue %></span> 
                 </span>
                 <span class="SortIndex"><%=sortIndex.ToString()%></span>
@@ -56,7 +57,7 @@
     <div class="copy_contacter" id="CopyingPropertyContainer" >
         <div runat="server" id="FromCat">
         <p>
-            Копировать свойства выбранного продукта который входит в категории текущего продукта
+           Copy properties of selected product of the same category
         </p>
         <p>
             <asp:DropDownList ID="cpddl" runat="server"></asp:DropDownList>
@@ -69,7 +70,7 @@
         </div>
         <div runat="server" id="FromAllCat">
         <p>
-            Копировать свойства выбранного продукта
+           Copy properties of selected product
         </p>
         <p>
             <asp:DropDownList ID="apddl" runat="server"></asp:DropDownList>
@@ -95,10 +96,12 @@
     <div id="EditPropertyTemplate" style="display: none;z-index:100;height:100%;width:100%;">
         <span>
             <input type="text" id="EditName" />
-        </span><span>
+        </span>
+        <span>
             <input type="text" id="EditVal" />
-        </span><span id="ChangeID" style="cursor: pointer; color: Blue;">Change </span>
-        <div id="EditErrorMsg" style="display:none;">Такое свойство уже существует.</div>
+        </span>
+        <span id="ChangeID" class="dootted_anchord">Change </span>
+        <div id="EditErrorMsg" style="display:none;">You have already entered property with this name</div>
     </div>
 
     <p class="ProductEdit_Save">
@@ -120,6 +123,6 @@
     </asp:UpdatePanel>
 <br />
 <p class="BCCategories">
-    <a href="<%= iStore.Site.SiteAdminUrl %>Products/?cid=<%= Request.QueryString["cid"] %>">Вернуться к списку товаров</a>
+    <a href="<%= iStore.Site.SiteAdminUrl %>Products/?cid=<%= Request.QueryString["cid"] %>">Back to product list</a>
 </p>
 </asp:Content>

@@ -3,12 +3,17 @@
 <asp:Content ID="Content1" runat="server" ContentPlaceHolderID="head"></asp:Content>
 <asp:Content ID="Content2" runat="server" ContentPlaceHolderID="main">
 
+<div class="pader_category">
+<h1>Login e-mail Status</h1>
 
-<p>Login e-mail Status</p>
     <%foreach (var item in PageUsers)
       {
     %>
-    <p><a href="<%=iStore.Site.SiteAdminUrl%>Statistics/UserOrdersHistory.aspx?uid=<%=item.UserID.ToString() %>"><%=item.Login %></a> <%=item.Email %>  <%=item.IsActive?"active":"not active" %></p>
+    <p class="classed_userlist">
+        <span class="spaned_user"><a href="<%=iStore.Site.SiteAdminUrl%>Statistics/UserOrdersHistory.aspx?uid=<%=item.UserID.ToString() %>"><%=item.Login %></a> </span>
+        <span class="spaned_user"><%=item.Email %>  <%=item.IsActive?"active":"not active" %> </span>
+    </p>
     <%  } %>
     <iS:Pager runat="server" ID="pager"></iS:Pager>
+</div>
 </asp:Content>

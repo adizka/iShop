@@ -29,6 +29,7 @@
                 </div>
             </ItemTemplate>
         
+
             <EmptyListTemplate>
                 <div class="itemArea">
                     Не добавлено ни одного свойства

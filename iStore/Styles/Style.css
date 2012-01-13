@@ -14,6 +14,8 @@ position:relative;
 background:#E2E2E2;
 }
 
+form {min-width:1000px;}
+
 .container {
 min-height:100%;
 _height:100%;
@@ -695,11 +697,15 @@ margin-left:240px;
 
 .center_viewer {text-align:center; padding:3px 0;}
 
-
-
-
-
-
+.bread_crumbs {
+color:#a94105;
+background:#e8e8e8;
+border:solid #c9c9c9 1px;
+font-size:11px;
+margin: 10px 15px;
+padding: 5px 10px;
+} .bread_crumbs a {color:#a94105; margin:0 5px 0 0; font-size:11px;}
+    .bread_crumbs a:hover {text-decoration:none;}
 
 
 

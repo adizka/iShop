@@ -73,10 +73,10 @@ namespace iStore.Admin.Categories
             switch (errorMessageId)
             {
                 //HasChilds = 1, HasProducts = 2, Invalid = 3, Success = 4
-                case 1: { divError.InnerHtml = "Удаление не возможно. Категория имеет подкатегории."; break; };
-                case 2: { divError.InnerHtml = "Удаление не возможно. Категория имеет товары."; break; };
-                case 3: { divError.InnerHtml = "Удаление не возможно. Категория не выбрана."; break; };
-                default: divError.InnerHtml = "Удаление прошло успешно"; break;
+                case 1: { divError.InnerHtml = "Deletion failed. Please first delete subcategories."; break; };
+                case 2: { divError.InnerHtml = "Deletion failed. Please first delete all products of this category"; break; };
+                case 3: { divError.InnerHtml = "Deletion failed. Please chouse category"; break; };
+                default: divError.InnerHtml = "Category successfully deleted."; break;
             }
          
         }

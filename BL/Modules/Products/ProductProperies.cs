@@ -18,6 +18,7 @@ namespace BL.Modules.Products
             ProductPhotoOriginal3
         }
 
+
         public void AddProperty(Guid productID, string propertyName, string propertyValue, bool isImportant)
         {
             using (ShopDataContext db = new ShopDataContext())

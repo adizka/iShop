@@ -63,8 +63,7 @@ namespace iStore.Admin.Products
         {
             ppbl.UpdateProductDescription(txtBody.Text, CurrentProduct.ProductID);
             divError.Visible = true;
-            divError.InnerHtml = "Описание продукта сохранено";
-
+            divError.InnerHtml = "Description saved successfully!";
         }
     }
 }

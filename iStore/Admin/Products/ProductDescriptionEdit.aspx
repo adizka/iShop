@@ -7,7 +7,7 @@
 <div>    
 
     <p class="BCCategories">
-        <a href="<%= iStore.Site.SiteAdminUrl %>Products/?cid=<%= Request.QueryString["cid"] %>">Вернуться к списку товаров</a>
+        <a href="<%= iStore.Site.SiteAdminUrl %>Products/?cid=<%= Request.QueryString["cid"] %>">Back to Product list</a>
     </p>
     <br />
     <div class="Admin_LoginErrors" id="divError" runat="server">
@@ -21,6 +21,7 @@
             <asp:TextBox runat="server" ID="txtBody" TextMode="MultiLine" />
         </p> 
     </div>
+
     <div class="ProductEdit_Save">
     <script src="<%= iStore.Site.SiteUrl %>Scripts/fck/fckeditor.js" type="text/javascript"></script>
     <script type="text/javascript">
@@ -45,7 +46,7 @@
     </div>
 
     <p class="BCCategories">
-        <a href="<%= iStore.Site.SiteAdminUrl %>Products/?cid=<%= Request.QueryString["cid"] %>">Вернуться к списку товаров</a>
+        <a href="<%= iStore.Site.SiteAdminUrl %>Products/?cid=<%= Request.QueryString["cid"] %>">Back to Product list</a>
     </p>
 </div>
 

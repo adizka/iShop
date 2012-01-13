@@ -14,19 +14,28 @@
         $("[type=submit]", "#<%=addtoCart.GlobalID %>").click();
     }
 </script>
+
 <iS:BreadCrumbs runat="server" ID="bc" SiteMode="true" EntityType="Categories" />
+
 <div class="Title"><h1><%= CurrentCategory.Name %> [<%= GetProductsRefCurrentCategory.Count().ToString()%>]</h1></div>
 <div class="ChildCategoryList">
-    <span class="Title">Подкатегории: </span> 
+    <% IQueryable<BL.Category> categories = GetChildCategoryWhereParentIsCurrentCategory;
+       if (categories != null)
+       {
+            if (categories.Count() > 0)
+           { %>
+    <span class="Title">Subcategories: </span> 
     <% foreach (var category in GetChildCategoryWhereParentIsCurrentCategory)
        { %>
             <span>
                 <a href="<%= iStore.Site.SiteUrl %>Categories/?cid=<%= category.CategoryID.ToString() %>">
-                    <%= category.Name %>
+                    <%= category.Name%>
                 </a> 
-                <span>[<%= GetProductsCountInCategory(category.CategoryID) %>]</span>
+                <span>[<%= GetProductsCountInCategory(category.CategoryID)%>]</span>
             </span>      
-    <% } %>    
+    <% }
+           }
+       }%>    
 </div> 
 
 <br />

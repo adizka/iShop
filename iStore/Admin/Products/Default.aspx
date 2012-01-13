@@ -26,11 +26,13 @@
             </span>
         </span>
     </p>
+
     <p class="BCCategories">
-        <a href="<%= iStore.Site.SiteAdminUrl %>Products/ProductEdit.aspx?cid=<%= Request.QueryString["cid"] %>">Добавить продукт</a>
+        <a href="<%= iStore.Site.SiteAdminUrl %>Products/ProductEdit.aspx?cid=<%= Request.QueryString["cid"] %>">Add product</a>
     </p>
     <br />
     <iS:ValidateErrors runat="server" ID="ve" Visible="false" />
+<div class="pader_category">
     <div class="top_repeater"></div>
         <div class="mid_repeater">
             <p class="cat_h3">Products</p>
@@ -49,7 +51,7 @@
         <div class="mid_repeater">
              <% if (!PageProducts.Any())
            { %>
-                <p class="no_goods">Нет товаров</p>
+                <p class="no_goods">No products</p>
            <%} %>
         <% int i = 0; string cssClass = string.Empty;
            foreach (var item in PageProducts)
@@ -81,6 +83,6 @@
         <% } %>
         </div>
         <div class="bot_repeater"></div>
-
     <iS:Pager runat="server" ID="pager" EntitiesPerPage="10"></iS:Pager>
+</div>
 </asp:Content>

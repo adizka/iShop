@@ -1,11 +1,9 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="FormOrder.aspx.cs" Inherits="iStore.Orders.FormOrder"  MasterPageFile="~/Page.Master"%>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="FormOrder.aspx.cs" Inherits="iStore.Orders.FormOrder"  MasterPageFile="~/Paypal.Master"%>
 
 <asp:Content ID="Content1" runat="server" ContentPlaceHolderID="HeadContent">
 </asp:Content>
 <asp:Content ID="Content2" runat="server" ContentPlaceHolderID="MainContent">
 <script type="text/javascript" src="../../Scripts/jquery.fancybox-2.0/jquery.easing-1.3.pack.js"></script>
-
-
 
 
 <script type="text/javascript">
@@ -51,7 +49,7 @@
 </script>
     <div id="errMsg" runat="server" class="">
     </div>
-    <form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
+    
     <h1>Orders</h1>
     <div class="Form">
         <p>
@@ -177,7 +175,7 @@
        <%
       } %>
     <tr>
-        <td class="left_border">Sub Total</td><td></td><td></td>
+        <td colspan="3" class="left_border">Sub Total</td>
         <td class="right_border" align="center" id="TotalSumID"></td>
     </tr>
     </table>
@@ -188,5 +186,5 @@
             $("form").submit();
             <%}%>
     </script> 
-    </form>
+   <br />
 </asp:Content>

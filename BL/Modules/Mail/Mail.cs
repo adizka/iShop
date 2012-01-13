@@ -11,23 +11,24 @@ namespace BL.Modules.Mail
 
         public static void Registration(BL.User user)
         {
-            string m_subject = "Регистрация на сайте marvelworldwide.com";
+            string m_subject = "Registration on marvelworldwide.com";
 
             StringBuilder sb = new StringBuilder();
+
 
             string m_link = BL.SiteProperties.SiteUrl + "Users/UserConfirmation.aspx?email=" + user.Email + "&id=" + user.ConfirmationID.ToString();
 
             sb.Append("<p><h3>");
             sb.Append(SiteProperties.SiteName);
-            sb.Append("</h3></p><br /><p><h4>Вы заплонили регистрационную форму на сайте <a href='");
+            sb.Append("</h3></p><br /><p><h4>Вы заплонили регистрационную форму на сайте You have complited registration form on <a href='");
             sb.Append(SiteProperties.SiteUrl);
             sb.Append("'>");
             sb.Append(SiteProperties.SiteName);
-            sb.Append("</a>.</h4></p><br /><br /><p>Для подтверждения регистрации, пройдите по следующей ссылке: <a href='");
+            sb.Append("</a>.</h4></p><br /><br /><p>Для подтверждения регистрации, пройдите по следующей ссылке: To confirm you registration please follow  link <a href='");
             sb.Append(m_link);
             sb.Append("'>");
             sb.Append(m_link);
-            sb.Append("</a></p><br /><br /><p>C уважением, администрация ");
+            sb.Append("</a></p><br /><br /><p>C уважением, администрация Br, Administration  marvelworldwide.com");
             sb.Append(SiteProperties.SiteName);
             sb.Append("</p>");
             string m_from = "info@marvel.com";
@@ -37,22 +38,22 @@ namespace BL.Modules.Mail
 
         public static void RestorePassword(BL.User user)
         {
-            string m_subject = "Востановление пароля на сайте" + SiteProperties.SiteName;
+            string m_subject = "Password recovery on " + SiteProperties.SiteName;
 
             StringBuilder sb = new StringBuilder();
 
             string m_link = BL.SiteProperties.SiteUrl + "Users/RestorePassword.aspx?email=" + user.Email + "&id=" + user.ConfirmationID.ToString();
             sb.Append("<p><h3>");
             sb.Append(SiteProperties.SiteName);
-            sb.Append("</h3></p><br /><p><h4>Востановление пароля на сайте <a href='");
+            sb.Append("</h3></p><br /><p><h4>Password recovery on <a href='");
             sb.Append(SiteProperties.SiteUrl);
             sb.Append("'>");
             sb.Append(SiteProperties.SiteName);
-            sb.Append("</a>.</h4></p><br /><br /><p>Для востановления пароля, пройдите по следующей ссылке: <a href='");
+            sb.Append("</a>.</h4></p><br /><br /><p>To recover your password please follow link: <a href='");
             sb.Append(m_link);
             sb.Append("'>");
             sb.Append(m_link);
-            sb.Append("</a></p><br /><br /><p>C уважением, администрация ");
+            sb.Append("</a></p><br /><br /><p>C уважением, администрация Br, Administration marvelworldwide.com");
             sb.Append(SiteProperties.SiteName);
             sb.Append("</p>");
             string m_from = "info@marvel.com";
@@ -62,21 +63,21 @@ namespace BL.Modules.Mail
 
         public static void OrderAccepted(BL.User user)
         {
-            string m_subject = "Принятие заказа на сайте" + SiteProperties.SiteName;
+            string m_subject = "Принятие заказа на сайте Your order have been received on " + SiteProperties.SiteName;
 
             StringBuilder sb = new StringBuilder();
 
             sb.Append("<p><h3>");
             sb.Append(SiteProperties.SiteName);
-            sb.Append("</h3></p><br /><p><h4>Ваш заказ принят на сайте <a href='");
+            sb.Append("</h3></p><br /><p><h4>Your order have been received <a href='");
             sb.Append(SiteProperties.SiteUrl);
             sb.Append("'>");
             sb.Append(SiteProperties.SiteName);
-            sb.Append("</a>.</h4></p><br /><br /><p>Для просмотра вашего заказа пройдете по ссылке: <a href='");
+            sb.Append("</a>.</h4></p><br /><br /><p>Для просмотра вашего заказа пройдете по ссылке:  To review your order please follow link<a href='");
             sb.Append(BL.SiteProperties.SiteUrl);
             sb.Append("'>");
             sb.Append(SiteProperties.SiteName);
-            sb.Append("</a></p><br /><br /><p>C уважением, администрация ");
+            sb.Append("</a></p><br /><br /><p>C уважением, администрация Br, Administration marvelworldwide.com ");
             sb.Append(SiteProperties.SiteName);
             sb.Append("</p>");
             string m_from = "info@marvel.com";

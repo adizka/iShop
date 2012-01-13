@@ -4,22 +4,23 @@
 
 <asp:Content runat="server" ContentPlaceHolderID="head"></asp:Content>
 <asp:Content runat="server" ContentPlaceHolderID="main">
-<div>    
-    <p>
-        Редактирование свойств магазина
-    </p>
+<p class="BCCategories">
+    Shop property edit
+</p>
+<div class="pader_category">  
+    <div runat="server" id="ErrorMsg" visible="false">
+        This field shoul be filled!!!
+    </div>
+    <div class="line_style">
         <p>
-        <div runat="server" id="ErrorMsg" visible="false">
-        Данное поле необходимо заполнить!!!
-        </div>
-        <br />
-        Ключ
-        <asp:TextBox runat="server" ID="keyTxt" />
-    </p>
+            Property name
+            <asp:TextBox runat="server" ID="keyTxt" />
+        </p>
+    
     <p>
         <asp:TextBox runat="server" ID="valTxt" TextMode="MultiLine" />
     </p>
-        <script src="<%= iStore.Site.SiteUrl %>Scripts/fck/fckeditor.js" type="text/javascript"></script>
+    <script src="<%= iStore.Site.SiteUrl %>Scripts/fck/fckeditor.js" type="text/javascript"></script>
     <script type="text/javascript">
         window.onload = function () {
             var sBasePath = '<%= iStore.Site.SiteUrl %>Scripts/FCK/';
@@ -34,14 +35,16 @@
             oFCKeditor.ReplaceTextarea();
         }
     </script>
-    <asp:Button runat="server" ID="SaveBtn" OnClick="Save" Text="Save" />
-
-     <p>
+    <p>
+        <span class="universal_button">
+            <span>
+                <asp:LinkButton runat="server" ID="SaveBtn" OnClick="Save" Text="Save" />
+            </span>
+        </span>
+    </p>
+    </div>
+</div>
+    <p class="BCCategories">
         <a href="<%= iStore.Site.SiteAdminUrl %>ShopProperties/">Вернуться к списку свойств</a>
     </p>
-    <br />
-</div>
-
-
-
 </asp:Content>

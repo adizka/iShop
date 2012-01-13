@@ -19,6 +19,7 @@
         <label>User Name:</label>
         <asp:TextBox ID="userNameTxt" runat="server" Text=""></asp:TextBox>
     </p>
+
     <p>
         <label>E-mail:</label>
         <asp:TextBox ID="emailTxt" runat="server" Text=""></asp:TextBox>

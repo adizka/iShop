@@ -6,6 +6,7 @@ using System.Net.Mail;
 
 namespace BL.Helpers
 {
+
     public class MailHelper
     {
         /// <summary>
@@ -50,8 +51,15 @@ namespace BL.Helpers
             // Instantiate a new instance of SmtpClient
             SmtpClient mSmtpClient = new SmtpClient();
             // Send the mail message
-            mSmtpClient.Send(mMailMessage);
-            
+
+            try
+            {
+                mSmtpClient.Send(mMailMessage);
+            }
+            catch
+            { 
+                 
+            }
         }
     }
 }

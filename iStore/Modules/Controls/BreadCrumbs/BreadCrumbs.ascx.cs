@@ -54,7 +54,7 @@ namespace iStore.Modules.Controls.BreadCrumbs
                             break;
                         }
                         parentId = tempCategory.ParentID;
-                        string arrow = (i == 0) ? string.Empty : "->";
+                        string arrow = (i == 0) ? string.Empty : " > ";
                         i++;
                         string url = String.Format("{0}?cid={1}", preUrl,  tempCategory.CategoryID.ToString());
                         bctemplate = String.Format("<a href='{0}' class='BCCategoriesLink'>{1}</a>{2}", url, tempCategory.Name, arrow) + bctemplate;
@@ -74,7 +74,7 @@ namespace iStore.Modules.Controls.BreadCrumbs
         {
             string bctemplate = string.Empty;
             string url = ((!SiteMode) ? iStore.Site.SiteAdminUrl : iStore.Site.SiteUrl) + EntityType  + "/";
-            bctemplate =  String.Format("<a class='BCCategoriesLink' href='{0}'>{1}</a>{2}", url, "Главная", "->");
+            bctemplate =  String.Format("<a class='BCCategoriesLink' href='{0}'>{1}</a>{2}", url, "Main", " > ");
             return bctemplate;
         }
 

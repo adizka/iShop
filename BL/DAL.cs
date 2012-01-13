@@ -23,6 +23,7 @@ namespace BL
             Web = 2
         }
     }
+
     public enum OrderStatus
     {
         NotPaid = 1,
