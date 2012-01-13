@@ -83,5 +83,22 @@ namespace BL.Modules.Mail
 
             MailHelper.SendMailMessage(m_from, user.Email, string.Empty, string.Empty, m_subject, sb.ToString());
         }
+
+        public static void SendFeedBack(string email, string userName, string body)
+        {
+            string m_subject = "Feed back from " + userName;
+
+            StringBuilder sb = new StringBuilder();
+
+            sb.Append("<p>Contact address");
+            sb.Append(email);
+            sb.Append("</p>");
+            sb.Append("<p>");
+            sb.Append(body);
+            sb.Append("</p>");
+            string m_from = "info@marvel.com";
+
+            MailHelper.SendMailMessage(m_from, m_from, string.Empty, string.Empty, m_subject, sb.ToString());
+        }
     }
 }
