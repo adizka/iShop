@@ -51,7 +51,7 @@
         <br />
         <% } %>
 
-        <% if(PageProducts.Count ==0)
+        <% if (PageProducts.Count == 0 && Categories.Count > 0)
            {
                %>
                <p class="pad_nogoods">Categories:</p> 

@@ -4,7 +4,7 @@
 
 <%
     int i;
-    if(EntityCount != 0){
+    if(PagesCount > 1){
     if (PageIndex !=0)
   { %>
   <span class="NavigateLastPage"><a href ="<%=NavigateUrl %>?p=0<%=Params%>">first</a></span>

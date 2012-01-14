@@ -67,16 +67,16 @@
                 <%= item.Product.Price.ToString() %>
             </span>
             <span class="prod_span03">
-                <a class="blue_yanc" href="<%= iStore.Site.SiteAdminUrl %>Products/ProductPropertyEdit.aspx?pid=<%= item.ProductID.ToString() %>&cid=<%= Request.QueryString["cid"] %>">properties</a>
+                <a class="blue_yanc" href="<%= iStore.Site.SiteAdminUrl %>Products/ProductPropertyEdit.aspx?pid=<%= item.ProductID.ToString() %>&cid=<%= Request.QueryString["cid"] %>&p=<%=pager.PageIndex %>">properties</a>
             </span>
             <span class="prod_span03">
-                <a class="blue_yanc" href="<%= iStore.Site.SiteAdminUrl %>Products/ProductDescriptionEdit.aspx?pid=<%= item.ProductID.ToString() %>&cid=<%= Request.QueryString["cid"] %>">description</a>
+                <a class="blue_yanc" href="<%= iStore.Site.SiteAdminUrl %>Products/ProductDescriptionEdit.aspx?pid=<%= item.ProductID.ToString() %>&cid=<%= Request.QueryString["cid"] %>&p=<%=pager.PageIndex %>">description</a>
             </span>
             <span class="prod_span04">
-                <a class="photo_ico" href="<%= iStore.Site.SiteAdminUrl %>Products/ProductsPhoto.aspx?pid=<%= item.ProductID.ToString() %>&cid=<%= Request.QueryString["cid"] %>"></a>
+                <a class="photo_ico" href="<%= iStore.Site.SiteAdminUrl %>Products/ProductsPhoto.aspx?pid=<%= item.ProductID.ToString() %>&cid=<%= Request.QueryString["cid"] %>&p=<%=pager.PageIndex %>"></a>
             </span>
             <span class="prod_span05">
-                <a class="edit_ico" href="<%= iStore.Site.SiteAdminUrl %>Products/ProductEdit.aspx?pid=<%= item.ProductID.ToString() %>&cid=<%= Request.QueryString["cid"] %>"></a>
+                <a class="edit_ico" href="<%= iStore.Site.SiteAdminUrl %>Products/ProductEdit.aspx?pid=<%= item.ProductID.ToString() %>&cid=<%= Request.QueryString["cid"] %>&p=<%=pager.PageIndex %>"></a>
                 <a class="delete_ico" href="javascript:DeleteProduct('<%= item.Product.ProductID %>')"></a>
             </span>
         </p>       

@@ -6,9 +6,9 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.IO;
 
-namespace iStore.Modules.Controls.NewProducts
+namespace iStore.Modules.Controls.NewDeals
 {
-    public partial class NewProducts : System.Web.UI.UserControl
+    public partial class NewDeals : System.Web.UI.UserControl
     {
         BL.Modules.Products.ProductRefCategories prcbl = new BL.Modules.Products.ProductRefCategories();
         BL.Modules.Products.Products pbl = new BL.Modules.Products.Products();

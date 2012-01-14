@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="NewProducts.ascx.cs" Inherits="iStore.Modules.Controls.NewProducts.NewProducts" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="NewDeals.ascx.cs" Inherits="iStore.Modules.Controls.NewDeals.NewDeals" %>
 
 <%@ Register TagPrefix="iS" TagName="AddToCart" Src="~/Modules/Controls/AddToCard.ascx" %>
 <script type="text/javascript">

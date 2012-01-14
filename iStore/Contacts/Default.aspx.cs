@@ -38,7 +38,7 @@ namespace iStore.Contacts
                 return;
             }
 
-            if (body.Length >500)
+            if (body.Length > 500)
             {
                 errMsg.Visible = true;
                 errMsg.InnerHtml = "Сообщение не может превышать 500 символов.";
@@ -66,7 +66,7 @@ namespace iStore.Contacts
             }
 
             BL.Modules.Mail.Mail.SendFeedBack(email, userName, body);
-
+            BL.Modules.Mail.Mail.SendThanksFeedBack(email, userName);
             errMsg.Visible = false;
         }
     }

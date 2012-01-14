@@ -25,7 +25,7 @@ namespace iStore.Users
         protected void ChangePassword(object sender, EventArgs e)
         {
             //lblNewPasswordError
-            string password = Server.HtmlEncode(txtNewPassword.Text);
+            string password = txtNewPassword.Text;
             bool allRight = false;
             if (!string.IsNullOrEmpty(password))
             {
@@ -36,7 +36,7 @@ namespace iStore.Users
             }
             if (allRight)
             {
-                if (ubl.ChangePassword(auth.CurrentUser.UserID, auth.CurrentUser.Password, password))
+                if (ubl.ChangePassword(auth.CurrentUser.UserID, password))
                 {
                     lblNewMail.Text = "Password has been changed";
                 }
@@ -50,8 +50,8 @@ namespace iStore.Users
         protected void ChangeMail(object sender, EventArgs e)
         {
             //lblNewMailError
-            string email = Server.HtmlEncode(txtNewMail.Text);
-            if (string.IsNullOrEmpty(email))
+            string email = txtNewMail.Text;
+            if (!string.IsNullOrEmpty(email))
             {
                 if (IsEmail(email))
                 {

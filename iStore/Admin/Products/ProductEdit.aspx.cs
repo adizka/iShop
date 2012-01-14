@@ -97,7 +97,7 @@ namespace iStore.Admin.Products
                     return;
                 }
             }
-            Response.Redirect(iStore.Site.SiteAdminUrl + "Products/?cid=" + Request.QueryString["cid"]);
+            Response.Redirect(iStore.Site.SiteAdminUrl + "Products/?p=" + Request.QueryString["p"] + "&cid=" + Request.QueryString["cid"]);
         }
         #endregion
 

@@ -101,5 +101,24 @@ namespace BL.Modules.Mail
 
             MailHelper.SendMailMessage(m_from, m_from, string.Empty, string.Empty, m_subject, sb.ToString());
         }
+
+        public static void SendThanksFeedBack(string email, string userName)
+        {
+            string m_subject = "Спасибо вам огромное при огромное " + userName;
+
+            StringBuilder sb = new StringBuilder();
+
+            sb.Append("<p>");
+            sb.Append(m_subject);
+            sb.Append("</p>");
+            sb.Append("<p><a href=\"");
+            sb.Append(SiteProperties.SiteUrl);
+            sb.Append("\">");
+            sb.Append(SiteProperties.SiteName);
+            sb.Append("</a></p>");
+            string m_from = "info@marvel.com";
+
+            MailHelper.SendMailMessage(m_from, email, string.Empty, string.Empty, m_subject, sb.ToString());
+        }
     }
 }

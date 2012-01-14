@@ -123,6 +123,7 @@
     <Content Include="App_GlobalResources\Shops.ru-RU.resx">
       <Generator>GlobalResourceProxyGenerator</Generator>
       <LastGenOutput>Shops.ru-RU.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </Content>
     <Content Include="bin\BL.dll" />
     <Content Include="bin\FCKEditorWebForms.dll" />
@@ -233,6 +234,7 @@
     <Content Include="Modules\Controls\AddToCard.ascx" />
     <Content Include="Modules\Controls\BreadCrumbs\BreadCrumbs.ascx" />
     <Content Include="Modules\Controls\Cart.ascx" />
+    <Content Include="Modules\Controls\NewDeals\NewDeals.ascx" />
     <Content Include="Modules\Controls\Pager\Pager.ascx" />
     <Content Include="Modules\Controls\Validators\ValidateErrors.ascx" />
     <Content Include="NewDeals\Default.aspx" />
@@ -1065,6 +1067,13 @@
       <DependentUpon>Cart.ascx</DependentUpon>
     </Compile>
     <Compile Include="Modules\Controls\Colors.cs" />
+    <Compile Include="Modules\Controls\NewDeals\NewDeals.ascx.cs">
+      <DependentUpon>NewDeals.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\Controls\NewDeals\NewDeals.ascx.designer.cs">
+      <DependentUpon>NewDeals.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Modules\Controls\Pager\Pager.ascx.cs">
       <DependentUpon>Pager.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

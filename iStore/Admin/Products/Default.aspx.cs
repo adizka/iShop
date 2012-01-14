@@ -125,8 +125,7 @@ namespace iStore.Admin.Products
             Guid prodID;
             if (Guid.TryParse(hf.Value, out prodID))
                 pbl.DeleteProduct(prodID);
-            _prodCountInd = null;
-            _PageProducts = null;
+            Response.Redirect(Request.Url.AbsoluteUri);
         }
     }
 }

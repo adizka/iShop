@@ -123,13 +123,13 @@ namespace BL.Modules.Users
             return (user != null);
         }
 
-        public bool ChangePassword(Guid userId, string oldPassword, string password)
+        public bool ChangePassword(Guid userId, string password)
         {
             BL.User user = db.Users.Where(u => u.UserID == userId).FirstOrDefault();
             if (user != null)
             {
                 BL.Helpers.MD5CryptoServiceProvider md5 = new BL.Helpers.MD5CryptoServiceProvider();
-                if (md5.getMd5Hash(oldPassword) == user.Password)
+                if (md5.getMd5Hash(password) != user.Password)
                 {
                     using (var ts = new TransactionScope())
                     {

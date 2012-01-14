@@ -7,10 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace iStore.Modules.Controls.NewProducts {
+namespace iStore.Modules.Controls.NewDeals {
     
     
-    public partial class NewProducts {
+    public partial class NewDeals {
         
         /// <summary>
         /// addtoCart control.

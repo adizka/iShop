@@ -7,7 +7,7 @@
 
 <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainContent">
     <div>
-        <h1>New Deals</h1>    
+        <h1><a href="<%= iStore.Site.SiteUrl %>NewDeals/">New Deals</a></h1>    
     </div>
     <div class="last_goods">
         <%counter=0; %>

@@ -54,10 +54,12 @@
         <p class="prod_descrip">Product Description</p>
         <%= ProductDescription %>
     </div>
+    <%if (RelatedProducts.Count != 0)
+      { %>
     <div class="realte_pro"> 
         <p class="prod_descrip">Related Products</p>
         <div runat="server" id="RelatedProductsContainer"></div>
-        <%counter=0; %>
+        <%counter = 0; %>
         <asp:Repeater runat="server" id="rpt" >
         <ItemTemplate> 
             <span class="goods_linear">
@@ -68,6 +70,6 @@
             </span>
         </ItemTemplate > 
         </asp:Repeater>
-    </div>
+    </div><%} %>
 </div>
 </asp:Content>

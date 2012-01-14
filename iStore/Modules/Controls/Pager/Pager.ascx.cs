@@ -73,6 +73,7 @@ namespace iStore.Modules.Controls.Pager
                     finally
                     {
                         PageIndexObj = new object();
+                        _PageIndex = (_PageIndex + 1 > PagesCount) ? PagesCount - 1 : _PageIndex;
                     }
                 return _PageIndex;
             }

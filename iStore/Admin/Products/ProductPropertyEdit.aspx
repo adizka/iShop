@@ -123,6 +123,6 @@
     </asp:UpdatePanel>
 <br />
 <p class="BCCategories">
-    <a href="<%= iStore.Site.SiteAdminUrl %>Products/?cid=<%= Request.QueryString["cid"] %>">Back to product list</a>
+    <a href="<%= iStore.Site.SiteAdminUrl %>Products/?p=<%=  Request.QueryString["p"] + "&cid=" + Request.QueryString["cid"] %>">Back to product list</a>
 </p>
 </asp:Content>

@@ -136,6 +136,7 @@ namespace iStore.Admin.Products
             ppbl.AddProperties(Product.ProductID, props);
             divError.Visible = true;
             divError.InnerHtml = "Product properties has been updated";
+            Response.Redirect(iStore.Site.SiteAdminUrl + "Products/?p=" + Request.QueryString["p"] + "&cid=" + Request.QueryString["cid"]);
         }
     }
 }

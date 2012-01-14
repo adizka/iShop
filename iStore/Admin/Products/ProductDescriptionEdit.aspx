@@ -46,7 +46,7 @@
     </div>
 
     <p class="BCCategories">
-        <a href="<%= iStore.Site.SiteAdminUrl %>Products/?cid=<%= Request.QueryString["cid"] %>">Back to Product list</a>
+        <a href="<%= iStore.Site.SiteAdminUrl %>Products/?p=<%=  Request.QueryString["p"] + "&cid=" + Request.QueryString["cid"] %>">Back to Product list</a>
     </p>
 </div>
 

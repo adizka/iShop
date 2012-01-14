@@ -7,16 +7,16 @@
     function Update() {
         var total = 0;
 
-        $(".TotalSum", "#ProdTable").each(function () {
+        $("#TotalSum", "#ProdTable").each(function () {
             var parent = $(this).parent();
-            $(".Price", parent).html(($(".Price", parent).html().replace(",", ".") / 1).toFixed(2));
-            var sum = $(".Price", parent).html().replace(",", ".") * $(".ProdCount", parent).html();
+            $("#Price", parent).html(($("#Price", parent).html().replace(",", ".") / 1).toFixed(2));
+            var sum = $("#Price", parent).html().replace(",", ".") * $("#ProdCount", parent).html();
             $(this).html(sum.toFixed(2));
 
         });
 
 
-        $(".TotalSum", "#ProdTable").each(function () {
+        $("#TotalSum", "#ProdTable").each(function () {
             total += $(this).html() / 1;
         });
         $("#TotalSumID").html(total.toFixed(2));
@@ -44,9 +44,9 @@
                   %>
             <p class="repparaq">
                 <span class="prod_span01"><%=prodRef.Product.Name%></span>
-                <span class="prod_span06"><%=prodRef.Product.Price%></span>
-                <span class="prod_span06"><span class="ProdCount"><%=Math.Min(prodRef.Count, prodRef.Product.Count)%></span></span>
-                <span class="prod_span06 TotalSum">Total</span>
+                <span class="prod_span06" id="Price"><%=prodRef.Product.Price%></span>
+                <span class="prod_span06"><span id="ProdCount"><%=Math.Min(prodRef.Count, prodRef.Product.Count)%></span></span>
+                <span class="prod_span06" id="TotalSum"></span>
             </p>
            <%
           } %>

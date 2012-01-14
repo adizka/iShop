@@ -64,6 +64,7 @@ namespace iStore.Admin.Products
             ppbl.UpdateProductDescription(txtBody.Text, CurrentProduct.ProductID);
             divError.Visible = true;
             divError.InnerHtml = "Description saved successfully!";
+            Response.Redirect(iStore.Site.SiteAdminUrl + "Products/?p=" + Request.QueryString["p"] + "&cid=" + Request.QueryString["cid"]);
         }
     }
 }
