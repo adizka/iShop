@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="PropertyEdit.aspx.cs" Inherits="iStore.Admin.ShopProperty.PropertyEdit" MasterPageFile="~/Admin/Admin.Master" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="PropertyEdit.aspx.cs" Inherits="iStore.Admin.ShopProperty.PropertyEdit" MasterPageFile="~/Admin/Admin.Master" Title="Shop properties | Marvel Worldwide" %>
 
 
 
@@ -45,6 +45,6 @@
     </div>
 </div>
     <p class="BCCategories">
-        <a href="<%= iStore.Site.SiteAdminUrl %>ShopProperties/">Вернуться к списку свойств</a>
+        <a href="<%= iStore.Site.SiteAdminUrl %>ShopProperties/">Back to shop properties</a>
     </p>
 </asp:Content>

@@ -45,6 +45,7 @@ namespace iStore.Admin.Categories
                     }
                 }
             }
+            Page.Title = iStore.Modules.Controls.PageTitle.Get("Edit category");
         }
 
         protected void Save(object sender, EventArgs e)

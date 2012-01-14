@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ProductDescriptionEdit.aspx.cs" MasterPageFile="~/Admin/Admin.Master" Inherits="iStore.Admin.Products.ProductDescriptionEdit" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ProductDescriptionEdit.aspx.cs" MasterPageFile="~/Admin/Admin.Master" Inherits="iStore.Admin.Products.ProductDescriptionEdit" Title="Product description | Marvel Worldwide" %>
 
 <%@ Register TagPrefix="iS" TagName="ValidateErrors" Src="~/Modules/Controls/Validators/ValidateErrors.ascx" %>
 <asp:Content ID="Content1" runat="server" ContentPlaceHolderID="head">

@@ -72,7 +72,6 @@
     <Content Include="Admin\Categories\CategoryEdit.aspx" />
     <Content Include="Admin\Categories\CategorySort.aspx" />
     <Content Include="Admin\Categories\Default.aspx" />
-    <Content Include="Admin\Categories\Properties.aspx" />
     <Content Include="Admin\Default.aspx" />
     <Content Include="Admin\Design\Header.ascx" />
     <Content Include="Admin\Design\Menu.ascx" />
@@ -171,6 +170,7 @@
     <Content Include="Design\Menu.ascx" />
     <Content Include="Design\Menu2.ascx" />
     <Content Include="Design\MostPopularProducts.ascx" />
+    <Content Include="favicon.ico" />
     <Content Include="Images\5x5black.png" />
     <Content Include="Images\5x5white.png" />
     <Content Include="Images\add_to_cart.png" />
@@ -201,6 +201,7 @@
     <Content Include="Images\lightbox-btn-next.gif" />
     <Content Include="Images\lightbox-btn-prev.gif" />
     <Content Include="Images\lightbox-ico-loading.gif" />
+    <Content Include="Images\loader.gif" />
     <Content Include="Images\login_btn.png" />
     <Content Include="Images\logo.png" />
     <Content Include="Images\logo_admin.jpg" />
@@ -718,7 +719,6 @@
     <Content Include="Global.asax" />
     <Content Include="Styles\Style.css" />
     <Content Include="Styles\white.png" />
-    <Content Include="Test.aspx" />
     <Content Include="Users\ForgotPassword.aspx" />
     <Content Include="Users\Login.aspx" />
     <Content Include="Users\Profile.aspx" />
@@ -771,13 +771,6 @@
     </Compile>
     <Compile Include="Admin\Categories\Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Admin\Categories\Properties.aspx.cs">
-      <DependentUpon>Properties.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Admin\Categories\Properties.aspx.designer.cs">
-      <DependentUpon>Properties.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
@@ -1126,6 +1119,9 @@
     <Compile Include="Orders\OrdersList.aspx.designer.cs">
       <DependentUpon>OrdersList.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Orders\PayPalIPN.ashx.cs">
+      <DependentUpon>PayPalIPN.ashx</DependentUpon>
+    </Compile>
     <Compile Include="Orders\Thanks.aspx.cs">
       <DependentUpon>Thanks.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1190,13 +1186,6 @@
     </Compile>
     <Compile Include="Site.Master.designer.cs">
       <DependentUpon>Site.Master</DependentUpon>
-    </Compile>
-    <Compile Include="Test.aspx.cs">
-      <DependentUpon>Test.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Test.aspx.designer.cs">
-      <DependentUpon>Test.aspx</DependentUpon>
     </Compile>
     <Compile Include="Users\ForgotPassword.aspx.cs">
       <DependentUpon>ForgotPassword.aspx</DependentUpon>
@@ -1297,6 +1286,7 @@
     <None Include="Content\Products\Original\.gitignore" />
     <None Include="Content\Products\Preview\.gitignore" />
     <Content Include="Paypal.Master" />
+    <Content Include="Orders\PayPalIPN.ashx" />
     <None Include="Scripts\FCK\editor\dialog\fck_spellerpages\spellerpages\server-scripts\spellchecker.cfm" />
     <None Include="Scripts\FCK\editor\dialog\fck_spellerpages\spellerpages\server-scripts\spellchecker.php" />
     <None Include="Scripts\FCK\editor\dialog\fck_spellerpages\spellerpages\server-scripts\spellchecker.pl" />

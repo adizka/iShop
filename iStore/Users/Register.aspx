@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Register.aspx.cs" MasterPageFile="~/Page.Master" Inherits="iStore.Users.Register" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Register.aspx.cs" MasterPageFile="~/Page.Master" Inherits="iStore.Users.Register" Title="Registration | Marvel Worldwide" %>
 
 <asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="HeadContent">
 </asp:Content>
@@ -36,6 +36,7 @@
         <div class="Registration_Info Form" runat="server" id="divAfterRegistration" Visible="false">
             <p>Registration is successful, a confirmation email has been sent to your email</p>
         </div>
+
     </ContentTemplate>
 </asp:UpdatePanel>
 </asp:Content>

@@ -20,7 +20,7 @@ namespace iStore.Admin.Pages
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            Page.Title = PageTitle.Get(global::Resources.Admin_Edits.PageEdit_Title);
+            Page.Title = PageTitle.Get("Page edit");
             if (!IsPostBack)
             {
                 int id = CurrentPageId;

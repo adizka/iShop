@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Marvel | Authorization" MasterPageFile="~/Page.Master" Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="iStore.Users.Login" %>
+﻿<%@ Page Title="Authorization | Marvel Worldwide" MasterPageFile="~/Page.Master" Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="iStore.Users.Login" %>
 <%@ Register tagPrefix="iS" tagName="ValidateErrors" src="~/Modules/Controls/Validators/ValidateErrors.ascx" %>
 
 <asp:Content runat="server" ID="hc" ContentPlaceHolderID="HeadContent"></asp:Content>

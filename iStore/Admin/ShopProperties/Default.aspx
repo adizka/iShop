@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="iStore.Admin.ShopProperties.Default"  MasterPageFile="~/Admin/Admin.Master"%>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="iStore.Admin.ShopProperties.Default"  MasterPageFile="~/Admin/Admin.Master" Title="Shop | Marvel Worldwide" %>
 <asp:Content runat="server" ContentPlaceHolderID="head"></asp:Content>
 <asp:Content runat="server" ContentPlaceHolderID="main">
     <p class="BCCategories">

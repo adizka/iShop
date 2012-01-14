@@ -23,6 +23,7 @@ namespace iStore.Products
             CurrProdAddToCart.ProductId = CurrentProduct.ProductID;
             rpt.DataSource = RelatedProducts;
             rpt.DataBind();
+            Page.Title = iStore.Modules.Controls.PageTitle.Get(CurrentProduct.Name);
         }
 
 

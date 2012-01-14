@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.IO;
+using iStore.Modules.Controls;
 
 namespace iStore.Categories
 {
@@ -21,6 +22,7 @@ namespace iStore.Categories
                 if (CurrentCategory == null) Response.Redirect(iStore.Site.SiteUrl);
             }
             pager.EntityCount = GetProductsRefCurrentCategory.Count();
+            Page.Title = PageTitle.Get(CurrentCategory.Name);
         }
 
         public BL.Category CurrentCategory

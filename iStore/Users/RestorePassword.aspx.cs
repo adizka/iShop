@@ -19,7 +19,7 @@ namespace iStore.Users
             if (string.IsNullOrWhiteSpace(email))
             {
                 errMsg.Visible = true;
-                errMsg.InnerHtml = "Вы не регистрировались в нашей системе.";
+                errMsg.InnerHtml = "No such user.";
                 return;
             }
 
@@ -27,19 +27,19 @@ namespace iStore.Users
             if (User == null)
             {
                 errMsg.Visible = true;
-                errMsg.InnerHtml = "Вы не регистрировались в нашей системе.";
+                errMsg.InnerHtml = "No such user.";
                 return;
             }
             else if (User.ConfirmationID == null)
             {
                 errMsg.Visible = true;
-                errMsg.InnerHtml = "Вы уже зарегистрированны.";
+                errMsg.InnerHtml = "You have already registered.";
                 return;
             }
             else if (string.IsNullOrWhiteSpace(confirmationID) || User.ConfirmationID.ToString().ToUpper() != Request.QueryString["id"].ToUpper())
             {
                 errMsg.Visible = true;
-                errMsg.InnerHtml = "Ваша ссылка не активна.";
+                errMsg.InnerHtml = "Your link is disabled.";
                 return;
             }
             NewPasswordForm.Visible = true;
@@ -77,7 +77,7 @@ namespace iStore.Users
             }
 
             ubl.SetNewPasswordByUserId(User.UserID, passwd1.Text);
-            errMsg.InnerHtml = "Ваш пароль успешно востановлен";
+            errMsg.InnerHtml = "Pasword has been recoveried successfully";
             errMsg.Visible = true;
             errMsg.Visible = false;
         }

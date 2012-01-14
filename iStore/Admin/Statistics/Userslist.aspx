@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Userslist.aspx.cs" Inherits="iStore.Admin.Statistics.Userslist" MasterPageFile="~/Admin/Admin.Master" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Userslist.aspx.cs" Inherits="iStore.Admin.Statistics.Userslist" MasterPageFile="~/Admin/Admin.Master" Title="Users list | Marvel Worldwide" %>
 <%@ Register TagPrefix="iS" TagName="Pager" Src="~/Modules/Controls/Pager/Pager.ascx" %>
 <asp:Content ID="Content1" runat="server" ContentPlaceHolderID="head"></asp:Content>
 <asp:Content ID="Content2" runat="server" ContentPlaceHolderID="main">

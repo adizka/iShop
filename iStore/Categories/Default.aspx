@@ -55,7 +55,10 @@
                         <div class="ProductInfo">
                         <% foreach (var property in GetProductPropery(productRefCat.ProductID))
                         { %>
-                            <%= property.PropertyName %>: <%= property.PropertyValue %> <br />
+                            <p>
+                                <span class="prod_span bold_span"><%= property.PropertyName %>: </span>
+                                <span class="prod_span"><%= property.PropertyValue %> </span>
+                            </p>
                         <% } %>
                         </div>
                     </div>

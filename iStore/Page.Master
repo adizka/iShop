@@ -8,6 +8,7 @@
     <title></title>
     <link href="Styles/Style.css" rel="stylesheet" type="text/css" />
     <link href="Styles/Controls.css" rel="Stylesheet" type="text/css" />
+    <link href="favicon.ico" rel="shortcut icon">
     <script type="text/javascript" src="<%= iStore.Site.SiteUrl %>Scripts/jquery.min.js"></script>
     <script type="text/javascript" src="<%= iStore.Site.SiteUrl %>Scripts/Menu.js"></script>
     <script type="text/javascript" src="<%= iStore.Site.SiteUrl %>Scripts/MostPopularProducts.js"></script>

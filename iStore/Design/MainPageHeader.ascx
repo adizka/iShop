@@ -11,4 +11,5 @@
         <div class="MainPageHeader_Right">
             <iS:MostPopularProducts runat="server" ID="mostPopularProducts" />
         </div>
+        <div class="clear"></div>
     </div>

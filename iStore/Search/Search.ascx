@@ -15,7 +15,7 @@
     });
 </script>
 <span class="paraq_search">
-    <asp:DropDownList runat="server" ID="ddlSearchType">
+    <asp:DropDownList style="display:none;" runat="server" ID="ddlSearchType">
         <asp:ListItem Value="0">By product</asp:ListItem>
         <asp:ListItem Value="1">By category</asp:ListItem>
     </asp:DropDownList>

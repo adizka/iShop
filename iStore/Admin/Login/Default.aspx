@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Authorization - Admin Panel | Marvel WordlWide LTD" MasterPageFile="~/Admin/AdminLogin.Master" Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="iStore.Admin.Login.Default" %>
+﻿<%@ Page Title="Authorization - Admin Panel | Marvel Wordlwide" MasterPageFile="~/Admin/AdminLogin.Master" Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="iStore.Admin.Login.Default" %>
 <%@ Register TagPrefix="iS" TagName="ValidateErrors" Src="~/Modules/Controls/Validators/ValidateErrors.ascx" %>
 
 <asp:Content ContentPlaceHolderID="head" runat="server" ID="hd"></asp:Content>

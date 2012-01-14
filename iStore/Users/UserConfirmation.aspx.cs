@@ -17,7 +17,7 @@ namespace iStore.Users
             if (string.IsNullOrWhiteSpace(email))
             {
                 errMsg.Visible = true;
-                errMsg.InnerHtml = "You are not register in our system.";
+                errMsg.InnerHtml = "No such user.";
                 return;
             }
 
@@ -25,19 +25,19 @@ namespace iStore.Users
             if (user == null)
             {
                 errMsg.Visible = true;
-                errMsg.InnerHtml = "You are not register in our system.";
+                errMsg.InnerHtml = "No such user.";
                 return;
             }
             else if (user.ConfirmationID == null)
             {
                 errMsg.Visible = true;
-                errMsg.InnerHtml = "You already register.";
+                errMsg.InnerHtml = "You have already registered.";
                 return;
             }
             else if (string.IsNullOrWhiteSpace(confirmationID) || user.ConfirmationID.ToString().ToUpper() != Request.QueryString["id"].ToUpper())
             {
                 errMsg.Visible = true;
-                errMsg.InnerHtml = "Your link disabled.";
+                errMsg.InnerHtml = "Your link is disabled.";
                 return;
             }
 

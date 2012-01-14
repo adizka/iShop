@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="iStore.Search.Default" MasterPageFile="~/Page.Master" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="iStore.Search.Default" MasterPageFile="~/Page.Master" Title="Search | Marvel Worldwide" %>
 
 <%@ Register TagPrefix="iS" TagName="Pager" Src="~/Modules/Controls/Pager/Pager.ascx" %>
 <%@ Register TagPrefix="iS" TagName="AddToCart" Src="~/Modules/Controls/AddToCard.ascx" %>
@@ -54,21 +54,16 @@
         <% if(PageProducts.Count ==0)
            {
                %>
-               Categories: <br />
-               <ul>
+               <p class="pad_nogoods">Categories:</p> 
                <%
                foreach (var item in Categories)
                {
                 %>
-                
-                <li>
-                <a href="/Categories/?cid=<%= item.CategoryID %>">
-                <%= item.Name %>
-                     </a>
-                </li>
+                <p class="category_linear">
+                    <a href="/Categories/?cid=<%= item.CategoryID %>"><%= item.Name %></a> 
+                </p>
         <%}
           %>
-          </ul>
           <%
            }%>
     </div>

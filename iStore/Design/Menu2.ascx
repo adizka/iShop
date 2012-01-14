@@ -6,7 +6,7 @@
     <div class="MenuItemFirst">
         <% int i = -1; string topStyle = string.Empty;  
         foreach (var item in ParentCategory) 
-        {   i++; topStyle = "top:" + (20 * i).ToString() + "px"; %>
+        {   i++; topStyle = "top:" + (27 * i).ToString() + "px"; %>
             <div class="MenuHoverFirst" id="<%= item.CategoryID.ToString() %>">
                 <a href="<%= iStore.Site.SiteUrl %>Categories/?cid=<%= item.CategoryID.ToString() %>"><%= item.Name %></a>
             </div>

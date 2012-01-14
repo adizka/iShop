@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Search.aspx.cs" Inherits="iStore.Admin.Search" MasterPageFile="~/Admin/Admin.Master" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Search.aspx.cs" Inherits="iStore.Admin.Search" MasterPageFile="~/Admin/Admin.Master" Title="Search | Marvel Worldwide" %>
 
 <%@ Register TagPrefix="iS" TagName="Pager" Src="~/Modules/Controls/Pager/Pager.ascx" %>
 <%@ Register TagPrefix="iS" TagName="SearchControl" Src="~/Admin/SearchControl.ascx" %>

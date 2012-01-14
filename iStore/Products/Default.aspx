@@ -46,7 +46,7 @@
                     <span class="prod_span"><%=item. PropertyValue%> </span>
                 </p>
             <%
-            } %>
+            } %><br />
             <iS:AddToCart ProductId="<%#CurrentProduct.ProductID %>" ID="CurrProdAddToCart" runat="server" IsCounterVisible="true"  />
         </div>
     </div>

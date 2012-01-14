@@ -17,6 +17,7 @@ namespace iStore.Pages
             {
                 Response.Redirect(iStore.Site.SiteUrl);
             }
+            Page.Title = iStore.Modules.Controls.PageTitle.Get(CurrentPage.PageName);
         }
 
         public BL.Page CurrentPage

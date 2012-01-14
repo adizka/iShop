@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true"  MasterPageFile="~/Admin/Admin.Master" CodeBehind="NewsEdit.aspx.cs" Inherits="iStore.Admin.News.NewsEdit" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true"  MasterPageFile="~/Admin/Admin.Master" CodeBehind="NewsEdit.aspx.cs" Inherits="iStore.Admin.News.NewsEdit" Title="News edit | Marvel Worldwide" %>
 
 <asp:Content runat="server" ContentPlaceHolderID="head"></asp:Content>
 

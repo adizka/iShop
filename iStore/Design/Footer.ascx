@@ -8,7 +8,11 @@
     </p>
 </div>
 <div class="right_foot">
-    <p class="copyright_txt">Copyright 2011 Marvel Worldwide, Ltd. USA. All Rights Reserved.</p>
+    <p class="copyright_txt">
+        Copyright 2011 Marvel Worldwide, Ltd. USA. All Rights Reserved.
+        <br /><br />
+        Powered by <a  target="_blank" href="http://wchsb.com/">WCHSB</a>
+    </p>
 </div>
 
 <div class="clear"></div>

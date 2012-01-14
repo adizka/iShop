@@ -69,12 +69,12 @@ namespace iStore.Users
                 }
                 else
                 {
-                    lblNewMailError.Text = "Wrong Email";
+                    lblNewMailError.Text = "Wrong Email format";
                 }
             }
             else
             {
-                lblNewMailError.Text = "Wrong Email";
+                lblNewMailError.Text = "Wrong Email format";
             }
         }
 

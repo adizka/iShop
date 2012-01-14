@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="FormOrder.aspx.cs" Inherits="iStore.Orders.FormOrder"  MasterPageFile="~/Paypal.Master"%>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="FormOrder.aspx.cs" Inherits="iStore.Orders.FormOrder"  MasterPageFile="~/Paypal.Master" Title="Orders form | Marvel Worldwide" %>
 
 <asp:Content ID="Content1" runat="server" ContentPlaceHolderID="HeadContent">
 </asp:Content>
@@ -8,8 +8,6 @@
 
 <script type="text/javascript">
     
-    var tax = <%= ConfigurationManager.AppSettings["Tax"]%>;
-
     function Update() {
         var total = 0;
 
@@ -96,7 +94,7 @@
     <%if (UserOrder.OrdersRefProducts.Count != 0)
       { %>
     <div class="options_div">
-        <asp:ImageButton CommandName="Make payments with PayPal - it's fast, free and secure!" CssClass="right_pay" ImageUrl="http://www.paypal.com/en_US/i/btn/x-click-but01.gif" runat="server" OnClick="Pay" Text="Pay" /> 
+        <asp:ImageButton ID="ImageButton1" CommandName="Make payments with PayPal - it's fast, free and secure!" CssClass="right_pay" ImageUrl="http://www.paypal.com/en_US/i/btn/x-click-but01.gif" runat="server" OnClick="Pay" Text="Pay" /> 
     </div>
     <%} %>
 <h1>Your Shopping Cart</h1>
@@ -181,9 +179,13 @@
     </table>
         <script type="text/javascript" >
         Update();
+        $("form").attr("action", "FormOrder.aspx");
         <%if(IsDataAccepted) {%>
+        
+            var action = $("form").attr("action");
             $("form").attr("action", '<%=ConfigurationManager.AppSettings["PayPalPaymentUrlTest"] %>');
             $("form").submit();
+            $("form").attr("action", action);
             <%}%>
     </script> 
    <br />

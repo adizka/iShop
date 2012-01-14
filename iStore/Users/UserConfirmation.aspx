@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="UserConfirmation.aspx.cs" Inherits="iStore.Users.UserConfirmation"  MasterPageFile="~/Page.Master" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="UserConfirmation.aspx.cs" Inherits="iStore.Users.UserConfirmation"  MasterPageFile="~/Page.Master" Title="Confirmation | Marvel" %>
 
 
 <asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="HeadContent">

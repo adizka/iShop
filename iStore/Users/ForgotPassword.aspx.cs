@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using iStore.Modules.Controls;
 
 namespace iStore.Users
 {
@@ -17,6 +18,7 @@ namespace iStore.Users
             {
                 Response.Redirect(iStore.Site.SiteUrl);
             }
+            Page.Title = PageTitle.Get("Forgot Password");
         }
 
         protected void Go(object sender, EventArgs e)
@@ -32,7 +34,7 @@ namespace iStore.Users
             }
             else
             {
-                lblEmailError.Text = "Login or Password are wrong";
+                lblEmailError.Text = "Login or e-mail are wrong";
             }
         }
     }
