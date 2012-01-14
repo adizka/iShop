@@ -19,7 +19,7 @@ namespace BL.Helpers
 
 
 
-    
+
     public class Items
     {
         private PayPalPayerInfo ppinf;
@@ -105,7 +105,7 @@ namespace BL.Helpers
         public string payer_status { get { return GetPropertyByKey("payer_status"); } }
         public string business { get { return GetPropertyByKey("business"); } }
         public string address_country { get { return GetPropertyByKey("address_country"); } }
-        public uint ItemsCount { get { return uint.Parse( GetPropertyByKey("num_cart_items")); } }
+        public uint ItemsCount { get { return uint.Parse(GetPropertyByKey("num_cart_items")); } }
         public string address_city { get { return GetPropertyByKey("address_city"); } }
         public string payer_email { get { return GetPropertyByKey("payer_email"); } }
         public string txn_id { get { return GetPropertyByKey("txn_id"); } }
@@ -119,6 +119,6 @@ namespace BL.Helpers
         public string mc_currency { get { return GetPropertyByKey("mc_currency"); } }
         public string residence_country { get { return GetPropertyByKey("residence_country"); } }
         public string transaction_subject { get { return GetPropertyByKey("transaction_subject"); } }
-        public string payment_gross { get { return GetPropertyByKey("payment_gross"); } }
+        public decimal payment_gross { get { return decimal.Parse(GetPropertyByKey("payment_gross")); } }
     }
 }

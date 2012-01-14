@@ -20,15 +20,15 @@ namespace BL.Modules.Mail
 
             sb.Append("<p><h3>");
             sb.Append(SiteProperties.SiteName);
-            sb.Append("</h3></p><br /><p><h4>Вы заплонили регистрационную форму на сайте You have complited registration form on <a href='");
+            sb.Append("</h3></p><br /><p><h4>You have complited registration form on <a href='");
             sb.Append(SiteProperties.SiteUrl);
             sb.Append("'>");
             sb.Append(SiteProperties.SiteName);
-            sb.Append("</a>.</h4></p><br /><br /><p>Для подтверждения регистрации, пройдите по следующей ссылке: To confirm you registration please follow  link <a href='");
+            sb.Append("</a>.</h4></p><br /><br /><p>To confirm you registration please follow  link <a href='");
             sb.Append(m_link);
             sb.Append("'>");
             sb.Append(m_link);
-            sb.Append("</a></p><br /><br /><p>C уважением, администрация Br, Administration  marvelworldwide.com");
+            sb.Append("</a></p><br /><br /><p>Br, Administration ");
             sb.Append(SiteProperties.SiteName);
             sb.Append("</p>");
             string m_from = "info@marvel.com";
@@ -53,7 +53,7 @@ namespace BL.Modules.Mail
             sb.Append(m_link);
             sb.Append("'>");
             sb.Append(m_link);
-            sb.Append("</a></p><br /><br /><p>C уважением, администрация Br, Administration marvelworldwide.com");
+            sb.Append("</a></p><br /><br /><p>Br, Administration ");
             sb.Append(SiteProperties.SiteName);
             sb.Append("</p>");
             string m_from = "info@marvel.com";
@@ -63,7 +63,7 @@ namespace BL.Modules.Mail
 
         public static void OrderAccepted(BL.User user)
         {
-            string m_subject = "Принятие заказа на сайте Your order have been received on " + SiteProperties.SiteName;
+            string m_subject = "Your order have been received on " + SiteProperties.SiteName;
 
             StringBuilder sb = new StringBuilder();
 
@@ -73,11 +73,11 @@ namespace BL.Modules.Mail
             sb.Append(SiteProperties.SiteUrl);
             sb.Append("'>");
             sb.Append(SiteProperties.SiteName);
-            sb.Append("</a>.</h4></p><br /><br /><p>Для просмотра вашего заказа пройдете по ссылке:  To review your order please follow link<a href='");
+            sb.Append("</a>.</h4></p><br /><br /><p>To review your order please follow link <a href='");
             sb.Append(BL.SiteProperties.SiteUrl);
             sb.Append("'>");
             sb.Append(SiteProperties.SiteName);
-            sb.Append("</a></p><br /><br /><p>C уважением, администрация Br, Administration marvelworldwide.com ");
+            sb.Append("</a></p><br /><br /><p>Br, Administration ");
             sb.Append(SiteProperties.SiteName);
             sb.Append("</p>");
             string m_from = "info@marvel.com";
