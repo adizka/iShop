@@ -13,6 +13,7 @@
     <p>Email: <a href="">testmail@sitename.com </a> </p>
 </div>
 <div class="Form left_prizm">
+<div runat="server" id="errMsg" visible="false"></div>
     <h1>Contact Us</h1>
     <p>
         <label>User Name:</label>
