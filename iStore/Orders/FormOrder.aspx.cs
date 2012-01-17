@@ -43,6 +43,7 @@ namespace iStore.Orders
                 phoneTxt.Text = UserOrder.PhoneNumber;
                 emailTxt.Text = UserOrder.email;
             }
+            obl.UpadateOrderTime(UserOrder.OrderID);
 
             IsDataAccepted = false;
         }
@@ -58,6 +59,36 @@ namespace iStore.Orders
                 return _UserOrder;
             }
         }
+ 
+
+        protected void Pay(object obj, EventArgs args)
+        {
+
+            var firstName = HttpUtility.HtmlEncode(FirstNameTxt.Text.Trim());
+            var lastName = HttpUtility.HtmlEncode(LastNameTxt.Text.Trim());
+            var address1 = HttpUtility.HtmlEncode(address1Txt.Text.Trim());
+            var address2 = HttpUtility.HtmlEncode(address2Txt.Text.Trim());
+            var city = HttpUtility.HtmlEncode(cityTxt.Text.Trim());
+            var email = emailTxt.Text.Trim();
+            var province = HttpUtility.HtmlEncode(provinceTxt.Text.Trim());
+            var zip = HttpUtility.HtmlEncode(zipTxt.Text.Trim());
+            var phone = HttpUtility.HtmlEncode(phoneTxt.Text.Trim());
+            var strCountryID = countryDdl.SelectedValue;
+            int countryID;
+            if (!int.TryParse(strCountryID, out countryID))
+                return;
+
+            if (!CheckData(firstName, lastName, address1, address2, city, province, zip, phone, email, countryID))
+                return;
+
+            email = string.IsNullOrWhiteSpace(email) ? auth.CurrentUser.Email : HttpUtility.HtmlEncode(email);
+
+            obl.UpdateOrderUserData(UserOrder.OrderID, firstName, lastName, address1, address2, city, province, zip, phone, email, countryID);
+            _UserOrder = null;
+
+            IsDataAccepted = true;
+        }
+
         static string emailPatern = @"^([0-9a-zA-Z]([-.\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\w]*[0-9a-zA-Z]\.)+[a-zA-Z]{2,9})$";
         static Regex emailValidator = new Regex(emailPatern);
         private bool CheckData(string firstName, string lastName, string address1, string address2, string city, string province, string zip, string phone, string email, int countryID)
@@ -117,11 +148,6 @@ namespace iStore.Orders
             if (errMsg.Visible)
                 return !errMsg.Visible;
 
-<<<<<<< HEAD
-
-=======
-            
->>>>>>> origin/master
             if (address1.Length > 150)
             {
                 errMsg.InnerHtml += "Address 1 max length 150<br/>";
@@ -177,34 +203,6 @@ namespace iStore.Orders
             }
 
             return !errMsg.Visible;
-        }
-
-        protected void Pay(object obj, EventArgs args)
-        {
-
-            var firstName = HttpUtility.HtmlEncode(FirstNameTxt.Text.Trim());
-            var lastName = HttpUtility.HtmlEncode(LastNameTxt.Text.Trim());
-            var address1 = HttpUtility.HtmlEncode(address1Txt.Text.Trim());
-            var address2 = HttpUtility.HtmlEncode(address2Txt.Text.Trim());
-            var city = HttpUtility.HtmlEncode(cityTxt.Text.Trim());
-            var email = emailTxt.Text.Trim();
-            var province = HttpUtility.HtmlEncode(provinceTxt.Text.Trim());
-            var zip = HttpUtility.HtmlEncode(zipTxt.Text.Trim());
-            var phone = HttpUtility.HtmlEncode(phoneTxt.Text.Trim());
-            var strCountryID = countryDdl.SelectedValue;
-            int countryID;
-            if (!int.TryParse(strCountryID, out countryID))
-                return;
-
-            if (!CheckData(firstName, lastName, address1, address2, city, province, zip, phone, email, countryID))
-                return;
-
-            email = string.IsNullOrWhiteSpace(email) ? auth.CurrentUser.Email : HttpUtility.HtmlEncode(email);
-
-            obl.UpdateOrderUserData(UserOrder.OrderID, firstName, lastName, address1, address2, city, province, zip, phone, email, countryID);
-            _UserOrder = null;
-
-            IsDataAccepted = true;
         }
 
         public bool IsDataAccepted { get; set; }

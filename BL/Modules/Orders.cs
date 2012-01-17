@@ -43,25 +43,33 @@ namespace BL.Modules.Orders
                 foreach (var item in prodIDs)
                 {
                     var ord = order.OrdersRefProducts.FirstOrDefault(r => r.ProductID == item.ID);
+                    int oldCount = 0;
+                    BL.Product prod = null;
                     if (ord != null)
                     {
-                        ord.Count = Math.Min(ord.Count + item.Count, ord.Product.Count);
+                        oldCount = ord.Count;
+                        //ord.Count = Math.Min(item.Count, ord.Product.Count);
+                        ord.CreateDate = DateTime.Now;
                     }
                     else
                     {
-                        var prod = db.Products.First(p => p.ProductID == item.ID);
+                        prod = db.Products.First(p => p.ProductID == item.ID);
                         if (prod == null)
                             continue;
                         ord = new OrdersRefProduct()
                         {
-                            Count = Math.Min(item.Count, prod.Count),
                             ProductID = item.ID,
                             ID = Guid.NewGuid(),
                             CreateDate = DateTime.Now,
-                            //ProductAndProperyRefID =????????????
                         };
+                        oldCount = 0;
                         order.OrdersRefProducts.Add(ord);
                     }
+                    prod = (prod == null) ? db.Products.First(p => p.ProductID == item.ID) : prod;
+                    ord.Count += Math.Min(item.Count, prod.Count);
+                    prod.Count -= ord.Count - oldCount;
+                    prod.IsVisible = prod.Count > 0;
+                    
                 }
                 db.SubmitChanges();
             }
@@ -77,6 +85,13 @@ namespace BL.Modules.Orders
 
                 if (order == null)
                     return;
+
+                foreach (var item in order.OrdersRefProducts)
+                {
+                    item.Product.Count += item.Count;
+                    item.Product.IsVisible = item.Product.Count > 0;
+                }
+
                 db.OrdersRefProducts.DeleteAllOnSubmit(order.OrdersRefProducts.Where(r => toDelete.Contains(r.ID)));
 
                 db.SubmitChanges();
@@ -98,49 +113,14 @@ namespace BL.Modules.Orders
 
                 foreach (var item in refs)
                 {
+                    var oldCount = item.Count;
                     item.Count = (Math.Min(newCounts.First(c => c.ID == item.ID).Count, item.Product.Count));
-                }
-
-                db.SubmitChanges();
-            }
-        }
-
-        public bool TryFormOrder(PaymentTypes paymentType, Helpers.PayPalPayerInfo paymentInfo)
-        {
-            using (var db = new ShopDataContext())
-            {
-                if (db.Orders.Any(o => o.TransactionID == paymentInfo.txn_id))
-                    return true;
-
-                var order = db.Orders.FirstOrDefault(o => o.OrderID == paymentInfo.OrderID && !o.IsPaid);
-
-                if (order == null)
-                    return false;
-
-                var totalSum = order.OrdersRefProducts.Sum(r => (r.Product.Price + r.Product.Tax + r.Product.Shipping) * r.Count);
-                if (totalSum != paymentInfo.payment_gross)
-                    return false;
-
-                foreach (var item in order.OrdersRefProducts)
-                {
-                    item.Product.Count -= item.Count;
+                    item.Product.Count -= item.Count - oldCount;
                     item.Product.IsVisible = item.Product.Count > 0;
                 }
 
-                order.IsActive = false;
-                order.IsPaid = true;
-                order.PaymentTypeID = (int)paymentType;
-                order.OrderStatusID = (int)BL.OrderStatus.Paid;
-                order.TotalSum = Convert.ToDecimal(order.OrdersRefProducts.Sum(r => r.Product.Price * r.Count));
-                order.CreateDate = paymentInfo.payment_date;
-                order.TransactionID = paymentInfo.txn_id;
-                order.DeliveryDate = DateTime.Now.AddHours(double.Parse(ConfigurationManager.AppSettings["DeliveryTime"]));
-                order.DeliveryTypeID = (int)DeliveryTypes.NotDelivered;
-                order.SpecialNote = paymentInfo.SpecialNote;
                 db.SubmitChanges();
-                BL.Modules.Mail.Mail.OrderAccepted(order.User);
             }
-            return true;
         }
 
         public bool TryFormOrderIPN(PaymentTypes paymentType, string transactionID, Guid orderID, decimal payment_gross,
@@ -159,12 +139,6 @@ namespace BL.Modules.Orders
                 var totalSum = order.OrdersRefProducts.Sum(r => (r.Product.Price + r.Product.Tax + r.Product.Shipping) * r.Count);
                 if (totalSum != payment_gross)
                     return false;
-
-                foreach (var item in order.OrdersRefProducts)
-                {
-                    item.Product.Count -= item.Count;
-                    item.Product.IsVisible = item.Product.Count > 0;
-                }
 
                 order.IsActive = false;
                 order.IsPaid = true;
@@ -200,6 +174,12 @@ namespace BL.Modules.Orders
 
                 if (order == null)
                     return;
+
+                foreach (var item in order.OrdersRefProducts)
+                {
+                    item.Product.Count += item.Count;
+                    item.Product.IsVisible = item.Product.Count > 0;
+                }
                 db.OrdersRefProducts.DeleteAllOnSubmit(order.OrdersRefProducts);
                 db.SubmitChanges();
             }
@@ -258,7 +238,10 @@ namespace BL.Modules.Orders
 
                 foreach (var item in order.OrdersRefProducts)
                 {
+                    var oldCount = item.Count;
                     item.Count = (Math.Min(item.Count, item.Product.Count));
+                    item.Product.Count += oldCount - item.Count;
+                    item.Product.IsVisible = item.Product.Count > 0;
                 }
 
                 db.SubmitChanges();
@@ -274,6 +257,11 @@ namespace BL.Modules.Orders
                 if (order == null)
                     return;
 
+                foreach (var item in order.OrdersRefProducts)
+                {
+                    item.CreateDate = DateTime.Now;
+                }
+
                 order.CountryID = countryID;
                 order.FirstName = firstName;
                 order.LastName = lastName;
@@ -285,6 +273,42 @@ namespace BL.Modules.Orders
                 order.zipcode = zip;
                 order.email = email;
 
+                db.SubmitChanges();
+            }
+        }
+
+        public void UpadateOrderTime(Guid orderID)
+        {
+            using (var db = new ShopDataContext())
+            {
+                var refs = db.OrdersRefProducts.Where(o => o.OrderID == orderID);
+
+                foreach (var item in refs)
+                {
+                    item.CreateDate = DateTime.Now;
+                }
+
+                db.SubmitChanges();
+            }
+        }
+
+        public void UpadateOrdersCounts()
+        {
+            using (var db = new ShopDataContext())
+            {
+                var timeLimit = int.Parse(ConfigurationManager.AppSettings["OrderRefExpireTimeMin"]);
+                var expireDate = DateTime.Now.AddHours(-timeLimit);
+
+                var expiredOrders = db.OrdersRefProducts.Where(o => !o.Order.IsPaid && o.CreateDate > expireDate).ToList();
+                if (expiredOrders.Count > 0)
+                    expireDate = expireDate;
+
+                foreach (var item in expiredOrders)
+                {
+                    item.Product.Count += item.Count;
+                }
+
+                db.OrdersRefProducts.DeleteAllOnSubmit(expiredOrders);
                 db.SubmitChanges();
             }
         }
