@@ -114,6 +114,64 @@ namespace iStore.Orders
                 errMsg.InnerHtml += "fill out valid e-mail<br/>";
                 errMsg.Visible = true;
             }
+            if (errMsg.Visible)
+                return !errMsg.Visible;
+
+            
+            if (address1.Length > 150)
+            {
+                errMsg.InnerHtml += "Address 1 max length 150<br/>";
+                errMsg.Visible = true;
+            }
+
+            if (address2.Length > 150)
+            {
+                errMsg.InnerHtml += "Address 2 max length 150<br/>";
+                errMsg.Visible = true;
+            }
+
+            if (city.Length > 50)
+            {
+                errMsg.InnerHtml += "City max length 50<br/>";
+                errMsg.Visible = true;
+            }
+
+            if (province.Length > 50)
+            {
+                errMsg.InnerHtml += "State/Province/Region max length 150<br/>";
+                errMsg.Visible = true;
+            }
+
+            if (zip.Length > 50)
+            {
+                errMsg.InnerHtml += "Zip code max length 50<br/>";
+                errMsg.Visible = true;
+            }
+
+            if (phone.Length > 50)
+            {
+                errMsg.InnerHtml += "Phone max length 50<br/>";
+                errMsg.Visible = true;
+            }
+
+            if (email.Length > 150)
+            {
+                errMsg.InnerHtml += "Email max length 50<br/>";
+                errMsg.Visible = true;
+            }
+
+            if (lastName.Length > 50)
+            {
+                errMsg.InnerHtml += "Last name max length 50<br/>";
+                errMsg.Visible = true;
+            }
+
+            if (firstName.Length > 50)
+            {
+                errMsg.InnerHtml += "First name max length 50<br/>";
+                errMsg.Visible = true;
+            }
+
             return !errMsg.Visible;
         }
 

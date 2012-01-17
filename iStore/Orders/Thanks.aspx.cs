@@ -18,67 +18,20 @@ namespace iStore.Orders
         protected void Page_Load(object sender, EventArgs e)
         {
 
+            if (ubl.CurrentUser == null)
+                Response.Redirect(iStore.Site.SiteUrl + "Users/Login.aspx");
+
             if (UserOrder == null || UserOrder.OrdersRefProducts.Count == 0)
             {
                 msg.InnerHtml = "You do not have any items in your cart";
                 return;
             }
 
-            if (!Page.IsPostBack)
-            {
-                if (PaymentInfo.IsSucced
-                    && PaymentInfo.receiver_email == WebConfigurationManager.AppSettings["Login"])
-                {
-
-                    if (obl.TryFormOrder(BL.PaymentTypes.PayPal, PaymentInfo))
-                        msg.InnerHtml = "Transaction complete successfuly! :)";
-                    else
-                        msg.InnerHtml = "You transaction had already been passed! :)";
-                }
-                else
-                {
-                    msg.InnerHtml = "You had paid incorrect sum ):";
-                }
-            }
-        }
+            if (UserOrder.UserID != ubl.CurrentUser.UserID)
+                Response.Redirect("~/Orders/OrdersList.aspx");
 
 
-        BL.Helpers.PayPalPayerInfo _PaymentInfo;
-        BL.Helpers.PayPalPayerInfo PaymentInfo
-        {
-            get
-            {
-                if (_PaymentInfo != null)
-                    return _PaymentInfo;
-
-
-                var authToken = WebConfigurationManager.AppSettings["PDTToken"];
-
-                var txToken = Request.QueryString.Get("txn_id");
-                if (string.IsNullOrEmpty(txToken))
-                    txToken = Request.QueryString.Get("tx");
-
-                var query = string.Format("cmd=_notify-synch&tx={0}&at={1}",
-                                      txToken, authToken);
-
-                string url = WebConfigurationManager.AppSettings["PayPalPaymentUrlTest"];
-                HttpWebRequest req = (HttpWebRequest)WebRequest.Create(url);
-
-                req.Method = "POST";
-                req.ContentType = "application/x-www-form-urlencoded";
-                req.ContentLength = query.Length;
-
-                StreamWriter stOut = new StreamWriter(req.GetRequestStream(),
-                                         System.Text.Encoding.ASCII);
-                stOut.Write(query);
-                stOut.Close();
-
-                StreamReader stIn = new StreamReader(req.GetResponse().GetResponseStream());
-                var strResponse = stIn.ReadToEnd();
-                stIn.Close();
-                _PaymentInfo = new BL.Helpers.PayPalPayerInfo(HttpUtility.UrlDecode(strResponse));
-                return _PaymentInfo;
-            }
+            msg.InnerHtml = "You transaction had already been passed! :)";
         }
 
         BL.Order _UserOrder;
@@ -87,7 +40,13 @@ namespace iStore.Orders
             get
             {
                 if (_UserOrder == null)
-                    _UserOrder = obl.GetOrderById(new Guid(Request.QueryString["cm"]));
+                {
+                    var txToken = Request.QueryString.Get("txn_id");
+                    if (string.IsNullOrEmpty(txToken))
+                        txToken = Request.QueryString.Get("tx");
+
+                    _UserOrder = obl.GetAllOrders().FirstOrDefault(o => o.TransactionID == txToken);
+                }
                 return _UserOrder;
             }
             set
