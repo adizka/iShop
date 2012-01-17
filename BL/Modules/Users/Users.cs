@@ -17,7 +17,6 @@ namespace BL.Modules.Users
             return db.Users;
         }
 
-
         /// <summary>
         /// Registration User, Send Mail With ConfirmI
         /// </summary>

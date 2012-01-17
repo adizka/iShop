@@ -4,7 +4,6 @@
 <%@Register TagPrefix="iS" TagName="AddToCart" Src="~/Modules/Controls/AddToCard.ascx" %>
 <asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="HeadContent">
 </asp:Content>
-
 <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainContent">
     <div>
         <h1><a href="<%= iStore.Site.SiteUrl %>NewDeals/">New Deals</a></h1>    

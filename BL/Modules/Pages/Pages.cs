@@ -5,8 +5,6 @@ using System.Text;
 using System.Configuration;
 using System.Transactions;
 
-
-
 namespace BL.Modules.Pages
 {
     public class Pages
@@ -24,7 +22,7 @@ namespace BL.Modules.Pages
                 UpdatePage(pageId, keywords, pageName, pageBody);
             }
         }
-
+        
         private void AddPage(string keywords, string pageName, string pageBody)
         {
             BL.Page page = new BL.Page();

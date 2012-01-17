@@ -12,7 +12,6 @@ namespace BL.Modules.Categories
     {
         public bool AddProperties(Guid categoryId, string name, string value, int sort)
         {
-
             bool saveProperty = false;
             using (ShopDataContext db = new ShopDataContext())
             {

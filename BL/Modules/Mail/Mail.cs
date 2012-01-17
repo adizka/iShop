@@ -8,13 +8,11 @@ namespace BL.Modules.Mail
 {
     public class Mail
     {
-
         public static void Registration(BL.User user)
         {
             string m_subject = "Registration on marvelworldwide.com";
 
             StringBuilder sb = new StringBuilder();
-
 
             string m_link = BL.SiteProperties.SiteUrl + "Users/UserConfirmation.aspx?email=" + user.Email + "&id=" + user.ConfirmationID.ToString();
 
@@ -31,7 +29,8 @@ namespace BL.Modules.Mail
             sb.Append("</a></p><br /><br /><p>Br, Administration ");
             sb.Append(SiteProperties.SiteName);
             sb.Append("</p>");
-            string m_from = "info@marvel.com";
+            string m_from = "marinan@wchsb.com";
+;
 
             MailHelper.SendMailMessage(m_from, user.Email, string.Empty, string.Empty, m_subject, sb.ToString());
         }
@@ -56,7 +55,7 @@ namespace BL.Modules.Mail
             sb.Append("</a></p><br /><br /><p>Br, Administration ");
             sb.Append(SiteProperties.SiteName);
             sb.Append("</p>");
-            string m_from = "info@marvel.com";
+            string m_from = "marinan@wchsb.com";
 
             MailHelper.SendMailMessage(m_from, user.Email, string.Empty, string.Empty, m_subject, sb.ToString());
         }
@@ -80,7 +79,7 @@ namespace BL.Modules.Mail
             sb.Append("</a></p><br /><br /><p>Br, Administration ");
             sb.Append(SiteProperties.SiteName);
             sb.Append("</p>");
-            string m_from = "info@marvel.com";
+            string m_from = "marinan@wchsb.com";
 
             MailHelper.SendMailMessage(m_from, user.Email, string.Empty, string.Empty, m_subject, sb.ToString());
         }
@@ -91,13 +90,13 @@ namespace BL.Modules.Mail
 
             StringBuilder sb = new StringBuilder();
 
-            sb.Append("<p>Contact address");
+            sb.Append("<p>Contact address ");
             sb.Append(email);
             sb.Append("</p>");
             sb.Append("<p>");
             sb.Append(body);
             sb.Append("</p>");
-            string m_from = "info@marvel.com";
+            string m_from = "marinan@wchsb.com";
 
             MailHelper.SendMailMessage(m_from, m_from, string.Empty, string.Empty, m_subject, sb.ToString());
         }
@@ -116,7 +115,7 @@ namespace BL.Modules.Mail
             sb.Append("\">");
             sb.Append(SiteProperties.SiteName);
             sb.Append("</a></p>");
-            string m_from = "info@marvel.com";
+            string m_from = "marinan@wchsb.com";
 
             MailHelper.SendMailMessage(m_from, email, string.Empty, string.Empty, m_subject, sb.ToString());
         }

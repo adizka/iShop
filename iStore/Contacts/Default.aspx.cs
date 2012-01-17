@@ -31,42 +31,42 @@ namespace iStore.Contacts
             var email = HttpUtility.HtmlEncode(emailTxt.Text);
             var body = HttpUtility.HtmlEncode(msgTxt.Text);
 
-            if (body.Length == 0)
+            if (body.Length < 3)
             {
                 errMsg.Visible = true;
-                errMsg.InnerHtml = "Сообщение не может быть пустым.";
+                errMsg.InnerHtml = "Message must be at least 4 characters.";
                 return;
             }
 
             if (body.Length > 500)
             {
                 errMsg.Visible = true;
-                errMsg.InnerHtml = "Сообщение не может превышать 500 символов.";
+                errMsg.InnerHtml = "Message  must be no longer than 500 characters";
                 return;
             }
 
-            if (userName.Length == 0)
+            if (userName.Length == 4)
             {
                 errMsg.Visible = true;
-                errMsg.InnerHtml = "Неуказанно имя пользователя.";
+                errMsg.InnerHtml = "UserName must be at least 4 characters";
                 return;
             }
 
             if (userName.Length > 75)
             {
                 errMsg.Visible = true;
-                errMsg.InnerHtml = "Имя пользователя не может превышать 75 символов.";
+                errMsg.InnerHtml = "UserName  must be no longer than 75 characters";
                 return;
             }
             if (!Regex.IsMatch(email, MatchEmailPattern))
             {
                 errMsg.Visible = true;
-                errMsg.InnerHtml = "Введите корректный e-mail.";
+                errMsg.InnerHtml = "Enter a valid email-address";
                 return;
             }
 
             BL.Modules.Mail.Mail.SendFeedBack(email, userName, body);
-            BL.Modules.Mail.Mail.SendThanksFeedBack(email, userName);
+            //BL.Modules.Mail.Mail.SendThanksFeedBack(email, userName);
             errMsg.Visible = false;
         }
     }

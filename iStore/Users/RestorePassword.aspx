@@ -10,6 +10,7 @@ type your new password:<br />
 retype your new password:<br />
 <asp:TextBox runat="server" ID="passwd2"></asp:TextBox>
 <br />
+
 <asp:Button runat="server" ID="RestoreBtn" Text="Restore" OnClick="Restore" />
 </div>
 </asp:Content>

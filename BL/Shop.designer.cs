@@ -2030,7 +2030,7 @@ namespace BL
             }
         }
 
-        [global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_TotalSum", DbType = "Decimal(18,0) NOT NULL")]
+        [global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_TotalSum", DbType = "Decimal(18,2) NOT NULL")]
         public decimal TotalSum
         {
             get

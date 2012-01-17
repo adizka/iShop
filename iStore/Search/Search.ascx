@@ -14,6 +14,7 @@
         });
     });
 </script>
+
 <span class="paraq_search">
     <asp:DropDownList style="display:none;" runat="server" ID="ddlSearchType">
         <asp:ListItem Value="0">By product</asp:ListItem>

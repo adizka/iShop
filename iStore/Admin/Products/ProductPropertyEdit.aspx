@@ -18,7 +18,7 @@
     <a href="<%= iStore.Site.SiteAdminUrl %>Products/?cid=<%= Request.QueryString["cid"] %>">Back to product list</a>
 </p>
 <div class="pro_cat_name">
-    <%=Product.Name %> (edit product )
+    <%=Product.Name %> (edit product)
 </div>
 <div class="Admin_LoginErrors" id="divError" runat="server"></div>
     <div id="AddNewPropContainer">
@@ -30,7 +30,6 @@
         </div>
         <div id="WarningMsg" style="display:none;">This property is allready exist.</div>
     </div>
-
 
     <div id="ProductPropertyContainer">
         <%

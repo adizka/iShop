@@ -4,8 +4,6 @@ function PackVals(name, val, sortInd) {
     return delimeter + delimeter + name + delimeter + val + delimeter + sortInd;
 }
 
-
-
 function AssignEvents() {
     $('.DeleteButton').unbind('click');
     $(".DeleteButton").each(function () { $(this).click(function () { return DeleteProperty(this); }); });

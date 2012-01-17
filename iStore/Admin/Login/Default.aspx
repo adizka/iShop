@@ -22,21 +22,18 @@
         }
     </script>
     <div class="Admin_Login">
-        <div class="Admin_LoginErrors">
-            <iS:ValidateErrors runat="server" ID="veLogin" Visible="false" />
-        </div>
+        <div class="Admin_LoginErrors"  id="divError" runat="server"></div>
         <div class="Admin_LoginForm">
             <div class="top_loged"></div>
             <div class="mid_loged">
 
                 <p>
-                    <span class="spn_spec">Username </span>
-                    <asp:TextBox runat="server" ID="txtLogin" AutoPostBack="true" />
+                    <span class="spn_spec">Login</span>
+                    <asp:TextBox runat="server" ID="txtLogin"  />
                 </p>  
-
                 <p>
                     <span class="spn_spec">Password </span>
-                    <asp:TextBox runat="server" ID="txrPassword" TextMode="Password" AutoPostBack="true" />
+                    <asp:TextBox runat="server" ID="txrPassword" TextMode="Password" />
                 </p>
                 <p>
                     <span class="spn_spec">&nbsp;</span>
@@ -67,6 +64,7 @@
             </p>
         </div>         
     </div>
+
    <%-- <div class="Admin_LoginLinks">
         <a href="#" onclick="Forgot();" id="linkForgot">Forgot password?</a>
         <a href="#" onclick="Login();" id="linkLogin" style="display:none">Sign in</a>

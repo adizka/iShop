@@ -6,7 +6,6 @@
     <h1>
         <%= CurrentPageName %>
     </h1>
-
     <div>
         <%= CurrentPage.PageBody %>
     </div>

@@ -18,7 +18,11 @@ namespace iStore.Admin.Design
         protected void LogOut(object sender, EventArgs e)
         {
             iStore.Modules.Logic.Auth.Users ubl = new iStore.Modules.Logic.Auth.Users();
-            ubl.LogOut(ubl.CurrentUser.UserID);
+            if (ubl.CurrentUser != null)
+            {
+                ubl.LogOut(ubl.CurrentUser.UserID);
+            }
+            Response.Redirect(Request.Url.AbsoluteUri);
         }
     }
 }

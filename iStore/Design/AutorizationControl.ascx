@@ -9,7 +9,6 @@
         <a href="<%= iStore.Site.SiteUrl %>Users/Register.aspx">register</a>
     </span>
 </span>
-
 <div class="Header_Login apple_overlay" id="Header_Login">
     <p>
         <asp:Label runat="server" ID="lblLogin" AssociatedControlID="txtLogin">User name:</asp:Label><br />

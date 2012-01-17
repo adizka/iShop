@@ -28,7 +28,6 @@ namespace iStore.Admin.Categories
             this.Root = this;
         }
 
-
         private Categories(BL.Category category, Categories parent)
         {
 

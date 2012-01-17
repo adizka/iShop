@@ -1,7 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="PropertyEdit.aspx.cs" Inherits="iStore.Admin.ShopProperty.PropertyEdit" MasterPageFile="~/Admin/Admin.Master" Title="Shop properties | Marvel Worldwide" %>
 
-
-
 <asp:Content runat="server" ContentPlaceHolderID="head"></asp:Content>
 <asp:Content runat="server" ContentPlaceHolderID="main">
 <p class="BCCategories">

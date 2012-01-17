@@ -43,5 +43,4 @@
     <div class="UserCart">
         <iS:Cart runat="server" ></iS:Cart>
     </div>
-<%--end 1--%>
 </div>

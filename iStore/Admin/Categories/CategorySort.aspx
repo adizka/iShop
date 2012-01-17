@@ -21,8 +21,7 @@
         temp = $("#CategoryName" + index).html();
         $("#CategoryName" + index).html($("#CategoryName" + (index - 1)).html());
         $("#CategoryName" +( index - 1)).html(temp);
-        UpdateResult();
-                
+        UpdateResult();                
     }
 
     function MoveDown(index) {

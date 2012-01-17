@@ -14,6 +14,5 @@ namespace BL.Modules.Stock
             ShopDataContext db = new ShopDataContext();
             return db.Stocks.Where(s => s.ProductID == productId).FirstOrDefault();
         }
-
     }
 }

@@ -6,6 +6,7 @@
 <asp:ScriptManager runat="server" ID="sm"></asp:ScriptManager>    
 <asp:UpdatePanel runat="server" ID="up">
 <ContentTemplate>
+
    <h1>I forgot my password</h1>
    <div class="Form">
        <p>

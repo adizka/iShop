@@ -19,7 +19,7 @@ namespace iStore.Modules.Controls.Pager
         }
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            pds.Visible = EntityCount > EntitiesPerPage;
         }
 
         string _NavigateUrl;
@@ -73,7 +73,6 @@ namespace iStore.Modules.Controls.Pager
                     finally
                     {
                         PageIndexObj = new object();
-                        _PageIndex = (_PageIndex + 1 > PagesCount) ? PagesCount - 1 : _PageIndex;
                     }
                 return _PageIndex;
             }

@@ -3,8 +3,7 @@
 <asp:Content runat="server" ContentPlaceHolderID="head"></asp:Content>
 
 <asp:Content runat="server" ContentPlaceHolderID="main">
-    <div class="Admin_AddOrUpdate">
-           
+    <div class="Admin_AddOrUpdate">         
             
             <div class="Title">
                 <h1><%= global::Resources.Admin_Edits.PageEdit_Title%></h1>

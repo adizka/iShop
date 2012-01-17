@@ -2,6 +2,7 @@
 <asp:Content runat="server" ContentPlaceHolderID="head"></asp:Content>
 <asp:Content runat="server" ContentPlaceHolderID="main">
 <br />
+
 <div class="pader_category">
     <div class="top_repeater"></div>
         <div class="mid_repeater">
@@ -74,8 +75,8 @@
                 <span class="order_span08"><%=item.OrderStatuse.OrderStatus %></span>
                 <span class="order_span09"><%= ((item.IsPaid) ? item.PaymentType.PaymentType1 : string.Empty)%></span>
                 <span class="order_span09"><%=item.DeliveryType.DeliveryType1%></span>
-                <span class="order_span05"><%=((!string.IsNullOrEmpty(item.TransactionID)) ? item.TransactionID.ToString():string.Empty)%></span>
-                <span class="order_span10"><%=((item.DeliveryTypeID == 1) ? item.DeliveryDate.ToUniversalTime().ToString() : string.Empty)%></span>
+                <span class="order_span05"><%=((item.DeliveryTypeID == 1) ? item.DeliveryDate.ToUniversalTime().ToString() : string.Empty)%></span>
+                <span class="order_span11"><%=((!string.IsNullOrEmpty(item.TransactionID)) ? item.TransactionID.ToString():string.Empty)%></span>
             </p>
       <%
   } %>

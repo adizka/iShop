@@ -15,7 +15,6 @@
         });
 </script>
 </asp:Content>
-
 <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainContent">
 <script type="text/javascript" src="../Scripts/AddToCart.js"></script>
 <div class="ProducContainer">

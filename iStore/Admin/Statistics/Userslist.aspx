@@ -2,7 +2,6 @@
 <%@ Register TagPrefix="iS" TagName="Pager" Src="~/Modules/Controls/Pager/Pager.ascx" %>
 <asp:Content ID="Content1" runat="server" ContentPlaceHolderID="head"></asp:Content>
 <asp:Content ID="Content2" runat="server" ContentPlaceHolderID="main">
-
 <div class="pader_category">
 <h1>Login e-mail Status</h1>
 

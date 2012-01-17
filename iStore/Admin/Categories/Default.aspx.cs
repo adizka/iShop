@@ -60,11 +60,6 @@ namespace iStore.Admin.Categories
         public void Delete(Guid id)
         {
             iStore.Modules.Logic.Auth.Users ul = new iStore.Modules.Logic.Auth.Users();
-            if (!ul.CurrentUserIdAdministrator)
-            {
-                Response.Redirect(iStore.Site.SiteAdminUrl);
-            }
-
             int errorMessageId = cbl.DeleteCategoryByIdWithErrorMessage(id);
             string errorMessage = string.Empty;
 
@@ -76,9 +71,8 @@ namespace iStore.Admin.Categories
                 case 1: { divError.InnerHtml = "Deletion failed. Please first delete subcategories."; break; };
                 case 2: { divError.InnerHtml = "Deletion failed. Please first delete all products of this category"; break; };
                 case 3: { divError.InnerHtml = "Deletion failed. Please chouse category"; break; };
-                default: divError.InnerHtml = "Category successfully deleted."; break;
+                default: divError.InnerHtml = "Category successfully deleted.";  break;
             }
-         
         }
     }
 }

@@ -30,6 +30,7 @@
         <div class="Center">
             <div class="MarginBoth">
                 <div class="Center_Left">
+                    <h1>Categories</h1>
                     <iS:Menu runat="server" ID="menu" />
                 </div>
                 <div class="Center_Right">

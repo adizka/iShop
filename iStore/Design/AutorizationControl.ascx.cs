@@ -23,7 +23,10 @@ namespace iStore.Design
 
         protected void LogOut(object sender, EventArgs e)
         {
-            ubl.LogOut(CurrentUser.UserID);
+            if (CurrentUser != null)
+            {
+                ubl.LogOut(CurrentUser.UserID);
+            }
             Response.Redirect(Request.Url.AbsolutePath);
         }
 

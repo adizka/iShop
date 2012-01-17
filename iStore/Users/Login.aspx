@@ -8,8 +8,7 @@
 <asp:ScriptManager runat="server" ID="sm"></asp:ScriptManager>
 <asp:UpdatePanel runat="server" ID="up">
 <ContentTemplate>
-    <div class="Admin_LoginErrors" id="divError" runat="server">
-        
+    <div class="Admin_LoginErrors" id="divError" runat="server">        
     </div>
     <div class="Form">
         <p>

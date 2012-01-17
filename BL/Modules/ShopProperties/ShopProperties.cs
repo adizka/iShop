@@ -25,7 +25,6 @@ namespace BL.Modules.ShopProperties
             }
         }
         
-
         public void DeleteProperty(Guid id)
         {
             using (var db = new BL.ShopDataContext())

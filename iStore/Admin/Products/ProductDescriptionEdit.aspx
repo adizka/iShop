@@ -4,8 +4,7 @@
 <asp:Content ID="Content1" runat="server" ContentPlaceHolderID="head">
 </asp:Content>
 <asp:Content ID="Content2" runat="server" ContentPlaceHolderID="main">
-<div>    
-
+<div>
     <p class="BCCategories">
         <a href="<%= iStore.Site.SiteAdminUrl %>Products/?cid=<%= Request.QueryString["cid"] %>">Back to Product list</a>
     </p>

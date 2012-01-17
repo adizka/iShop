@@ -13,6 +13,24 @@ namespace iStore.Contacts {
     public partial class Default {
         
         /// <summary>
+        /// sm control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.ScriptManager sm;
+        
+        /// <summary>
+        /// up control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel up;
+        
+        /// <summary>
         /// errMsg control.
         /// </summary>
         /// <remarks>
@@ -55,6 +73,6 @@ namespace iStore.Contacts {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton sendBtn;
+        protected global::System.Web.UI.WebControls.Button sendBtn;
     }
 }

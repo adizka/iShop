@@ -12,8 +12,6 @@
         <a href="<%= iStore.Site.SiteAdminUrl %>Categories/CategorySort.aspx?cid=<%= Request.QueryString["cid"] %>">Sort categories</a>
         <a href="<%= iStore.Site.SiteAdminUrl %>Products/ProductEdit.aspx?cid=<%= Request.QueryString["cid"] %>">Add product to category</a>
     </p>
-    <br />
-
     <div class="Admin_LoginErrors" runat="server" id="divError" visible="false"></div>
 <div class="pader_category">
     <div class="top_repeater"></div>
@@ -49,7 +47,7 @@
             </span>
             <span class="cat_span04">
                 <a class="edit_ico" href="<%= iStore.Site.SiteAdminUrl %>Categories/CategoryEdit.aspx?cid=<%= item.CategoryID.ToString() %>&parentId=<%= Request.QueryString["cid"] %>"></a>
-                <a class="delete_ico" href="<%= iStore.Site.SiteAdminUrl %>Categories/Default.aspx?delcid=<%= item.CategoryID.ToString() %>"></a>
+                <a class="delete_ico" href="<%= iStore.Site.SiteAdminUrl %>Categories/Default.aspx?delcid=<%= item.CategoryID.ToString() %>&cid=<%= Request.QueryString["cid"] %>"></a>
             </span>
         </p>       
         <% } %>

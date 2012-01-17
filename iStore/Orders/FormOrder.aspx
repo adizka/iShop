@@ -3,7 +3,7 @@
 <asp:Content ID="Content1" runat="server" ContentPlaceHolderID="HeadContent">
 </asp:Content>
 <asp:Content ID="Content2" runat="server" ContentPlaceHolderID="MainContent">
-<script type="text/javascript" src="../../Scripts/jquery.fancybox-2.0/jquery.easing-1.3.pack.js"></script>
+    <script type="text/javascript" src="../../Scripts/jquery.fancybox-2.0/jquery.easing-1.3.pack.js"></script>
 
 
 <script type="text/javascript">
@@ -45,10 +45,8 @@
         <%} %>
     }
 </script>
-    <div id="errMsg" runat="server" class="">
-    </div>
-    
     <h1>Orders</h1>
+    <div id="errMsg" runat="server" class="Admin_LoginErrors" visible="false"></div>
     <div class="Form">
         <p>
             <label class="more_width">First Name</label>

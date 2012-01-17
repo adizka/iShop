@@ -15,5 +15,6 @@ namespace iStore.Modules.Controls
             HeaderColor = string.Empty;
             BodyColor = string.Empty;
         }
+
     }
 }

@@ -1,7 +1,5 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Menu.ascx.cs" Inherits="iStore.Admin.Design.Menu" %>
 
-
-
 <div class="admin_Menu">
      <script type="text/javascript">
          $(document).ready(function () {

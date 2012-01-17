@@ -18,7 +18,6 @@ namespace BL.Modules.Products
             ProductPhotoOriginal3
         }
 
-
         public void AddProperty(Guid productID, string propertyName, string propertyValue, bool isImportant)
         {
             using (ShopDataContext db = new ShopDataContext())
@@ -125,7 +124,11 @@ namespace BL.Modules.Products
                 var prod = db.Products.FirstOrDefault(p => p.ProductID == propertyID);
                 if (prod == null) return;
                 db.ProductsRefProperies.DeleteAllOnSubmit(db.ProductsRefProperies);
-                db.ProductProperties.DeleteAllOnSubmit(prod.ProductProperties);
+                db.ProductProperties.DeleteAllOnSubmit(prod.ProductProperties.Where(p => p.PropertyName != ProductPropertyConstants.ProductPhotoPreview
+                        && p.PropertyName != ProductPropertyConstants.ProductPhotoOriginal
+                            && p.PropertyName != ProductPropertyConstants.ProductDescription
+                                && p.PropertyName != ProductPropertyConstants.ProductPhotoOriginal2
+                                    && p.PropertyName != ProductPropertyConstants.ProductPhotoOriginal3));
                 db.SubmitChanges();
             }
         }

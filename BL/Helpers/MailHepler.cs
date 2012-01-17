@@ -6,7 +6,6 @@ using System.Net.Mail;
 
 namespace BL.Helpers
 {
-
     public class MailHelper
     {
         /// <summary>

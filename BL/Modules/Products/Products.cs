@@ -96,6 +96,7 @@ namespace BL.Modules.Products
             return addCategoryToProduct;
         }
 
+
         public void DeleteProductCategories(Guid productID)
         {
 
@@ -214,7 +215,19 @@ namespace BL.Modules.Products
         public IQueryable<BL.Product> GetMostPopularProducts()
         {
             var db = new ShopDataContext();
-            return db.Products.Take(10);
+            //IList<BL.Product> products = db.Products.ToList();
+            //if (products.Count < 10)
+            //{
+                return db.Products.Take(10);
+            //}
+            //List<BL.Product> prods = new List<Product>();
+            //for (int i = 0; i < 10; i++)
+            //{
+            //    Random _r = new Random();
+            //    int n = _r.Next(products.Count());
+            //    prods.Add(products[n]);
+            //}
+            //return null;
         }
 
         public IQueryable<ProductData> GetProductsByProductName(string name)
@@ -231,8 +244,7 @@ namespace BL.Modules.Products
             using (ShopDataContext db = new ShopDataContext())
             {
                 var prod = db.Products.FirstOrDefault(p => p.ProductID == prodID);
-                if (prod == null)
-                    return;
+                if (prod == null) return;
 
                 db.ProductsRefCategories.DeleteAllOnSubmit(prod.ProductsRefCategories);
                 db.OrdersRefProducts.DeleteAllOnSubmit(prod.OrdersRefProducts);

@@ -14,7 +14,6 @@
     }
 </script>
 <div class="rep">
-
         <% if (!PageProducts.Any())
            { %>
                 <p class="pad_nogoods">Not found, try again.</p>

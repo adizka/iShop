@@ -38,10 +38,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="AjaxControlToolkit">
-      <HintPath>C:\Users\abdullaev.WCH\Desktop\AjaxControlToolkit.dll</HintPath>
+      <HintPath>..\..\..\..\Temp\iStore\bin\AjaxControlToolkit.dll</HintPath>
     </Reference>
     <Reference Include="AjaxControlToolkit.resources">
-      <HintPath>C:\Users\abdullaev.WCH\Desktop\AjaxControlToolkit.resources.dll</HintPath>
+      <HintPath>..\..\..\..\Temp\iStore\bin\AjaxControlToolkit.resources.dll</HintPath>
     </Reference>
     <Reference Include="log4net">
       <HintPath>C:\Users\vadimz\Desktop\log4net.dll</HintPath>
@@ -1294,8 +1294,8 @@
     <Content Include="Page.Master" />
     <None Include="Content\Products\Original\.gitignore" />
     <None Include="Content\Products\Preview\.gitignore" />
-    <Content Include="Paypal.Master" />
     <Content Include="Orders\PayPalIPN.ashx" />
+    <Content Include="Paypal.Master" />
     <None Include="Scripts\FCK\editor\dialog\fck_spellerpages\spellerpages\server-scripts\spellchecker.cfm" />
     <None Include="Scripts\FCK\editor\dialog\fck_spellerpages\spellerpages\server-scripts\spellchecker.php" />
     <None Include="Scripts\FCK\editor\dialog\fck_spellerpages\spellerpages\server-scripts\spellchecker.pl" />

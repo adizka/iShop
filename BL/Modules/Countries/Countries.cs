@@ -28,8 +28,7 @@ namespace BL.Modules.Countries
                 db.SubmitChanges();
             }
         }
-
-
+        
         public bool DeleteCountry(int ID)
         {
             using (ShopDataContext db = new ShopDataContext())

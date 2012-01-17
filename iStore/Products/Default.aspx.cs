@@ -18,7 +18,7 @@ namespace iStore.Products
         protected void Page_Load(object sender, EventArgs e)
         {
             if (CurrentProduct == null)
-                Response.Redirect(iStore.Site.SiteUrl + "Products/ProductsList.aspx");
+                Response.Redirect(iStore.Site.SiteUrl);
 
             CurrProdAddToCart.ProductId = CurrentProduct.ProductID;
             rpt.DataSource = RelatedProducts;
@@ -53,7 +53,7 @@ namespace iStore.Products
                             && p.PropertyName != BL.ProductPropertyConstants.ProductPhotoOriginal
                             && p.PropertyName != BL.ProductPropertyConstants.ProductPhotoPreview
                             && p.PropertyName != BL.ProductPropertyConstants.ProductPhotoOriginal2
-                            && p.PropertyName != BL.ProductPropertyConstants.ProductPhotoOriginal3).ToList();
+                            && p.PropertyName != BL.ProductPropertyConstants.ProductPhotoOriginal3).Take(8).ToList();
                 return _productProperties;
             }
         }

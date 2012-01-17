@@ -4,8 +4,7 @@
     function ChangePassword() {
         $("#changePassword").toggle();
     }
-
-    function ChangeMail() {
+function ChangeMail() {
         $("#changeMail").toggle();
     }
 </script>

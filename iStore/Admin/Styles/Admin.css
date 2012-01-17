@@ -226,6 +226,7 @@ vertical-align:middle;
 .order_span08 {width:90px;}
 .order_span09 {width:60px;}
 .order_span10 {width:100px;}
+.order_span11 {width:100px; font-size:10px;}
 
 input.field_universe {
 width:110px;
@@ -448,3 +449,4 @@ padding:0 5px 0 0;
 } .spaned_user a {color:#008EC3}
 
 .blue_anchored {color:#008ec3;}
+.Admin_LoginErrors {padding:5px 15px 10px; color:#a90000;}

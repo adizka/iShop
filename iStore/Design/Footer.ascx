@@ -14,5 +14,4 @@
         Powered by <a  target="_blank" href="http://wchsb.com/">WCHSB</a>
     </p>
 </div>
-
 <div class="clear"></div>

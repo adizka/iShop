@@ -21,9 +21,8 @@ namespace iStore.Admin.Login
                 string message = Request.QueryString["message"];
                 if (message != null)
                 {
-                    veLogin.Visible = true;
-                    veLogin.ClearErrors();
-                    veLogin.Errors = "Your Login and URL's for Password Recovery  were sent to your email address";
+                    divError.Visible = true;
+                    divError.InnerHtml = "Your Login and URL's for Password Recovery  were sent to your email address";
                 }
             }
         }
@@ -40,10 +39,8 @@ namespace iStore.Admin.Login
             }
             else
             {
-                veLogin.Visible = true;
-                veLogin.ClearErrors();
-                veLogin.Errors = "Wrong login or password";
-                veLogin.SetErrors();
+                divError.Visible = true;
+                divError.InnerHtml= "Wrong login or password";
             }
             
         }

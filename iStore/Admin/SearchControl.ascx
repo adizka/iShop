@@ -1,5 +1,4 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="SearchControl.ascx.cs" Inherits="iStore.Admin.SearchControl" %>
-
 <div class="InputConteiner">
 <span>
 Название:

@@ -28,6 +28,7 @@
     <%} counter++;
        } %>
     </div>
+
     <div style="display:none">
     <iS:AddToCart ID="addtoCart" IsCounterVisible="false" runat="server" />
     </div>

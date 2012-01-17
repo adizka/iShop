@@ -22,6 +22,7 @@ namespace BL.Modules.News
             }
         }
 
+
         private void AddNews(string title, string desc, string body)
         {
             using (var db = new ShopDataContext())

@@ -33,7 +33,6 @@
     <p class="prod_h6">
         Edit product photo <span><b><%= CuurentProduct.Name %></b></span>
     </p>
-
     <p>
         Change Preview
     </p>

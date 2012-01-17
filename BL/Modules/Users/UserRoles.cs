@@ -12,6 +12,5 @@ namespace BL.Modules.Users
         public int Admin { get { return 1; } }
         public int Manager { get { return 2; } }
         public int User { get { return 3; } }
-
     }
 }

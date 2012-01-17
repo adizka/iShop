@@ -10,6 +10,7 @@
   { %>
           <h2><a href="/Orders/?oid=">Shopping cart</a></h2>
 <div class="cart_div">
+
    You have <a href="/Orders/?oid="> no items </a> in your shopping cart.
 </div>
   <%} %>

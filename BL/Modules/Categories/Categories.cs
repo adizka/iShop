@@ -10,7 +10,6 @@ namespace BL.Modules.Categories
 {
     public class Categories
     {
-
         public enum DeleteErrors { HasChilds = 1, HasProducts = 2, Invalid = 3, Success = 4 }
 
         public void AddCategory(string name, Guid? parentId)

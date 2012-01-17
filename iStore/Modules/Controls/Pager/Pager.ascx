@@ -1,10 +1,10 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Pager.ascx.cs" Inherits="iStore.Modules.Controls.Pager.Pager" %>
 
-    <div class="Paging" >
+    <div class="Paging" runat="server" id="pds" >
 
 <%
     int i;
-    if(PagesCount > 1){
+    if(EntityCount != 0){
     if (PageIndex !=0)
   { %>
   <span class="NavigateLastPage"><a href ="<%=NavigateUrl %>?p=0<%=Params%>">first</a></span>
@@ -40,3 +40,5 @@
   %>
         
     </div>
+
+

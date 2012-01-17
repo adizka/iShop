@@ -1,7 +1,6 @@
 ﻿<%@ Page MasterPageFile="~/Admin/Admin.Master"  Language="C#" AutoEventWireup="true" CodeBehind="PageEdit.aspx.cs" Inherits="iStore.Admin.Pages.PageEdit" Title="Page edit | Marvel Worldwide" %>
 <%@ Register TagPrefix="iS" TagName="ValidateErrors" Src="~/Modules/Controls/Validators/ValidateErrors.ascx" %>
 
-
 <asp:Content runat="server" ContentPlaceHolderID="head"></asp:Content>
 <asp:Content runat="server" ContentPlaceHolderID="main">
 <div class="pader_category">

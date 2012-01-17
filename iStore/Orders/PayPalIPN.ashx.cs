@@ -8,9 +8,8 @@ using System.IO;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.Configuration;
-using System.Net;
-using System.IO;
 using System.Globalization;
+
 namespace iStore.Orders
 {
     /// <summary>
@@ -21,11 +20,6 @@ namespace iStore.Orders
         BL.Modules.Orders.Orders obl = new BL.Modules.Orders.Orders();
         public void ProcessRequest(HttpContext context)
         {
-
-
-            System.IO.File.WriteAllText(HttpContext.Current.Server.MapPath("~/out.txt"), HttpContext.Current.Request.Url.AbsoluteUri);
-
-
             //Post back to either sandbox or live
             string strSandbox = "https://www.sandbox.paypal.com/cgi-bin/webscr";
             //string strLive = "https://www.paypal.com/cgi-bin/webscr";
@@ -39,6 +33,7 @@ namespace iStore.Orders
             strRequest += "&cmd=_notify-validate";
             req.ContentLength = strRequest.Length;
 
+
             //for proxy
             //WebProxy proxy = new WebProxy(new Uri("http://url:port#"));
             //req.Proxy = proxy;
@@ -51,11 +46,13 @@ namespace iStore.Orders
             string strResponse = streamIn.ReadToEnd();
             streamIn.Close();
 
+
             if (strResponse == "VERIFIED")
             {
-                if (HttpContext.Current.Request.QueryString["receiver_email"] == WebConfigurationManager.AppSettings["Login"])
+                if (receiver_email == WebConfigurationManager.AppSettings["Login"])
                 {
-                    obl.TryFormOrderIPN(BL.PaymentTypes.PayPal, TransactionID, OrderID, payment_gross, payment_date, string.Empty);
+                    if (obl.TryFormOrderIPN(BL.PaymentTypes.PayPal, TransactionID, OrderID, payment_gross, payment_date, string.Empty))
+                        HttpContext.Current.Response.Status = "200";
                 }
             }
             else if (strResponse == "INVALID")
@@ -67,19 +64,19 @@ namespace iStore.Orders
                 //log response/ipn data for manual investigation
             }
         }
+        HttpRequest Request
+        {
+            get
+            {
+                return HttpContext.Current.Request;
+            }
+        }
         string TransactionID
         {
             get
             {
-                return HttpContext.Current.Request.QueryString["txn_id"];
-            }
-        }
-
-        decimal payment_gross
-        {
-            get
-            {
-                return decimal.Parse(HttpContext.Current.Request.QueryString["payment_gross"]);
+                var key = "txn_id";
+                return Request[key];
             }
         }
 
@@ -87,22 +84,43 @@ namespace iStore.Orders
         {
             get
             {
-                return new Guid(HttpContext.Current.Request.QueryString["custom"]);
+                var key = "custom";
+                return new Guid(Request[key]);
             }
         }
 
-        static string[] dateFormats = { "HH:mm:ss MMM dd, yyyy PST", "HH:mm:ss MMM. dd, yyyy PST", "HH:mm:ss MMM dd, yyyy PDT", "HH:mm:ss MMM. dd, yyyy PDT" };
-        static CultureInfo cultInfo = new CultureInfo("en-US");
+
+        decimal payment_gross
+        {
+            get
+            {
+                var key = "payment_gross";
+                return decimal.Parse(Request[key]);
+            }
+        }
+
         public DateTime payment_date
         {
             get
             {
                 DateTime outputDateTime;
-                string payPalDateTime = HttpContext.Current.Request.QueryString["payment_date"];
+                string payPalDateTime = HttpContext.Current.Server.UrlDecode(Request["payment_date"]);
                 DateTime.TryParseExact(payPalDateTime, dateFormats, cultInfo, DateTimeStyles.None, out outputDateTime);
                 return outputDateTime;
             }
         }
+
+        string receiver_email
+        {
+            get
+            {
+                var key = "receiver_email";
+                return HttpContext.Current.Server.UrlDecode(Request[key]);
+            }
+        }
+
+        static string[] dateFormats = { "HH:mm:ss MMM dd, yyyy PST", "HH:mm:ss MMM. dd, yyyy PST", "HH:mm:ss MMM dd, yyyy PDT", "HH:mm:ss MMM. dd, yyyy PDT" };
+        static CultureInfo cultInfo = new CultureInfo("en-US");
 
         public bool IsReusable
         {

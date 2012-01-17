@@ -7,18 +7,17 @@
 
 <%if (UserOrder.IsActive)
   { %>
-
   <script type="text/javascript">
-    function Update() {
+      function Update() {
 
-        var selectedEl = " ";
-        $("input:checkbox:checked", "#ProdTable").
+          var selectedEl = " ";
+          $("input:checkbox:checked", "#ProdTable").
         each(function () {
             selectedEl += $(this).attr("id") + "~";
         });
 
-        selectedEl += "~~~";
-        $("input:checkbox", "#ProdTable").
+          selectedEl += "~~~";
+          $("input:checkbox", "#ProdTable").
         each(function () {
             if ($(".ProdCount", $(this).parent().parent()).html() / 1 < 1 || isNaN($(".ProdCount", $(this).parent().parent()).html()))
                 $(".ProdCount", $(this).parent().parent()).html("1");
@@ -27,60 +26,60 @@
 
             selectedEl += $(this).attr("id") + "~" + $(".ProdCount", $(this).parent().parent()).html() + "~~";
         });
-        $("#hf").val(selectedEl);
+          $("#hf").val(selectedEl);
 
-        Sum();
-    }
-    function Sum() {
-        var total = 0;
+          Sum();
+      }
+      function Sum() {
+          var total = 0;
 
-        $(".TotalSum", "#ProdTable").each(function () {
-            var parent = $(this).parent();
-            $(".Price", parent).html(($(".Price", parent).html().replace(",", ".")/1).toFixed(2));
-            var sum = $(".Price", parent).html().replace(",", ".") * $(".ProdCount", parent).html();
-            $(this).html(sum.toFixed(2));
+          $(".TotalSum", "#ProdTable").each(function () {
+              var parent = $(this).parent();
+              $(".Price", parent).html(($(".Price", parent).html().replace(",", ".") / 1).toFixed(2));
+              var sum = $(".Price", parent).html().replace(",", ".") * $(".ProdCount", parent).html();
+              $(this).html(sum.toFixed(2));
 
-        });
+          });
 
 
-        $(".TotalSum", "#ProdTable").each(function () {
-            total += $(this).html() / 1;
-        });
-        $("#TotalSumID").html(total.toFixed(2));
-    }
+          $(".TotalSum", "#ProdTable").each(function () {
+              total += $(this).html() / 1;
+          });
+          $("#TotalSumID").html(total.toFixed(2));
+      }
 
-    function Incr(el) {
+      function Incr(el) {
 
-        var count = $($(el).parent().children()[1]).html() / 1;
+          var count = $($(el).parent().children()[1]).html() / 1;
 
-        if (count == 1)
-            $($(el).parent().children()[0]).css("cursor", "pointer")
+          if (count == 1)
+              $($(el).parent().children()[0]).css("cursor", "pointer")
 
-        $($(el).parent().children()[1]).html(count + 1);
-        Sum();
-        Update();
-    }
-    function Decr(el) {
+          $($(el).parent().children()[1]).html(count + 1);
+          Sum();
+          Update();
+      }
+      function Decr(el) {
 
-        var count = $($(el).parent().children()[1]).html() / 1;
+          var count = $($(el).parent().children()[1]).html() / 1;
 
-        if (count == 1) {
-            $(el).css("cursor", "");
-            return;
-        }
-        else {
-            $(el).css("cursor", "pointer");
-        }
+          if (count == 1) {
+              $(el).css("cursor", "");
+              return;
+          }
+          else {
+              $(el).css("cursor", "pointer");
+          }
 
-        $($(el).parent().children()[1]).html(count - 1);
-        Sum();
-        Update();
-    }
+          $($(el).parent().children()[1]).html(count - 1);
+          Sum();
+          Update();
+      }
 
-    function SelDes(val) {
-        $("input:checkbox", "#ProdTable").attr("checked", val);
-        Update();
-    }
+      function SelDes(val) {
+          $("input:checkbox", "#ProdTable").attr("checked", val);
+          Update();
+      }
 
 </script>
 
@@ -135,7 +134,7 @@
     </tr>
     </table>
     <asp:HiddenField ID="hf" runat="server" ClientIDMode="Static" ></asp:HiddenField>
-    <script type="text/javascript" > 
+    <script type="text/javascript" >
         function pageLoad() {
             Update();
         }
@@ -145,7 +144,7 @@
       { %>
     <div class="options_div">
               <span class="right_pay"><span>
-                  <asp:LinkButton runat="server" CssClass="right_pay" OnClick="FromOrder" Text="Order" />
+                  <asp:LinkButton ID="LinkButton1" runat="server" CssClass="right_pay" OnClick="FromOrder" Text="Order" />
               </span></span>
         <p>
             <a class="clear_select" href="javascript:SelDes(true)">select all</a>
@@ -171,34 +170,36 @@
     <%}
   else
   { %>
-      <table id="Table1">
+    <h1>Orders history</h1>
+    <table class="cart_table" cellpadding="0" cellspacing="0" id="Table1" width="760">
     <tr>
-        <td>
-            Название
-        </td>
-        <td>
-            Количество
-        </td>
+        <th align="left">
+            Name
+        </th>
+        <th width="90" align="center">
+            Count
+        </th>
     </tr>
 <%  
       foreach (var prodRef in UserOrder.OrdersRefProducts)
       {%>
        <tr>
-<td>
-<%=prodRef.Product.Name%>
-</td>
-<td >
-<%=prodRef.Count%>
-</td>
+            <td class="left_border">
+            <%=prodRef.Product.Name%>
+            </td>
+            <td align="center" class="right_border">
+            <%=prodRef.Count%>
+            </td>
        </tr>
        <%
       } %>
     
     <tr>
-    <td>Итого</td>
-    <td><%=UserOrder.TotalSum%></td>
+        <td class="left_border">Sub Total</td>
+        <td class="right_border"><%=UserOrder.TotalSum%></td>
     </tr>
     </table>
     <%} %>
+    <br />
     <a href="/Orders/OrdersList.aspx">Orders history</a>
 </asp:Content>

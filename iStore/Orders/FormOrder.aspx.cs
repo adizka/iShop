@@ -62,7 +62,7 @@ namespace iStore.Orders
         static Regex emailValidator = new Regex(emailPatern);
         private bool CheckData(string firstName, string lastName, string address1, string address2, string city, string province, string zip, string phone, string email, int countryID)
         {
-                    
+
             errMsg.Visible = false;
             errMsg.InnerHtml = "Please fill:<br/>";
 
@@ -114,27 +114,85 @@ namespace iStore.Orders
                 errMsg.InnerHtml += "fill out valid e-mail<br/>";
                 errMsg.Visible = true;
             }
+            if (errMsg.Visible)
+                return !errMsg.Visible;
+
+
+            if (address1.Length > 150)
+            {
+                errMsg.InnerHtml += "Address 1 max length 150<br/>";
+                errMsg.Visible = true;
+            }
+
+            if (address2.Length > 150)
+            {
+                errMsg.InnerHtml += "Address 2 max length 150<br/>";
+                errMsg.Visible = true;
+            }
+
+            if (city.Length > 50)
+            {
+                errMsg.InnerHtml += "City max length 50<br/>";
+                errMsg.Visible = true;
+            }
+
+            if (province.Length > 50)
+            {
+                errMsg.InnerHtml += "State/Province/Region max length 150<br/>";
+                errMsg.Visible = true;
+            }
+
+            if (zip.Length > 50)
+            {
+                errMsg.InnerHtml += "Zip code max length 50<br/>";
+                errMsg.Visible = true;
+            }
+
+            if (phone.Length > 50)
+            {
+                errMsg.InnerHtml += "Phone max length 50<br/>";
+                errMsg.Visible = true;
+            }
+
+            if (email.Length > 150)
+            {
+                errMsg.InnerHtml += "Email max length 50<br/>";
+                errMsg.Visible = true;
+            }
+
+            if (lastName.Length > 50)
+            {
+                errMsg.InnerHtml += "Last name max length 50<br/>";
+                errMsg.Visible = true;
+            }
+
+            if (firstName.Length > 50)
+            {
+                errMsg.InnerHtml += "First name max length 50<br/>";
+                errMsg.Visible = true;
+            }
+
             return !errMsg.Visible;
         }
 
         protected void Pay(object obj, EventArgs args)
         {
 
-            var firstName = HttpUtility.HtmlEncode( FirstNameTxt.Text.Trim());
+            var firstName = HttpUtility.HtmlEncode(FirstNameTxt.Text.Trim());
             var lastName = HttpUtility.HtmlEncode(LastNameTxt.Text.Trim());
-            var address1 = HttpUtility.HtmlEncode( address1Txt.Text.Trim());
+            var address1 = HttpUtility.HtmlEncode(address1Txt.Text.Trim());
             var address2 = HttpUtility.HtmlEncode(address2Txt.Text.Trim());
-            var city = HttpUtility.HtmlEncode( cityTxt.Text.Trim());
+            var city = HttpUtility.HtmlEncode(cityTxt.Text.Trim());
             var email = emailTxt.Text.Trim();
-            var province = HttpUtility.HtmlEncode( provinceTxt.Text.Trim());
-            var zip =  HttpUtility.HtmlEncode( zipTxt.Text.Trim());
-            var phone =  HttpUtility.HtmlEncode( phoneTxt.Text.Trim());
+            var province = HttpUtility.HtmlEncode(provinceTxt.Text.Trim());
+            var zip = HttpUtility.HtmlEncode(zipTxt.Text.Trim());
+            var phone = HttpUtility.HtmlEncode(phoneTxt.Text.Trim());
             var strCountryID = countryDdl.SelectedValue;
             int countryID;
             if (!int.TryParse(strCountryID, out countryID))
                 return;
 
-            if (!CheckData(firstName, lastName,address1,address2, city, province, zip, phone, email, countryID))
+            if (!CheckData(firstName, lastName, address1, address2, city, province, zip, phone, email, countryID))
                 return;
 
             email = string.IsNullOrWhiteSpace(email) ? auth.CurrentUser.Email : HttpUtility.HtmlEncode(email);

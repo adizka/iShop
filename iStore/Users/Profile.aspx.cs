@@ -38,12 +38,12 @@ namespace iStore.Users
             {
                 if (ubl.ChangePassword(auth.CurrentUser.UserID, password))
                 {
-                    lblNewMail.Text = "Password has been changed";
+                    lblNewPasswordError.Text = "Password has been changed";
                 }
             }
             else
             {
-                lblNewMail.Text = "Password must be at least 4 characters";
+                lblNewPasswordError.Text = "Password must be at least 4 characters";
             }
         }
 

@@ -10,6 +10,5 @@ namespace BL.Modules.Products
     public class ProductType
     {
         public enum Types:int { Real = 1, Web = 2}
-
     }
 }

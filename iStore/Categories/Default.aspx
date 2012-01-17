@@ -14,7 +14,6 @@
         $("[type=submit]", "#<%=addtoCart.GlobalID %>").click();
     }
 </script>
-
 <iS:BreadCrumbs runat="server" ID="bc" SiteMode="true" EntityType="Categories" />
 
 <div class="Title"><h1><%= CurrentCategory.Name %> [<%= GetProductsRefCurrentCategory.Count().ToString()%>]</h1></div>

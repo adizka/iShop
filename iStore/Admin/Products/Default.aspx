@@ -26,7 +26,6 @@
             </span>
         </span>
     </p>
-
     <p class="BCCategories">
         <a href="<%= iStore.Site.SiteAdminUrl %>Products/ProductEdit.aspx?cid=<%= Request.QueryString["cid"] %>">Add product</a>
     </p>

@@ -3,6 +3,7 @@
 <div class="Admin_HeaderCompanyName">
 <span><%= iStore.Site.ProjectName %> </span> | <i> <%= global::Resources.Default.AdminPanel %> </i>
 </div>
+
 <div class="Admin_HeaderCenter"></div>
 <div class="Admin_HeaderToolbar">
     <span class="view_span"><a target="_blank" href="<%= iStore.Site.SiteUrl %>"><%= global::Resources.Default.ViewTheSite %></a></span> 

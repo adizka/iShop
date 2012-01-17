@@ -3,6 +3,7 @@
 <%@ Register TagPrefix="iS" TagName="ValidateErrors" Src="~/Modules/Controls/Validators/ValidateErrors.ascx" %>
 
 <asp:Content runat="server" ContentPlaceHolderID="head"></asp:Content>
+
 <asp:Content runat="server" ContentPlaceHolderID="main">
 <br />
 <div class="pader_category">

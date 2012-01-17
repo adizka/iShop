@@ -35,7 +35,7 @@ namespace BL.Modules.Orders
                         UserID = userID,
                         CreateDate = DateTime.Now,
                         DeliveryDate = DateTime.Now,
-                        CountryID = 1
+                        CountryID = db.Countries.First().ID
                     };
                     db.Orders.InsertOnSubmit(order);
                 }

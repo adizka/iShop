@@ -2,4 +2,5 @@
 
 <div class="ValidateErrors" style="border:1px solid gray; margin:5px;">
     <div runat="server" id="errorText" visible="false"></div>
+
 </div>

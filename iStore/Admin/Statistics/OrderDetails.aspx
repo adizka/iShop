@@ -15,7 +15,6 @@
 
         });
 
-
         $("#TotalSum", "#ProdTable").each(function () {
             total += $(this).html() / 1;
         });

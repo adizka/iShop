@@ -15,8 +15,7 @@
     <script src="<%= iStore.Site.SiteUrl %>Scripts/jquery.fancybox-2.0/jquery.mousewheel-3.0.6.pack.js" type="text/javascript"></script>
     <script src="<%= iStore.Site.SiteUrl %>Scripts/jquery.fancybox-2.0/jquery.fancybox.pack.js" type="text/javascript"></script>
     <link href="Scripts/jquery.fancybox-2.0/jquery.fancybox.css" rel="stylesheet" type="text/css" />
-    <asp:ContentPlaceHolder ID="HeadContent" runat="server" />
-    
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server" />    
 </head>
 <body>
     <form id="MainPageForm" runat="server">
@@ -29,6 +28,7 @@
         <div class="Center">
             <div class="MarginBoth">
                 <div class="Center_Left">
+                    <h1>Categories</h1>
                     <iS:Menu runat="server" ID="menu" />
                 </div>
                 <div class="Center_Right">
