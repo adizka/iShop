@@ -117,7 +117,11 @@ namespace iStore.Orders
             if (errMsg.Visible)
                 return !errMsg.Visible;
 
+<<<<<<< HEAD
 
+=======
+            
+>>>>>>> origin/master
             if (address1.Length > 150)
             {
                 errMsg.InnerHtml += "Address 1 max length 150<br/>";
