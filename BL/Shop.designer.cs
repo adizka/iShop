@@ -62,6 +62,9 @@ namespace BL
         partial void InsertPage(Page instance);
         partial void UpdatePage(Page instance);
         partial void DeletePage(Page instance);
+        partial void InsertPaymentError(PaymentError instance);
+        partial void UpdatePaymentError(PaymentError instance);
+        partial void DeletePaymentError(PaymentError instance);
         partial void InsertPaymentType(PaymentType instance);
         partial void UpdatePaymentType(PaymentType instance);
         partial void DeletePaymentType(PaymentType instance);
@@ -209,6 +212,14 @@ namespace BL
             get
             {
                 return this.GetTable<Page>();
+            }
+        }
+
+        public System.Data.Linq.Table<PaymentError> PaymentErrors
+        {
+            get
+            {
+                return this.GetTable<PaymentError>();
             }
         }
 
@@ -3065,6 +3076,116 @@ namespace BL
                     this._PageBody = value;
                     this.SendPropertyChanged("PageBody");
                     this.OnPageBodyChanged();
+                }
+            }
+        }
+
+        public event PropertyChangingEventHandler PropertyChanging;
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected virtual void SendPropertyChanging()
+        {
+            if ((this.PropertyChanging != null))
+            {
+                this.PropertyChanging(this, emptyChangingEventArgs);
+            }
+        }
+
+        protected virtual void SendPropertyChanged(String propertyName)
+        {
+            if ((this.PropertyChanged != null))
+            {
+                this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+
+    [global::System.Data.Linq.Mapping.TableAttribute(Name = "dbo.PaymentErrors")]
+    public partial class PaymentError : INotifyPropertyChanging, INotifyPropertyChanged
+    {
+
+        private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+
+        private int _ID;
+
+        private string _Message;
+
+        private System.DateTime _CreateDate;
+
+        #region Extensibility Method Definitions
+        partial void OnLoaded();
+        partial void OnValidate(System.Data.Linq.ChangeAction action);
+        partial void OnCreated();
+        partial void OnIDChanging(int value);
+        partial void OnIDChanged();
+        partial void OnMessageChanging(string value);
+        partial void OnMessageChanged();
+        partial void OnCreateDateChanging(System.DateTime value);
+        partial void OnCreateDateChanged();
+        #endregion
+
+        public PaymentError()
+        {
+            OnCreated();
+        }
+
+        [global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_ID", AutoSync = AutoSync.OnInsert, DbType = "Int NOT NULL IDENTITY", IsPrimaryKey = true, IsDbGenerated = true)]
+        public int ID
+        {
+            get
+            {
+                return this._ID;
+            }
+            set
+            {
+                if ((this._ID != value))
+                {
+                    this.OnIDChanging(value);
+                    this.SendPropertyChanging();
+                    this._ID = value;
+                    this.SendPropertyChanged("ID");
+                    this.OnIDChanged();
+                }
+            }
+        }
+
+        [global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_Message", DbType = "NVarChar(MAX) NOT NULL", CanBeNull = false)]
+        public string Message
+        {
+            get
+            {
+                return this._Message;
+            }
+            set
+            {
+                if ((this._Message != value))
+                {
+                    this.OnMessageChanging(value);
+                    this.SendPropertyChanging();
+                    this._Message = value;
+                    this.SendPropertyChanged("Message");
+                    this.OnMessageChanged();
+                }
+            }
+        }
+
+        [global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_CreateDate", DbType = "DateTime NOT NULL")]
+        public System.DateTime CreateDate
+        {
+            get
+            {
+                return this._CreateDate;
+            }
+            set
+            {
+                if ((this._CreateDate != value))
+                {
+                    this.OnCreateDateChanging(value);
+                    this.SendPropertyChanging();
+                    this._CreateDate = value;
+                    this.SendPropertyChanged("CreateDate");
+                    this.OnCreateDateChanged();
                 }
             }
         }

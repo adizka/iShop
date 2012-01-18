@@ -300,8 +300,6 @@ namespace BL.Modules.Orders
                 var expireDate = DateTime.Now.AddHours(-timeLimit);
 
                 var expiredOrders = db.OrdersRefProducts.Where(o => !o.Order.IsPaid && o.CreateDate > expireDate).ToList();
-                if (expiredOrders.Count > 0)
-                    expireDate = expireDate;
 
                 foreach (var item in expiredOrders)
                 {
@@ -309,6 +307,19 @@ namespace BL.Modules.Orders
                 }
 
                 db.OrdersRefProducts.DeleteAllOnSubmit(expiredOrders);
+                db.SubmitChanges();
+            }
+        }
+
+        public void LogError(string message)
+        {
+            using (var db = new ShopDataContext())
+            {
+                db.PaymentErrors.InsertOnSubmit(new PaymentError()
+                {
+                    CreateDate = DateTime.Now,
+                    Message = message
+                });
                 db.SubmitChanges();
             }
         }

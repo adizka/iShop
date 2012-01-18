@@ -51,18 +51,19 @@ namespace iStore.Orders
             {
                 if (receiver_email == WebConfigurationManager.AppSettings["Login"])
                 {
-                    if (obl.TryFormOrderIPN(BL.PaymentTypes.PayPal, TransactionID, OrderID, payment_gross, payment_date, string.Empty))
-                        HttpContext.Current.Response.Status = "200";
+                    obl.TryFormOrderIPN(BL.PaymentTypes.PayPal, TransactionID, OrderID, payment_gross, payment_date, string.Empty);
+                        
                 }
             }
             else if (strResponse == "INVALID")
             {
-                //log for manual investigation
+                obl.LogError(Request.Params.ToString());
             }
             else
             {
-                //log response/ipn data for manual investigation
+                obl.LogError(Request.Params.ToString());
             }
+            HttpContext.Current.Response.Status = "200 OK";
         }
         HttpRequest Request
         {
